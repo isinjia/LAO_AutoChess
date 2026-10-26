@@ -10,7 +10,8 @@
   const GROUND = 0.43; // share of the background image (from the bottom) that is floor
   const COL_X = [2.5, 5.5]; // front / back column distance from the centre line
   const ROW_SCALE = [0.9, 1, 1.1]; // far rows a little smaller
-  const HEAD = 1.75; // bar height above the feet (world units, before row scale)
+  const HEAD = 1.75; // bar height above the feet (world units, before row scale); the lowest, see headHeight
+  const HEAD_MAX = 3.0;
   // wave field camera: shifted right so the formation stands in the left third with the spawn edge at the right edge
   const CAM_X = 0.3, VIEW_HALF_W = 9.8; // base line (-7.4) to the spawn edge (9.6)
   const FLOOR = 0.71; // share of the screen height (from the bottom) that is floor on the wave field
@@ -176,7 +177,7 @@
   }
   function ring(color, opacity, r, w) {
     const g = new THREE.RingGeometry(r - w, r, 48);
-    const m = new THREE.MeshBasicMaterial({ color, transparent: true, opacity, depthTest: false, depthWrite: false, blending: THREE.AdditiveBlending });
+    const m = new THREE.MeshBasicMaterial({ color, transparent: true, opacity, depthTest: false, depthWrite: false, ...ADD_LIGHT });
     const mesh = new THREE.Mesh(g, m);
     mesh.scale.set(1, 0.32, 1);
     return mesh;
@@ -190,6 +191,37 @@
   // head icons at the hp bar's right end: class (경장 / 중장 / 기동, Iron Bugs too) and the original squad emblem (allies).
   // Hover (mouse) or long press (touch) shows the names; the lobby setting turns them off (setHeadIcons)
   let tipEl = null, tipOwner = null, tipTimer = 0, tipSwallow = false;
+  // where the bars sit (world units above the feet, before the row / star scale): over the top of the sprites hung
+  // on the rig's head bone in its current pose, so hovering and tall units are not covered while big weapons, shields
+  // and wings held above the head do not push the bar up. Sprite rects run a little past the drawn hair (the trim).
+  // Rigs without a head bone use the whole idle-pose box
+  const HEAD_RE = [/^(parts_|bone_)?head(_bone)?$/i, /head/i];
+  function headHeight(u) {
+    const s = u.s, c = u.c;
+    if (s.enemy) return ENEMY_H[s.enemy] * 0.92;
+    const tpl = c && SD.template(c.tpl.id);
+    if (!tpl || !tpl.box) return HEAD;
+    let top = tpl.box.max.y;
+    const nodes = tpl.data && tpl.data.nodes, P = tpl.parent;
+    let h = -1;
+    if (nodes && P) for (const re of HEAD_RE) { h = nodes.findIndex((n) => re.test(n.n) && !/set|ring|goggle/i.test(n.n)); if (h >= 0) break; }
+    if (h >= 0) {
+      const under = (k) => { for (let x = k; x >= 0; x = P[x]) if (x === h) return true; return false; };
+      let y1 = -Infinity;
+      tpl.rends.forEach((r, k) => {
+        const sp = tpl.sprites[c.rKey[k]];
+        if (r.kind !== 0 || r.add || !sp || !c.EA[r.node] || !c.rEn[k] || c.rCol[k * 4 + 3] < 0.05 || !under(r.node)) return;
+        const o = r.node * 12, W = c.W;
+        for (const [lx, ly] of [[sp.x0, sp.y0], [sp.x1, sp.y0], [sp.x0, sp.y1], [sp.x1, sp.y1]]) {
+          const fx = c.rFlip[k] ? -lx : lx, fy = c.rFlipY[k] ? -ly : ly;
+          y1 = Math.max(y1, W[o + 1] * fx + W[o + 4] * fy + W[o + 10]);
+        }
+      });
+      if (isFinite(y1)) top = y1;
+    }
+    return Math.max(HEAD, Math.min(HEAD_MAX, c.root.position.y + c.root.scale.y * top - 0.12));
+  }
+  const headOf = (u) => (u.headH == null ? (u.headH = headHeight(u)) : u.headH); // measured once the rig has posed
   function headTags(s) {
     const d = s.def || {}, t = document.createElement('div'), tip = [];
     t.className = 'htag';
@@ -287,6 +319,7 @@
         uid: s.uid, s, side: s.side, col: s.col, row: s.row, k, order, holder, flip, c, shadow, teamRing, shieldRing, bar, halo, rig: c && c.tpl ? c.tpl.id : rig,
         hpI: bar.querySelector('.hp i'), shB: bar.querySelector('.hp b'), mpI: bar.querySelector('.mp i'), mp: bar.querySelector('.mp'), st: bar.querySelector('.st'),
         dash: null, flashT: 0, knock: 0, dieT: -1, fade: 1,
+        headH: null,
       };
       if (s.enemy) bar.classList.add('enemy', s.enemy);
       if (s.gear && s.gear.length && window.Items) { // equipped gear: small icons beside the bar
@@ -334,7 +367,7 @@
   function makeHalo(star, k, order) {
     const h = HALO[Math.min(7, star)];
     const group = new THREE.Group();
-    const mat = (map, op) => new THREE.MeshBasicMaterial({ map, color: h.color, transparent: true, opacity: op, depthTest: false, depthWrite: false, blending: THREE.AdditiveBlending });
+    const mat = (map, op) => new THREE.MeshBasicMaterial({ map, color: h.color, transparent: true, opacity: op, depthTest: false, depthWrite: false, ...ADD_LIGHT });
     const glowM = new THREE.Mesh(new THREE.PlaneGeometry(1, 1), mat(glow(), h.op));
     glowM.scale.set(h.size * k, h.size * k * 1.15, 1);
     glowM.position.y = 1.0 * k;
@@ -363,7 +396,7 @@
       H.sparkT -= dt;
       if (H.sparkT <= 0) {
         H.sparkT = 0.18;
-        const m = new THREE.Mesh(new THREE.PlaneGeometry(1, 1), new THREE.MeshBasicMaterial({ map: glow(), color: new THREE.Color().setHSL(H.h.sparkHue != null ? H.h.sparkHue + Math.random() * 0.04 : Math.random(), 0.9, 0.7), transparent: true, depthTest: false, depthWrite: false, blending: THREE.AdditiveBlending }));
+        const m = new THREE.Mesh(new THREE.PlaneGeometry(1, 1), new THREE.MeshBasicMaterial({ map: glow(), color: new THREE.Color().setHSL(H.h.sparkHue != null ? H.h.sparkHue + Math.random() * 0.04 : Math.random(), 0.9, 0.7), transparent: true, depthTest: false, depthWrite: false, ...ADD_LIGHT }));
         const x0 = u.holder.position.x + (Math.random() - 0.5) * 1.4 * H.k, y0 = u.holder.position.y + Math.random() * 0.6 * H.k;
         m.position.set(x0, y0, 0);
         m.renderOrder = H.order + 5;
@@ -391,7 +424,7 @@
     const dx = to.x - from.x, dy = to.y - from.y, len = Math.hypot(dx, dy);
     if (!Number.isFinite(len) || len < 0.01) return; // a target that already left the field
     const g = new THREE.PlaneGeometry(1, 1);
-    const m = new THREE.MeshBasicMaterial({ color, transparent: true, opacity: 0.9, depthTest: false, depthWrite: false, blending: THREE.AdditiveBlending });
+    const m = new THREE.MeshBasicMaterial({ color, transparent: true, opacity: 0.9, depthTest: false, depthWrite: false, ...ADD_LIGHT });
     const mesh = new THREE.Mesh(g, m);
     mesh.position.set((from.x + to.x) / 2, (from.y + to.y) / 2, 0);
     mesh.rotation.z = Math.atan2(dy, dx);
@@ -416,7 +449,7 @@
     return glowTex;
   }
   function burst(at, color, size, life) {
-    const m = new THREE.MeshBasicMaterial({ map: glow(), color, transparent: true, opacity: 1, depthTest: false, depthWrite: false, blending: THREE.AdditiveBlending });
+    const m = new THREE.MeshBasicMaterial({ map: glow(), color, transparent: true, opacity: 1, depthTest: false, depthWrite: false, ...ADD_LIGHT });
     const mesh = new THREE.Mesh(new THREE.PlaneGeometry(1, 1), m);
     mesh.position.set(at.x + (Math.random() - 0.5) * 0.3, at.y + (Math.random() - 0.5) * 0.3, 0);
     mesh.rotation.z = Math.random() * Math.PI;
@@ -437,7 +470,7 @@
     setTimeout(() => d.remove(), 400);
   }
   function floatText(u, text, cls, dy) {
-    const [x, y] = toScreen(u.holder.position.x, u.holder.position.y + (HEAD - 0.2) * u.k);
+    const [x, y] = toScreen(u.holder.position.x, u.holder.position.y + (headOf(u) - 0.2) * u.k);
     const d = document.createElement('div');
     d.className = 'num ' + (cls || '');
     d.textContent = text;
@@ -447,7 +480,7 @@
     setTimeout(() => d.remove(), 950);
   }
   function skillBanner(u, name) {
-    const [x, y] = toScreen(u.home.x, u.home.y + (HEAD + 0.55) * u.k);
+    const [x, y] = toScreen(u.home.x, u.home.y + (headOf(u) + 0.55) * u.k);
     const d = document.createElement('div');
     d.className = 'skillname';
     d.textContent = name;
@@ -873,15 +906,32 @@
     }
   }
 
+  // tall and flying units carry their bars higher, so bars of one column could sit on each other: a farther row's
+  // bar stays at least BAR_GAP px above the nearer one (allies, by their home cells; fallen units make room)
+  const BAR_GAP = 30;
+  function barLifts() {
+    const cols = {}, lift = {};
+    for (const u of units) if (!u.s.enemy && u.home && u.s.alive) (cols[u.side + ':' + u.col] = cols[u.side + ':' + u.col] || []).push(u);
+    for (const k in cols) {
+      let cur = Infinity;
+      for (const u of cols[k].sort((a, b) => b.row - a.row)) {
+        const y = toScreen(u.home.x, u.home.y + headOf(u) * u.k)[1], to = Math.min(y, cur - BAR_GAP);
+        lift[u.uid] = y - to;
+        cur = to;
+      }
+    }
+    return lift;
+  }
   function updateBars() {
     let hp = [0, 0], max = [0, 0];
+    const lift = barLifts();
     for (const u of units) {
       const s = u.s;
       hp[s.side] += s.hp; max[s.side] += s.maxHp;
       if (!s.alive && u.bar.classList.contains('dead')) continue;
-      const [x, y] = toScreen(u.holder.position.x, u.holder.position.y + (u.s.enemy ? ENEMY_H[u.s.enemy] * 0.92 : HEAD) * u.k);
+      const [x, y] = toScreen(u.holder.position.x, u.holder.position.y + headOf(u) * u.k);
       u.bar.style.left = x + 'px';
-      u.bar.style.top = y - 30 + 'px';
+      u.bar.style.top = y - 30 - (lift[u.uid] || 0) + 'px';
       u.hpI.style.width = (s.hp / s.maxHp * 100) + '%';
       const sh = Math.min(s.shield, s.maxHp);
       u.shB.style.left = (s.hp / s.maxHp * 100) + '%';
@@ -1051,7 +1101,7 @@
     if (!isWave()) return;
     const top = rowY(0) + 1.4, bot = rowY(2) - 0.5;
     if (!(top - bot > 0)) return; // the field has not been measured yet
-    baseMesh = new THREE.Mesh(new THREE.PlaneGeometry(0.4, top - bot), new THREE.MeshBasicMaterial({ map: glow(), color: 0x4fb4ff, transparent: true, opacity: 0.3, depthTest: false, depthWrite: false, blending: THREE.AdditiveBlending }));
+    baseMesh = new THREE.Mesh(new THREE.PlaneGeometry(0.4, top - bot), new THREE.MeshBasicMaterial({ map: glow(), color: 0x4fb4ff, transparent: true, opacity: 0.3, depthTest: false, depthWrite: false, ...ADD_LIGHT }));
     baseMesh.position.set(WaveSim.FIELD.baseX, (top + bot) / 2, 0);
     baseMesh.renderOrder = 50;
     scene.add(baseMesh);
@@ -1108,7 +1158,7 @@
       g.position.set(h.x, h.y, 0);
       g.scale.set(TILE_RX * k, TILE_RY * k, 1); // far rows smaller, like the units on them
       const fill = new THREE.Mesh(cellGeo, new THREE.MeshBasicMaterial({ map: tex.fill, transparent: true, opacity: 0, depthTest: false, depthWrite: false }));
-      const line = new THREE.Mesh(cellGeo, new THREE.MeshBasicMaterial({ map: tex.line, transparent: true, opacity: 0, depthTest: false, depthWrite: false, blending: THREE.AdditiveBlending }));
+      const line = new THREE.Mesh(cellGeo, new THREE.MeshBasicMaterial({ map: tex.line, transparent: true, opacity: 0, depthTest: false, depthWrite: false, ...ADD_LIGHT }));
       fill.renderOrder = 60; line.renderOrder = 61; // under every unit's shadow (their orders start at 95)
       g.add(fill, line);
       scene.add(g);

@@ -4,6 +4,11 @@
 // For speed every character is drawn as ONE mesh: all of its textures are packed into one
 // atlas, and each frame the rig is evaluated on the CPU and written straight into a
 // dynamic vertex buffer (sprite quads + CPU-skinned parts), in Unity sorting order.
+// Additive light on the transparent battle canvas (the background is an <img> behind it): colours are added, but the
+// canvas alpha is left as it is. Plain AdditiveBlending also adds the source alpha, so an additive sheet with an opaque
+// black backing (common in the original effects) turned its whole quad into a black card over the background.
+window.ADD_LIGHT = { blending: THREE.CustomBlending, blendEquation: THREE.AddEquation, blendSrc: THREE.SrcAlphaFactor, blendDst: THREE.OneFactor,
+  blendEquationAlpha: THREE.AddEquation, blendSrcAlpha: THREE.ZeroFactor, blendDstAlpha: THREE.OneFactor };
 (function () {
   const FPS = 24;
 
@@ -697,7 +702,7 @@
       const mk = (add, side) => {
         const m = new THREE.MeshBasicMaterial({
           map: tpl.atlas.tex, vertexColors: true, transparent: true, depthTest: false, depthWrite: false,
-          alphaTest: 0.02, side, blending: add ? THREE.AdditiveBlending : THREE.NormalBlending,
+          alphaTest: 0.02, side, ...(add ? ADD_LIGHT : { blending: THREE.NormalBlending }),
         });
         if (this.gpu) {
           m.userData.sd = this.sdU;

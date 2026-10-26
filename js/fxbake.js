@@ -151,7 +151,7 @@
     g.setIndex(new THREE.BufferAttribute(new Uint16Array(Math.max(3, maxI)), 1).setUsage(THREE.DynamicDrawUsage));
     const m = new THREE.Mesh(g, new THREE.MeshBasicMaterial({
       map: c.tex, vertexColors: true, transparent: true, depthTest: false, depthWrite: false, side: THREE.DoubleSide,
-      blending: additive ? THREE.AdditiveBlending : THREE.NormalBlending,
+      ...(additive ? window.ADD_LIGHT || { blending: THREE.AdditiveBlending } : { blending: THREE.NormalBlending }), // ADD_LIGHT: js/sd.js
       color: new THREE.Color(2, 2, 2), opacity: 2, // vertex colours/alpha are stored at half scale
     }));
     m.scale.set(c.d.scale, c.d.scale, 1); // positions are int16 normalised by the effect's extent
