@@ -9,3 +9,5 @@ __pycache__/
 *.pyc
 .DS_Store
 Thumbs.db
+# 대화 그림 확인용 한 장 그림 (tools/build_story_art.py --sheet)
+tools/.story_art_sheet.jpg

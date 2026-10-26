@@ -1,0 +1,96 @@
+/* Story dialogue: the original LAO novel screen, after LAO_RPG_01 (12_LAO_Sim_RPG css/lo.css "대화").
+   --u is one pixel of the original 1920x1080 layout on this 1280x720 canvas; the frame, name plate, Touch marker
+   and buttons are the original dialogue atlas pieces (assets/ui/dlg_*.png) with their original stretch borders. */
+#story { position: absolute; inset: 0; z-index: 30; overflow: hidden; background: #000; cursor: pointer; --u: 0.66667px; --y: #ffcc00; font-family: 'Godo', sans-serif; }
+#story[hidden] { display: none; }
+
+/* background: two layers cross-fading */
+#story .tbg { position: absolute; inset: 0; background: #000 center/cover no-repeat; opacity: 0; }
+#story .tstage { position: absolute; inset: 0; z-index: 2; }
+#story .tshade { position: absolute; inset: 0; z-index: 4; pointer-events: none; background: linear-gradient(rgba(0, 0, 0, 0.35), transparent 18%, transparent 58%, rgba(0, 0, 0, 0.55)); }
+#story .tfx { position: absolute; inset: 0; z-index: 6; background: #000; opacity: 0; pointer-events: none; }
+
+/* characters: full-body original art standing left / right, the speaker lit; the right one faces the centre */
+#story .stand { position: absolute; bottom: -250px; height: 900px; width: auto; max-width: 760px; object-fit: contain; object-position: bottom center;
+  --tx: -50%; --sx: 1; transform: translateX(var(--tx)) scaleX(var(--sx)); filter: drop-shadow(0 0 16px rgba(0, 0, 0, 0.4)); transition: filter 0.25s; }
+#story .stand[data-p="L"] { left: 27%; }
+#story .stand[data-p="R"] { left: 73%; --sx: -1; }
+#story .stand.dim { filter: brightness(0.45) drop-shadow(0 0 16px rgba(0, 0, 0, 0.4)); }
+#story .stand.talking { z-index: 1; }
+@keyframes ap-fade { from { opacity: 0; } }
+@keyframes ap-l { from { opacity: 0; transform: translate(calc(var(--tx) - 384px), 0) scaleX(var(--sx)); } }
+@keyframes ap-r { from { opacity: 0; transform: translate(calc(var(--tx) + 384px), 0) scaleX(var(--sx)); } }
+@keyframes off-fade { to { opacity: 0; } }
+#story .stand.ap-fade { animation: ap-fade 0.45s ease-out both; }
+#story .stand.ap-l { animation: ap-l 0.5s cubic-bezier(0.2, 0.8, 0.3, 1) both; }
+#story .stand.ap-r { animation: ap-r 0.5s cubic-bezier(0.2, 0.8, 0.3, 1) both; }
+#story .stand.off-fade { animation: off-fade 0.4s ease-in both; }
+
+/* chapter / stage title (top left) */
+#story .storyTitle { position: absolute; left: 28px; top: 18px; z-index: 8; display: flex; flex-direction: column; gap: 2px; pointer-events: none; }
+#story .storyTitle small { font: 12px 'Exo2', sans-serif; font-style: italic; font-weight: 700; color: var(--amber); letter-spacing: 3px; }
+#story .storyTitle span { position: relative; padding-bottom: 6px; font-size: 18px; font-weight: 900; color: #fff; letter-spacing: 1px; text-shadow: 0 1px 3px #000; }
+#story .storyTitle span::after { content: ''; position: absolute; left: 0; bottom: 0; width: 100%; height: 2px; background: linear-gradient(90deg, var(--amber) 60%, transparent); }
+#story .storyTitle span:empty { display: none; }
+
+/* dialogue box (original 1789x248, bottom centre) */
+#story .tbox { position: absolute; z-index: 8; left: 50%; bottom: calc(-14 * var(--u)); transform: translateX(-50%);
+  width: calc(1789 * var(--u)); height: calc(268 * var(--u)); border: 0 solid transparent;
+  border-image: url(../assets/ui/dlg_frame.png) 89 658 138 5 fill; border-image-width: calc(89 * var(--u)) calc(658 * var(--u)) calc(138 * var(--u)) calc(5 * var(--u));
+  transition: opacity 0.25s, transform 0.25s; }
+#story.nobox .tbox { opacity: 0; pointer-events: none; transform: translate(-50%, 12px); }
+#story .tname { position: absolute; top: calc(-46 * var(--u)); height: calc(48 * var(--u)); min-width: calc(508 * var(--u)); padding: 0 calc(140 * var(--u)) 0 calc(150 * var(--u));
+  display: flex; align-items: center; justify-content: center; color: #fff; font-size: calc(32 * var(--u)); font-weight: 900; letter-spacing: 1px; text-shadow: 0 1px 2px #000; white-space: nowrap;
+  border: 0 solid transparent; border-image: url(../assets/ui/dlg_name.png) 0 153 0 163 fill; border-image-width: 0 calc(153 * var(--u)) 0 calc(163 * var(--u)); }
+#story .tbox[data-p="L"] .tname { left: calc(60 * var(--u)); }
+#story .tbox[data-p="C"] .tname { left: 50%; transform: translateX(-50%); }
+#story .tbox[data-p="R"] .tname { right: calc(60 * var(--u)); }
+#story .tname:empty, #story.nar .tname { display: none; }
+#story.cmd .tname { color: #bfe9ff; }
+#story .ttext { position: absolute; left: calc(90 * var(--u)); right: calc(330 * var(--u)); top: calc(34 * var(--u)); color: #f1f3f8; white-space: pre-line;
+  font-size: calc(36 * var(--u)); line-height: 1.5; text-shadow: 0 1px 2px #000; }
+#story.nar .ttext { color: #cfd6e4; font-style: italic; }
+#story .ttouch { position: absolute; right: calc(70 * var(--u)); top: calc(70 * var(--u)); width: calc(109 * var(--u)); height: calc(48 * var(--u)); opacity: 0;
+  background: url(../assets/ui/dlg_touch.png) center/contain no-repeat; transition: opacity 0.2s; }
+#story .ttouch i { position: absolute; left: 50%; top: calc(54 * var(--u)); width: calc(16 * var(--u)); height: calc(13 * var(--u)); margin-left: calc(-8 * var(--u));
+  background: url(../assets/ui/dlg_arrow.png) center/contain no-repeat; animation: tnext 0.8s ease-in-out infinite; }
+#story.ready .ttouch { opacity: 1; animation: nextBlink 1.6s ease-in-out infinite; }
+@keyframes tnext { 50% { transform: translateY(calc(5 * var(--u))); } }
+
+/* HISTORY / AUTO / FAST and SKIP (original name-plate pieces as buttons) */
+#story .tbar { position: absolute; left: calc(20 * var(--u)); bottom: calc(30 * var(--u)); display: flex; gap: calc(14 * var(--u)); }
+#story .tbar button, #story .tskip { height: calc(34 * var(--u)); min-width: calc(146 * var(--u)); padding: 0 calc(34 * var(--u)) 0 calc(42 * var(--u)); color: #fff;
+  background: none; box-shadow: none; clip-path: none; border-radius: 0; font: 700 calc(22 * var(--u)) 'Exo2', sans-serif; letter-spacing: 0.5px; cursor: pointer;
+  border: 0 solid transparent; border-image: url(../assets/ui/dlg_btn.png) 0 39 0 46 fill; border-image-width: 0 calc(39 * var(--u)) 0 calc(46 * var(--u)); }
+#story .tbar button.hist { min-width: calc(155 * var(--u)); color: #1a1a1a; border-image: url(../assets/ui/dlg_btn_hist.png) 0 36 0 34 fill; border-image-width: 0 calc(36 * var(--u)) 0 calc(34 * var(--u)); }
+#story .tbar button.on { color: #111; border-image: url(../assets/ui/dlg_btn_on.png) 0 48 0 47 fill; border-image-width: 0 calc(48 * var(--u)) 0 calc(47 * var(--u)); }
+#story .tskip { position: absolute; right: calc(120 * var(--u)); bottom: calc(30 * var(--u)); }
+#story .tbar button:hover, #story .tskip:hover { filter: brightness(1.2); }
+
+/* place caption: original lblBGname (small, gold) over lblBGDesc (large) in the middle of the screen */
+#story .tplace { position: absolute; z-index: 7; left: 0; right: 0; top: 50%; transform: translateY(-60%); text-align: center; opacity: 0; transition: opacity 0.35s; pointer-events: none;
+  padding: calc(30 * var(--u)) 0; background: linear-gradient(90deg, transparent, rgba(0, 0, 0, 0.55) 25%, rgba(0, 0, 0, 0.55) 75%, transparent); }
+#story .tplace.on { opacity: 1; }
+#story .tplace .pd { margin-top: calc(10 * var(--u)); color: #fff; font-size: calc(64 * var(--u)); font-weight: 900; letter-spacing: calc(6 * var(--u)); text-shadow: 0 2px 8px #000; }
+#story .tplace .pn { color: var(--y); font: 700 calc(30 * var(--u)) 'Exo2', sans-serif; letter-spacing: calc(4 * var(--u)); }
+#story .tplace .pn::before, #story .tplace .pn::after { content: ''; display: inline-block; vertical-align: middle; width: calc(80 * var(--u)); height: 1px; margin: 0 calc(18 * var(--u)); background: var(--y); opacity: 0.7; }
+
+/* HISTORY */
+#story .tlog { position: absolute; inset: 0; z-index: 12; display: none; flex-direction: column; align-items: center; padding: 20px 16px 16px; background: rgba(0, 0, 0, 0.82); cursor: default; }
+#story.logon .tlog { display: flex; animation: ap-fade 0.2s both; }
+#story .tloghead { margin-bottom: 10px; padding: 4px 30px; color: var(--y); font: 700 20px 'Exo2', sans-serif; letter-spacing: 3px; border-bottom: 2px solid var(--y); }
+#story .tloglist { flex: 1; width: min(980px, 100%); overflow-y: auto; }
+#story .tloglist .li { display: grid; grid-template-columns: 150px 1fr; gap: 14px; padding: 9px 6px; border-bottom: 1px solid rgba(255, 255, 255, 0.14); }
+#story .tloglist .li b { color: var(--y); font-size: 15px; text-align: right; }
+#story .tloglist .li p { margin: 0; color: #e8ebf2; font-size: 15px; line-height: 1.55; white-space: pre-line; }
+#story .tloglist .li.nar p { color: #b9c0cf; font-style: italic; }
+#story .tlogfoot { margin-top: 8px; color: rgba(255, 255, 255, 0.55); font-size: 12px; }
+
+/* skip: ask first */
+#story .task { position: absolute; inset: 0; z-index: 13; display: none; align-items: center; justify-content: center; background: rgba(0, 0, 0, 0.55); cursor: default; }
+#story.asking .task { display: flex; animation: ap-fade 0.15s both; }
+#story .taskbox { min-width: 360px; padding: 26px 30px 22px; text-align: center; background: rgba(14, 17, 23, 0.96); border: 1px solid rgba(255, 204, 0, 0.45); box-shadow: 0 10px 40px rgba(0, 0, 0, 0.6); }
+#story .taskbox p { margin: 0 0 18px; color: #fff; font-size: 18px; font-weight: 700; }
+#story .taskbox div { display: flex; gap: 12px; justify-content: center; }
+#story .taskbox button { min-width: 120px; height: 38px; font-size: 15px; font-weight: 700; }
+#story .taskbox button.y { color: #111; background: var(--y); }

@@ -303,72 +303,29 @@
   // =====================================================================================
   // stage play
   // =====================================================================================
-  // ---------- story scenes ----------
-  let storyQ = [], storyDone = null;
-  const SPEAKER = (who) => (who === 'commander' ? '사령관' : who === 'narr' ? '' : (RO.BY_ID[who] ? RO.BY_ID[who].name : who));
-  function playStory(lines, title, bg, done) {
-    if (!lines || !lines.length) { done && done(); return; }
-    storyQ = lines.slice();
-    storyDone = done;
-    $('storyBg').src = bg || 'assets/bg_city.jpg';
-    $('storyChapter').textContent = title || '';
-    $('story').hidden = false;
-    nextLine();
+  // ---------- story scenes (js/talk.js: the original novel screen) ----------
+  // a scene: its lines, the dialogue background behind them and the place caption that opens it
+  const sceneIntro = (ch) => ({ lines: ch.intro, bg: ch.introBg, place: [`CHAPTER ${ch.id}`, ch.title] });
+  const sceneStage = (a) => ({ lines: a.stage.lines, bg: a.chapter.stageBg, place: [a.code, a.stage.name] });
+  const sceneOutro = (ch) => ({ lines: ch.outro, bg: ch.outroBg, place: ['EPILOGUE', ch.title] });
+  function playStory(scenes, title, done) {
+    scenes = scenes.filter((x) => x.lines && x.lines.length);
+    if (!scenes.length) { if (done) done(); return; }
+    TALK.playScenes(scenes, title).then(() => { if (done) done(); });
   }
-  // typewriter: the line is revealed letter by letter; a click while it types shows it all, the next click advances
-  let typeTimer = 0, typeFull = '';
-  function finishTyping() {
-    if (!typeTimer) return false;
-    clearInterval(typeTimer); typeTimer = 0;
-    $('storyText').textContent = typeFull; $('story').classList.add('ready');
-    return true;
-  }
-  function typeText(text) {
-    finishTyping();
-    const el = $('storyText'), root = $('story');
-    typeFull = text || ''; el.textContent = ''; root.classList.remove('ready');
-    if (!typeFull) { root.classList.add('ready'); return; }
-    let n = 0;
-    typeTimer = setInterval(() => {
-      n++; el.textContent = typeFull.slice(0, n);
-      if (n >= typeFull.length) { clearInterval(typeTimer); typeTimer = 0; root.classList.add('ready'); }
-    }, 28);
-  }
-  function nextLine() {
-    finishTyping();
-    const l = storyQ.shift();
-    if (!l) { $('story').hidden = true; $('story').classList.remove('ready'); const d = storyDone; storyDone = null; if (d) d(); return; }
-    const [who, text] = l;
-    const box = document.querySelector('.storyBox');
-    const hasFace = !!RO.BY_ID[who];
-    box.className = 'storyBox ' + (who === 'narr' ? 'narr' : who === 'commander' ? 'cmd' : 'unit') + (hasFace ? '' : ' noface');
-    $('storyName').textContent = SPEAKER(who);
-    const face = $('storyFace'), port = face.parentElement;
-    if (hasFace) {
-      const src = icon(who), changed = !face.getAttribute('src') || !face.src.endsWith(src);
-      face.src = src; face.hidden = false;
-      if (changed) { port.classList.remove('pop'); void port.offsetWidth; port.classList.add('pop'); } // slide in when the speaker changes
-    } else face.hidden = true;
-    typeText(text);
-    if (hasFace) A.voice(who, 'Join'); // a little life in the scene (cooldowns keep it rare)
-    A.sfx('click', 0.5);
-  }
-  const storyAdvance = () => { if (finishTyping()) return; nextLine(); };
-  $('story').addEventListener('click', (e) => { if (e.target.id === 'storySkip') { storyQ = []; nextLine(); return; } storyAdvance(); });
-  window.addEventListener('keydown', (e) => { if ($('story').hidden) return; if (e.code === 'Space' || e.code === 'Enter') { e.preventDefault(); storyAdvance(); } if (e.code === 'Escape') { storyQ = []; nextLine(); } }, true);
   function replay(key) {
     const kind = key[0], n = +key.slice(1);
-    if (kind === 'c' || kind === 'o') { const ch = S.CHAPTERS[n - 1]; playStory(kind === 'c' ? ch.intro : ch.outro, `챕터 ${ch.id} · ${ch.title}`, ch.bg); return; }
-    const a = S.at(n); playStory(a.stage.lines, `${a.code} ${a.stage.name}`, a.chapter.bg);
+    if (kind === 'c' || kind === 'o') { const ch = S.CHAPTERS[n - 1]; playStory([kind === 'c' ? sceneIntro(ch) : sceneOutro(ch)], `챕터 ${ch.id} · ${ch.title}`); return; }
+    const a = S.at(n); playStory([sceneStage(a)], `${a.code} ${a.stage.name}`);
   }
 
   function startStage(g) {
     const a = S.at(g);
     const scenes = [];
-    if (a.si === 0 && !meta.data.seen['c' + a.chapter.id]) { scenes.push(...a.chapter.intro); meta.data.seen['c' + a.chapter.id] = 1; }
-    if (!meta.data.seen['s' + g]) { scenes.push(...a.stage.lines); meta.data.seen['s' + g] = 1; }
+    if (a.si === 0 && !meta.data.seen['c' + a.chapter.id]) { scenes.push(sceneIntro(a.chapter)); meta.data.seen['c' + a.chapter.id] = 1; }
+    if (!meta.data.seen['s' + g]) { scenes.push(sceneStage(a)); meta.data.seen['s' + g] = 1; }
     meta.save();
-    if (scenes.length) { $('lobby').hidden = true; playStory(scenes, `${a.code} ${a.stage.name}`, a.chapter.bg, () => beginStage(g)); } else beginStage(g);
+    if (scenes.length) { $('lobby').hidden = true; playStory(scenes, `${a.code} ${a.stage.name}`, () => beginStage(g)); } else beginStage(g);
   }
   function beginStage(g) {
     const n = g;
@@ -762,7 +719,7 @@
     const a = st && S.at(st.stage);
     if (st && st.cleared && a.last && !meta.data.seen['o' + a.chapter.id]) {
       meta.data.seen['o' + a.chapter.id] = 1; meta.save();
-      playStory(a.chapter.outro, `챕터 ${a.chapter.id} · ${a.chapter.title} — 에필로그`, a.chapter.bg, openLobby);
+      playStory([sceneOutro(a.chapter)], `챕터 ${a.chapter.id} · ${a.chapter.title} — 에필로그`, openLobby);
       return;
     }
     openLobby();

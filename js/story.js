@@ -1,6 +1,7 @@
 // Scenario: 8 chapters of 8 stages, each with a short scene before it. Original writing set in the Last Origin world
 // (Orca, the commander, the Iron Bugs); no lines are copied from the game.
 //
+// introBg / stageBg / outroBg: original dialogue backgrounds behind the prologue, the stage scenes and the epilogue
 // line: [speaker, text]   speaker = roster unit id (portrait), 'commander' (the player) or 'narr' (narration)
 // stage.final: 'elite' (a stage captain) or a boss rig with tricks; stage 4 and 8 of a chapter are boss stages
 // stage.cruel: the boss comes "cruel" (one extra trick, harsher numbers); a chapter's `cruel` is the default
@@ -20,6 +21,7 @@
   const CHAPTERS = [
     {
       id: 1, title: '서른 날', sub: '동력로 코어의 균열, 폭풍 해안에 상륙하다', bg: 'assets/bg_bridge_storm.jpg', cruel: false,
+      introBg: 'BG_Lobby', stageBg: 'BG_CliffNight', outroBg: 'BG_Cliff', // dialogue backgrounds (assets/story/bg, tools/build_story_art.py)
       intro: [
         ['narr', '오르카 호는 바다 위에서는 안전했다. 철충은 물에 들어오지 못한다. 하지만 그날 아침, 동력로 코어에 균열이 발견됐다. 알파의 계산으로 남은 시간은 서른 날이었다.'],
         ['lemonadealpha', '코어가 멈추면 배도 멈춰요. 예비 코어는 옛 인류 기록에 딱 한 곳, 대륙 안쪽 산맥의 "방주"에 있어요.'],
@@ -45,6 +47,7 @@
     },
     {
       id: 2, title: '잿빛 도시의 농성', sub: '폐허 도시에서 열흘을 버틴다', bg: 'assets/bg_city.jpg', cruel: false,
+      introBg: 'BG_CoastCity', stageBg: 'BG_Ruin', outroBg: 'BG_Soulworker1', // dialogue backgrounds (assets/story/bg, tools/build_story_art.py)
       intro: [
         ['narr', '해안 도로가 끝나는 곳에 잿빛 도시가 있었다. 절벽에서 부상자가 늘었고, 폭풍으로 배와의 연락도 끊겼다. 일행은 무너진 백화점에 바리케이드를 쌓았다.'],
         ['leona', '서른 날 중 벌써 닷새를 썼다. 걸을 수 있는 대원만 먼저 방주로 보내야 한다.'],
@@ -70,6 +73,7 @@
     },
     {
       id: 3, title: '협곡 대교의 추격', sub: '협곡을 가로지르는 긴 다리, 뒤에서 철충이 쫓아온다', bg: 'assets/bg_bridge.jpg', cruel: false,
+      introBg: 'BG_Camp3', stageBg: 'BG_Cliff', outroBg: 'BG_Soulworker4', // dialogue backgrounds (assets/story/bg, tools/build_story_art.py)
       intro: [
         ['narr', '도시를 나서자 철충 무리가 뒤따랐다. 방주로 가는 길은 깊은 협곡을 가로지르는 긴 대교 하나뿐이었고, 다리 위에서는 숨을 곳이 없었다.'],
         ['raven', '뒤쪽 5킬로미터에 큰 무리. 다리 건너편 끝에도 철충이 보여. 앞뒤로 끼이게 돼.'],
@@ -95,6 +99,7 @@
     },
     {
       id: 4, title: '녹슨 공장 잠입', sub: '연료 전지를 훔치기 위한 조용한 작전', bg: 'assets/bg_plant.jpg', cruel: false,
+      introBg: 'BG_Soulworker3', stageBg: 'BG_Maintenance01', outroBg: 'BG_Hangar', // dialogue backgrounds (assets/story/bg, tools/build_story_art.py)
       intro: [
         ['narr', '공장 지대는 철충이 스스로를 고치는 정비소였다. 알파의 계획은 단순했다. 들키지 않고 들어가서, 전지를 챙기고, 들키지 않고 나온다.'],
         ['zero', '잠입은 제 일입니다. 소리를 내는 분은 두고 가겠습니다.'],
@@ -120,6 +125,7 @@
     },
     {
       id: 5, title: '텅 빈 방주', sub: '산맥의 피난 요새에서 마주한 진실', bg: 'assets/bg_city_dusk.jpg', cruel: true,
+      introBg: 'BG_Hallway', stageBg: 'BG_Meeting03', outroBg: 'BG_LightTower', // dialogue backgrounds (assets/story/bg, tools/build_story_art.py)
       intro: [
         ['narr', '산맥을 넘은 일행 앞에 방주가 나타났다. 옛 인류의 피난 요새는 노을 아래 조용히 서 있었다. 문은 열려 있었고, 안에는 아무도 없었다.'],
         ['constantia', '…비어 있어요. 전부. 식량도, 발전기도, 사람도. 수십 년 전에 버려진 거예요.'],
@@ -147,6 +153,7 @@
     },
     {
       id: 6, title: '용광로의 양동', sub: '둥지의 주력을 발전소에서 떼어 놓는 속임수', bg: 'assets/bg_plant_red.jpg', cruel: true,
+      introBg: 'BG_Soulworker2', stageBg: 'BG_Maintenance02', outroBg: 'BG_Soulworker2', // dialogue backgrounds (assets/story/bg, tools/build_story_art.py)
       intro: [
         ['narr', '해안으로 돌아가는 길목, 산기슭의 용광로 지대에 철충의 정비 공장이 하나 더 있었다. 사령관은 정면으로 발전소에 가지 않기로 했다.'],
         ['commander', '녀석들이 지키는 건 코어다. 우리가 여길 크게 치면 발전소의 주력이 이쪽으로 온다. 그 사이 소수가 협곡을 건너 발전소로 간다.'],
@@ -172,6 +179,7 @@
     },
     {
       id: 7, title: '얼어붙은 협곡의 호위', sub: '냉각 운반함을 싣고 얼음 다리를 건넌다', bg: 'assets/bg_bridge_ice.jpg', cruel: true,
+      introBg: 'BG_13_5', stageBg: 'BG_13_6', outroBg: 'BG_13_5', // dialogue backgrounds (assets/story/bg, tools/build_story_art.py)
       intro: [
         ['narr', '북쪽 협곡은 얼어 있었다. 옛 연륙교 위로 수레 넷이 나아갔다. 수레에는 공장에서 훔친 전지와, 달아오른 코어를 꺼내 옮길 알파의 냉각 운반함이 실려 있었다.'],
         ['lemonadealpha', '운반함이 깨지면 코어를 꺼내도 옮길 수 없어요. 수레 넷 중 어느 것도 잃으면 안 돼요.'],
@@ -198,6 +206,7 @@
     },
     {
       id: 8, title: '둥지의 심장', sub: '해안 발전소에서 코어를 되찾는 마지막 날', bg: 'assets/bg_plant_void.jpg', cruel: true,
+      introBg: 'BG_HoleLight', stageBg: 'BG_SubmarineHangar', outroBg: 'BG_Lobby', // dialogue backgrounds (assets/story/bg, tools/build_story_art.py)
       intro: [
         ['narr', '해안 발전소의 내부는 보랏빛 비상등과 철충의 조직으로 뒤덮여 있었다. 그 한가운데에서 오르카의 예비 코어가 철충의 심장이 되어 뛰고 있었다. 남은 날은 하루였다.'],
         ['lemonadealpha', '코어를 꺼내려면 터빈 홀 안쪽 제어실까지 가야 해요. 꺼내서 운반함에 넣는 데 1분이면 돼요.'],

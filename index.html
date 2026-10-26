@@ -8,6 +8,7 @@
 <link rel="stylesheet" href="css/shop.css">
 <link rel="stylesheet" href="css/lao.css">
 <link rel="stylesheet" href="css/czn.css">
+<link rel="stylesheet" href="css/talk.css">
 <link rel="preload" href="assets/fonts/GodoM.ttf" as="font" type="font/ttf" crossorigin>
 <link rel="preload" href="assets/fonts/GodoB.ttf" as="font" type="font/ttf" crossorigin>
 </head>
@@ -120,20 +121,23 @@
   <!-- supply shop (shop time) and elite reward -->
   <div id="itemModal" hidden><div class="box"><h2 id="imTitle">보급 상점</h2><p id="imSub"></p><div id="imList"></div>
     <div class="imBtns"><button id="imReroll">새로고침 <small>●2</small></button><button id="imClose" class="primary">나가기</button></div></div></div>
-  <!-- story scenes -->
+  <!-- story scenes: the original novel screen (js/talk.js, css/talk.css; after LAO_RPG_01) -->
   <section id="story" hidden>
-    <img id="storyBg" alt="">
-    <div class="storyShade"></div>
-    <div class="storyTop">
-      <div class="storyTitle"><small class="en">STORY</small><span id="storyChapter"></span></div>
-      <button id="storySkip" class="quiet">건너뛰기 ▶▶</button>
+    <div class="tbg"></div><div class="tbg"></div>
+    <div class="tstage"></div>
+    <div class="tshade"></div>
+    <div class="tfx"></div>
+    <div class="storyTitle"><small class="en">STORY</small><span id="storyChapter"></span></div>
+    <div class="tplace"><div class="pn"></div><div class="pd"></div></div>
+    <div class="tbox" data-p="L">
+      <div class="tname"></div>
+      <div class="ttext"></div>
+      <div class="ttouch"><i></i></div>
+      <div class="tbar"><button data-k="log" class="hist">HISTORY</button><button data-k="auto">AUTO</button><button data-k="fast">FAST &gt;&gt;</button></div>
+      <button data-k="skip" class="tskip">SKIP ▶</button>
     </div>
-    <div class="storyBox">
-      <div class="storyPort"><img id="storyFace" alt=""></div>
-      <div class="storyName" id="storyName"></div>
-      <div class="storyText" id="storyText"></div>
-      <div class="storyNext"><i></i></div>
-    </div>
+    <div class="tlog"><div class="tloghead">HISTORY</div><div class="tloglist"></div><div class="tlogfoot">화면을 누르면 닫힙니다</div></div>
+    <div class="task"><div class="taskbox"><p>대화를 건너뛸까요?</p><div><button data-k="skipY" class="y">건너뛰기</button><button data-k="skipN">계속 보기</button></div></div></div>
   </section>
   <div id="toast" hidden></div>
   <div id="loading">SD 불러오는 중…</div>
@@ -163,6 +167,7 @@
 <script src="js/audio.js"></script>
 <script src="js/tutorial.js"></script>
 <script src="js/l2d.js"></script>
+<script src="js/talk.js"></script>
 <script src="js/shop.js"></script>
 <script>/* tools: index.html?fxbattle runs the stage-battle effect sync check (tools/fxbuild/fxbattle.js) */ if (/[?&]fxbattle/.test(location.search)) { const s = document.createElement('script'); s.src = 'tools/fxbuild/fxbattle.js'; document.body.appendChild(s); }</script>
 </body>

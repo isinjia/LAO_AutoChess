@@ -27,7 +27,7 @@ html, body { font-family: 'Godo', 'Malgun Gothic', sans-serif; letter-spacing: -
 .t1 { --tc: var(--r-b); } .t2 { --tc: var(--r-a); } .t3 { --tc: var(--r-s); } .t4 { --tc: var(--r-ss); }
 
 /* ---------- chamfered shapes ---------- */
-.cut, button, .lobbyBox, #info, #itemModal .box, #roundResult .box, .tutCard, .storyBox, .stageCard, .rCard, .uCard, .card, .imCard, .slot, #controls, .rb {
+.cut, button, .lobbyBox, #info, #itemModal .box, #roundResult .box, .tutCard, .stageCard, .rCard, .uCard, .card, .imCard, .slot, #controls, .rb {
   clip-path: polygon(var(--cut) 0, 100% 0, 100% calc(100% - var(--cut)), calc(100% - var(--cut)) 100%, 0 100%, 0 var(--cut));
 }
 .rb, .slot, .ichip { --cut: 6px; }
@@ -155,15 +155,6 @@ button:disabled { opacity: 0.35; }
 .rCard { border: none; border-radius: 0; background: #181b21; box-shadow: inset 3px 0 0 var(--gold), inset 0 0 0 1px rgba(255, 255, 255, 0.07); }
 .rCard .rn { font-weight: 900; }
 .vol input[type=range] { accent-color: var(--gold); }
-
-/* ---------- story ---------- */
-.storyBox { border: none; border-radius: 0; background: rgba(8, 10, 14, 0.92); box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.08); --cut: 16px; }
-.storyBox #storyFace { border: none; border-radius: 0; clip-path: polygon(12px 0, 100% 0, calc(100% - 12px) 100%, 0 100%); box-shadow: none; }
-.storyName { display: inline-block; padding: 2px 14px; margin-bottom: 8px; color: #17130a !important; background: var(--gold); clip-path: polygon(6px 0, 100% 0, calc(100% - 6px) 100%, 0 100%); font-weight: 900; min-height: 0; }
-.storyBox.narr .storyName { display: none; }
-.storyBox.cmd .storyName { background: var(--cyan); }
-.storyText { font-size: 17px; }
-#storyChapter { font-weight: 900; }
 
 /* tutorial */
 #tut .tutSpot { border-radius: 0; box-shadow: 0 0 0 9999px rgba(0, 0, 0, 0.6), 0 0 0 2px var(--gold), 0 0 22px 4px rgba(255, 194, 26, 0.5); }
