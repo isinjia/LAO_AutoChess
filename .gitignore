@@ -11,3 +11,6 @@ __pycache__/
 Thumbs.db
 # 대화 그림 확인용 한 장 그림 (tools/build_story_art.py --sheet)
 tools/.story_art_sheet.jpg
+# 원작 대사를 풀어 둔 말투 참고 자료(원작 텍스트라 공개 저장소에 올리지 않음)
+tools/corpus/
+tools/corpus_*.py
