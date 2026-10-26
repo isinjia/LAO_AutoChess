@@ -1,4 +1,5 @@
-// Game UI (not in ?sandbox): lobby (stages, units, research) and stage play (shop, bench, 3x3 formation, waves).
+// Game UI (not in ?sandbox): title (save slots), lobby (stages, deck, members) and stage play (shop, bench, 3x3 formation,
+// waves), the story scenes and the ending / next cycle.
 // Logic: js/meta.js (permanent), js/stage.js (one stage), js/wavesim.js (one wave); field: js/battle.js (window.BATTLE).
 (function () {
   'use strict';
@@ -6,13 +7,12 @@
   if (!B || B.MODE !== 'run') return;
   const RO = window.ROSTER;
   const $ = (id) => document.getElementById(id);
-  const meta = Meta.load(RO);
-  B.setHeadIcons(meta.data.headIcons !== false);
+  let meta = null; // the save slot being played (js/meta.js), picked on the title screen
   let st = null; // the stage being played
   let phase = 'lobby'; // lobby | prep | fight | result
 
   const S = window.STORY;
-  const bossOf = (g) => WaveSim.bossInfo(S.plan(g), window.LAO_ENEMIES); // null on a captain (elite) stage
+  const bossOf = (g) => WaveSim.bossInfo(meta ? meta.plan(g) : S.plan(g), window.LAO_ENEMIES); // null on a captain (elite) stage
   let chapterSel = 1;
   const icon = (id, star = 1) => `assets/icons/${B.skinOf(id, star, 'icons')}.webp`; // ★2 / ★3 show the skin portrait
   const card = (id, star = 1) => `assets/cards/${B.skinOf(id, star, 'icons')}.webp`; // whole-face bust (deck / member screens)
@@ -35,7 +35,7 @@
   // lobby: a home screen (secretary, banner, menu) and full-screen pages with a back button
   // =====================================================================================
   const PAGES = {
-    stage: ['작전', 'OPERATION'], deck: ['편성', 'DECK'], units: ['대원', 'MEMBERS'], research: ['연구', 'RESEARCH'],
+    stage: ['작전', 'OPERATION'], deck: ['편성', 'DECK'], units: ['대원', 'MEMBERS'],
     archive: ['기록', 'ARCHIVE'], settings: ['설정', 'SETTINGS'],
   };
   let page = 'home';
@@ -52,7 +52,7 @@
   function stageState(g) { return g <= meta.data.stageCleared ? 'cleared' : meta.stageOpen(g) ? 'open' : 'locked'; }
 
   function renderTop() {
-    $('lobbyParts').textContent = fmt(meta.data.parts);
+    $('lobbyCycle').textContent = meta.data.cycle;
     $('lobbyStars').textContent = stars();
     $('lobbyStarsMax').textContent = '/' + S.total();
     $('profLv').textContent = 1 + meta.data.stageCleared;
@@ -70,7 +70,7 @@
     if (L) L.pause(true);
     $('pgTitle').textContent = PAGES[page][0];
     $('pgEn').textContent = PAGES[page][1];
-    ({ stage: renderStagePage, deck: renderDeckPage, units: renderUnitsPage, research: renderResearchPage, archive: renderArchivePage, settings: renderSettingsPage })[page]();
+    ({ stage: renderStagePage, deck: renderDeckPage, units: renderUnitsPage, archive: renderArchivePage, settings: renderSettingsPage })[page]();
   }
   function go(p) {
     if (p === page) return;
@@ -86,7 +86,7 @@
     const done = Math.max(0, Math.min(S.PER_CHAPTER, meta.data.stageCleared - (ch.id - 1) * S.PER_CHAPTER));
     B.setBg(ch.bg);
     $('homeBanner').style.backgroundImage = `linear-gradient(90deg, rgba(8,9,12,.92) 30%, rgba(8,9,12,.2)), url(${ch.bg})`;
-    $('homeBanner').innerHTML = `<span class="bTag">MAIN STORY</span><div class="bCh">CHAPTER ${ch.id}</div><div class="bT">${ch.title}</div>` +
+    $('homeBanner').innerHTML = `<span class="bTag">${meta.data.cycle >= 2 ? `NEW GAME+ · ${meta.data.cycle}회차` : 'MAIN STORY'}</span><div class="bCh">CHAPTER ${ch.id}</div><div class="bT">${ch.title}</div>` +
       `<div class="bProg"><span><i style="width:${done / S.PER_CHAPTER * 100}%"></i></span><b>${done}</b>/${S.PER_CHAPTER}</div>`;
     $('homeNext').innerHTML = `<span class="nL">NEXT</span><b>${a.code}</b> ${a.stage.name}<span class="nB">${b ? '보스 · ' + b.name : '대장 · 엘리트 철충'}</span>`;
     $('homeCur').textContent = `${a.code} ${a.stage.name}`;
@@ -118,14 +118,15 @@
         `<span class="nd">${a.code}</span><span class="nn">${a.stage.name}</span>${s === 'cleared' ? '<span class="ck">CLEAR</span>' : b ? '<span class="ck bs">BOSS</span>' : ''}</button>`;
     }
     h += '</div>';
-    const g = stageSel, a = S.at(g), b = bossOf(g), s = stageState(g), best = meta.data.best[g] || 0, plan = S.plan(g);
+    const g = stageSel, a = S.at(g), b = bossOf(g), s = stageState(g), best = meta.data.best[g] || 0, plan = meta.plan(g);
+    const joins = a.last && meta.data.cycle === 1 ? (S.JOIN[a.chapter.id] || []) : [];
     const first = g > meta.data.stageCleared;
-    h += `<div class="opDetail"><div class="dCode">${a.code}</div><div class="dName">${a.stage.name}</div>` +
+    h += `<div class="opDetail"><div class="dCode">${a.code}${meta.data.cycle >= 2 ? `<em class="ngTag">${meta.data.cycle}회차</em>` : ''}</div><div class="dName">${a.stage.name}</div>` +
       '<div class="dSec"><span class="dL">적 정보</span>' +
       (b ? `<div class="dBoss boss"><b>보스</b>${b.name}${b.cruel ? ' <em>강화</em>' : ''}</div><div class="dGim">${b.gimNames.map((x) => `<span>${x}</span>`).join('')}</div><p class="dTip">${b.tip}</p>`
         : '<div class="dBoss"><b>대장</b>엘리트 철충</div><p class="dTip">마지막 웨이브에 단단한 대장 철충이 나옵니다.</p>') + '</div>' +
       `<div class="dSec"><span class="dL">작전 정보</span><div class="dRows"><span>웨이브</span><b>${plan.waves}</b><span>엘리트</span><b>${plan.eliteWave}웨이브</b><span>최고 기록</span><b>${s === 'cleared' ? '클리어' : best ? best + '웨이브' : '-'}</b></div></div>` +
-      `<div class="dSec"><span class="dL">보상</span><div class="dRew"><span class="pill"><span class="gearI">⚙</span>부품${first ? ' <em>첫 클리어 ×2</em>' : ''}</span><span class="pill">장비 보상</span></div></div>` +
+      `<div class="dSec"><span class="dL">보상</span><div class="dRew">${a.last && first ? '<span class="pill">챕터 보상 · 전 대원 +4%</span>' : ''}${joins.length && first ? `<span class="pill">합류 ${joins.length}명</span>` : ''}<span class="pill">장비 보상</span></div></div>` +
       `<div class="dSec"><span class="dL">편성 ${meta.data.deck.length}/${DECK_N()}</span>${deckStrip(meta.data.deck)}<button class="quiet dEdit" data-page="deck">편성 변경</button></div>` +
       '<div class="dBtns">' + (meta.data.seen['s' + g] ? `<button class="quiet story" data-replay="s${g}" title="스토리 다시 보기">STORY</button>` : '') +
       `<button class="primary sortie" id="btnSortie" data-go="${g}" ${s === 'locked' ? 'disabled' : ''}><b>출격</b><small>SORTIE</small></button></div></div></div>`;
@@ -135,26 +136,27 @@
     if (on) cl.scrollTop += window.toStageRect(on.getBoundingClientRect()).top - window.toStageRect(cl.getBoundingClientRect()).top - (cl.clientHeight - on.offsetHeight) / 2;
   }
 
-  // ---------- members: grid + detail ----------
+  // ---------- members: the squad (joined) and who joins later ----------
+  function joinText(id) {
+    const c = meta.joinsAfter(id);
+    return c ? `${c}장 클리어 후 합류` : '처음부터 합류';
+  }
   function renderUnitsPage() {
-    const list = RO.ROSTER.slice().sort((a, b) => (meta.isUnlocked(b.id) - meta.isUnlocked(a.id)) || b.tier - a.tier || a.name.localeCompare(b.name, 'ko'));
+    const list = RO.ROSTER.slice().sort((a, b) => (meta.isUnlocked(b.id) - meta.isUnlocked(a.id)) || meta.joinsAfter(a.id) - meta.joinsAfter(b.id) || b.tier - a.tier || a.name.localeCompare(b.name, 'ko'));
     if (!unitSel || !RO.BY_ID[unitSel]) unitSel = list[0].id;
     let h = '<div class="uWrap"><div class="uGrid">' + list.map((d) => {
       const on = meta.isUnlocked(d.id);
       return `<button class="uTile t${d.tier}${on ? '' : ' locked'}${d.id === unitSel ? ' sel' : ''}" data-usel="${d.id}" style="background-image:url(${card(d.id)})">` +
-        `<img class="ricon" src="${B.roleIcon(d)}" alt=""><span class="rk">${RO.TIER_NAME[d.tier]}</span><span class="nm">${d.name}</span>${on ? `<span class="lv">Lv${meta.level(d.id)}</span>` : '<span class="lk">🔒</span>'}</button>`;
+        `<img class="ricon" src="${B.roleIcon(d)}" alt=""><span class="rk">${RO.TIER_NAME[d.tier]}</span><span class="nm">${on ? d.name : '???'}</span>${on ? '' : `<span class="lk">${meta.joinsAfter(d.id)}장</span>`}</button>`;
     }).join('') + '</div>';
-    const d = RO.BY_ID[unitSel], on = meta.isUnlocked(d.id), lv = meta.level(d.id);
-    const btn = !on ? `<button class="primary big" data-unlock="${d.id}" ${meta.data.parts < meta.unlockCost(d.id) ? 'disabled' : ''}><b>해금</b><small>⚙ ${meta.unlockCost(d.id)}</small></button>`
-      : lv >= meta.RULES.unitMaxLevel ? '<button class="big" disabled><b>최대 레벨</b></button>'
-        : `<button class="primary big" data-level="${d.id}" ${meta.data.parts < meta.levelCost(d.id) ? 'disabled' : ''}><b>강화 Lv ${lv + 1}</b><small>⚙ ${meta.levelCost(d.id)}</small></button>`;
-    const k = 1 + 0.06 * (lv - 1);
-    h += `<div class="uDetail t${d.tier}"><div class="uArt" style="background-image:url(${card(d.id)})"><span class="rk">${RO.TIER_NAME[d.tier]}</span></div>` +
-      `<div class="uHead"><img class="ricon" src="${B.roleIcon(d)}" alt=""><div><div class="uName">${d.name}${on ? ` <span class="lv">Lv ${lv}</span>` : ''}</div><div class="uFull">${d.fullName || ''}</div></div></div>` +
+    const d = RO.BY_ID[unitSel], on = meta.isUnlocked(d.id), bon = meta.upgrades();
+    h += `<div class="uDetail t${d.tier}${on ? '' : ' locked'}"><div class="uArt" style="background-image:url(${card(d.id)})"><span class="rk">${RO.TIER_NAME[d.tier]}</span></div>` +
+      `<div class="uHead"><img class="ricon" src="${B.roleIcon(d)}" alt=""><div><div class="uName">${on ? d.name : '합류 전'}</div><div class="uFull">${on ? d.fullName || '' : joinText(d.id)}</div></div></div>` +
       `<div class="uTags"><span>${RO.CLASS_NAME[d.cls]}</span><span>${RO.ROLE_NAME[d.role]}</span>${d.squadName ? `<span>${d.squadName}</span>` : ''}</div>` +
-      `<div class="dRows"><span>체력</span><b>${fmt(Math.round(d.hp * k))}</b><span>공격력</span><b>${fmt(Math.round(d.atk * k))}</b><span>방어력</span><b>${d.def}</b><span>사거리</span><b>${d.basic.range}</b></div>` +
+      `<div class="dRows"><span>체력</span><b>${fmt(Math.round(d.hp * bon.hp))}</b><span>공격력</span><b>${fmt(Math.round(d.atk * bon.atk))}</b><span>방어력</span><b>${d.def}</b><span>사거리</span><b>${d.basic.range}</b></div>` +
       `<div class="uSk"><span class="dL">스킬</span><div>${d.basic.name || '기본 공격'}</div><div>${d.skill.name || '-'}</div></div>` +
-      `<div class="uBtns"><button class="quiet" data-info="${d.id}">상세</button>${btn}</div></div></div>`;
+      `<p class="hint">${on ? `챕터 보상으로 전 대원 공격력·체력 +${Math.round((bon.atk - 1) * 100)}% 적용 중` : joinText(d.id)}</p>` +
+      `<div class="uBtns"><button class="quiet" data-info="${d.id}">상세</button></div></div></div>`;
     $('lobbyBody').innerHTML = h;
   }
 
@@ -193,7 +195,7 @@
     for (const id of list) {
       const d = RO.BY_ID[id], k = deck.indexOf(id);
       h += `<button class="uTile t${d.tier}${k >= 0 ? ' inDeck' : ''}" data-dpick="${id}" style="background-image:url(${card(id)})">` +
-        `<img class="ricon" src="${B.roleIcon(d)}" alt=""><span class="rk">${RO.TIER_NAME[d.tier]}</span><span class="nm">${d.name}</span><span class="lv">Lv${meta.level(id)}</span>${k >= 0 ? `<span class="inNo">${k + 1}</span>` : ''}</button>`;
+        `<img class="ricon" src="${B.roleIcon(d)}" alt=""><span class="rk">${RO.TIER_NAME[d.tier]}</span><span class="nm">${d.name}</span>${k >= 0 ? `<span class="inNo">${k + 1}</span>` : ''}</button>`;
     }
     $('lobbyBody').innerHTML = h + '</div></div>';
   }
@@ -209,19 +211,6 @@
     else { toast('편성이 가득 찼습니다. 바꿀 칸을 먼저 누르세요'); return; }
     meta.setDeck(deck.filter(Boolean));
     A.voice(id, 'SortiePick');
-  }
-
-  // ---------- research ----------
-  const R_ICON = { atk: '⚔', hp: '✚', base: '◆', gold: '●' };
-  function renderResearchPage() {
-    $('lobbyBody').innerHTML = '<div class="rWrap">' + Object.entries(meta.RULES.research).map(([k, r]) => {
-      const lv = meta.data.research[k], max = lv >= r.max;
-      let pips = '';
-      for (let i = 0; i < r.max; i++) pips += `<i class="${i < lv ? 'on' : ''}"></i>`;
-      return `<div class="rTile"><div class="rIc">${R_ICON[k] || '◆'}</div><div class="rName">${r.name}</div><div class="rLv"><b>${lv}</b>/${r.max}</div><div class="rPips">${pips}</div>` +
-        `<div class="rNow">${r.desc(lv)}</div><div class="rNext">${max ? '연구 완료' : '다음 · ' + r.desc(lv + 1)}</div>` +
-        `<button class="primary big" data-research="${k}" ${max || meta.data.parts < meta.researchCost(k) ? 'disabled' : ''}><b>${max ? '완료' : '연구'}</b>${max ? '' : `<small>⚙ ${meta.researchCost(k)}</small>`}</button></div>`;
-    }).join('') + '</div><p class="hint">연구는 모든 대원과 모든 스테이지에 적용됩니다. 부품은 출격할 때마다 받습니다.</p>';
   }
 
   // ---------- archive: story replays ----------
@@ -244,8 +233,8 @@
     const slider = (k, label) => `<label class="vol"><span>${label}</span><input type="range" min="0" max="1" step="0.05" value="${v[k]}" data-vol="${k}"><b>${Math.round(v[k] * 100)}</b></label>`;
     $('lobbyBody').innerHTML = '<div class="sWrap"><div class="sBox"><div class="dL">사운드</div>' + slider('bgm', '배경음악') + slider('sfx', '효과음') + slider('voice', '캐릭터 보이스') +
       `<label class="vol"><span>전체 음소거</span><input type="checkbox" id="muteAll" ${v.mute ? 'checked' : ''}></label></div>` +
-      '<div class="sBox"><div class="dL">게임</div><label class="vol htagSet"><span>머리 위 아이콘 표시</span><input type="checkbox" id="headIcons" ' + (meta.data.headIcons !== false ? 'checked' : '') + '></label><div class="setRow"><button id="btnTutorial">튜토리얼 다시 보기</button><button id="btnResetSave" class="quiet">저장 초기화</button></div>' +
-      `<div class="dRows"><span>출격</span><b>${meta.data.stats.runs}회</b><span>클리어</span><b>${meta.data.stats.clears}회</b><span>진행</span><b>${stars()}/${S.total()}</b></div></div></div>`;
+      '<div class="sBox"><div class="dL">게임</div><label class="vol htagSet"><span>머리 위 아이콘 표시</span><input type="checkbox" id="headIcons" ' + (meta.data.headIcons !== false ? 'checked' : '') + '></label><div class="setRow"><button id="btnTutorial">튜토리얼 다시 보기</button><button id="btnTitle">타이틀로</button><button id="btnResetSave" class="quiet">이 슬롯 지우기</button></div>' +
+      `<div class="dRows"><span>슬롯</span><b>${meta.slot}</b><span>회차</span><b>${meta.data.cycle}회차</b><span>진행</span><b>${stars()}/${S.total()}</b><span>플레이 시간</span><b>${playTime(meta.data.playSec)}</b><span>출격</span><b>${meta.data.stats.runs}회</b><span>클리어</span><b>${meta.data.stats.clears}회</b></div></div></div>`;
   }
 
   function openLobby() {
@@ -289,13 +278,11 @@
     if (t.dataset.dslot) { const i = +t.dataset.dslot; deckSlot = deckSlot === i ? -1 : i; renderLobby(); return; }
     if (t.dataset.dpick) { deckPick(t.dataset.dpick); renderLobby(); return; }
     if (t.dataset.drole) { deckRole = t.dataset.drole; renderLobby(); return; }
-    if (t.id === 'btnAutoDeck') { meta.setDeck(Meta.autoDeck(RO, meta.data.unlocked, meta.level)); deckSlot = -1; renderLobby(); return; }
+    if (t.id === 'btnAutoDeck') { meta.setDeck(Meta.autoDeck(RO, meta.data.unlocked)); deckSlot = -1; renderLobby(); return; }
     if (t.id === 'btnClearDeck') { meta.setDeck([]); deckSlot = -1; renderLobby(); return; }
-    if (t.dataset.unlock) { const id = t.dataset.unlock; if (meta.unlock(id)) { toast(`${RO.BY_ID[id].name} 해금!`, true); A.sfx(RO.BY_ID[id].tier >= 4 ? 'pickSS' : 'genS'); A.voice(id, 'Join', true); } renderLobby(); return; }
-    if (t.dataset.level) { const id = t.dataset.level; if (meta.levelUp(id)) { toast(`${RO.BY_ID[id].name} Lv ${meta.level(id)}`, true); A.sfx('reinforce'); A.voice(id, 'Reinforce'); } renderLobby(); return; }
-    if (t.dataset.research) { if (meta.research(t.dataset.research)) { toast(`${meta.RULES.research[t.dataset.research].name} 완료`, true); A.sfx('reinforce'); } renderLobby(); return; }
     if (t.id === 'btnTutorial') { meta.data.tutorial = false; meta.save(); toast('스테이지 1에 출격하면 튜토리얼이 다시 시작됩니다', true); go('home'); return; }
-    if (t.id === 'btnResetSave') { if (window.confirm('저장 데이터를 모두 지울까요? 되돌릴 수 없습니다.')) { meta.reset(); renderLobby(); toast('초기화했습니다', true); } return; }
+    if (t.id === 'btnTitle') { meta.save(); showTitle(); return; }
+    if (t.id === 'btnResetSave') { if (window.confirm(`슬롯 ${meta.slot}의 진행을 모두 지울까요? 되돌릴 수 없습니다.`)) { Meta.erase(meta.slot); meta = null; showTitle(); toast('슬롯을 지웠습니다', true); } return; }
     if (t.dataset.info) B.showCard(t.dataset.info, 1);
   });
   window.addEventListener('keydown', (e) => { if (e.code === 'Escape' && phase === 'lobby' && $('story').hidden && page !== 'home') go('home'); });
@@ -308,8 +295,11 @@
   const sceneIntro = (ch) => ({ lines: ch.intro, bg: ch.introBg, place: [`CHAPTER ${ch.id}`, ch.title] });
   const sceneStage = (a) => ({ lines: a.stage.lines, bg: a.chapter.stageBg, place: [a.code, a.stage.name] });
   const sceneOutro = (ch) => ({ lines: ch.outro, bg: ch.outroBg, place: ['EPILOGUE', ch.title] });
+  // new game plus scenes (js/story_ng.js, written for the 2nd cycle on)
+  const NG = () => (meta && meta.data.cycle >= 2 && window.STORY_NG) || null;
+  const sceneNG = (x, place) => (x && x.lines && x.lines.length ? { lines: x.lines, bg: x.bg, place } : null);
   function playStory(scenes, title, done) {
-    scenes = scenes.filter((x) => x.lines && x.lines.length);
+    scenes = scenes.filter((x) => x && x.lines && x.lines.length);
     if (!scenes.length) { if (done) done(); return; }
     TALK.playScenes(scenes, title).then(() => { if (done) done(); });
   }
@@ -321,15 +311,20 @@
 
   function startStage(g) {
     const a = S.at(g);
-    const scenes = [];
-    if (a.si === 0 && !meta.data.seen['c' + a.chapter.id]) { scenes.push(sceneIntro(a.chapter)); meta.data.seen['c' + a.chapter.id] = 1; }
+    const scenes = [], ng = NG(), ngc = ng && ng.chapters && ng.chapters[a.chapter.id];
+    if (ng && g === 1 && !meta.data.seen.ngp) { scenes.push(sceneNG(ng.prologue, ['NEW GAME+', `${meta.data.cycle}회차`])); meta.data.seen.ngp = 1; }
+    if (a.si === 0 && !meta.data.seen['c' + a.chapter.id]) {
+      scenes.push(sceneIntro(a.chapter));
+      if (ngc) scenes.push(sceneNG(ngc.intro, [`CHAPTER ${a.chapter.id}`, `${a.chapter.title} — 2회차`]));
+      meta.data.seen['c' + a.chapter.id] = 1;
+    }
     if (!meta.data.seen['s' + g]) { scenes.push(sceneStage(a)); meta.data.seen['s' + g] = 1; }
     meta.save();
     if (scenes.length) { $('lobby').hidden = true; playStory(scenes, `${a.code} ${a.stage.name}`, () => beginStage(g)); } else beginStage(g);
   }
   function beginStage(g) {
     const n = g;
-    const plan = S.plan(g);
+    const plan = meta.plan(g);
     B.setBg(plan.bg);
     st = Stage.create({ roster: RO, stage: n, plan, seed: (Date.now() >>> 0) % 1000000, deck: meta.data.deck, pool: meta.data.unlocked, baseHp: meta.baseHp(), bonusGold: meta.bonusGold() });
     $('lobby').hidden = true;
@@ -620,12 +615,15 @@
     const res = st.finishWave(e.result, sim.baseHp);
     if (st.over) {
       const wavesCleared = st.cleared ? st.waves : res.wave - 1;
-      const r = meta.finishStage(st.stage, st.cleared, wavesCleared, st.parts);
+      const r = meta.finishStage(st.stage, st.cleared, wavesCleared);
+      lastResult = r;
       const t = $('rrTitle');
       t.className = st.cleared ? 'win' : 'lose';
       t.textContent = st.cleared ? `${st.plan.code} 클리어` : '기지 함락';
       $('rrSub').innerHTML = (st.cleared ? `${st.waves}웨이브를 모두 막았습니다` : `${res.wave}웨이브에서 기지가 무너졌습니다`) +
-        `<br>부품 +${r.gain}${r.first ? ' (첫 클리어 2배)' : ''} · 보유 ${fmt(meta.data.parts)}`;
+        (r.chapterDone ? `<br><b class="rrBonus">챕터 ${r.chapterDone} 클리어 보상</b> 전 대원 공격력·체력 +${Math.round(meta.RULES.bonusAtk * 100)}%, 기지 체력 +${meta.RULES.bonusBase}` : '') +
+        (r.joined.length ? `<br><b class="rrJoin">합류</b> ${r.joined.map((id) => RO.BY_ID[id].name).join(', ')}` : '');
+      if (r.joined.length) setTimeout(() => A.voice(r.joined[0], 'Join', true), 1600);
       $('btnNext').textContent = '로비로';
       $('roundResult').hidden = false;
       renderHud();
@@ -639,7 +637,7 @@
     }
     A.sfx('clear', 0.7);
     // between waves: straight back to the shop with a short summary
-    toast(`웨이브 ${res.wave} 방어 · 수입 ●${res.gold} · 부품 +${res.parts}${sim.breached ? ` · 기지 피해 ${sim.breached}` : ''}`, true);
+    toast(`웨이브 ${res.wave} 방어 · 수입 ●${res.gold}${sim.breached ? ` · 기지 피해 ${sim.breached}` : ''}`, true);
     phase = 'prep';
     document.body.classList.remove('fighting');
     stageBgm();
@@ -716,17 +714,22 @@
   $('btnFight').onclick = fight;
   $('btnNext').onclick = () => {
     $('roundResult').hidden = true;
-    const a = st && S.at(st.stage);
+    const a = st && S.at(st.stage), r = lastResult, ending = !!(r && r.ending);
     if (st && st.cleared && a.last && !meta.data.seen['o' + a.chapter.id]) {
       meta.data.seen['o' + a.chapter.id] = 1; meta.save();
-      playStory([sceneOutro(a.chapter)], `챕터 ${a.chapter.id} · ${a.chapter.title} — 에필로그`, openLobby);
+      const ng = NG(), ngc = ng && ng.chapters && ng.chapters[a.chapter.id];
+      const scenes = [sceneOutro(a.chapter)];
+      if (ngc) scenes.push(sceneNG(ngc.outro, ['EPILOGUE', `${a.chapter.title} — 2회차`]));
+      if (ending && ng) scenes.push(sceneNG(ng.trueEnding, ['TRUE ENDING', '진엔딩']));
+      playStory(scenes, `챕터 ${a.chapter.id} · ${a.chapter.title} — 에필로그`, ending ? showEnding : openLobby);
       return;
     }
+    if (ending) { showEnding(); return; }
     openLobby();
   };
   $('btnRetreat').onclick = () => {
-    if (phase === 'prep' && window.confirm('작전을 포기하고 로비로 돌아갈까요? 이번 출격에서 얻은 부품은 받습니다.')) {
-      meta.finishStage(st.stage, false, st.wave - 1, st.parts);
+    if (phase === 'prep' && window.confirm('작전을 포기하고 로비로 돌아갈까요?')) {
+      meta.finishStage(st.stage, false, st.wave - 1);
       openLobby();
     }
   };
@@ -745,8 +748,81 @@
   });
   B.onLayout = () => { if (st && phase !== 'lobby') renderZones(); };
 
-  if (!meta.data.deck || !meta.data.deck.length) meta.setDeck(meta.deck());
-  if (window.TUTORIAL) TUTORIAL.bind(meta);
-  openLobby();
-  window.GAME = { meta, toast, changed: () => changed(), openLobby, get stage() { return st; }, get phase() { return phase; } }; // debugging handle
+  // =====================================================================================
+  // title (three save slots) and the ending
+  // =====================================================================================
+  let lastResult = null;
+  function playTime(sec) { const m = Math.floor((sec || 0) / 60); return `${Math.floor(m / 60)}:${String(m % 60).padStart(2, '0')}`; }
+  function slotWhere(sl) {
+    if (sl.stageCleared >= S.total()) return sl.endings >= 2 ? '진엔딩 도달' : '엔딩 도달';
+    const a = S.at(sl.stageCleared + 1);
+    return `CHAPTER ${a.chapter.id} · ${a.chapter.title} — ${a.code}`;
+  }
+  function showTitle() {
+    phase = 'title';
+    st = null;
+    if (meta) { meta.save(); meta = null; } // a slot is only held while it is played (an erased slot must not be saved again)
+    $('lobby').hidden = true; $('ending').hidden = true; $('roundResult').hidden = true; $('story').hidden = true;
+    document.body.classList.add('lobby');
+    if (L) L.pause(true);
+    B.setBg(S.CHAPTERS[0].bg);
+    const slots = Meta.slots(RO);
+    $('title').innerHTML = '<div class="tiShade"></div><div class="tiLogo"><small>LAST ORIGIN · ORCA DEFENSE</small><b>오르카 방어전</b><span>사령관의 열두 시간</span></div>' +
+      '<div class="tiSlots">' + slots.map((sl) => {
+        if (sl.empty) return `<div class="tiSlot empty"><span class="tiN">SLOT ${sl.n}</span><span class="tiE">비어 있음</span><div class="tiBtns"><button class="primary" data-new="${sl.n}">새 게임</button></div></div>`;
+        const done = sl.stageCleared >= S.total();
+        return `<div class="tiSlot${sl.cycle >= 2 ? ' ng' : ''}"><span class="tiN">SLOT ${sl.n}</span><span class="tiC" data-cycle="${sl.cycle}">${sl.cycle}회차${sl.endings ? ` · 엔딩 ${sl.endings}` : ''}</span>` +
+          `<div class="tiW">${slotWhere(sl)}</div><div class="tiM"><span>진행 ${Math.min(sl.stageCleared, S.total())}/${S.total()}</span><span>플레이 ${playTime(sl.playSec)}</span><span>${new Date(sl.updated).toLocaleDateString('ko-KR')}</span></div>` +
+          '<div class="tiBtns">' + (done && sl.endings >= sl.cycle ? `<button class="primary" data-ng="${sl.n}" data-next="${sl.cycle + 1}">${sl.cycle + 1}회차 시작</button>` : '') +
+          `<button class="${done ? '' : 'primary'}" data-load="${sl.n}">이어하기</button><button class="quiet" data-erase="${sl.n}">삭제</button></div></div>`;
+      }).join('') + '</div><div class="tiFoot">스토리를 끝까지 깨면 같은 슬롯에서 2회차가 열립니다. 2회차는 모든 대원이 합류한 채 시작하고, 철충이 강해지며, 추가 이야기와 진엔딩이 있습니다.</div>';
+    $('title').hidden = false;
+    A.bgm('title');
+  }
+  function loadSlot(n, mode) {
+    if (mode === 'new') Meta.erase(n);
+    meta = Meta.load(RO, n);
+    if (mode === 'new') meta.save();
+    if (mode === 'ng' && !meta.newCycle()) { toast('아직 엔딩에 도달하지 않았습니다'); return; }
+    B.setHeadIcons(meta.data.headIcons !== false);
+    if (!meta.data.deck || !meta.data.deck.length) meta.setDeck(meta.deck());
+    if (window.TUTORIAL) TUTORIAL.bind(meta);
+    $('title').hidden = true;
+    openLobby();
+    if (mode === 'ng') toast(`${meta.data.cycle}회차 시작 · 모든 대원 합류, 철충 강화`, true);
+  }
+  $('title').addEventListener('click', (e) => {
+    const t = e.target.closest('button');
+    if (!t) return;
+    A.sfx('click');
+    if (t.dataset.new) loadSlot(+t.dataset.new, 'new');
+    else if (t.dataset.load) loadSlot(+t.dataset.load, 'load');
+    else if (t.dataset.ng) { if (window.confirm(`${t.dataset.next}회차를 시작할까요? 스테이지 진행은 처음부터 다시 하고, 대원과 챕터 보상은 모두 이어받습니다.`)) loadSlot(+t.dataset.ng, 'ng'); }
+    else if (t.dataset.erase) { if (window.confirm(`슬롯 ${t.dataset.erase}을 지울까요? 되돌릴 수 없습니다.`)) { Meta.erase(+t.dataset.erase); showTitle(); } }
+  });
+  function showEnding() {
+    phase = 'ending';
+    const c = meta.data.cycle, trueEnd = c >= 2;
+    $('lobby').hidden = true; $('roundResult').hidden = true;
+    $('ending').innerHTML = `<div class="enBox"><small>${trueEnd ? 'TRUE ENDING' : 'ENDING'}</small><b>${trueEnd ? '진엔딩' : '열두 시간'}</b>` +
+      `<span>${c}회차 클리어 · 플레이 ${playTime(meta.data.playSec)} · 출격 ${meta.data.stats.runs}회</span>` +
+      `<p>${trueEnd ? '모든 이야기를 보았습니다. 같은 슬롯에서 다음 회차를 이어 갈 수 있습니다.' : '같은 슬롯에서 <b>2회차</b>가 열렸습니다.<br>모든 대원이 합류한 채로 시작하고, 철충이 강해지며, 추가 이야기와 진엔딩이 기다립니다.'}</p>` +
+      `<div class="enBtns"><button class="primary" id="enNext">${c + 1}회차 시작</button><button id="enTitle">타이틀로</button></div></div>`;
+    $('ending').hidden = false;
+    A.bgm('title');
+    A.sfx('win');
+  }
+  $('ending').addEventListener('click', (e) => {
+    const t = e.target.closest('button');
+    if (!t) return;
+    A.sfx('click');
+    $('ending').hidden = true;
+    if (t.id === 'enNext') loadSlot(meta.slot, 'ng'); else showTitle();
+  });
+  // play time (only while the page is in front)
+  setInterval(() => { if (meta && !document.hidden && document.hasFocus()) meta.addTime(5); }, 5000);
+  window.addEventListener('pagehide', () => { if (meta) meta.save(); });
+
+  showTitle();
+  window.GAME = { get meta() { return meta; }, toast, changed: () => changed(), openLobby, showTitle, showEnding, loadSlot, get stage() { return st; }, get phase() { return phase; } }; // debugging handle
 })();

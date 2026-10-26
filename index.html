@@ -9,6 +9,7 @@
 <link rel="stylesheet" href="css/lao.css">
 <link rel="stylesheet" href="css/czn.css">
 <link rel="stylesheet" href="css/talk.css">
+<link rel="stylesheet" href="css/title.css">
 <link rel="preload" href="assets/fonts/GodoM.ttf" as="font" type="font/ttf" crossorigin>
 <link rel="preload" href="assets/fonts/GodoB.ttf" as="font" type="font/ttf" crossorigin>
 </head>
@@ -86,7 +87,11 @@
   <div id="info" hidden></div>
   <div id="result" hidden><div class="box"><div id="resultText"></div><div id="resultSub"></div><button id="btnAgain" class="primary">다시 전투</button></div></div>
   <div id="roundResult" hidden><div class="box"><div id="rrTitle"></div><div id="rrSub"></div><button id="btnNext" class="primary">로비로</button></div></div>
-  <!-- lobby: stages, units (unlock / level), research -->
+  <!-- title: three save slots, new game / continue / next cycle (js/shop.js showTitle) -->
+  <section id="title" hidden></section>
+  <!-- ending: the cycle's last stage cleared -->
+  <section id="ending" hidden></section>
+  <!-- lobby: stages, deck, members (the squad the story has given), archive, settings -->
   <section id="lobby" hidden>
     <div id="l2d"></div>
     <div class="lbShade"></div>
@@ -104,7 +109,6 @@
         <div class="mRow">
           <button class="mTile" data-page="deck"><svg viewBox="0 0 24 24"><rect x="3" y="6" width="7" height="12" rx="1"/><rect x="14" y="6" width="7" height="12" rx="1"/><path d="M10 12h4"/></svg><span class="kr">편성</span><span class="en">DECK</span></button>
           <button class="mTile" data-page="units"><svg viewBox="0 0 24 24"><circle cx="9" cy="8" r="3.2"/><path d="M3 20c0-3.6 2.7-6 6-6s6 2.4 6 6"/><circle cx="17" cy="9" r="2.4"/><path d="M15.5 14.2c3 .2 5.5 2.4 5.5 5.8"/></svg><span class="kr">대원</span><span class="en">MEMBERS</span></button>
-          <button class="mTile" data-page="research"><svg viewBox="0 0 24 24"><path d="M9 3h6M10 3v6l-5.5 9.5A1.6 1.6 0 0 0 5.9 21h12.2a1.6 1.6 0 0 0 1.4-2.5L14 9V3"/><path d="M7.5 15h9"/></svg><span class="kr">연구</span><span class="en">RESEARCH</span></button>
           <button class="mTile" data-page="archive"><svg viewBox="0 0 24 24"><path d="M4 5.5C6.5 4 9.5 4 12 5.5 14.5 4 17.5 4 20 5.5V19c-2.5-1.5-5.5-1.5-8 0-2.5-1.5-5.5-1.5-8 0z"/><path d="M12 5.5V19"/></svg><span class="kr">기록</span><span class="en">ARCHIVE</span></button>
         </div>
       </div>
@@ -115,7 +119,7 @@
     </div>
     <div class="lhTop">
       <div class="prof"><div class="pAv"><img id="profPic" alt=""></div><div class="pInfo"><div class="pName">사령관<small>COMMANDER</small></div><div class="pLv"><small>LV</small><b id="profLv">1</b><span class="pXp"><i id="profXp"></i></span></div></div></div>
-      <div class="res"><span class="pill"><span class="gearI">⚙</span><b id="lobbyParts">0</b><small>부품</small></span><span class="pill"><span class="starI">★</span><b id="lobbyStars">0</b><small id="lobbyStarsMax">/24</small></span><button class="ico" data-page="home" id="btnHome" title="홈"><svg viewBox="0 0 24 24"><path d="M3 11l9-7 9 7M5.5 9.5V20h13V9.5"/></svg></button><button class="ico" data-page="settings" title="설정"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M12 2.5v3M12 18.5v3M2.5 12h3M18.5 12h3M5.3 5.3l2.1 2.1M16.6 16.6l2.1 2.1M5.3 18.7l2.1-2.1M16.6 7.4l2.1-2.1"/></svg></button></div>
+      <div class="res"><span class="pill cyc"><b id="lobbyCycle">1</b><small>회차</small></span><span class="pill"><span class="starI">★</span><b id="lobbyStars">0</b><small id="lobbyStarsMax">/24</small></span><button class="ico" data-page="home" id="btnHome" title="홈"><svg viewBox="0 0 24 24"><path d="M3 11l9-7 9 7M5.5 9.5V20h13V9.5"/></svg></button><button class="ico" data-page="settings" title="설정"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M12 2.5v3M12 18.5v3M2.5 12h3M18.5 12h3M5.3 5.3l2.1 2.1M16.6 16.6l2.1 2.1M5.3 18.7l2.1-2.1M16.6 7.4l2.1-2.1"/></svg></button></div>
     </div>
   </section>
   <!-- supply shop (shop time) and elite reward -->
@@ -157,6 +161,7 @@
 <script src="js/sim.js"></script>
 <script src="js/lao_enemies.js"></script>
 <script src="js/story.js"></script>
+<script src="js/story_ng.js"></script>
 <script src="js/wavesim.js"></script>
 <script src="js/stage.js"></script>
 <script src="js/meta.js"></script>

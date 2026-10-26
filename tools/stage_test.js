@@ -1,4 +1,4 @@
-// Headless stages with a simple bot: node tools/stage_test.js [runs] [--chapters]
+// Headless stages with a simple bot: node tools/stage_test.js [runs] [--chapters | --story]
 // Prints clear rate and waves reached per stage for a starter pool and for the full roster.
 const fs = require('fs');
 const path = require('path');
@@ -49,7 +49,7 @@ function botTurn(st) {
 }
 
 function playStage(stage, pool, seed, ups, opts = {}) {
-  const plan = STORY.plan(stage);
+  const plan = STORY.plan(stage, opts.cycle || 1);
   const deck = opts.deck || Meta.autoDeck(roster, pool); // the bot takes a 6-unit deck like the player
   const st = Stage.create({ roster, stage, plan, seed, deck, baseHp: opts.baseHp || 20 + ((ups && ups.baseHp) || 0), bonusGold: opts.bonusGold || 0 });
   while (!st.over) {
@@ -66,6 +66,32 @@ if (require.main === module) {
   const N = +process.argv[2] || 30;
   const starter = roster.ROSTER.filter((r) => r.tier <= 2).map((r) => r.id);
   const full = roster.ROSTER.map((r) => r.id);
+  // --story: the packaged game as played. Cycle 1: the squad and the chapter bonuses the story has given by that chapter
+  // (js/story.js JOIN, js/meta.js chapterBonus); cycle 2: everyone, all eight bonuses, cruel bosses and stronger bugs
+  if (process.argv.includes('--story')) {
+    const Meta = require(J('meta.js'));
+    const env = (k) => process.env[k] && JSON.parse(process.env[k]); // CURVE='{"late":1.01}' NGK=1.5: try values
+    if (env('CURVE')) Object.assign(WaveSim.CURVE, env('CURVE'));
+    if (env('NG')) Object.assign(STORY.TUNE, env('NG')); // NG='{"ng0":2.2,"ng1":1.3}'
+    for (const cycle of [1, 2]) {
+      const line = [];
+      for (let c = 0; c < STORY.CHAPTERS.length; c++) {
+        const done = cycle >= 2 ? STORY.CHAPTERS.length : c;
+        const pool = STORY.squad(done, cycle), bon = Meta.chapterBonus(done);
+        const ups = { atk: bon.atk, hp: bon.hp, baseHp: bon.base };
+        let sum = 0, low = 101, lowG = 0;
+        for (let i = 1; i <= STORY.PER_CHAPTER; i++) {
+          const g = c * STORY.PER_CHAPTER + i;
+          let clear = 0;
+          for (let s = 1; s <= N; s++) if (playStage(g, pool, s, ups, { cycle }).cleared) clear++;
+          const r = clear / N * 100; sum += r; if (r < low) { low = r; lowG = g; }
+        }
+        line.push(`${c + 1}장 ${Math.round(sum / STORY.PER_CHAPTER)}% (최저 ${STORY.at(lowG).code} ${Math.round(low)}%)`);
+      }
+      console.log(`${cycle}회차`.padEnd(6), line.join(' | '));
+    }
+    process.exit(0);
+  }
   // the curve (js/wavesim.js CURVE / GIM) is tuned on the first line: nothing bought at all
   const chapters = process.argv.includes('--chapters'); // every stage, chapter averages and each chapter's hardest stage
   for (const [name, pool, ups] of [['강화 없음(B·A만)', starter, null], ['해금만(강화 없음)', full, null], ['전원+강화', full, { atk: 1.3, hp: 1.3, baseHp: 10 }]]) {

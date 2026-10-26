@@ -1,0 +1,50 @@
+/* Title (three save slots) and the ending screen: a packaged game's front door (js/shop.js showTitle / showEnding).
+   Same look as the lobby: charcoal glass panels, amber accents, cut corners. */
+#title, #ending { position: absolute; inset: 0; z-index: 40; overflow: hidden; font-family: 'Godo', sans-serif; color: #f2f2f2; }
+#title[hidden], #ending[hidden] { display: none; }
+#title { background: #07080b url(../assets/story/bg/BG_CliffNight.webp) center/cover no-repeat; animation: tiIn 0.6s ease-out both; }
+@keyframes tiIn { from { opacity: 0; } }
+#title .tiShade { position: absolute; inset: 0; background: linear-gradient(90deg, rgba(5, 6, 9, 0.2) 0%, rgba(5, 6, 9, 0.55) 45%, rgba(5, 6, 9, 0.92) 70%); }
+
+#title .tiLogo { position: absolute; left: 72px; top: 150px; display: flex; flex-direction: column; gap: 6px; text-shadow: 0 3px 18px rgba(0, 0, 0, 0.8); animation: tiLogo 0.9s cubic-bezier(0.2, 0.8, 0.3, 1) both; }
+@keyframes tiLogo { from { opacity: 0; transform: translateX(-30px); } }
+#title .tiLogo small { font: 700 14px 'Exo2', sans-serif; font-style: italic; letter-spacing: 5px; color: var(--amber); }
+#title .tiLogo b { font-size: 76px; font-weight: 900; letter-spacing: 4px; line-height: 1.05; }
+#title .tiLogo span { align-self: flex-start; margin-top: 6px; padding: 4px 18px 4px 14px; font-size: 22px; font-weight: 700; letter-spacing: 6px; color: #111; background: var(--amber);
+  clip-path: polygon(0 0, 100% 0, calc(100% - 10px) 100%, 0 100%); }
+
+#title .tiSlots { position: absolute; right: 56px; top: 110px; width: 470px; display: flex; flex-direction: column; gap: 14px; }
+#title .tiSlot { position: relative; padding: 16px 20px 14px; background: rgba(14, 17, 23, 0.86); border-left: 3px solid var(--amber);
+  clip-path: polygon(0 0, 100% 0, 100% calc(100% - 14px), calc(100% - 14px) 100%, 0 100%); animation: tiSlot 0.5s ease-out both; }
+#title .tiSlot:nth-child(2) { animation-delay: 0.08s; } #title .tiSlot:nth-child(3) { animation-delay: 0.16s; }
+@keyframes tiSlot { from { opacity: 0; transform: translateX(24px); } }
+#title .tiSlot.empty { border-left-color: rgba(255, 255, 255, 0.25); background: rgba(14, 17, 23, 0.7); }
+#title .tiSlot.ng { border-left-color: #ff7a4a; }
+#title .tiN { font: 700 12px 'Exo2', sans-serif; letter-spacing: 3px; color: rgba(255, 255, 255, 0.55); }
+#title .tiC { margin-left: 10px; font-size: 13px; font-weight: 700; color: var(--amber); }
+#title .tiSlot.ng .tiC { color: #ff9a6a; }
+#title .tiE { margin-left: 10px; font-size: 14px; color: rgba(255, 255, 255, 0.5); }
+#title .tiW { margin-top: 6px; font-size: 18px; font-weight: 700; }
+#title .tiM { margin-top: 4px; display: flex; gap: 14px; font-size: 12px; color: rgba(255, 255, 255, 0.6); }
+#title .tiBtns { margin-top: 12px; display: flex; gap: 8px; justify-content: flex-end; }
+#title .tiBtns button { min-width: 96px; height: 34px; font-size: 14px; font-weight: 700; }
+#title .tiFoot { position: absolute; left: 72px; bottom: 40px; max-width: 560px; font-size: 13px; line-height: 1.6; color: rgba(255, 255, 255, 0.6); text-shadow: 0 1px 4px #000; }
+
+#ending { display: flex; align-items: center; justify-content: center; background: radial-gradient(ellipse at center, #1e1808, #040507 70%); animation: tiIn 1.2s ease-out both; }
+#ending .enBox { display: flex; flex-direction: column; align-items: center; gap: 10px; text-align: center; }
+#ending small { font: 700 16px 'Exo2', sans-serif; font-style: italic; letter-spacing: 8px; color: var(--amber); }
+#ending b { font-size: 64px; font-weight: 900; letter-spacing: 6px; text-shadow: 0 0 30px rgba(255, 194, 26, 0.35); }
+#ending span { font-size: 14px; color: rgba(255, 255, 255, 0.65); }
+#ending p { margin: 18px 0 8px; font-size: 17px; line-height: 1.7; color: #e8ebf2; }
+#ending p b { font-size: inherit; letter-spacing: 0; text-shadow: none; color: var(--amber); }
+#ending .enBtns { display: flex; gap: 12px; margin-top: 10px; }
+#ending .enBtns button { min-width: 150px; height: 44px; font-size: 16px; font-weight: 700; }
+
+/* lobby bits of the packaged game */
+.pill.cyc b { color: var(--amber); }
+.ngTag { margin-left: 10px; padding: 2px 8px; font: 700 12px 'Godo', sans-serif; font-style: normal; vertical-align: middle; color: #111; background: #ff9a6a; }
+.uTile.locked .nm { color: rgba(255, 255, 255, 0.5); }
+.uTile.locked { filter: grayscale(1) brightness(0.45); }
+.uDetail.locked .uArt { filter: grayscale(1) brightness(0.35); }
+#rrSub .rrBonus { color: var(--amber); }
+#rrSub .rrJoin { color: #7fd6ff; }

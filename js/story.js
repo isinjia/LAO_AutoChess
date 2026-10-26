@@ -332,12 +332,37 @@
   }
   // what WaveSim / Stage need: waves, elite and final waves, the final enemy, the difficulty index and the
   // reward factor (later chapters pay more parts: 1 .. 2.75)
-  function plan(g) {
+  // cycle: the playthrough (1 = story, 2+ = new game plus: every boss cruel, every bug ngK times stronger)
+  // new game plus: bugs ngK times stronger, ng0 at 1-1 easing to ng1 at the last stage (the whole squad and every
+  // bonus make the early chapters trivial, while the late ones are already steep). tools/stage_test.js --story
+  const TUNE = { ng0: 2.4, ng1: 1.05 };
+  const ngK = (g) => TUNE.ng0 * Math.pow(TUNE.ng1 / TUNE.ng0, (g - 1) / Math.max(1, total() - 1));
+  function plan(g, cycle = 1) {
     const a = at(g);
-    const cruel = a.stage.cruel != null ? a.stage.cruel : a.chapter.cruel;
-    return { g, waves: 8, eliteWave: 4, final: a.stage.final, cruel, bg: a.chapter.bg, code: a.code, partsK: 1 + 0.25 * a.ci };
+    const ng = cycle >= 2;
+    const cruel = ng || (a.stage.cruel != null ? a.stage.cruel : a.chapter.cruel);
+    return { g, waves: 8, eliteWave: 4, final: a.stage.final, cruel, bg: a.chapter.bg, code: a.code, cycle, ngK: ng ? ngK(g) : 1 };
   }
 
-  const api = { CHAPTERS, PER_CHAPTER, total, at, plan };
+  // who joins the squad (the deck pool) in the story: at the start, then on each chapter clear. Order follows the
+  // story's cast and the units' strength (B / A first, SS from chapter 2 on), with a tank and a support at each step; the 2nd cycle starts with everyone.
+  const JOIN = {
+    0: ['brownie', 'gnome', 'leprechaun', 'impet', 'nymph', 'constantia', 'lrl'],
+    1: ['valkyrie', 'raven', 'banshee', 'andvari'],
+    2: ['undine', 'leona', 'sylphid', 'amy', 'daphne'],
+    3: ['blacklilith', 'labiata', 'hraesvelgr', 'empress', 'phoenix'],
+    4: ['khan', 'harpy', 'lemonadealpha', 'zero', 'thetis'],
+    5: ['eternity', 'titania', 'cyclopsprincess', 'blindprincess', 'sleipnir'],
+    6: ['mercury', 'tiamat', 'ullr', 'fafnir', 'azazel'],
+    7: ['brunhild', 'hela', 'ramiel', 'saraqael'],
+  };
+  // the squad after `chapters` chapter clears (cycle 2+: everyone)
+  function squad(chapters, cycle = 1) {
+    const out = [];
+    for (let c = 0; c <= (cycle >= 2 ? 7 : Math.min(7, chapters)); c++) out.push(...JOIN[c]);
+    return out;
+  }
+
+  const api = { CHAPTERS, PER_CHAPTER, total, at, plan, JOIN, TUNE, squad };
   if (typeof module !== 'undefined') module.exports = api; else root.STORY = api;
 })(this);

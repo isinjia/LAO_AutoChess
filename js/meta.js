@@ -1,120 +1,169 @@
-// Permanent progression (survives runs): parts (부품), unlocked units, unit levels, research, stage progress.
-// Pure logic + a small storage adapter (browser localStorage now; swap `store` for a server later).
+// Story progress (a packaged game, not a grind): three save slots, the playthrough cycle, the squad the story has
+// given (js/story.js JOIN), the chapter bonuses, which scenes were seen. Nothing is bought with a currency.
 //
-//   const m = Meta.load(roster);   m.data.parts, m.unlock(id), m.levelUp(id), m.research(key), m.upgrades(), m.save()
+//   Meta.slots(roster)        -> [{ n, empty, cycle, stageCleared, endings, playSec, updated }] for the title screen
+//   const m = Meta.load(roster, n)   m.data, m.upgrades(), m.baseHp(), m.finishStage(...), m.newCycle(), m.save()
+//
+// Cycle 1: the squad grows on each chapter clear and every cleared chapter adds a bonus (attack / hp +4%, base +2).
+// Cycle 2+ (after the ending): everyone in the squad, all eight bonuses, cruel bosses and stronger bugs (STORY.plan).
 (function (root) {
-  const KEY = 'lao_autobattler_save_v1';
+  const SLOT_KEY = (n) => 'lao_orca_slot_' + n;
+  const LEGACY_KEY = 'lao_autobattler_save_v1'; // the old single save (grind version): moves into slot 1 once
+  const SLOTS = 3;
   const RULES = {
-    unitMaxLevel: 10, levelK: 0.06, // +6% hp / attack per unit level
-    unlockCost: { 1: 0, 2: 40, 3: 120, 4: 300 }, // by tier (B / A / S / SS)
-    levelCost: (lv, tier) => Math.round((20 + 15 * lv) * (0.8 + 0.2 * tier)),
-    research: {
-      atk: { name: '공격 연구', desc: (lv) => `전 대원 공격력 +${lv * 8}%`, max: 15, cost: (lv) => 50 + 40 * lv },
-      hp: { name: '체력 연구', desc: (lv) => `전 대원 체력 +${lv * 8}%`, max: 15, cost: (lv) => 50 + 40 * lv },
-      base: { name: '기지 장갑', desc: (lv) => `기지 체력 +${lv * 2}`, max: 15, cost: (lv) => 40 + 30 * lv },
-      gold: { name: '보급 확대', desc: (lv) => `스테이지 시작 골드 +${lv}`, max: 5, cost: (lv) => 80 + 60 * lv },
-    },
-    starterTiers: [1, 2], // B and A units are unlocked from the start
     deckSize: 6, // the units taken into a stage (King God Castle style): the shop draws only these, all equally likely
-    firstClearK: 2,
+    bonusAtk: 0.04, bonusHp: 0.04, bonusBase: 2, // per cleared chapter
   };
+  const story = () => (typeof STORY !== 'undefined' ? STORY : require('./story.js'));
+  const PER = () => story().PER_CHAPTER;
+  const TOTAL = () => story().total();
 
-  // storage: localStorage when it works (private windows can refuse it), memory otherwise
-  const store = {
-    get() { try { return JSON.parse(localStorage.getItem(KEY) || 'null'); } catch (e) { return null; } },
-    set(v) { try { localStorage.setItem(KEY, JSON.stringify(v)); return true; } catch (e) { return false; } },
-    clear() { try { localStorage.removeItem(KEY); } catch (e) { /* ignore */ } },
-  };
+  // what `chapters` cleared chapters give everyone (tools/stage_test.js --story uses it too)
+  function chapterBonus(chapters) {
+    return { atk: 1 + RULES.bonusAtk * chapters, hp: 1 + RULES.bonusHp * chapters, base: RULES.bonusBase * chapters };
+  }
 
-  function fresh(roster) {
+  const storeOf = (key) => ({
+    get() { try { return JSON.parse(localStorage.getItem(key) || 'null'); } catch (e) { return null; } },
+    set(v) { try { localStorage.setItem(key, JSON.stringify(v)); return true; } catch (e) { return false; } },
+    clear() { try { localStorage.removeItem(key); } catch (e) { /* ignore */ } },
+  });
+
+  function fresh() {
     return {
-      v: 1, parts: 0,
-      unlocked: roster.ROSTER.filter((r) => RULES.starterTiers.includes(r.tier)).map((r) => r.id),
-      levels: {}, research: { atk: 0, hp: 0, base: 0, gold: 0 },
-      stageCleared: 0, // highest stage cleared
-      best: {}, // stage -> best wave reached
+      v: 2,
+      cycle: 1, // the playthrough: 1 = story, 2+ = new game plus
+      endings: 0, // highest cycle whose ending was reached (2 = the true ending)
+      stageCleared: 0, // highest stage cleared in this cycle
+      best: {}, // stage -> best wave reached (this cycle)
       stats: { runs: 0, clears: 0 },
       deck: [], // unit ids taken into a stage (deckSize); empty = picked automatically
+      unlocked: [], // the squad (kept in step with the story by sync())
       tutorial: false, // first-run tutorial finished or skipped (js/tutorial.js)
       headIcons: true, // battle: class / squad icons beside the hp bar (lobby settings)
-      seen: {}, // story scenes already shown: 'c1' chapter intro, 's3' stage 3, 'o1' chapter outro
+      seen: {}, // story scenes already shown this cycle: 'c1' chapter intro, 's3' stage 3, 'o1' outro, 'ng1' / 'ngo1' extras
+      playSec: 0, // play time
+      created: Date.now(), updated: Date.now(),
     };
   }
 
   function wrap(roster, data, storage) {
     const m = {
       RULES, data,
-      save() { return storage ? storage.set(data) : false; },
-      reset() { Object.assign(data, fresh(roster)); if (storage) storage.clear(); m.save(); },
+      save() { data.updated = Date.now(); return storage ? storage.set(data) : false; },
+      reset() { Object.assign(data, fresh()); m.sync(); if (storage) storage.clear(); m.save(); },
+      chapters: () => Math.floor(data.stageCleared / PER()), // chapters cleared this cycle
+      bonusChapters: () => (data.cycle >= 2 ? story().CHAPTERS.length : m.chapters()),
       isUnlocked: (id) => data.unlocked.includes(id),
-      level: (id) => data.levels[id] || 1,
-      unlockCost: (id) => RULES.unlockCost[roster.BY_ID[id].tier],
-      levelCost: (id) => RULES.levelCost(m.level(id), roster.BY_ID[id].tier),
-      researchCost: (key) => RULES.research[key].cost(data.research[key]),
-      unlock(id) {
-        if (m.isUnlocked(id) || data.parts < m.unlockCost(id)) return false;
-        data.parts -= m.unlockCost(id); data.unlocked.push(id); m.save(); return true;
+      // the squad as the story stands; returns the units that just joined
+      sync() {
+        const want = story().squad(m.chapters(), data.cycle).filter((id) => roster.BY_ID[id]);
+        const fresh_ = want.filter((id) => !data.unlocked.includes(id));
+        data.unlocked = want;
+        return fresh_;
       },
-      levelUp(id) {
-        if (!m.isUnlocked(id) || m.level(id) >= RULES.unitMaxLevel || data.parts < m.levelCost(id)) return false;
-        data.parts -= m.levelCost(id); data.levels[id] = m.level(id) + 1; m.save(); return true;
-      },
-      research(key) {
-        const r = RULES.research[key];
-        if (!r || data.research[key] >= r.max || data.parts < m.researchCost(key)) return false;
-        data.parts -= m.researchCost(key); data.research[key]++; m.save(); return true;
-      },
-      // what a stage run gets from the permanent side (WaveSim `upgrades`, Stage options)
-      upgrades() {
-        return { atk: 1 + 0.08 * data.research.atk, hp: 1 + 0.08 * data.research.hp, levels: Object.assign({}, data.levels) };
-      },
-      baseHp: () => 20 + 2 * data.research.base,
-      bonusGold: () => data.research.gold,
+      // when each unit joins (cycle 1): 0 = from the start, n = after chapter n
+      joinsAfter(id) { const J = story().JOIN; for (const c in J) if (J[c].includes(id)) return +c; return 0; },
+      // what a stage run gets from the story: chapter bonuses (WaveSim `upgrades`, Stage options)
+      upgrades() { const b = chapterBonus(m.bonusChapters()); return { atk: b.atk, hp: b.hp, levels: {} }; },
+      baseHp: () => 20 + chapterBonus(m.bonusChapters()).base,
+      bonusGold: () => 0,
+      level: () => 1,
       stageOpen: (n) => n <= data.stageCleared + 1,
-      // the deck: saved picks that are still unlocked, filled up automatically to deckSize
+      plan: (g) => story().plan(g, data.cycle),
+      // the deck: saved picks still in the squad, filled up automatically to deckSize
       deck() {
         const d = [...new Set((data.deck || []).filter((id) => roster.BY_ID[id] && data.unlocked.includes(id)))].slice(0, RULES.deckSize);
-        for (const id of autoDeck(roster, data.unlocked, m.level)) { if (d.length >= RULES.deckSize) break; if (!d.includes(id)) d.push(id); }
+        for (const id of autoDeck(roster, data.unlocked)) { if (d.length >= RULES.deckSize) break; if (!d.includes(id)) d.push(id); }
         return d;
       },
       setDeck(ids) {
         const d = [...new Set(ids.filter((id) => data.unlocked.includes(id)))].slice(0, RULES.deckSize);
         data.deck = d; m.save(); return d;
       },
-      // a finished stage run: parts earned (first clear pays double), progress recorded
-      finishStage(stage, cleared, wavesCleared, parts) {
+      // a finished stage: progress recorded; a chapter clear grows the squad; the last stage is the cycle's ending
+      finishStage(stage, cleared, wavesCleared) {
         const first = cleared && stage > data.stageCleared;
-        const gain = first ? Math.round(parts * RULES.firstClearK) : parts;
-        data.parts += gain;
+        const chBefore = m.chapters();
         data.best[stage] = Math.max(data.best[stage] || 0, cleared ? 10 : wavesCleared);
         if (cleared) { data.stageCleared = Math.max(data.stageCleared, stage); data.stats.clears++; }
         data.stats.runs++;
+        const joined = m.sync();
+        const chapterDone = first && m.chapters() > chBefore ? m.chapters() : 0;
+        const ending = first && stage >= TOTAL();
+        if (ending) data.endings = Math.max(data.endings, data.cycle);
         m.save();
-        return { gain, first };
+        return { first, joined, chapterDone, ending, bonus: chapterBonus(m.bonusChapters()) };
       },
+      canNewCycle: () => data.endings >= data.cycle,
+      // the next playthrough: the story again from 1-1, harder, with everyone and every bonus
+      newCycle() {
+        if (!m.canNewCycle()) return false;
+        data.cycle++;
+        data.stageCleared = 0; data.best = {}; data.seen = {};
+        m.sync();
+        data.deck = autoDeck(roster, data.unlocked);
+        m.save();
+        return true;
+      },
+      addTime(sec) { data.playSec = (data.playSec || 0) + sec; },
     };
+    m.sync();
     return m;
   }
 
-  // a sensible deck from a pool: the best tank and the best support, then the strongest of the rest
-  function autoDeck(roster, pool, level = () => 1) {
-    const score = (id) => { const d = roster.BY_ID[id]; return d.tier * 100 + level(id) * 5 + (d.atk * d.hp) / 1e6; };
+  // a sensible deck from a pool: the best tank and the best support, then the strongest of the rest, with at most
+  // two S and two SS cards (they cost 3-4 gold: an all-SS deck buys too few copies to merge and loses mid-game)
+  const TIER_CAP = { 3: 2, 4: 2 };
+  function autoDeck(roster, pool) {
+    const score = (id) => { const d = roster.BY_ID[id]; return d.tier * 100 + (d.atk * d.hp) / 1e6; };
     const list = pool.filter((id) => roster.BY_ID[id]).sort((a, b) => score(b) - score(a));
-    const out = [];
-    for (const role of ['tank', 'support']) { const id = list.find((x) => roster.BY_ID[x].role === role && !out.includes(x)); if (id) out.push(id); }
-    for (const id of list) { if (out.length >= RULES.deckSize) break; if (!out.includes(id)) out.push(id); }
+    const out = [], n = {};
+    const fits = (id) => (n[roster.BY_ID[id].tier] || 0) < (TIER_CAP[roster.BY_ID[id].tier] || 9);
+    const add = (id) => { out.push(id); const t = roster.BY_ID[id].tier; n[t] = (n[t] || 0) + 1; };
+    for (const role of ['tank', 'support']) { const id = list.find((x) => roster.BY_ID[x].role === role && !out.includes(x) && fits(x)); if (id) add(id); }
+    for (const id of list) { if (out.length >= RULES.deckSize) break; if (!out.includes(id) && fits(id)) add(id); }
+    for (const id of list) { if (out.length >= RULES.deckSize) break; if (!out.includes(id)) add(id); } // a small pool: anyone
     return out;
   }
 
-  function load(roster) {
-    const saved = store.get();
-    const data = Object.assign(fresh(roster), saved || {});
-    data.unlocked = data.unlocked.filter((id) => roster.BY_ID[id]);
-    return wrap(roster, data, store);
+  // the old single save (parts / research version) becomes slot 1: its story progress and settings carry over
+  function migrate() {
+    const old = storeOf(LEGACY_KEY).get();
+    if (!old) return;
+    const s1 = storeOf(SLOT_KEY(1));
+    if (!s1.get()) {
+      const d = Object.assign(fresh(), {
+        stageCleared: old.stageCleared || 0, best: old.best || {}, stats: old.stats || { runs: 0, clears: 0 },
+        deck: old.deck || [], tutorial: !!old.tutorial, headIcons: old.headIcons !== false, seen: old.seen || {},
+      });
+      s1.set(d);
+    }
+    storeOf(LEGACY_KEY).clear();
   }
-  // headless runs (tools): no storage
-  function memory(roster, data) { return wrap(roster, Object.assign(fresh(roster), data || {}), null); }
 
-  const api = { load, memory, autoDeck, RULES };
+  function slots() {
+    migrate();
+    const out = [];
+    for (let n = 1; n <= SLOTS; n++) {
+      const d = storeOf(SLOT_KEY(n)).get();
+      out.push(d ? { n, empty: false, cycle: d.cycle || 1, stageCleared: d.stageCleared || 0, endings: d.endings || 0, playSec: d.playSec || 0, updated: d.updated || 0 }
+        : { n, empty: true });
+    }
+    return out;
+  }
+  function load(roster, n = 1) {
+    migrate();
+    const storage = storeOf(SLOT_KEY(n));
+    const data = Object.assign(fresh(), storage.get() || {});
+    const m = wrap(roster, data, storage);
+    m.slot = n;
+    return m;
+  }
+  function erase(n) { storeOf(SLOT_KEY(n)).clear(); }
+  // headless runs (tools): no storage
+  function memory(roster, data) { return wrap(roster, Object.assign(fresh(), data || {}), null); }
+
+  const api = { load, memory, slots, erase, autoDeck, chapterBonus, RULES, SLOTS };
   if (typeof module !== 'undefined') module.exports = api; else root.Meta = api;
 })(this);

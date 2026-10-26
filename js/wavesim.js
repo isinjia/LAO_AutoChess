@@ -64,7 +64,7 @@
   // stage through chapter 2 (stage 16), then +0.4% a stage, so stage 64 is ~2.3x stage 1. A starting deck clears chapter 1
   // every time and the last chapter about 60% of the time (a simple bot; the final bosses ~20%); upgrades are the margin.
   // (The old +13% / +3% curve reached ~26x by stage 64: nothing past stage 12 could be cleared without upgrades.)
-  const CURVE = { early: 1.045, cap: 16, late: 1.004, wave: 1.13, boss: 0.4 }; // exposed for tuning
+  const CURVE = { early: 1.045, cap: 16, late: 1.015, wave: 1.13, boss: 0.4 }; // exposed for tuning
   const stageK = (g) => Math.pow(CURVE.early, Math.min(g, CURVE.cap) - 1) * Math.pow(CURVE.late, Math.max(0, g - CURVE.cap));
   const growth = (g, wave) => Math.pow(CURVE.wave, wave - 1) * stageK(g);
   // a stage's plan (js/story.js); without one, the old 10-wave layout with a rotating boss
@@ -175,7 +175,7 @@
       // a boss grows with stageK ** CURVE.boss: its tricks (and the cruel ones from chapter 4) already make it the stage's
       // wall, so it climbs slower than the waves before it
       const sg = e.kind === 'normal' ? growth(stage, wave) : e.kind === 'boss' ? Math.pow(CURVE.wave, 3) * Math.pow(stageK(stage), CURVE.boss) : growth(stage, 4);
-      const rk = ROLE_K[role], g = sg * (s.captain ? 1.6 : 1); // a captain: +60%
+      const rk = ROLE_K[role], g = sg * (s.captain ? 1.6 : 1) * (plan.ngK || 1); // a captain: +60%; new game plus: ngK
       const s1 = e.s1 || { range: 1, grid: [0, 0, 0, 0, 1, 0, 0, 0, 0] };
       const def = {
         id: s.rig, name: e.name, cls: ['light', 'heavy', 'air'][e.type] || 'light', role, tier: 0,
