@@ -132,7 +132,7 @@
     $('lobbyBody').innerHTML = h;
     // the chapter column scrolls on its own (8 cards do not fit the 720 design height): keep the open chapter in view
     const cl = $('lobbyBody').querySelector('.chList'), on = cl && cl.querySelector('.chCard.on');
-    if (on) { const k = window.STAGE_K || 1; cl.scrollTop += (on.getBoundingClientRect().top - cl.getBoundingClientRect().top) / k - (cl.clientHeight - on.offsetHeight) / 2; }
+    if (on) cl.scrollTop += window.toStageRect(on.getBoundingClientRect()).top - window.toStageRect(cl.getBoundingClientRect()).top - (cl.clientHeight - on.offsetHeight) / 2;
   }
 
   // ---------- members: grid + detail ----------
@@ -532,14 +532,15 @@
       const g = document.createElement('div');
       g.className = 'ghost' + (drag.u ? '' : ' item');
       g.innerHTML = drag.u ? chipHtml(drag.u) : itemChip(st.items[drag.item], drag.item);
-      document.body.appendChild(g);
+      $('stage').appendChild(g); // design pixels: turns with the stage on a portrait screen
       drag.ghost = g;
       if (drag.u) { document.body.classList.add('dragging'); $('sellZone').textContent = `판매 ●${st.cost(drag.u.id) * st.RULES.starCost[drag.u.star]}`; }
       B.hideInfo();
     }
     if (!drag.moved) return;
-    drag.ghost.style.left = e.clientX + 'px';
-    drag.ghost.style.top = e.clientY + 'px';
+    const gp = window.toStage(e.clientX, e.clientY);
+    drag.ghost.style.left = gp.x + 'px';
+    drag.ghost.style.top = gp.y + 'px';
     document.querySelectorAll('.hot').forEach((x) => x.classList.remove('hot'));
     const tgt = document.elementsFromPoint(e.clientX, e.clientY).map((el) => el.closest && (el.closest('[data-bench]') || el.closest('.zone') || el.closest('#sellZone'))).find(Boolean);
     if (tgt) tgt.classList.add('hot');

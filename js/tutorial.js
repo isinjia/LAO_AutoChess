@@ -64,9 +64,9 @@
     let r = rectOf(step.target);
     const spot = document.querySelector('#tut .tutSpot'), card = document.querySelector('#tut .tutCard');
     // screen rectangles -> stage (design) pixels: the stage is scaled to the screen
-    const sr = el('stage').getBoundingClientRect(), k = window.STAGE_K || 1;
-    const stage = { left: 0, top: 0, width: sr.width / k, height: sr.height / k };
-    if (r) r = { left: (r.left - sr.left) / k, top: (r.top - sr.top) / k, width: r.width / k, height: r.height / k };
+    // (window.toStageRect also undoes the quarter turn of a portrait screen)
+    const st = el('stage'), stage = { left: 0, top: 0, width: st.offsetWidth, height: st.offsetHeight };
+    if (r) r = window.toStageRect({ left: r.left, top: r.top, right: r.left + r.width, bottom: r.top + r.height });
     if (r) {
       const pad = 6;
       Object.assign(spot.style, { display: 'block', left: r.left - pad + 'px', top: r.top - pad + 'px', width: r.width + pad * 2 + 'px', height: r.height + pad * 2 + 'px' });

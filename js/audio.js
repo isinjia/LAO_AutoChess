@@ -54,7 +54,7 @@
       el.loop = true;
       el.volume = 0;
       bgmEl = el;
-      el.play().catch(() => {});
+      if (!away) el.play().catch(() => {}); // away: starts on focus (setAway)
       clearInterval(fadeTimer);
       let t = 0;
       fadeTimer = setInterval(() => { // 0.8 s cross-fade
@@ -66,7 +66,25 @@
     });
   }
   let ducked = false;
-  function vol(kind) { return settings.mute ? 0 : settings[kind] * (ducked && kind !== 'voice' ? DUCK : 1); }
+  // the page lost focus (another tab or app, the window behind another one, a phone's home screen): silent until it
+  // comes back. BGM pauses and resumes where it was; effects and voices are dropped, not queued
+  let away = !document.hasFocus() && document.visibilityState !== 'visible';
+  function vol(kind) { return settings.mute || away ? 0 : settings[kind] * (ducked && kind !== 'voice' ? DUCK : 1); }
+  function setAway(on) {
+    if (on === away) return;
+    away = on;
+    if (on) {
+      if (bgmEl) bgmEl.pause();
+      if (voiceEl) { voiceEl.pause(); voiceEl.src = ''; voiceEl = null; ducked = false; }
+    } else if (bgmEl && unlocked) {
+      clearInterval(fadeTimer);
+      bgmEl.volume = vol('bgm');
+      bgmEl.play().catch(() => {});
+    }
+  }
+  window.addEventListener('blur', () => setAway(true));
+  window.addEventListener('focus', () => setAway(false));
+  document.addEventListener('visibilitychange', () => setAway(document.visibilityState !== 'visible' || !document.hasFocus()));
   function duck(on) {
     ducked = on;
     if (bgmEl) bgmEl.volume = vol('bgm');
@@ -84,7 +102,7 @@
   const lastPlay = {};
   let live = 0;
   function sfx(name, k = 1) {
-    if (!name || settings.mute || !settings.sfx) return;
+    if (!name || settings.mute || away || !settings.sfx) return;
     const now = performance.now() / 1000;
     if (now - (lastPlay[name] || 0) < MIN_GAP || live >= MAX_LIVE) return;
     lastPlay[name] = now;
@@ -112,7 +130,7 @@
   let voiceEl = null, voiceUntil = 0;
   const unitLast = {};
   function voice(id, line, prio) {
-    if (settings.mute || !settings.voice) return false;
+    if (settings.mute || away || !settings.voice) return false;
     const lines = (window.LAO_VOICES || {})[id] || [];
     if (!lines.includes(line)) {
       const alt = { SpSkill: 'BattleFocus', BattleFocus: 'SpSkill', SortiePick: 'Join', StageStart: 'SortiePick' }[line];
@@ -145,5 +163,5 @@
     if (voiceEl) voiceEl.volume = vol('voice');
   }
 
-  window.AUDIO = { bgm, sfx, attack, voice, set, get settings() { return settings; }, ATTACK };
+  window.AUDIO = { bgm, sfx, attack, voice, set, get settings() { return settings; }, get away() { return away; }, ATTACK };
 })();

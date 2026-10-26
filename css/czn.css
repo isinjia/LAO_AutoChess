@@ -11,13 +11,8 @@ body.run-mode.lobby { --panel-h: 0px; }
 :root { --glass: rgba(12, 14, 19, 0.72); --glass2: rgba(20, 23, 30, 0.86); --hair: rgba(255, 255, 255, 0.14); --amber: #ffc21a; }
 .en, small.en { font-family: 'Exo2', sans-serif; font-style: italic; font-weight: 700; letter-spacing: 1.5px; }
 
-/* portrait: ask to rotate */
+/* portrait: the game turns a quarter (js/battle.js fitStage), no "please rotate" wall */
 #rotate { display: none; }
-@media (orientation: portrait) {
-  #rotate { position: fixed; inset: 0; z-index: 100; display: flex; align-items: center; justify-content: center; gap: 6px; background: #0d0f13; color: #f2f2f2; font-family: 'Godo', sans-serif; font-size: 18px; }
-  #rotate b { color: var(--gold); }
-  #stage { display: none; }
-}
 svg { fill: none; stroke: currentColor; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
 
 /* =====================================================================================

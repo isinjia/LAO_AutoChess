@@ -76,16 +76,38 @@
   }
 
   // mobile-style fixed design resolution: the whole game is laid out at 1280x720 and scaled to the screen
-  // (letterboxed), so every UI element keeps its place on any landscape device
+  // (letterboxed), so every UI element keeps its place on any landscape device. A portrait screen gets the same
+  // landscape game turned a quarter clockwise (no "please rotate" wall): window.toStage / toStageRect map screen
+  // coordinates (pointer events, getBoundingClientRect) back to design pixels in either case.
   const DESIGN_W = 1280, DESIGN_H = 720;
-  let stageK = 1;
+  let stageK = 1, stageRot = false, stageTX = 0, stageTY = 0;
   function fitStage() {
-    const st = $('stage');
-    stageK = Math.min(window.innerWidth / DESIGN_W, window.innerHeight / DESIGN_H);
+    const st = $('stage'), vw = window.innerWidth, vh = window.innerHeight;
+    stageRot = vh > vw;
+    const W = stageRot ? vh : vw, H = stageRot ? vw : vh; // the screen as the landscape game sees it
+    stageK = Math.min(W / DESIGN_W, H / DESIGN_H);
     st.style.width = DESIGN_W + 'px'; st.style.height = DESIGN_H + 'px';
-    st.style.transform = `translate(${(window.innerWidth - DESIGN_W * stageK) / 2}px, ${(window.innerHeight - DESIGN_H * stageK) / 2}px) scale(${stageK})`;
+    if (stageRot) { // design (x, y) -> screen (tx - k*y, ty + k*x)
+      stageTX = (vw - DESIGN_H * stageK) / 2 + DESIGN_H * stageK; stageTY = (vh - DESIGN_W * stageK) / 2;
+      st.style.transform = `translate(${stageTX}px, ${stageTY}px) rotate(90deg) scale(${stageK})`;
+    } else {
+      stageTX = (vw - DESIGN_W * stageK) / 2; stageTY = (vh - DESIGN_H * stageK) / 2;
+      st.style.transform = `translate(${stageTX}px, ${stageTY}px) scale(${stageK})`;
+    }
+    document.body.classList.toggle('rotated', stageRot);
     window.STAGE_K = stageK;
+    window.STAGE_ROT = stageRot;
   }
+  // screen pixels -> design pixels of #stage
+  window.toStage = (x, y) => {
+    const X = x - stageTX, Y = y - stageTY;
+    return stageRot ? { x: Y / stageK, y: -X / stageK } : { x: X / stageK, y: Y / stageK };
+  };
+  window.toStageRect = (r) => {
+    const a = window.toStage(r.left, r.top), b = window.toStage(r.right, r.bottom);
+    const left = Math.min(a.x, b.x), top = Math.min(a.y, b.y), right = Math.max(a.x, b.x), bottom = Math.max(a.y, b.y);
+    return { left, top, right, bottom, width: right - left, height: bottom - top };
+  };
   function resize() {
     fitStage();
     const field = $('field');
@@ -193,7 +215,7 @@
     return t;
   }
   function showTip(t) {
-    if (!tipEl) { tipEl = document.createElement('div'); tipEl.className = 'htagTip'; document.body.appendChild(tipEl); }
+    if (!tipEl) { tipEl = document.createElement('div'); tipEl.className = 'htagTip'; $('stage').appendChild(tipEl); } // design pixels
     tipEl.textContent = t.dataset.tip;
     tipEl.hidden = false;
     tipOwner = t;
@@ -202,7 +224,7 @@
   function placeTip() {
     if (!tipOwner) return;
     if (!tipOwner.isConnected || tipOwner.closest('.dead') || document.body.classList.contains('noHtag')) { hideTip(); return; }
-    const r = tipOwner.getBoundingClientRect();
+    const r = window.toStageRect(tipOwner.getBoundingClientRect());
     tipEl.style.left = (r.left + r.width / 2) + 'px';
     tipEl.style.top = r.top + 'px';
   }
@@ -1004,12 +1026,11 @@
     tip.innerHTML = `<h4>${x.name} <span class="lv">${x.kind === 'class' ? '분류' : '부대'} · ${x.count}명</span></h4>` +
       x.steps.map((st, j) => `<div class="lv${j === x.level - 1 ? ' cur' : ''}">(${st}) ${x.desc[j]}</div>`).join('') +
       `<div class="mem">${names}</div>` + (x.kind === 'class' ? '' : '<div class="lv">서로 다른 대원 수로 셉니다</div>');
-    const r = row.getBoundingClientRect();
+    const r = window.toStageRect(row.getBoundingClientRect()); // design pixels
     tip.hidden = false;
-    const sr = $('stage').getBoundingClientRect(), k = stageK; // screen -> stage (design) pixels
-    const left = +row.dataset.side === 0 ? (r.right - sr.left) / k + 8 : (r.left - sr.left) / k - 8 - tip.offsetWidth;
+    const left = +row.dataset.side === 0 ? r.right + 8 : r.left - 8 - tip.offsetWidth;
     tip.style.left = Math.max(4, Math.min(DESIGN_W - tip.offsetWidth - 4, left)) + 'px';
-    tip.style.top = Math.max(4, Math.min(DESIGN_H - tip.offsetHeight - 4, (r.top - sr.top) / k)) + 'px';
+    tip.style.top = Math.max(4, Math.min(DESIGN_H - tip.offsetHeight - 4, r.top)) + 'px';
   }
   ['synL', 'synR'].forEach((id) => {
     const el = $(id);
