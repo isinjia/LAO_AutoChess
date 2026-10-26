@@ -831,7 +831,11 @@
       if (u.s.enemy && u.dieT === 999) { u.fade = Math.max(0, u.fade - dt * 3); if (u.c) u.c.setOpacity(u.fade); if (u.fade <= 0) u.holder.visible = false; continue; } // breached
       // melee trip to the target and back, on the clip's own movement frames
       let x = u.home.x, y = u.home.y;
-      if (u.dash) {
+      if (u.drag) { // prep: picked up by the player, eased towards the pointer
+        const d = u.drag, f = Math.min(1, dt * 18);
+        d.x += (d.tx - d.x) * f; d.y += (d.ty - d.y) * f;
+        x = d.x; y = d.y;
+      } else if (u.dash) {
         const d = u.dash, m = d.mv;
         d.t += dt;
         const ease = (p) => p * p * (3 - 2 * p);
@@ -921,6 +925,7 @@
   }
   // one world step of dt game seconds (also BATTLE.tick: tools step the field without the browser's frame clock)
   function stepWorld(dt) {
+    dragStep(dt);
     if (running) {
       acc += dt;
       while (acc >= DT && running) {
@@ -1195,6 +1200,87 @@
     });
   }
 
+  // ---------- drag (prep): the picked-up SD walks after the pointer ----------
+  // a unit on the formation is lifted off its cell; a bench card gets a temporary SD of the same rig and star.
+  // Positions come in stage (design) pixels: #field covers the stage, so they are field pixels too.
+  let dragSD = null; // { u } or { temp: { holder, flip, c, k, x, y, tx, ty } }
+  const DRAG_ORDER = 5000; // over every unit while carried
+  function fieldToWorld(px, py) {
+    return { x: view.cx - view.halfW + px / view.W * 2 * view.halfW, y: view.halfH - py / view.H * 2 * view.halfH };
+  }
+  function dragBegin(o) {
+    dragEnd();
+    if (o.col != null) {
+      const u = units.find((x) => x.side === 0 && !x.s.enemy && x.col === o.col && x.row === o.row);
+      if (!u) return;
+      u.drag = { x: u.holder.position.x, y: u.holder.position.y, tx: u.holder.position.x, ty: u.holder.position.y, show: true };
+      u.dash = null;
+      if (u.c) { u.c.speed = 1; u.c.play(u.c.has('move') ? 'move' : 'idle', null, true); u.c.setOrder(DRAG_ORDER); }
+      u.bar.style.visibility = 'hidden';
+      dragSD = { u };
+      return;
+    }
+    const star = o.star || 1, rig = skinOf(o.id, star), k = ROW_SCALE[1] * (1 + 0.07 * (star - 1));
+    const t = { holder: new THREE.Group(), flip: new THREE.Group(), c: null, k, x: 0, y: 0, tx: 0, ty: 0, placed: false, show: false };
+    const shadow = ellipse(0x000000, 0.42, 0.85 * k, 0.24 * k);
+    shadow.renderOrder = DRAG_ORDER - 5;
+    t.shadow = shadow;
+    t.flip.scale.set(k, k, 1);
+    t.holder.add(shadow, t.flip);
+    t.holder.visible = false;
+    scene.add(t.holder);
+    dragSD = { temp: t };
+    const attach = () => {
+      if (!dragSD || dragSD.temp !== t) return; // dropped before the rig was ready
+      const c = SD.create(rig) || SD.create(o.id);
+      if (!c) return;
+      c.root.scale.set(SD_K, SD_K, 1);
+      c.root.position.set(-c.W[9] * SD_K, -c.W[10] * SD_K, 0);
+      c.setTint(0.92, 0.92, 0.92);
+      c.setOrder(DRAG_ORDER);
+      t.flip.add(c.root);
+      c.play(c.has('move') ? 'move' : 'idle', null, true);
+      t.c = c;
+    };
+    Promise.resolve(SD.prepare(rig)).then(attach, attach);
+  }
+  // px, py: the pointer in stage pixels; show: false while it is over a panel (the shop / bench draws its own chip)
+  function dragMove(px, py, show) {
+    if (!dragSD) return;
+    const w = fieldToWorld(px, py);
+    const d = dragSD.u ? dragSD.u.drag : dragSD.temp;
+    d.tx = w.x; d.ty = w.y - 0.1; // feet just under the pointer: the body stays visible above a finger
+    if (dragSD.temp && !d.placed) { d.x = d.tx; d.y = d.ty; d.placed = true; }
+    d.show = show;
+  }
+  function dragStep(dt) {
+    if (!dragSD) return;
+    const u = dragSD.u, t = dragSD.temp, d = u ? u.drag : t, flip = u ? u.flip : t.flip, k = u ? u.k : t.k;
+    if (t) { const f = Math.min(1, dt * 18); t.x += (t.tx - t.x) * f; t.y += (t.ty - t.y) * f; t.holder.position.set(t.x, t.y, 0); t.holder.visible = t.placed && d.show; if (t.c) t.c.update(dt); }
+    if (u) u.holder.visible = d.show;
+    // face where it is being carried (allies face right at rest)
+    const vx = d.tx - d.x;
+    if (Math.abs(vx) > 0.04) flip.scale.x = (vx < 0 ? -1 : 1) * k;
+  }
+  function dragEnd() {
+    if (!dragSD) return;
+    const { u, temp } = dragSD;
+    dragSD = null;
+    if (u) {
+      u.drag = null;
+      u.holder.visible = true;
+      u.flip.scale.x = u.k;
+      u.bar.style.visibility = '';
+      if (u.c) { u.c.play('idle', null, true); u.c.setOrder(u.order); }
+      placeHome(u);
+    }
+    if (temp) {
+      if (temp.c) temp.c.dispose();
+      scene.remove(temp.holder);
+      temp.shadow.geometry.dispose(); temp.shadow.material.dispose();
+    }
+  }
+
   // screen rectangle of a formation cell: the tile plus the body standing on it (invisible drop zones for the
   // shop's drag and drop; the tile itself is drawn by buildCells)
   function cellRect(side, col, row) {
@@ -1211,7 +1297,7 @@
   else document.body.classList.add('run-mode');
   requestAnimationFrame(frame);
   Object.assign(api, {
-    MODE, start, cellRect, setCells, skinOf, roleIcon, setHeadIcons,
+    MODE, start, cellRect, setCells, skinOf, roleIcon, setHeadIcons, dragBegin, dragMove, dragEnd,
     tick(sec, fps = 30) { for (let i = 0; i < Math.round(sec * fps); i++) stepWorld(1 / fps); },
     cellStates: () => ({ fade: cellFade, states: Object.fromEntries(cells.map((c) => [c.col + ',' + c.row, c.state])) }), // debugging
     fxStats: () => ({ live: ofx.length, loaded: window.FXB ? FXB.loaded().length : 0, attached: units.filter((u) => u.fxa && u.fxa.attached).length, timelines: units.filter((u) => u.fxa).length }), // debugging

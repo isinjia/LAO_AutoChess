@@ -534,13 +534,23 @@
       g.innerHTML = drag.u ? chipHtml(drag.u) : itemChip(st.items[drag.item], drag.item);
       $('stage').appendChild(g); // design pixels: turns with the stage on a portrait screen
       drag.ghost = g;
-      if (drag.u) { document.body.classList.add('dragging'); $('sellZone').textContent = `판매 ●${st.cost(drag.u.id) * st.RULES.starCost[drag.u.star]}`; }
+      if (drag.u) {
+        document.body.classList.add('dragging'); $('sellZone').textContent = `판매 ●${st.cost(drag.u.id) * st.RULES.starCost[drag.u.star]}`;
+        // the SD itself follows the pointer over the field; the chip only shows over the panels, which hide the field
+        B.dragBegin(drag.from.at === 'board' ? { col: drag.from.col, row: drag.from.row } : { id: drag.u.id, star: drag.u.star });
+      }
       B.hideInfo();
     }
     if (!drag.moved) return;
     const gp = window.toStage(e.clientX, e.clientY);
     drag.ghost.style.left = gp.x + 'px';
     drag.ghost.style.top = gp.y + 'px';
+    if (drag.u) {
+      const top = document.elementFromPoint(e.clientX, e.clientY);
+      const overField = !!(top && top.closest('#field')) && !(top && top.closest('#sellZone'));
+      drag.ghost.style.visibility = overField ? 'hidden' : '';
+      B.dragMove(gp.x, gp.y, overField);
+    }
     document.querySelectorAll('.hot').forEach((x) => x.classList.remove('hot'));
     const tgt = document.elementsFromPoint(e.clientX, e.clientY).map((el) => el.closest && (el.closest('[data-bench]') || el.closest('.zone') || el.closest('#sellZone'))).find(Boolean);
     if (tgt) tgt.classList.add('hot');
@@ -554,6 +564,7 @@
     document.querySelectorAll('.hot').forEach((x) => x.classList.remove('hot'));
     document.body.classList.remove('dragging');
     if (d.ghost) d.ghost.remove();
+    if (d.u && d.moved) B.dragEnd(); // a carried SD goes back to its cell (a move rebuilds the field right after)
     if (d.moved) renderZones(); // the tiles back to plain empty / filled
     if (d.item != null) { // gear: drop on a unit to equip it, a click shows what it does
       const it = st.items[d.item];
@@ -732,7 +743,7 @@
   document.addEventListener('pointerdown', onDown);
   document.addEventListener('pointermove', onMove);
   document.addEventListener('pointerup', onUp);
-  document.addEventListener('pointercancel', () => { if (drag && drag.ghost) drag.ghost.remove(); drag = null; document.body.classList.remove('dragging'); if (st && phase === 'prep') renderZones(); });
+  document.addEventListener('pointercancel', () => { if (drag && drag.ghost) drag.ghost.remove(); B.dragEnd(); drag = null; document.body.classList.remove('dragging'); if (st && phase === 'prep') renderZones(); });
   $('btnReroll').onclick = () => { if (phase === 'prep' && st.reroll()) { A.sfx('coin', 0.8); renderShop(); renderHud(); } };
   $('btnXp').onclick = () => {
     if (phase !== 'prep') return;
