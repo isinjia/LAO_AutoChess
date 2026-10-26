@@ -1,0 +1,14 @@
+<!doctype html><meta charset="utf-8"><link rel="stylesheet" href="../css/spine-player.css">
+<body style="margin:0;background:#223;display:flex;flex-wrap:wrap">
+<script src="../js/vendor/spine-player.min.js"></script>
+<script>
+// dev check for assets/l2d: renders each lobby model with the lobby skin, prints the setup-pose bounds (window.BOUNDS)
+window.BOUNDS={};
+const ids=(location.hash.slice(1)||'harpy,banshee,khan').split(',');
+for(const id of ids){const d=document.createElement('div');d.style.cssText='width:380px;height:420px;outline:1px solid #555';document.body.appendChild(d);
+new spine.SpinePlayer(d,{skeleton:`../assets/l2d/${id}/model.json`,atlas:`../assets/l2d/${id}/model.atlas`,premultipliedAlpha:true,showControls:false,alpha:true,backgroundColor:'#00000000',showLoading:false,
+ viewport:{x:-2000,y:-2000,width:4000,height:6000},
+ success:p=>{const sd=p.skeleton.data,sk=new spine.Skin('lobby');for(const x of sd.skins){const n=x.name;if(n==='skin_base'||n==='default'||n.startsWith('decorations/')||/Censorship/i.test(n)||/face\/.*_Idle$/.test(n))sk.addSkin(x)}
+ p.skeleton.setSkin(sk);p.skeleton.setSlotsToSetupPose();p.animationState.setAnimation(0,sd.animations.find(a=>/^idle$/i.test(a.name)).name,true);p.skeleton.updateWorldTransform(spine.Physics.update);
+ const o=new spine.Vector2(),z=new spine.Vector2();p.skeleton.getBounds(o,z,[]);BOUNDS[id]=[o.x,o.y,z.x,z.y].map(Math.round)},error:(p,e)=>{d.textContent=id+' '+e}});}
+</script>

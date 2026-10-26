@@ -1,0 +1,305 @@
+EW_Report_map_deco_01                     290x250  
+EW_Report_map_deco_02                      81x256  border (78, 0, 2, 0)
+EW_Report_map_deco_03                     266x230  
+EW_Report_map_deco_04                      28x24   border (1, 0, 22, 0)
+Icon_mission                               82x78   
+RL_Report_map_deco_03                     243x211  
+SkillIconCircle_Move                       70x70   
+SkillIconCircle_None                       70x71   
+SkillIconCircle_Wait                       70x70   
+UI_Battle_ActionBubble                     79x110  border (15, 32, 8, 20)
+UI_Battle_ActionQmark                      21x29   
+UI_Battle_Atktype_electric                 40x35   
+UI_Battle_Atktype_fire                     40x35   
+UI_Battle_Atktype_ice                      40x35   
+UI_Battle_Atktype_normal                   40x35   
+UI_Battle_CHA_deco                        117x231  
+UI_Battle_CHA_deco_outline                140x140  
+UI_Battle_Causion_frame                    87x60   border (43, 0, 2, 0)
+UI_Battle_Caution_frame_1                 137x215  
+UI_Battle_Caution_frame_2                 130x222  
+UI_Battle_Caution_frame_3                 249x29   
+UI_Battle_Caution_frame_text_2             25x105  
+UI_Battle_Caution_text_1                  136x28   
+UI_Battle_Enemyinfo_Frame_1               131x162  
+UI_Battle_Enemyinfo_Frame_2               125x144  
+UI_Battle_Enemyinfo_black                 206x366  border (202, 0, 0, 0)
+UI_Battle_Frame_Squad_Acc_1               176x31   border (2, 0, 58, 0)
+UI_Battle_Frame_Squad_Acc_2               663x31   border (14, 0, 528, 0)
+UI_Battle_Frame_Squad_Acc_3               358x253  border (0, 0, 348, 0)
+UI_Battle_Frame_Squad_Friend_1             75x109  
+UI_Battle_Frame_Squad_Friend_2             17x212  
+UI_Battle_Frame_Squad_Friend_3            157x217  
+UI_Battle_Frame_opa35                      11x64   border (3, 3, 3, 3)
+UI_Battle_Frame_report                     44x276  border (26, 187, 17, 38)
+UI_Battle_Frame_text                       71x10   border (1, 0, 3, 0)
+UI_Battle_Frame_white                      10x42   border (3, 3, 3, 3)
+UI_Battle_Icon_cross                       32x32   
+UI_Battle_Icon_cross_2                     36x36   
+UI_Battle_Icon_tri                         14x13   
+UI_Battle_Info_Btn_SkillQ                  36x36   
+UI_Battle_Info_Btn_tab_1                  104x87   
+UI_Battle_Info_Btn_tab_2                  104x87   
+UI_Battle_Info_Btn_tab_3                    9x38   
+UI_Battle_Info_Frame_Acc                  175x59   border (5, 53, 160, 3)
+UI_Battle_Info_Frame_Round                478x185  border (236, 32, 236, 32)
+UI_Battle_Info_Frame_Round_w               56x59   border (40, 0, 10, 0)
+UI_Battle_Info_Frame_Skill                 59x173  border (36, 40, 7, 10)
+UI_Battle_Info_Frame_Skill_bline            6x52   
+UI_Battle_Info_Frame_Skill_buttom          36x48   border (31, 0, 2, 0)
+UI_Battle_Info_Frame_Skill_w               91x87   border (30, 32, 58, 1)
+UI_Battle_Info_Frame_Skill_yline            6x52   
+UI_Battle_Info_Frame_Status                67x594  border (28, 250, 28, 250)
+UI_Battle_Info_Frame_Status_Black         152x42   border (5, 5, 5, 5)
+UI_Battle_Info_Frame_Status_in            246x80   border (220, 60, 20, 5)
+UI_Battle_Info_Frame_Status_sframe         13x112  border (3, 3, 3, 3)
+UI_Battle_Info_Frame_log                  246x258  border (222, 70, 12, 15)
+UI_Battle_Info_btn_Bbox                    12x80   border (3, 3, 3, 3)
+UI_Battle_Info_btn_Gbox                    12x80   border (3, 3, 3, 3)
+UI_Battle_Info_btn_Ybox                    12x80   border (3, 3, 3, 3)
+UI_Battle_Main_Acc_yellowline              98x7    border (2, 0, 0, 0)
+UI_Battle_Main_Control_Btn_SquadChange     61x60   
+UI_Battle_Main_Control_Btn_Strategy       152x78   
+UI_Battle_Main_Control_Btn_Strategy2      149x55   
+UI_Battle_Main_Control_Btn_Withrow        227x92   
+UI_Battle_Main_Control_Btn_deco_on         33x47   
+UI_Battle_Main_Control_Circle             119x119  
+UI_Battle_Main_Control_Frame_Common        37x31   border (15, 12, 15, 12)
+UI_Battle_Main_Control_Frame_Round        154x154  
+UI_Battle_Main_Control_ICN_Squad01         49x56   
+UI_Battle_Main_Control_ICN_Squad02         49x56   
+UI_Battle_Main_Control_ICN_Squad03         49x56   
+UI_Battle_Main_Control_ICN_SquadEmpty      49x56   
+UI_Battle_Main_Field_Acc                   52x48   
+UI_Battle_Main_Field_Arrow                 48x25   
+UI_Battle_Main_Field_Frame                 31x47   border (27, 0, 3, 0)
+UI_Battle_Main_Field_Frame_2               40x80   border (29, 0, 10, 0)
+UI_Battle_Main_Field_Frame_ChosenHP02      14x13   
+UI_Battle_Main_Field_Frame_EnemyHP02       14x13   
+UI_Battle_Main_Field_Frame_done_bottom    184x116  
+UI_Battle_Main_Field_Frame_done_fill2_1   140x68   border (47, 0, 50, 0)
+UI_Battle_Main_Field_Frame_done_out       212x187  
+UI_Battle_Main_Field_Frame_info           167x45   border (40, 0, 50, 0)
+UI_Battle_Main_Field_Frame_mini           108x15   border (18, 0, 2, 0)
+UI_Battle_Main_Field_Frame_selectIcon     106x107  
+UI_Battle_Main_Field_Frame_selectIcon_g    61x107  
+UI_Battle_Main_Field_Frame_selectIcon_outline  110x111  
+UI_Battle_Main_Field_Frame_selectIcon_outline_g   71x115  
+UI_Battle_Main_Field_Frame_selectIcon_outline_r   69x114  
+UI_Battle_Main_Field_Frame_selectIcon_outline_w   71x115  
+UI_Battle_Main_Field_Frame_selectIcon_r    61x107  
+UI_Battle_Main_Field_Frame_selectIcon_w    61x107  
+UI_Battle_Main_Field_Frame_selectText_g    55x39   
+UI_Battle_Main_Field_Frame_selectText_r    55x39   
+UI_Battle_Main_Field_Frame_selectText_w    55x39   
+UI_Battle_Main_Field_Frame_select_onlyText_R   55x15   
+UI_Battle_Main_Field_Frame_select_onlyText_g   55x15   
+UI_Battle_Main_Field_Icon_defence          24x29   
+UI_Battle_Main_Field_Pbar                   3x3    border (1, 1, 1, 1)
+UI_Battle_Main_Field_Pbar_ChosenHP         25x3    border (2, 0, 2, 0)
+UI_Battle_Main_Field_Pbar_EnemyHP          25x3    
+UI_Battle_Main_Grid_01                    261x148  
+UI_Battle_Main_Grid_02                    274x148  
+UI_Battle_Main_Grid_03                    286x148  
+UI_Battle_Main_Grid_04                    278x165  
+UI_Battle_Main_Grid_05                    291x165  
+UI_Battle_Main_Grid_06                    304x165  
+UI_Battle_Main_Grid_07                    296x187  
+UI_Battle_Main_Grid_08                    312x187  
+UI_Battle_Main_Grid_09                    327x187  
+UI_Battle_Main_Grid_ATK_Confirm           184x103  border (89, 0, 48, 0)
+UI_Battle_Main_Grid_ATK_Confirm_Btn        87x76   border (36, 36, 36, 36)
+UI_Battle_Main_Skill_Btn_SkillParts02     113x114  
+UI_Battle_Main_Skill_Btn_SkillParts03     108x107  
+UI_Battle_Main_Skill_ICN_TestSkill01L      49x49   
+UI_Battle_Main_Skill_ICN_TestSkill02L      49x49   
+UI_Battle_Main_Skill_outline               10x100  border (5, 18, 5, 41)
+UI_Battle_Main_Skill_outline_W             10x100  border (3, 8, 3, 14)
+UI_Battle_Main_TbarIcon_outline            23x22   border (10, 10, 10, 10)
+UI_Battle_Main_TbarIcon_outline_2          24x24   
+UI_Battle_Main_Turnbar_Frame_BottomLine    57x20   border (2, 0, 54, 0)
+UI_Battle_Main_Turnbar_Frame_CharComplete   90x15   border (10, 0, 10, 0)
+UI_Battle_Main_Turnbar_HUD_Arrow           63x28   border (5, 0, 45, 0)
+UI_Battle_Main_Turnbar_HUD_RoundBar        10x51   
+UI_Battle_Main_Turnbar_ICN_SkillEmpty      26x26   
+UI_Battle_Main_Turnbar_ICN_Testskill01S    25x26   
+UI_Battle_Main_missionclear_acc           449x335  
+UI_Battle_Main_missionclear_background_1  214x250  border (103, 0, 100, 91)
+UI_Battle_Main_missionclear_background_2  214x232  border (103, 91, 98, 0)
+UI_Battle_Main_missionclear_box            43x40   border (17, 17, 17, 17)
+UI_Battle_Main_missionclear_box_2          57x54   border (26, 0, 28, 0)
+UI_Battle_Main_missionclear_box_deco       71x73   
+UI_Battle_Main_missionclear_box_deco2      71x73   
+UI_Battle_Main_missionclear_label_2       295x24   
+UI_Battle_Main_missionclear_star_fill_2   133x127  
+UI_Battle_Main_missionclear_star_fill_3   133x127  
+UI_Battle_Main_missionclear_star_fill_4   133x127  
+UI_Battle_Main_missionclear_star_frame_2  133x127  
+UI_Battle_Miss                            127x49   
+UI_Battle_Passive_panel_1                 715x139  border (109, 0, 13, 0)
+UI_Battle_Passive_panel_2                 715x139  border (13, 0, 112, 0)
+UI_Battle_Progress_Frame_mid               52x12   
+UI_Battle_Progress_Frame_slot              66x64   
+UI_Battle_Progress_Frame_start             16x18   
+UI_Battle_Progress_box                     52x50   border (2, 2, 2, 2)
+UI_Battle_Progress_check                   36x30   
+UI_Battle_Progress_icon_battle             30x6    
+UI_Battle_Progress_icon_clear              30x6    
+UI_Battle_Progress_squad                   42x38   
+UI_Battle_Range_w                          28x28   
+UI_Battle_Range_y                          28x28   border (15, 0, 0, 0)
+UI_Battle_Ring                            248x248  
+UI_Battle_SelectIcon_Btn_1                 77x88   
+UI_Battle_SelectIcon_Btn_2                 63x72   
+UI_Battle_SelectIcon_info                  31x35   
+UI_Battle_SelectIcon_move                  47x29   
+UI_Battle_SelectIcon_recovery              29x29   
+UI_Battle_Select_Acc_1                    284x137  
+UI_Battle_Select_Acc_2                    161x7    
+UI_Battle_TbarIcon_Select                  89x96   border (43, 47, 43, 47)
+UI_Battle_TbarIcon_Select_off             151x152  
+UI_Battle_TbarIcon_Select_on              218x207  
+UI_Battle_WGbox                            34x36   border (13, 13, 13, 13)
+UI_Battle_WGbox2                           34x36   border (13, 13, 13, 13)
+UI_Battle_WGbox_bgglow                    116x116  border (54, 54, 54, 54)
+UI_Battle_WGbox_deco                       40x40   
+UI_Battle_Warning_grid                     29x35   border (13, 0, 13, 0)
+UI_Battle_bar_fill                          8x8    border (3, 3, 3, 3)
+UI_Battle_bar_frame                        16x16   border (5, 5, 5, 5)
+UI_Battle_bar_frame2                       30x30   border (21, 19, 6, 5)
+UI_Battle_bar_frame_3                      16x16   
+UI_Battle_gauge_in_base                     4x10   border (1, 1, 1, 1)
+UI_Battle_gauge_outline_base                5x14   border (2, 2, 2, 2)
+UI_Battle_glow                             51x51   
+UI_Battle_main_Field_cursor_big            28x35   
+UI_Battle_main_Field_cursor_g              21x26   
+UI_Battle_main_Field_cursor_r              21x26   
+UI_Battle_main_Field_cursor_w              21x26   
+UI_Battle_popup                           152x81   border (19, 19, 19, 19)
+UI_Battle_popup_2                         166x70   border (45, 0, 47, 0)
+UI_Battle_popup_bar                        48x27   border (21, 0, 16, 0)
+UI_Battle_popup_teb                        50x75   border (15, 0, 33, 0)
+UI_Battle_progress_Frame_Arrow             26x23   
+UI_Battle_progress_Frame_line              41x15   border (5, 0, 13, 0)
+UI_Battle_progress_Icon_boss               22x28   
+UI_Battle_progress_Icon_mboss              16x28   
+UI_Battle_progress_Icon_private             8x14   
+UI_Battle_progress_control_bar            151x14   
+UI_Battle_round_addin_1                    78x109  
+UI_Battle_round_addin_2                   243x242  
+UI_Battle_round_arrow2                     37x39   
+UI_Battle_round_arrow_1                    37x39   
+UI_Battle_round_circle_1                  251x250  
+UI_Battle_round_circle_2                  302x302  
+UI_Battle_round_line_1                    111x197  
+UI_Battle_round_line_2                    111x196  
+UI_Battle_round_out                       175x80   
+UI_Battle_set_Btn_auto_arrow_off           31x32   
+UI_Battle_set_Btn_auto_arrow_on            31x32   
+UI_Battle_set_Btn_auto_outline_off         57x57   
+UI_Battle_set_Btn_auto_outline_on          57x57   
+UI_Battle_set_Btn_back                     19x35   
+UI_Battle_set_Btn_mission                  52x51   
+UI_Battle_set_Btn_option                   55x55   
+UI_Battle_set_Btn_repeat_arrow_off         35x26   
+UI_Battle_set_Btn_repeat_arrow_on          35x26   
+UI_Battle_set_Btn_speed                    62x49   
+UI_Battle_set_Btn_white                    24x24   border (7, 7, 7, 7)
+UI_Battle_set_Frame_back                  166x69   
+UI_Battle_skillBtn_Select                 165x186  border (74, 89, 78, 83)
+UI_Battle_skillBtn_Select2                174x166  border (79, 81, 84, 77)
+UI_Battle_speed_control_Btn_fill           12x10   border (3, 3, 3, 3)
+UI_Battle_speed_control_Btn_fill2          12x9    
+UI_Battle_speed_control_Btn_frame          20x18   border (7, 7, 7, 7)
+UI_Battle_speed_control_Btn_frame_2       121x17   
+UI_Battle_text_battlestart                571x111  
+UI_Battle_text_missionstart               626x111  
+UI_CombatReinforInven_CharaFrame_wht       68x145  border (37, 38, 28, 104)
+UI_CombatReinforMaterialInven_Main_BTN01   25x22   border (15, 2, 2, 15)
+UI_CombatReinfor_SquadFrame               194x21   border (87, 18, 2, 1)
+UI_Common_Main_Equipment_ChipSSS_Small    108x101  
+UI_Common_Main_Equipment_ItemSSS_Small    104x100  
+UI_Common_Main_Equipment_OSSSS_Small      110x98   
+UI_Common_Main_HUD_Btn_Close               77x85   
+UI_Common_bar_frame                        16x16   border (6, 6, 8, 6)
+UI_Dialog_Main_CharDialog_Frame_2         669x242  border (7, 113, 662, 114)
+UI_Dialog_Main_CharDialog_Frame_CharName_2  458x57   
+UI_Dialog_Main_CharDialog_Frame_CharName_3  112x33   
+UI_Dialog_Main_CharDialog_Frame_CharName_4  115x33   
+UI_Dialog_Main_CharDialog_Frame_CharName_4_on  104x33   
+UI_Dialog_Main_CharDialog_HUD_BTN_2        87x25   
+UI_Dialog_Main_CharDialog_acc_1           351x278  
+UI_Dialog_Main_CharDialog_acc_2           151x66   border (69, 0, 57, 0)
+UI_Dialog_Main_CharDialog_arrow            16x13   
+UI_Icon_Barrier                            85x88   
+UI_Icon_Broke                              68x84   
+UI_Icon_BrokenHeart                        92x69   
+UI_Icon_CHA_GearA_Big                     119x119  
+UI_Icon_CHA_GearB_Big                     119x119  
+UI_Icon_CHA_GearSS_Big                    186x161  
+UI_Icon_CHA_GearS_Big                     119x121  
+UI_Icon_CHA_ShieldA_Big                   107x121  
+UI_Icon_CHA_ShieldB_Big                   107x121  
+UI_Icon_CHA_ShieldSS_Big                  172x161  
+UI_Icon_CHA_ShieldS_Big                   107x121  
+UI_Icon_CHA_SwordA_Big                    109x109  
+UI_Icon_CHA_SwordB_Big                    109x109  
+UI_Icon_CHA_SwordSS_Big                   181x158  
+UI_Icon_CHA_SwordS_Big                    109x111  
+UI_Icon_Counter                            72x73   
+UI_Icon_DoubleAttack                       77x101  
+UI_Icon_FavorHeart                         80x70   
+UI_Icon_Item_ChipA_Small                   61x62   
+UI_Icon_Item_ChipB_Small                   61x62   
+UI_Icon_Item_ChipSS_Small                  89x84   
+UI_Icon_Item_ChipS_Small                   61x62   
+UI_Icon_Item_ItemA_Small                   59x67   
+UI_Icon_Item_ItemB_Small                   57x68   
+UI_Icon_Item_ItemSS_Small                  85x82   
+UI_Icon_Item_ItemS_Small                   57x68   
+UI_Icon_Item_OSA_Small                     67x66   
+UI_Icon_Item_OSB_Small                     67x66   
+UI_Icon_Item_OSSS_Small                    90x80   
+UI_Icon_Item_OSS_Small                     67x66   
+UI_Icon_Ressurrect                         94x85   
+UI_Icon_Shield                             78x87   
+UI_Icon_TogetherAttack                     78x81   
+UI_Icon_TogetherAttack02                   72x72   
+UI_Icon_Wait                               58x94   
+UI_Image_Assistattack                     112x35   
+UI_Image_Broke                             62x34   
+UI_Image_Counter                           57x34   
+UI_Image_Feelbad                          153x34   
+UI_Image_Feelgood                         152x35   
+UI_Image_Protect                           60x30   
+UI_Image_Shield                            88x35   
+UI_Image_Wait                              56x31   
+UI_Skillinfo_mainFrame                     40x40   border (20, 20, 20, 20)
+UI_Skillinfo_mainbg                        86x88   border (40, 40, 40, 40)
+UI_Skillinfo_titledottexture               48x30   
+UI_Skillinfo_titledottexture_circle        44x30   
+UI_Skillinfo_titleline                     26x6    border (2, 0, 2, 0)
+UI_SquadForm_Frame_evacuate                81x94   
+UI_SquadForm_Icon_evacuate                 44x32   
+UI_SquadForm_Main_Common_Btn_Select        58x61   border (40, 19, 15, 39)
+UI_SquadForm_skill_AP_box                 102x45   
+UI_SquadForm_skill_BTN                    145x225  
+UI_SquadForm_skill_info_box               184x283  border (150, 0, 8, 0)
+UI_SquadForm_skill_info_box2              184x283  
+UI_SquadForm_skill_info_box_2             145x59   border (56, 0, 61, 0)
+UI_SquadForm_skill_info_box_3             145x59   border (60, 0, 68, 0)
+UI_SquadForm_skill_info_box_4              92x56   
+UI_SquadInven_Main_Control_Btn_Common      39x29   border (17, 12, 17, 12)
+UI_WolrdMap_Chapter_Icon_Base_wht         100x60   
+UI_WolrdMap_SquadIconBG2                  119x142  
+UI_Worldmap_Main_arrow                     48x25   
+UI_Worldmap_Popup_SquadSelect_SquadBtn_E   27x26   border (12, 10, 12, 10)
+UI_Worldmap_Popup_SquadSelect_SquadBtn_E_cross   40x43   
+UI_battle_enemy_info_AimIcon               60x60   
+UI_battlelog_btn                           83x83   
+UI_battlelog_btn_2                         85x66   
+UI_btn_13                                  94x75   border (49, 0, 42, 0)
+arrow_T                                    25x33   border (1, 0, 21, 0)
+line                                        8x4    border (2, 0, 2, 0)
+line2                                      14x3    border (1, 1, 1, 2)
+304 sprites in E:/LAO/Google_QA/Assets/AssetBundleResource/Atlas\Battle.png

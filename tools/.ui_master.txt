@@ -1,0 +1,385 @@
+Background_Story_Title                    522x98   
+Bg_Attendance_pattern                     187x181  
+Bg_CharacterBookInfo_Deco                 711x267  border (50, 0, 400, 0)
+Bg_Dot                                      1x1    
+Bg_Dot_2                                    2x2    border (1, 1, 1, 1)
+Bg_Dot_3                                    8x8    border (3, 4, 4, 3)
+Bg_Exshop_PointLight                      140x140  border (30, 30, 30, 30)
+Bg_Filter                                 315x48   border (120, 20, 160, 2)
+Bg_Lock_Deco                               51x54   
+Bg_Mail_SelectDeco                         90x92   border (28, 28, 28, 28)
+Bg_Making_DisableGate01                   535x174  border (260, 60, 200, 110)
+Bg_Making_DisableGate02                   518x174  border (200, 60, 10, 110)
+Bg_Making_Gate01                          492x174  border (40, 60, 280, 110)
+Bg_Making_Gate02                          518x174  border (200, 60, 10, 110)
+Bg_Material_deco_01                         9x22   border (4, 4, 0, 4)
+Bg_Popup_Bg                                 4x886  border (1, 1, 1, 1)
+Bg_Popup_Deco                              16x98   
+Bg_Popup_TitleBg                          227x78   border (68, 0, 156, 0)
+Bg_Quest_Deco                             243x174  
+Bg_Quest_Deco2                            134x111  
+Bg_Quset_Deco3                            105x105  
+Bg_Recover_Select                          19x174  border (1, 0, 1, 0)
+Bg_Shop_Deco1                             105x105  
+Bg_Square_Small                            20x20   border (3, 3, 3, 3)
+Bg_Star_Active_P                           40x41   
+Bg_Star_Active_Y                           40x41   
+Bg_Star_Empty                              31x33   
+Bg_Temp_Deco                              210x73   
+Bg_Temp_Decov2                            188x61   
+Bg_TextBallon01                            84x84   border (20, 20, 20, 20)
+Bg_Title02                                525x144  
+Btn_Diamond                                96x87   border (48, 0, 48, 0)
+Btn_Icon_Close                             30x30   
+Btn_Lobby                                 128x128  
+Btn_fomation_c                            160x209  
+Btn_round_small                            12x12   border (6, 6, 6, 6)
+CostSlashbar                               44x53   
+Frame_diagonal_box                         14x28   border (3, 0, 9, 0)
+ICON_UI_BeconOFF                          240x230  
+ICON_UI_BeconON01                         240x230  
+ICON_UI_BeconON02                         240x230  
+Icon_Detail                                37x38   
+Icon_UI_AlertRing                          28x28   
+Icon_UI_Mechanic                          104x118  
+Icon_UI_Module                             59x65   
+Icon_UI_Module02                           78x60   
+Icon_UI_NaviExshop                        112x88   
+Icon_UI_NaviLodging                       104x72   
+Icon_UI_NaviResearch                       92x104  
+Icon_UI_NaviSquad                         104x96   
+Icon_UI_NaviWork                          116x112  
+Icon_UI_NaviWorld                         120x120  
+Icon_leader                                50x39   
+Icon_mission                               82x78   
+RedDot-copy                                32x34   
+Skill_Btn_group_box                       148x209  border (75, 0, 66, 0)
+Square-frame_1                             32x14   border (14, 6, 14, 6)
+Square-frame_2                             32x14   border (13, 5, 13, 5)
+Tab_Bg_LeftGradation_1                    200x8    
+Text_Board_Italic_round                    50x78   border (18, 0, 21, 0)
+Text_Board_RightGradation_1                77x15   border (10, 5, 0, 5)
+Text_Board_RightGradation_2                36x15   border (2, 0, 0, 0)
+Top_Rounded_Box                            16x16   border (4, 4, 4, 5)
+UI_Battle_Atktype_electric                 38x35   
+UI_Battle_Atktype_fire                     38x34   
+UI_Battle_Atktype_ice                      38x34   
+UI_Battle_Atktype_normal                   38x35   
+UI_Battle_Deftype_electric                 40x40   
+UI_Battle_Deftype_fire                     40x40   
+UI_Battle_Deftype_ice                      40x40   
+UI_Battle_Icon_cross                       32x32   
+UI_Battle_Info_Btn_tab_1                  104x87   
+UI_Battle_Info_Btn_tab_2                  104x87   
+UI_Battle_Main_Field_Frame_2               40x80   border (28, 0, 9, 0)
+UI_Battle_Main_Field_Frame_mini           108x15   border (16, 0, 3, 0)
+UI_Battle_Main_Grid_01                    261x148  
+UI_Battle_Main_Grid_02                    274x148  
+UI_Battle_Main_Grid_03                    286x148  
+UI_Battle_Main_Grid_04                    278x165  
+UI_Battle_Main_Grid_05                    291x165  
+UI_Battle_Main_Grid_06                    304x165  
+UI_Battle_Main_Grid_07                    296x187  
+UI_Battle_Main_Grid_08                    312x187  
+UI_Battle_Main_Grid_09                    327x187  
+UI_Battle_Main_Grid_ATK_Confirm           184x103  
+UI_Battle_Main_Grid_ATK_Confirm_Btn        87x76   
+UI_Battle_Progress_check                   36x30   
+UI_Battle_TbarIcon_Select                  89x96   border (39, 39, 39, 39)
+UI_Battle_bar_fill                          8x8    border (3, 3, 3, 3)
+UI_Battle_bar_frame2                       30x30   border (19, 19, 5, 5)
+UI_Battle_set_Btn_speed                    59x49   
+UI_Battle_set_Frame_back                  166x69   border (13, 0, 56, 0)
+UI_Battle_speed_control_Btn_fill2          12x9    
+UI_Battle_speed_control_Btn_frame_2       121x17   
+UI_Button_X_01                             55x54   
+UI_CharacterBook_Graph                    326x379  
+UI_CharacterInfo_Field_Frame               31x47   border (27, 0, 3, 0)
+UI_CombatReinforInven_CharaFrame_A         57x278  border (41, 0, 5, 0)
+UI_CombatReinforInven_CharaFrame_ADD      212x282  
+UI_CombatReinforInven_CharaFrame_A_Small   57x278  border (20, 10, 10, 20)
+UI_CombatReinforInven_CharaFrame_B         57x278  border (41, 0, 5, 0)
+UI_CombatReinforInven_CharaFrame_B_Small   57x278  border (20, 10, 10, 20)
+UI_CombatReinforInven_CharaFrame_S         57x278  border (41, 0, 5, 0)
+UI_CombatReinforInven_CharaFrame_SS        57x278  border (41, 0, 5, 0)
+UI_CombatReinforInven_CharaFrame_SSS       57x278  border (41, 0, 5, 0)
+UI_CombatReinforInven_CharaFrame_SSS_Small   57x278  border (20, 20, 10, 20)
+UI_CombatReinforInven_CharaFrame_SS_Small   57x278  border (20, 10, 10, 20)
+UI_CombatReinforInven_CharaFrame_S_Small   57x278  border (20, 10, 10, 20)
+UI_CombatReinfor_ReinforGage_W            358x26   
+UI_CombatReinfor_SquadFrame               107x47   border (104, 0, 4, 0)
+UI_Common_Button_00                        88x100  border (44, 48, 44, 48)
+UI_Common_Button_01                        93x104  border (46, 50, 47, 50)
+UI_Common_Button_02                        93x104  border (46, 52, 47, 52)
+UI_Common_CharaFrame_B                     56x278  border (40, 0, 10, 0)
+UI_Common_CharaFrame_BG                    40x96   border (25, 4, 8, 92)
+UI_Common_CharaFrame_W                     19x96   border (15, 4, 3, 87)
+UI_Common_Deco_01                          26x253  
+UI_Common_Deco_02                          17x123  
+UI_Common_Deco_03                           3x57   
+UI_Common_Frame_01                         50x50   border (10, 10, 10, 10)
+UI_Common_Frame_02                         45x45   border (22, 23, 23, 22)
+UI_Common_Frame_03                         96x127  border (48, 0, 48, 0)
+UI_Common_Frame_04                        102x102  
+UI_Common_icon_alarm                       34x39   
+UI_Common_nuker_Icon                       39x39   
+UI_Common_supporter_Icon                   40x41   
+UI_Common_tanker_Icon                      36x43   
+UI_Core_Icon_Off                           69x20   
+UI_DecoCircle1                            128x128  
+UI_DecoCircle2                            128x128  
+UI_Deco_offlinebattle_01                   22x186  border (14, 0, 6, 0)
+UI_Disassemble_EquipNameBG                  8x25   border (2, 2, 2, 2)
+UI_EquipReinfor_Gage                       46x244  
+UI_EquipReinfor_Gage2                      46x43   border (1, 1, 1, 1)
+UI_EquipReinfor_GageBefore                 56x115  
+UI_EquipReinfor_ItemSelect_Effect         202x250  
+UI_EquipReinfor_ItemSelect_Empty          164x214  border (0, 50, 0, 130)
+UI_Event_LabelWhite                       164x96   
+UI_Frame_Inchant                           75x56   border (6, 0, 63, 0)
+UI_Frame_Inchant2                          64x56   
+UI_Frame_LinkS                             13x48   border (4, 4, 4, 4)
+UI_Frame_Squad                             75x56   border (6, 0, 66, 0)
+UI_ICON_EditFace                           64x64   
+UI_ICON_EditMirror                         82x74   
+UI_ICON_EditMirrorActive                   98x92   
+UI_ICON_EditReset                          56x58   
+UI_ICON_EditStuff                          63x65   
+UI_ICON_EditStuffActive                    81x83   
+UI_ICON_FaceEditActive                     82x82   
+UI_Icon_3DArrow                           124x99   
+UI_Icon_Andvaribox                        128x128  
+UI_Icon_BackChange                         68x45   
+UI_Icon_Bg_Hexagon                         83x76   
+UI_Icon_Book                               45x52   
+UI_Icon_BrightArrow                        82x66   
+UI_Icon_CHA_GearA_Big                     119x119  
+UI_Icon_CHA_GearB_Big                     119x119  
+UI_Icon_CHA_GearSS_Big                    186x161  
+UI_Icon_CHA_GearS_Big                     119x121  
+UI_Icon_CHA_ShieldA_Big                   107x121  
+UI_Icon_CHA_ShieldB_Big                   107x121  
+UI_Icon_CHA_ShieldSS_Big                  172x161  
+UI_Icon_CHA_ShieldS_Big                   107x121  
+UI_Icon_CHA_SwordA_Big                    109x109  
+UI_Icon_CHA_SwordB_Big                    109x109  
+UI_Icon_CHA_SwordSS_Big                   181x158  
+UI_Icon_CHA_SwordS_Big                    109x111  
+UI_Icon_Camera                             66x55   
+UI_Icon_CharacterDetail_Unequipment_01     94x94   
+UI_Icon_Check                              30x24   
+UI_Icon_ClothBroken                        58x48   
+UI_Icon_ClothBroken_Deco                  127x129  
+UI_Icon_Core                               23x45   border (6, 6, 6, 6)
+UI_Icon_CoreLink                           48x20   
+UI_Icon_CutcenceReplay                     45x52   
+UI_Icon_Dot_Activate                       34x34   
+UI_Icon_Dot_Disable                        18x16   
+UI_Icon_EnhanceEquipAdd                    66x67   
+UI_Icon_EnhanceEquipMax                    70x68   
+UI_Icon_Eye                                46x24   
+UI_Icon_Fbcore                             76x22   
+UI_Icon_Gear                               64x61   
+UI_Icon_Gear2                              64x61   
+UI_Icon_Gift_Deco                          98x110  
+UI_Icon_Guide                             126x126  
+UI_Icon_Heart                              42x36   
+UI_Icon_ItemSlot_Chip                      35x35   
+UI_Icon_ItemSlot_Chip_L                    66x63   
+UI_Icon_ItemSlot_Chip_Off                  35x35   
+UI_Icon_ItemSlot_Item                      33x39   
+UI_Icon_ItemSlot_Item_L                    61x71   
+UI_Icon_ItemSlot_Item_Off                  33x39   
+UI_Icon_ItemSlot_OS                        39x39   
+UI_Icon_ItemSlot_OS_L                      72x66   
+UI_Icon_ItemSlot_OS_Off                    39x39   
+UI_Icon_Item_ChipA_Small                   61x62   
+UI_Icon_Item_ChipB_Small                   61x62   
+UI_Icon_Item_ChipSSS_Small                 90x81   
+UI_Icon_Item_ChipSS_Small                  89x84   
+UI_Icon_Item_ChipS_Small                   61x62   
+UI_Icon_Item_ItemA_Small                   59x67   
+UI_Icon_Item_ItemB_Small                   57x68   
+UI_Icon_Item_ItemSSS_Small                 84x80   
+UI_Icon_Item_ItemSS_Small                  85x82   
+UI_Icon_Item_ItemS_Small                   57x68   
+UI_Icon_Item_OSA_Small                     67x66   
+UI_Icon_Item_OSB_Small                     67x66   
+UI_Icon_Item_OSSSS_Small                   94x83   
+UI_Icon_Item_OSSS_Small                    90x80   
+UI_Icon_Item_OSS_Small                     67x66   
+UI_Icon_Item_Tuna                          63x54   
+UI_Icon_LinkBonus                          24x23   
+UI_Icon_Lock_01                            79x77   
+UI_Icon_MarriageIcon                      103x115  
+UI_Icon_MarriageIcon_Active               311x358  border (2, 2, 2, 2)
+UI_Icon_Menu02                             33x32   
+UI_Icon_Mic                                27x40   
+UI_Icon_Navigation                        103x70   
+UI_Icon_Nutrient                           42x60   
+UI_Icon_Nutrient2                          42x60   
+UI_Icon_PROP                               96x96   
+UI_Icon_Power                              42x61   
+UI_Icon_Power2                             42x61   
+UI_Icon_RandomPlay                         41x35   
+UI_Icon_Recovery                           82x104  
+UI_Icon_RoguelikeBox01                     84x84   
+UI_Icon_RoguelikeBox02                     84x84   
+UI_Icon_Rotate                             37x48   
+UI_Icon_Rotate_2                           61x52   
+UI_Icon_SkillDistance01                    38x34   border (15, 0, 15, 0)
+UI_Icon_SkinPack_PECS_LRL_2               128x128  
+UI_Icon_Slot_Plus                          50x49   
+UI_Icon_Squad                              90x77   
+UI_Icon_SquadPreset_Deco_1                 44x44   
+UI_Icon_SquadPreset_Deco_2                111x40   
+UI_Icon_SquadPreset_Deco_3                127x18   
+UI_Icon_SquadPreset_Deco_4                 32x32   
+UI_Icon_SquadPreset_Detail                 49x52   
+UI_Icon_SquadPreset_Frame                 367x84   border (40, 44, 314, 38)
+UI_Icon_SquadPreset_Frame2                 22x22   border (8, 8, 8, 8)
+UI_Icon_SquadPreset_Frame_2               385x107  border (50, 55, 330, 50)
+UI_Icon_SquadPreset_Frame_Bg              364x80   border (40, 40, 314, 38)
+UI_Icon_SquadPreset_NameIcon               43x48   
+UI_Icon_SquadPreset_Preset_1               97x96   
+UI_Icon_SquadPreset_Preset_2               97x99   
+UI_Icon_SquadPreset_Squad_1                78x63   
+UI_Icon_SquadPreset_Squad_2               100x84   
+UI_Icon_SquadPreset_Trashcan               61x68   
+UI_Icon_SquadPreset_Tuna_1                 88x72   
+UI_Icon_SquadPreset_Tuna_2                 90x104  
+UI_Icon_TempInven                          60x60   
+UI_Icon_TunaCanBonusTicket                120x77   
+UI_Icon_Twitter                           128x104  
+UI_Icon_Warning                           128x128  
+UI_Icon_Warning_Empty                     128x128  
+UI_Icon_battle                             30x28   
+UI_Icon_fcore                              11x6    
+UI_Icon_lcore                              11x6    
+UI_Icon_ncore                              11x6    
+UI_Icon_time                               38x42   
+UI_LineArrow                               36x96   
+UI_Lobby_Main_HUD_Twitter_Icon             94x94   border (14, 14, 14, 14)
+UI_Lobby_Main_HUD_WORLD_BTN_combatant_Iocon   62x63   
+UI_Lobby_Main_HUD_WORLD_BTN_equipment_Iocon   48x55   
+UI_Lobby_Preset                            47x47   
+UI_Lobby_Set_Square03                      66x66   border (20, 20, 20, 20)
+UI_Lock_Icon_Deco                         118x120  
+UI_Mail_Icon_Mail_Open                     44x43   
+UI_Mail_Icon_Mail_Unopen                   43x32   
+UI_Number_Frame_01                        128x128  
+UI_PlusMark                                70x70   
+UI_Popup_BG_01                             88x275  border (42, 134, 42, 134)
+UI_ShopDamagedIcon                         84x84   
+UI_ShopFxIcon                              84x84   
+UI_ShopL2DIcon                             84x84   
+UI_ShopObjectIcon                          84x84   
+UI_ShopSDAnimIcon                          84x84   
+UI_ShopVoiceIcon                           84x84   
+UI_ShopfillterIcon                         84x84   
+UI_Shopskin_barcode                       340x128  
+UI_SquadForm_Main_+icon                    76x75   
+UI_SquadForm_skill_info_box_2             143x59   border (59, 0, 68, 0)
+UI_SquadForm_skill_info_box_3              62x59   border (2, 0, 58, 0)
+UI_Squad_Type_1                            36x32   
+UI_Squad_Type_2                            16x34   
+UI_Squad_Type_3                            30x26   
+UI_Title_Bar_01                           500x69   border (250, 0, 250, 0)
+UI_WolrdMap_StageInfo                      24x25   border (11, 12, 11, 12)
+UI_WolrdMap_StageInfo_Deco                 46x42   
+UI_WolrdMap_StageInfo_L                    44x56   
+UI_accuracyrate                            50x50   
+UI_ap                                      50x50   
+UI_btn_02                                 108x108  border (42, 42, 42, 42)
+UI_btn_02_White                           108x108  border (42, 42, 42, 42)
+UI_btn_06                                  99x93   border (44, 45, 44, 45)
+UI_critical                                50x50   
+UI_eavde                                   50x50   
+UI_edgedBg                                 40x40   border (19, 0, 19, 0)
+UI_exskill_lvMax                           36x128  border (19, 32, 15, 82)
+UI_hitpoint                                50x50   
+UI_power                                   50x50   
+UI_preset_Button_Reset_Off                 34x35   
+UI_preset_Button_Reset_On                 104x93   
+UI_preset_Button_Setting_Off               35x38   
+UI_preset_Button_Setting_On               104x93   
+UI_shield                                  50x50   
+attendance_Patt                           195x202  
+back_Btn                                   70x70   border (4, 0, 63, 0)
+back_arrow                                 16x24   
+back_window                                18x71   border (5, 27, 0, 27)
+bg_MarriageDeco                           222x176  
+bg_MarriageDeco02                         227x80   
+bg_NaviDeco                                40x35   
+bg_NaviPopup                              202x98   border (120, 76, 120, 20)
+bg_NaviPopup02                             68x68   border (20, 40, 40, 20)
+bg_Shop_Pricetag01                         84x31   border (10, 4, 20, 4)
+box                                         6x6    border (1, 1, 1, 1)
+box_02                                     48x48   border (8, 8, 8, 8)
+box_03                                     38x44   border (8, 0, 20, 0)
+box_04                                     70x44   
+box_S2px                                   32x32   border (12, 12, 12, 12)
+btn_NaviBtn_01                             90x84   
+btn_cancel                                 29x28   border (13, 13, 13, 13)
+btn_icon_deco01                            10x10   border (2, 2, 2, 2)
+btn_round_Circle                           52x46   border (26, 23, 26, 23)
+btn_round_blue                             84x84   border (40, 40, 40, 40)
+btn_round_blue_glow                        56x59   border (26, 26, 26, 26)
+btn_round_deco                             60x60   border (24, 24, 24, 24)
+btn_round_white                            55x55   border (10, 10, 10, 10)
+btn_round_yellow                           96x96   border (48, 48, 48, 48)
+btn_round_yellow_glow                      58x59   border (28, 28, 28, 28)
+btn_sideTeb                                44x44   border (38, 39, 1, 1)
+btn_twitter_signin_dark_normal_xhdpi.9    126x82   border (10, 10, 40, 10)
+circle_128                                126x126  
+circle_128_fx                             127x126  
+deco_cha_frame                             10x102  
+deco_cha_frame_2                            6x11   
+deco_line                                  29x3    
+deco_line_dot                             125x5    
+deco_title                                362x145  
+donut_1                                    62x62   
+donut_2                                    62x62   
+frame_Cha_formation_Leader                 53x40   
+frame_Cha_formation_icon_SSrank           176x129  
+frame_Cha_formation_icon_W                176x129  
+frame_Cha_formation_icon_mask             172x173  
+frame_box_outline_glow                     66x60   border (22, 22, 22, 22)
+frame_selet_box                            51x51   border (23, 23, 23, 23)
+glow                                       64x64   
+hexagon_half                               33x102  border (2, 0, 31, 0)
+hexagon_half_shade                         48x112  border (7, 0, 38, 0)
+hp_bar                                    220x4    
+icon_A                                     82x86   
+icon_BattlePoint                           58x52   
+icon_ETC                                  107x122  
+icon_battle                               107x122  
+icon_cha_frame                             34x102  border (19, 13, 8, 83)
+icon_cha_frame_glow                        58x126  border (40, 26, 28, 104)
+icon_change                                96x75   
+icon_change_SDModel                        80x128  
+icon_change_iconModel                     146x147  
+icon_change_model_deco                     84x81   border (41, 0, 41, 0)
+icon_character                            107x122  
+icon_making                               107x122  
+icon_move                                  97x64   
+icon_promote                              107x122  
+icon_recovery                              27x27   
+icon_release                               97x94   
+icon_repeat_arrow                          74x62   
+icon_repeat_battle                         74x62   
+list_btn                                   43x43   
+lock                                       49x58   
+play_Btn                                   38x40   
+skill_BTN_Activation_fx                    95x152  
+skill_icon_Activation                     192x165  
+skill_icon_frame                          102x72   border (0, 33, 0, 33)
+skill_icon_outline                        120x93   border (0, 53, 0, 53)
+skill_range                                35x35   
+skill_range_acivaion                       29x29   
+tab_box_01                                 20x20   border (4, 4, 4, 4)
+tab_sub_material                          102x50   border (44, 0, 44, 0)
+triangle                                   64x56   
+triangle2                                  56x64   
+triangle3                                  64x56   
+384 sprites in E:/LAO/Google_QA/Assets/AssetBundleResource/Atlas\masterAtlas_V2_NewUi.png

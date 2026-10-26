@@ -1,0 +1,13008 @@
+{
+ "meta": {
+  "hand_gun_shot": {
+   "type": 0,
+   "T": 0.1,
+   "hit": "hnadgun_hit",
+   "hitScale": 1.0
+  },
+  "FX_bullet_sniper": {
+   "type": 0,
+   "T": 0.1,
+   "hit": "sniper_hit",
+   "hitScale": 1.0
+  },
+  "Andvari_skill1_bullet": {
+   "type": 0,
+   "T": 0.1,
+   "hit": "Andvari_skill1_Hit",
+   "hitScale": 1.0
+  },
+  "Andvari_skill2_Drone": {
+   "type": 0,
+   "T": 1.0,
+   "hit": "Andvari_skill2_buff_fx",
+   "hitScale": 1.0
+  },
+  "Andvari_skill2_Ground_buff": {
+   "type": -1
+  },
+  "Andvari_NS1_skill2_Drone": {
+   "type": 0,
+   "T": 1.0,
+   "hit": "Andvari_skill2_buff_fx",
+   "hitScale": 1.0
+  },
+  "Andvari_NS2_skill2_Drone": {
+   "type": 0,
+   "T": 1.0,
+   "hit": "Andvari_skill2_buff_fx",
+   "hitScale": 1.0
+  },
+  "Azazel_skill1_bullet": {
+   "type": 0,
+   "T": 0.15,
+   "hit": "Azazel_skill1_Hit_m",
+   "hitScale": 0.75
+  },
+  "noHit_m": {
+   "type": -1
+  },
+  "Azazel_skill2_buff_FX": {
+   "type": -1
+  },
+  "Azazel_small_Heart_Hit": {
+   "type": -1
+  },
+  "vfx_vfx_Banshee_ns2_skill1_hit": {
+   "type": -1
+  },
+  "vfx_Banshee_ns2_skill2_Hit": {
+   "type": -1
+  },
+  "FX_blackLilith_bullet": {
+   "type": 0,
+   "T": 0.1,
+   "hit": "BlackLilith_hit",
+   "hitScale": 1.0
+  },
+  "FX_bullet_Gun": {
+   "type": 0,
+   "T": 0.1,
+   "hit": "skill_hit_simple",
+   "hitScale": 1.0
+  },
+  "blindprincess_skill1_hit": {
+   "type": -1
+  },
+  "blind_NS1_thunder_hit": {
+   "type": -1
+  },
+  "Brownie_bullet": {
+   "type": 0,
+   "T": 0.1,
+   "hit": "skill_hit_simple",
+   "hitScale": 1.0
+  },
+  "Brunhild_N_Skill1_bullet": {
+   "type": 0,
+   "T": 1.0,
+   "hit": "noHit_m",
+   "hitScale": 1.0
+  },
+  "Brunhild_N_Skill1_Hit": {
+   "type": -1
+  },
+  "FX_bullet_Gun_ConstantiaS2": {
+   "type": 0,
+   "T": 0.1,
+   "hit": "Constantia_hit",
+   "hitScale": 1.0
+  },
+  "FX_hit_bori": {
+   "type": -1
+  },
+  "FX_hit_bori_NS2": {
+   "type": -1
+  },
+  "CyclopsePrincess_N_Skill1_Hit": {
+   "type": -1
+  },
+  "CyclopsePrincess_N_Skill2_Hit": {
+   "type": -1
+  },
+  "CyclopsePrincess_NS1_Skill2_Hit": {
+   "type": -1
+  },
+  "FX_bullet_bug": {
+   "type": 0,
+   "T": 0.8,
+   "hit": "daphne_hit",
+   "hitScale": 1.0
+  },
+  "daphne_hit_ver2": {
+   "type": -1
+  },
+  "FX_bullet_bug 2": {
+   "type": 0,
+   "T": 1.5,
+   "hit": "daphne_hit",
+   "hitScale": 1.0
+  },
+  "skill_2_nanobot_": {
+   "type": -1
+  },
+  "Daphne_NS2_FX_bullet_bug": {
+   "type": 0,
+   "T": 1.5,
+   "hit": "Daphne_NS2_skill1_Hit",
+   "hitScale": 1.0
+  },
+  "Daphne_NS2_FX_bullet_bug2": {
+   "type": 0,
+   "T": 1.5,
+   "hit": "Daphne_NS2_skill2_Hit",
+   "hitScale": 1.0
+  },
+  "Centurion_bullet": {
+   "type": 1,
+   "T": 0.3,
+   "hit": "Centurion_skill1_hit",
+   "hitScale": 1.0
+  },
+  "CenturionCF_skill2_Hit": {
+   "type": -1
+  },
+  "MP_Destroyer_Lazer_Hit": {
+   "type": -1
+  },
+  "DoomEater_skill2_bullet": {
+   "type": 2,
+   "T": 0.5,
+   "hit": "DoomEater_skill2_Hit_F",
+   "hitScale": 1.0
+  },
+  "FX_bullet_shock_Missile_MP": {
+   "type": 0,
+   "T": 0.6,
+   "hit": "wave_explosion_hit",
+   "hitScale": 1.0
+  },
+  "BCM_skill2_bullet": {
+   "type": 1,
+   "T": 0.3,
+   "hit": "basic_explosion2",
+   "hitScale": 0.7
+  },
+  "EmperorChick_skill2_hit": {
+   "type": -1
+  },
+  "FX_Vibration_Bullet": {
+   "type": 0,
+   "T": 1.0,
+   "hit": "Fallen_Skill2_Hit",
+   "hitScale": 1.0
+  },
+  "Fallen_lighting_1": {
+   "type": -1
+  },
+  "Fallen_lighting": {
+   "type": -1
+  },
+  "MP_Fortress_bullet": {
+   "type": 0,
+   "T": 0.1,
+   "hit": "Fortress_skill1_hit",
+   "hitScale": 1.2
+  },
+  "Fortress_skill1_hit": {
+   "type": -1
+  },
+  "Juggernaut_bullet": {
+   "type": 0,
+   "T": 0.1,
+   "hit": "Gigantes_hit",
+   "hitScale": 0.8
+  },
+  "Gigantes_bullet": {
+   "type": 0,
+   "T": 0.1,
+   "hit": "Gigantes_hit",
+   "hitScale": 0.8
+  },
+  "Harvest_skill2_hit": {
+   "type": -1
+  },
+  "Intruder_N_Skill2_Hit": {
+   "type": -1
+  },
+  "IronPrince_skill1_debuff": {
+   "type": -1
+  },
+  "IronPrince_skill1_debuff_ground": {
+   "type": -1
+  },
+  "IronPrince_skill1_Last_debuff": {
+   "type": -1
+  },
+  "Ironprince_skill1_Headsymbol_fx": {
+   "type": -1
+  },
+  "Legion_bullet": {
+   "type": 0,
+   "T": 0.1,
+   "hit": "Legion_skill1_hit",
+   "hitScale": 0.8
+  },
+  "Legion_skill2_hit": {
+   "type": -1
+  },
+  "nidhogg_skill1_hit": {
+   "type": -1
+  },
+  "NIDHOGG_SKLL2_HIT": {
+   "type": -1
+  },
+  "PD_skill2_hit": {
+   "type": -1
+  },
+  "FX_hit_MP_PuppHead_skill3": {
+   "type": -1
+  },
+  "MP_PuPphead_skill2_hit": {
+   "type": -1
+  },
+  "Empress_skill1_ice_Hit": {
+   "type": -1
+  },
+  "Empress_skill2_ice_first_Hit": {
+   "type": -1
+  },
+  "Empris_skill2_Ice_Hit": {
+   "type": -1
+  },
+  "Eternity_skill1_bullet": {
+   "type": 0,
+   "T": 0.1,
+   "hit": "noHit_m",
+   "hitScale": 1.0
+  },
+  "Eternity_skill1_Hit": {
+   "type": -1
+  },
+  "fafnir_skill1_elec_hit": {
+   "type": -1
+  },
+  "fafnir_N_Skill1_A": {
+   "type": -1
+  },
+  "vfx_fafnir_ns1_hit_01": {
+   "type": -1
+  },
+  "vfx_fafnir_ns1_hit_02": {
+   "type": -1
+  },
+  "vfx_fafnir_ns1_hit_03": {
+   "type": -1
+  },
+  "vfx_fafnir_ns1_hit_04": {
+   "type": -1
+  },
+  "vfx_fafnir_ns1_hit_04_last": {
+   "type": -1
+  },
+  "vfx_fafnir_ns1_Skill1_A": {
+   "type": -1
+  },
+  "vfx_fafnir_ns2_skill1_hit_01": {
+   "type": -1
+  },
+  "vfx_fafnir_ns2_skill1_hit02": {
+   "type": -1
+  },
+  "vfx_fafnir_ns2_skill1_kickhit": {
+   "type": -1
+  },
+  "Gnome_bullet": {
+   "type": 0,
+   "T": 0.1,
+   "hit": "skill_hit_simple",
+   "hitScale": 1.0
+  },
+  "Harpy_skill12_bullet2": {
+   "type": 2,
+   "T": 0.5,
+   "hit": "Harpy_skill1_bullet_Hit",
+   "hitScale": 1.0
+  },
+  "Harpy_skill12_bullet": {
+   "type": 1,
+   "T": 0.35,
+   "hit": "Harpy_skill1_bullet_Hit",
+   "hitScale": 0.6
+  },
+  "Harpy_skill2_Last_Lazer_HIt": {
+   "type": -1
+  },
+  "Harpy_skill12_bullet_ver2": {
+   "type": 1,
+   "T": 0.6,
+   "hit": "Harpy_skill2_missile_last_Hit",
+   "hitScale": 0.6
+  },
+  "Harpy_NS1_Bullet": {
+   "type": 0,
+   "T": 0.3,
+   "hit": "Harpy_NS1_skill1_Hit",
+   "hitScale": 1.25
+  },
+  "Harpy_NS1_Bullet_skill2_first": {
+   "type": 1,
+   "T": 0.35,
+   "hit": "Harpy_NS1_skill1_Hit",
+   "hitScale": 0.85
+  },
+  "Harpy_NS1_Bullet_skill2": {
+   "type": 1,
+   "T": 0.6,
+   "hit": "Harpy_NS1_skill2_Missile_Hit",
+   "hitScale": 1.0
+  },
+  "Harpy_NS2_Bullet": {
+   "type": 0,
+   "T": 0.3,
+   "hit": "Harpy_NS2_skill1_hit",
+   "hitScale": 0.85
+  },
+  "Harpy_NS2_Bullet_skill2_first": {
+   "type": 1,
+   "T": 0.6,
+   "hit": "Harpy_NS2_skill2_First_hit",
+   "hitScale": 1.0
+  },
+  "Harpy_NS2_Bullet_skill2": {
+   "type": 1,
+   "T": 0.6,
+   "hit": "Harpy_NS2_skill2_Last_missile_hit",
+   "hitScale": 1.0
+  },
+  "Meca_1_paticle": {
+   "type": -1
+  },
+  "hela_beam_hit_main": {
+   "type": -1
+  },
+  "Hraesvelgr_skill1_Lazer_bullet": {
+   "type": 0,
+   "T": 0.25,
+   "hit": "Hraesvelgr_skill1_Lazer_Hit",
+   "hitScale": 1.0
+  },
+  "Hraesvelgr_NS1_skill1_Lazer_bullet": {
+   "type": 0,
+   "T": 0.25,
+   "hit": "Hraesvelgr_NS1_skill1_hit",
+   "hitScale": 1.0
+  },
+  "rpg_bullet_fx": {
+   "type": 0,
+   "T": 0.3,
+   "hit": "simple_explosion",
+   "hitScale": 1.0
+  },
+  "2rpg_bullet_fx": {
+   "type": 0,
+   "T": 0.3,
+   "hit": "RPG_skill2_hit",
+   "hitScale": 1.0
+  },
+  "Impet_NS1_skill1_bullet": {
+   "type": 0,
+   "T": 0.3,
+   "hit": "Impet_NS1_skill1_Hit",
+   "hitScale": 1.0
+  },
+  "Impet_NS1_skill2_bullet": {
+   "type": 0,
+   "T": 0.3,
+   "hit": "Impet_NS1_Rainbow_Hit",
+   "hitScale": 1.0
+  },
+  "eff_Impet_ns2_bullet_1": {
+   "type": 0,
+   "T": 0.3,
+   "hit": "vfx_impet_Ns2_skill1_hit_payment",
+   "hitScale": 1.0
+  },
+  "eff_Impet_ns2_bullet_2": {
+   "type": 0,
+   "T": 0.3,
+   "hit": "vfx_impet_Ns2_skill2_hit_payment",
+   "hitScale": 1.0
+  },
+  "Khan_skill1_hit": {
+   "type": -1
+  },
+  "Khan_NS2_skill1_bullet": {
+   "type": 0,
+   "T": 0.1,
+   "hit": "Khan_NS2_skill1_Bullet_hit",
+   "hitScale": 1.0
+  },
+  "Khan_NS2_skill1_Loop_hit": {
+   "type": -1
+  },
+  "Khan_NS2_skill2_Hit": {
+   "type": -1
+  },
+  "Khan_NS2_skill2_Last_Swordhit": {
+   "type": -1
+  },
+  "Labiata_skill1_bag_hit": {
+   "type": -1
+  },
+  "Labiata_skill1_hit_first": {
+   "type": -1
+  },
+  "Labiata_skill1_hit": {
+   "type": -1
+  },
+  "Labiata_skill2_hit": {
+   "type": -1
+  },
+  "Labiata_NS1_skill1_Bag_Hit": {
+   "type": -1
+  },
+  "Labiata_NS1_skill2_Basic_Hit": {
+   "type": -1
+  },
+  "Lemonade_skill1_Enemy_digital_panel": {
+   "type": -1
+  },
+  "Lemonade_skill1_error_fx": {
+   "type": -1
+  },
+  "Lemonade_skill1_Hit": {
+   "type": -1
+  },
+  "Leona_skill2_buff_machine_event": {
+   "type": -1
+  },
+  "Leona_NS2_skill2_buff_machine_event": {
+   "type": -1
+  },
+  "FX_Leprechaun_bullet": {
+   "type": 0,
+   "T": 0.1,
+   "hit": "skill_hit_simple",
+   "hitScale": 1.0
+  },
+  "Hit_x2": {
+   "type": -1
+  },
+  "Hit": {
+   "type": -1
+  },
+  "Mercury_N_Skill2_Hit": {
+   "type": -1
+  },
+  "Mercury_NS2_Skill2_Hit": {
+   "type": -1
+  },
+  "Phoenix_skill1_bullet": {
+   "type": 0,
+   "T": 0.2,
+   "hit": "Phoenix_skill1_hit",
+   "hitScale": 1.0
+  },
+  "Phoenix_ns2_skill1_bullet": {
+   "type": 0,
+   "T": 0.2,
+   "hit": "Phoenix_skill1_hit",
+   "hitScale": 1.0
+  },
+  "Ramiel_N_bullet": {
+   "type": 0,
+   "T": 1.25,
+   "hit": "noHit_m",
+   "hitScale": 1.0
+  },
+  "Ramiel_N_Skill1_Hit": {
+   "type": -1
+  },
+  "Ramiel_N_Skill2_Hit": {
+   "type": -1
+  },
+  "vfx_Ramiel_NS2_bullet": {
+   "type": 0,
+   "T": 1.25,
+   "hit": "noHit_m",
+   "hitScale": 1.0
+  },
+  "vfx_Ramiel_NS2_Skill1_Hit": {
+   "type": -1
+  },
+  "FX_Raven_skill1_bullet": {
+   "type": 0,
+   "T": 0.35,
+   "hit": "Raven_skill1_Hit",
+   "hitScale": 1.0
+  },
+  "Raven_skill2_Scofe_Dot": {
+   "type": -1
+  },
+  "Saraqael_skill2_enemy_head_Ring": {
+   "type": -1
+  },
+  "Saraqael_skill2_enemy_BG": {
+   "type": -1
+  },
+  "Saraqael_skill2_enemy_Last_head_Ring": {
+   "type": -1
+  },
+  "Saraqael_skill2_Last_Hit": {
+   "type": -1
+  },
+  "Saraqael_skill2_Last_Ground_Smoke": {
+   "type": -1
+  },
+  "Saraqael_skill2_Last_Big_Hit": {
+   "type": -1
+  },
+  "Saraqael_skill2_Last_Hit_after": {
+   "type": -1
+  },
+  "Sleipnir_bullet2": {
+   "type": 0,
+   "T": 0.1,
+   "hit": "Sleipnir_hit2",
+   "hitScale": 1.0
+  },
+  "Sleipnir_bullet": {
+   "type": 0,
+   "T": 0.1,
+   "hit": "Sleipnir_hit",
+   "hitScale": 1.0
+  },
+  "Sleipnir_skill1_lastfire_bullet": {
+   "type": 0,
+   "T": 0.1,
+   "hit": "Sleipnir_skill1_last_hit",
+   "hitScale": 1.0
+  },
+  "Sleipnir_skill2_attack": {
+   "type": -1
+  },
+  "Sleipnir_NS2_skill1_Red_bullet": {
+   "type": 0,
+   "T": 0.1,
+   "hit": "Sleipnir_NS2_skill1_red_ball_Hit",
+   "hitScale": 1.0
+  },
+  "Sleipnir_NS2_skill1_Green_bullet": {
+   "type": 0,
+   "T": 0.1,
+   "hit": "Sleipnir_NS2_skill1_green_ball_Hit",
+   "hitScale": 1.0
+  },
+  "Sleipnir_NS2_skill1_blue_bullet": {
+   "type": 0,
+   "T": 0.1,
+   "hit": "Sleipnir_NS2_skill1_blue_ball_Hit",
+   "hitScale": 1.0
+  },
+  "Sleipnir_NS2_skill1_last_Hit": {
+   "type": -1
+  },
+  "Sleipnir_NS2_skill2_Hit": {
+   "type": -1
+  },
+  "Thetis_Skill1_Hit": {
+   "type": -1
+  },
+  "Thetis_skill1_Ground_Hit": {
+   "type": -1
+  },
+  "Thetis_skill2_Small_Missile": {
+   "type": 2,
+   "T": 0.35,
+   "hit": "Thetis_skill2_Hit",
+   "hitScale": 0.75
+  },
+  "Thetis_skill2_big_Missile": {
+   "type": 2,
+   "T": 0.35,
+   "hit": "Thetis_Skill2_Chaff_Hit",
+   "hitScale": 1.0
+  },
+  "Thetis_NS1_skill1_fire_bullet": {
+   "type": 0,
+   "T": 0.1,
+   "hit": "Thetis_NS1_skill1_Hit",
+   "hitScale": 1.0
+  },
+  "Thetis_NS1_Missile": {
+   "type": 0,
+   "T": 0.8,
+   "hit": "Thetis_NS1_skill2_Hit",
+   "hitScale": 1.0
+  },
+  "Thetis_NS1_skill2_Last_Hit": {
+   "type": -1
+  },
+  "Thetis_NS1_skill2_Ground_Aura": {
+   "type": -1
+  },
+  "Tiamat_Duke_skill1_bullet": {
+   "type": 0,
+   "T": 0.15,
+   "hit": "vfx_Tiamet_NS3_skill1_bullet_Hit",
+   "hitScale": 1.0
+  },
+  "Tiamat_skill1_Hit_01": {
+   "type": -1
+  },
+  "Tiamat_skill2_Dager_Hit_01": {
+   "type": -1
+  },
+  "Tiamat_skill2_front_UP_Hit": {
+   "type": -1
+  },
+  "Tiamat_NS1_Duke_skill1_bullet": {
+   "type": 0,
+   "T": 0.15,
+   "hit": "Tiamat_NS1_skill1_Duke_Hit",
+   "hitScale": 1.0
+  },
+  "Tiamat_NS1_skill1_Hit": {
+   "type": -1
+  },
+  "Tiamat_NS1_skill2_UP_Hit": {
+   "type": -1
+  },
+  "Tiamat_NS2_Skill1_bullet": {
+   "type": 0,
+   "T": 0.15,
+   "hit": "Tiamat_NS2_Skill1_Hit",
+   "hitScale": 1.0
+  },
+  "Tiamat_NS2_Skill2_Hit": {
+   "type": -1
+  },
+  "Titania_skill1_Ground_ice_smoke": {
+   "type": -1
+  },
+  "Titania_skill1_Ground_ice": {
+   "type": -1
+  },
+  "Titania_NS2_Skill1_bullet": {
+   "type": 0,
+   "T": 0.3,
+   "hit": "Titania_NS2_Skill1_hit",
+   "hitScale": 1.0
+  },
+  "Undine_skill1_bullet": {
+   "type": 0,
+   "T": 0.1,
+   "hit": "Undine_skill1_Hit",
+   "hitScale": 0.5
+  },
+  "Undine_skill2_bullet": {
+   "type": 0,
+   "T": 0.3,
+   "hit": "Undine_skill2_Hit",
+   "hitScale": 1.0
+  },
+  "Undine_skill2_bullet_NS1": {
+   "type": 0,
+   "T": 0.3,
+   "hit": "Undine_skill2_Hit",
+   "hitScale": 1.0
+  },
+  "Undine_NS2_skill2_bullet": {
+   "type": 0,
+   "T": 0.5,
+   "hit": "Undine_skill2_Hit",
+   "hitScale": 1.0
+  },
+  "violet_bullet": {
+   "type": 0,
+   "T": 0.1,
+   "hit": "valkyrie_Hit_skill1",
+   "hitScale": 1.0
+  },
+  "violet_skill2_bullet": {
+   "type": 0,
+   "T": 0.1,
+   "hit": "valkyrie_Hit_skill2",
+   "hitScale": 2.0
+  },
+  "Valkyrie_NS2_bullet2": {
+   "type": 0,
+   "T": 0.1,
+   "hit": "Valkyrie_skill1_Hit",
+   "hitScale": 1.0
+  },
+  "Valkyrie_NS2_skill2_bullet": {
+   "type": 0,
+   "T": 0.25,
+   "hit": "Valkyrie_NS2_skill2_HIT",
+   "hitScale": 2.0
+  },
+  "Kunoichi_skill2_after_Lighting": {
+   "type": -1
+  },
+  "KunoichiZero_skill1_Bullet": {
+   "type": 0,
+   "T": 0.2,
+   "hit": "KunoicheZero_skill1_bullet_hit",
+   "hitScale": 1.0
+  },
+  "KunoichiZero_skill2_first_hit_F": {
+   "type": -1
+  },
+  "Kunoichi_skill2_Hit_FX_F": {
+   "type": -1
+  },
+  "KunoichiZero_NS2_skill1_Bullet": {
+   "type": 0,
+   "T": 0.2,
+   "hit": "KunoichiZero_NS2_skill1_bullet_hit",
+   "hitScale": 1.0
+  },
+  "hnadgun_hit": {
+   "type": -1
+  },
+  "sniper_hit": {
+   "type": -1
+  },
+  "Andvari_skill1_Hit": {
+   "type": -1
+  },
+  "Andvari_skill2_buff_fx": {
+   "type": -1
+  },
+  "Azazel_skill1_Hit_m": {
+   "type": -1
+  },
+  "BlackLilith_hit": {
+   "type": -1
+  },
+  "skill_hit_simple": {
+   "type": -1
+  },
+  "Constantia_hit": {
+   "type": -1
+  },
+  "daphne_hit": {
+   "type": -1
+  },
+  "Daphne_NS2_skill1_Hit": {
+   "type": -1
+  },
+  "Daphne_NS2_skill2_Hit": {
+   "type": -1
+  },
+  "Centurion_skill1_hit": {
+   "type": -1
+  },
+  "DoomEater_skill2_Hit_F": {
+   "type": -1
+  },
+  "wave_explosion_hit": {
+   "type": -1
+  },
+  "basic_explosion2": {
+   "type": -1
+  },
+  "Fallen_Skill2_Hit": {
+   "type": -1
+  },
+  "Gigantes_hit": {
+   "type": -1
+  },
+  "Legion_skill1_hit": {
+   "type": -1
+  },
+  "Harpy_skill1_bullet_Hit": {
+   "type": -1
+  },
+  "Harpy_skill2_missile_last_Hit": {
+   "type": -1
+  },
+  "Harpy_NS1_skill1_Hit": {
+   "type": -1
+  },
+  "Harpy_NS1_skill2_Missile_Hit": {
+   "type": -1
+  },
+  "Harpy_NS2_skill1_hit": {
+   "type": -1
+  },
+  "Harpy_NS2_skill2_First_hit": {
+   "type": -1
+  },
+  "Harpy_NS2_skill2_Last_missile_hit": {
+   "type": -1
+  },
+  "Hraesvelgr_skill1_Lazer_Hit": {
+   "type": -1
+  },
+  "Hraesvelgr_NS1_skill1_hit": {
+   "type": -1
+  },
+  "simple_explosion": {
+   "type": -1
+  },
+  "RPG_skill2_hit": {
+   "type": -1
+  },
+  "Impet_NS1_skill1_Hit": {
+   "type": -1
+  },
+  "Impet_NS1_Rainbow_Hit": {
+   "type": -1
+  },
+  "vfx_impet_Ns2_skill1_hit_payment": {
+   "type": -1
+  },
+  "vfx_impet_Ns2_skill2_hit_payment": {
+   "type": -1
+  },
+  "Khan_NS2_skill1_Bullet_hit": {
+   "type": -1
+  },
+  "Phoenix_skill1_hit": {
+   "type": -1
+  },
+  "Raven_skill1_Hit": {
+   "type": -1
+  },
+  "Sleipnir_hit2": {
+   "type": -1
+  },
+  "Sleipnir_hit": {
+   "type": -1
+  },
+  "Sleipnir_skill1_last_hit": {
+   "type": -1
+  },
+  "Sleipnir_NS2_skill1_red_ball_Hit": {
+   "type": -1
+  },
+  "Sleipnir_NS2_skill1_green_ball_Hit": {
+   "type": -1
+  },
+  "Sleipnir_NS2_skill1_blue_ball_Hit": {
+   "type": -1
+  },
+  "Thetis_skill2_Hit": {
+   "type": -1
+  },
+  "Thetis_Skill2_Chaff_Hit": {
+   "type": -1
+  },
+  "Thetis_NS1_skill1_Hit": {
+   "type": -1
+  },
+  "Thetis_NS1_skill2_Hit": {
+   "type": -1
+  },
+  "vfx_Tiamet_NS3_skill1_bullet_Hit": {
+   "type": -1
+  },
+  "Tiamat_NS1_skill1_Duke_Hit": {
+   "type": -1
+  },
+  "Tiamat_NS2_Skill1_Hit": {
+   "type": -1
+  },
+  "Titania_NS2_Skill1_hit": {
+   "type": -1
+  },
+  "Undine_skill1_Hit": {
+   "type": -1
+  },
+  "Undine_skill2_Hit": {
+   "type": -1
+  },
+  "valkyrie_Hit_skill1": {
+   "type": -1
+  },
+  "valkyrie_Hit_skill2": {
+   "type": -1
+  },
+  "Valkyrie_skill1_Hit": {
+   "type": -1
+  },
+  "Valkyrie_NS2_skill2_HIT": {
+   "type": -1
+  },
+  "KunoicheZero_skill1_bullet_hit": {
+   "type": -1
+  },
+  "KunoichiZero_NS2_skill1_bullet_hit": {
+   "type": -1
+  },
+  "Azazel_NS1_skill2_buff_F": {
+   "type": -1
+  }
+ },
+ "timelines": {
+  "amy": {
+   "atk": {
+    "d": 3.4333,
+    "ev": [
+     [
+      1.9167,
+      "p",
+      1,
+      "hand_gun_shot",
+      0
+     ],
+     [
+      2.0833,
+      "p",
+      1,
+      "hand_gun_shot",
+      0
+     ],
+     [
+      2.3167,
+      "p",
+      1,
+      "hand_gun_shot",
+      0
+     ]
+    ]
+   },
+   "skill": {
+    "d": 5.3833,
+    "ev": [
+     [
+      3.0,
+      "p",
+      2,
+      "FX_bullet_sniper",
+      0
+     ]
+    ]
+   }
+  },
+  "amy_s1": {
+   "atk": {
+    "d": 3.4333,
+    "ev": [
+     [
+      1.9167,
+      "p",
+      1,
+      "hand_gun_shot",
+      0
+     ],
+     [
+      2.0833,
+      "p",
+      1,
+      "hand_gun_shot",
+      0
+     ],
+     [
+      2.3167,
+      "p",
+      1,
+      "hand_gun_shot",
+      0
+     ]
+    ]
+   },
+   "skill": {
+    "d": 5.3833,
+    "ev": [
+     [
+      3.0,
+      "p",
+      2,
+      "FX_bullet_sniper",
+      0
+     ]
+    ]
+   }
+  },
+  "amy_s2": {
+   "atk": {
+    "d": 3.4333,
+    "ev": [
+     [
+      1.9167,
+      "p",
+      1,
+      "hand_gun_shot",
+      0
+     ],
+     [
+      2.0833,
+      "p",
+      1,
+      "hand_gun_shot",
+      0
+     ],
+     [
+      2.3167,
+      "p",
+      1,
+      "hand_gun_shot",
+      0
+     ]
+    ]
+   },
+   "skill": {
+    "d": 5.3833,
+    "ev": [
+     [
+      3.0,
+      "p",
+      2,
+      "FX_bullet_sniper",
+      0
+     ]
+    ]
+   }
+  },
+  "andvari": {
+   "atk": {
+    "d": 5.0,
+    "ev": [
+     [
+      1.6167,
+      "p",
+      1,
+      "Andvari_skill1_bullet",
+      0
+     ],
+     [
+      2.4167,
+      "p",
+      1,
+      "Andvari_skill1_bullet",
+      0
+     ],
+     [
+      2.9,
+      "p",
+      1,
+      "Andvari_skill1_bullet",
+      0
+     ]
+    ]
+   },
+   "skill": {
+    "d": 9.0,
+    "ev": [
+     [
+      6.0833,
+      "p",
+      1,
+      "Andvari_skill2_Drone",
+      0
+     ],
+     [
+      7.1833,
+      "eg",
+      0,
+      "Andvari_skill2_Ground_buff",
+      0
+     ]
+    ]
+   }
+  },
+  "andvari_s1": {
+   "atk": {
+    "d": 5.0,
+    "ev": [
+     [
+      1.6167,
+      "p",
+      1,
+      "Andvari_skill1_bullet",
+      0
+     ],
+     [
+      2.4167,
+      "p",
+      1,
+      "Andvari_skill1_bullet",
+      0
+     ],
+     [
+      2.9,
+      "p",
+      1,
+      "Andvari_skill1_bullet",
+      0
+     ]
+    ]
+   },
+   "skill": {
+    "d": 9.0,
+    "ev": [
+     [
+      6.0833,
+      "p",
+      1,
+      "Andvari_NS1_skill2_Drone",
+      0
+     ],
+     [
+      7.1833,
+      "eg",
+      0,
+      "Andvari_skill2_Ground_buff",
+      0
+     ]
+    ]
+   }
+  },
+  "andvari_s2": {
+   "atk": {
+    "d": 5.9333,
+    "ev": [
+     [
+      1.6167,
+      "p",
+      1,
+      "Andvari_skill1_bullet",
+      0
+     ],
+     [
+      4.0,
+      "p",
+      1,
+      "Andvari_skill1_bullet",
+      0
+     ]
+    ]
+   },
+   "skill": {
+    "d": 9.0,
+    "ev": [
+     [
+      6.0833,
+      "p",
+      1,
+      "Andvari_NS2_skill2_Drone",
+      0
+     ],
+     [
+      7.1833,
+      "eg",
+      0,
+      "Andvari_skill2_Ground_buff",
+      0
+     ]
+    ]
+   }
+  },
+  "azazel": {
+   "atk": {
+    "d": 4.4167,
+    "ev": [
+     [
+      2.3167,
+      "p",
+      1,
+      "Azazel_skill1_bullet",
+      0
+     ],
+     [
+      2.6667,
+      "h",
+      0,
+      "noHit_m",
+      0
+     ],
+     [
+      2.9667,
+      "h",
+      0,
+      "noHit_m",
+      0
+     ],
+     [
+      3.1167,
+      "h",
+      0,
+      "noHit_m",
+      0
+     ],
+     [
+      3.3,
+      "h",
+      0,
+      "noHit_m",
+      0
+     ],
+     [
+      3.45,
+      "h",
+      0,
+      "noHit_m",
+      0
+     ]
+    ]
+   },
+   "skill": {
+    "d": 3.3333,
+    "ev": [
+     [
+      2.7,
+      "b",
+      0,
+      "Azazel_skill2_buff_FX",
+      0
+     ]
+    ]
+   }
+  },
+  "azazel_s1": {
+   "atk": {
+    "d": 4.4167,
+    "ev": [
+     [
+      2.3167,
+      "h",
+      0,
+      "Azazel_small_Heart_Hit",
+      0
+     ],
+     [
+      3.1167,
+      "h",
+      0,
+      "noHit_m",
+      0
+     ],
+     [
+      3.3,
+      "h",
+      0,
+      "noHit_m",
+      0
+     ],
+     [
+      3.45,
+      "h",
+      0,
+      "noHit_m",
+      0
+     ]
+    ]
+   },
+   "skill": {
+    "d": 3.3333,
+    "ev": [
+     [
+      2.5167,
+      "b",
+      0,
+      "Azazel_NS1_skill2_buff_F",
+      0
+     ]
+    ]
+   }
+  },
+  "azazel_s2": {
+   "atk": {
+    "d": 4.4167,
+    "ev": [
+     [
+      2.3167,
+      "p",
+      1,
+      "Azazel_skill1_bullet",
+      0
+     ],
+     [
+      2.6667,
+      "h",
+      0,
+      "noHit_m",
+      0
+     ],
+     [
+      2.9667,
+      "h",
+      0,
+      "noHit_m",
+      0
+     ],
+     [
+      3.1167,
+      "h",
+      0,
+      "noHit_m",
+      0
+     ],
+     [
+      3.3,
+      "h",
+      0,
+      "noHit_m",
+      0
+     ],
+     [
+      3.45,
+      "h",
+      0,
+      "noHit_m",
+      0
+     ]
+    ]
+   },
+   "skill": {
+    "d": 3.3333,
+    "ev": [
+     [
+      2.7,
+      "b",
+      0,
+      "Azazel_skill2_buff_FX",
+      0
+     ]
+    ]
+   }
+  },
+  "banshee": {
+   "atk": {
+    "d": 4.2667,
+    "ev": [
+     [
+      1.2,
+      "h",
+      0,
+      "noHit_m",
+      0
+     ],
+     [
+      1.3667,
+      "h",
+      0,
+      "noHit_m",
+      0
+     ],
+     [
+      1.5167,
+      "h",
+      0,
+      "noHit_m",
+      0
+     ]
+    ]
+   },
+   "skill": {
+    "d": 6.7333,
+    "ev": [
+     [
+      3.2833,
+      "h",
+      0,
+      "noHit_m",
+      0
+     ]
+    ]
+   }
+  },
+  "banshee_s1": {
+   "atk": {
+    "d": 4.2667,
+    "ev": [
+     [
+      1.2,
+      "h",
+      0,
+      "noHit_m",
+      0
+     ],
+     [
+      1.3667,
+      "h",
+      0,
+      "noHit_m",
+      0
+     ],
+     [
+      1.5167,
+      "h",
+      0,
+      "noHit_m",
+      0
+     ]
+    ]
+   },
+   "skill": {
+    "d": 6.7333,
+    "ev": [
+     [
+      3.2833,
+      "h",
+      0,
+      "noHit_m",
+      0
+     ]
+    ]
+   }
+  },
+  "banshee_s2": {
+   "atk": {
+    "d": 4.2667,
+    "ev": [
+     [
+      1.2,
+      "h",
+      0,
+      "noHit_m",
+      0
+     ],
+     [
+      1.3667,
+      "h",
+      0,
+      "noHit_m",
+      0
+     ],
+     [
+      1.5167,
+      "h",
+      0,
+      "noHit_m",
+      0
+     ],
+     [
+      1.75,
+      "h",
+      0,
+      "noHit_m",
+      0
+     ],
+     [
+      1.9167,
+      "h",
+      0,
+      "noHit_m",
+      0
+     ],
+     [
+      2.0667,
+      "h",
+      0,
+      "vfx_vfx_Banshee_ns2_skill1_hit",
+      0
+     ],
+     [
+      2.1667,
+      "h",
+      0,
+      "noHit_m",
+      0
+     ],
+     [
+      2.3833,
+      "h",
+      0,
+      "noHit_m",
+      0
+     ]
+    ]
+   },
+   "skill": {
+    "d": 6.7333,
+    "ev": [
+     [
+      2.9167,
+      "h",
+      0,
+      "noHit_m",
+      0
+     ],
+     [
+      3.0,
+      "h",
+      0,
+      "noHit_m",
+      0
+     ],
+     [
+      3.9667,
+      "h",
+      0,
+      "vfx_Banshee_ns2_skill2_Hit",
+      0
+     ]
+    ]
+   }
+  },
+  "blacklilith": {
+   "atk": {
+    "d": 5.1333,
+    "ev": [
+     [
+      0.4333,
+      "p",
+      1,
+      "FX_blackLilith_bullet",
+      0
+     ],
+     [
+      0.9667,
+      "p",
+      1,
+      "FX_blackLilith_bullet",
+      0
+     ],
+     [
+      1.9,
+      "p",
+      1,
+      "FX_blackLilith_bullet",
+      0
+     ],
+     [
+      2.8833,
+      "p",
+      1,
+      "FX_blackLilith_bullet",
+      0
+     ],
+     [
+      3.4833,
+      "p",
+      1,
+      "FX_blackLilith_bullet",
+      0
+     ],
+     [
+      4.25,
+      "p",
+      1,
+      "FX_blackLilith_bullet",
+      0
+     ],
+     [
+      4.25,
+      "p",
+      2,
+      "FX_bullet_Gun",
+      0
+     ],
+     [
+      4.2667,
+      "p",
+      1,
+      "FX_blackLilith_bullet",
+      0
+     ]
+    ]
+   }
+  },
+  "blacklilith_s1": {
+   "atk": {
+    "d": 5.1333,
+    "ev": [
+     [
+      0.4333,
+      "p",
+      1,
+      "FX_blackLilith_bullet",
+      0
+     ],
+     [
+      0.9667,
+      "p",
+      1,
+      "FX_blackLilith_bullet",
+      0
+     ],
+     [
+      1.9,
+      "p",
+      1,
+      "FX_blackLilith_bullet",
+      0
+     ],
+     [
+      2.8833,
+      "p",
+      1,
+      "FX_blackLilith_bullet",
+      0
+     ],
+     [
+      3.4833,
+      "p",
+      1,
+      "FX_blackLilith_bullet",
+      0
+     ],
+     [
+      4.25,
+      "p",
+      1,
+      "FX_blackLilith_bullet",
+      0
+     ],
+     [
+      4.25,
+      "p",
+      2,
+      "FX_bullet_Gun",
+      0
+     ],
+     [
+      4.2667,
+      "p",
+      1,
+      "FX_blackLilith_bullet",
+      0
+     ]
+    ]
+   }
+  },
+  "blacklilith_s2": {
+   "atk": {
+    "d": 5.1333,
+    "ev": [
+     [
+      0.4333,
+      "p",
+      1,
+      "FX_blackLilith_bullet",
+      0
+     ],
+     [
+      0.9667,
+      "p",
+      1,
+      "FX_blackLilith_bullet",
+      0
+     ],
+     [
+      1.9,
+      "p",
+      1,
+      "FX_blackLilith_bullet",
+      0
+     ],
+     [
+      2.8833,
+      "p",
+      1,
+      "FX_blackLilith_bullet",
+      0
+     ],
+     [
+      3.4833,
+      "p",
+      1,
+      "FX_blackLilith_bullet",
+      0
+     ],
+     [
+      4.25,
+      "p",
+      1,
+      "FX_blackLilith_bullet",
+      0
+     ],
+     [
+      4.25,
+      "p",
+      2,
+      "FX_bullet_Gun",
+      0
+     ],
+     [
+      4.2667,
+      "p",
+      1,
+      "FX_blackLilith_bullet",
+      0
+     ]
+    ]
+   }
+  },
+  "blindprincess": {
+   "atk": {
+    "d": 5.0,
+    "ev": [
+     [
+      2.4667,
+      "h",
+      0,
+      "blindprincess_skill1_hit",
+      0
+     ]
+    ]
+   },
+   "skill": {
+    "d": 11.0333,
+    "ev": [
+     [
+      6.15,
+      "h",
+      0,
+      "noHit_m",
+      0
+     ],
+     [
+      9.3167,
+      "h",
+      0,
+      "",
+      0
+     ]
+    ]
+   }
+  },
+  "blindprincess_s1": {
+   "atk": {
+    "d": 7.0167,
+    "ev": [
+     [
+      3.6167,
+      "h",
+      0,
+      "noHit_m",
+      0
+     ]
+    ]
+   },
+   "skill": {
+    "d": 10.1833,
+    "ev": [
+     [
+      2.3833,
+      "eg",
+      0,
+      "blind_NS1_thunder_hit",
+      0
+     ],
+     [
+      7.1167,
+      "h",
+      0,
+      "noHit_m",
+      0
+     ]
+    ]
+   }
+  },
+  "brownie": {
+   "atk": {
+    "d": 4.1667,
+    "ev": [
+     [
+      1.8833,
+      "p",
+      1,
+      "Brownie_bullet",
+      0
+     ],
+     [
+      1.9667,
+      "p",
+      1,
+      "Brownie_bullet",
+      0
+     ],
+     [
+      2.05,
+      "p",
+      1,
+      "Brownie_bullet",
+      0
+     ],
+     [
+      2.2,
+      "p",
+      1,
+      "Brownie_bullet",
+      0
+     ],
+     [
+      2.4167,
+      "p",
+      1,
+      "Brownie_bullet",
+      0
+     ],
+     [
+      2.5,
+      "p",
+      1,
+      "Brownie_bullet",
+      0
+     ],
+     [
+      2.5833,
+      "p",
+      1,
+      "Brownie_bullet",
+      0
+     ],
+     [
+      2.7,
+      "p",
+      1,
+      "Brownie_bullet",
+      0
+     ]
+    ]
+   },
+   "skill": {
+    "d": 6.5,
+    "ev": [
+     [
+      2.45,
+      "p",
+      1,
+      "Brownie_bullet",
+      0
+     ],
+     [
+      2.5333,
+      "p",
+      1,
+      "Brownie_bullet",
+      0
+     ],
+     [
+      2.65,
+      "p",
+      1,
+      "Brownie_bullet",
+      0
+     ],
+     [
+      4.6667,
+      "p",
+      1,
+      "Brownie_bullet",
+      0
+     ],
+     [
+      4.7667,
+      "p",
+      1,
+      "Brownie_bullet",
+      0
+     ],
+     [
+      4.8333,
+      "p",
+      1,
+      "Brownie_bullet",
+      0
+     ],
+     [
+      4.9833,
+      "p",
+      1,
+      "Brownie_bullet",
+      0
+     ],
+     [
+      5.0667,
+      "p",
+      1,
+      "Brownie_bullet",
+      0
+     ],
+     [
+      5.15,
+      "p",
+      1,
+      "Brownie_bullet",
+      0
+     ]
+    ]
+   }
+  },
+  "brownie_s1": {
+   "atk": {
+    "d": 4.1667,
+    "ev": [
+     [
+      1.8833,
+      "p",
+      1,
+      "Brownie_bullet",
+      0
+     ],
+     [
+      1.9667,
+      "p",
+      1,
+      "Brownie_bullet",
+      0
+     ],
+     [
+      2.05,
+      "p",
+      1,
+      "Brownie_bullet",
+      0
+     ],
+     [
+      2.2,
+      "p",
+      1,
+      "Brownie_bullet",
+      0
+     ],
+     [
+      2.4167,
+      "p",
+      1,
+      "Brownie_bullet",
+      0
+     ],
+     [
+      2.5,
+      "p",
+      1,
+      "Brownie_bullet",
+      0
+     ],
+     [
+      2.5833,
+      "p",
+      1,
+      "Brownie_bullet",
+      0
+     ],
+     [
+      2.7,
+      "p",
+      1,
+      "Brownie_bullet",
+      0
+     ]
+    ]
+   },
+   "skill": {
+    "d": 6.5,
+    "ev": [
+     [
+      2.45,
+      "p",
+      1,
+      "Brownie_bullet",
+      0
+     ],
+     [
+      2.5333,
+      "p",
+      1,
+      "Brownie_bullet",
+      0
+     ],
+     [
+      2.65,
+      "p",
+      1,
+      "Brownie_bullet",
+      0
+     ],
+     [
+      4.6667,
+      "p",
+      1,
+      "Brownie_bullet",
+      0
+     ],
+     [
+      4.7667,
+      "p",
+      1,
+      "Brownie_bullet",
+      0
+     ],
+     [
+      4.8333,
+      "p",
+      1,
+      "Brownie_bullet",
+      0
+     ],
+     [
+      4.9833,
+      "p",
+      1,
+      "Brownie_bullet",
+      0
+     ],
+     [
+      5.0667,
+      "p",
+      1,
+      "Brownie_bullet",
+      0
+     ],
+     [
+      5.15,
+      "p",
+      1,
+      "Brownie_bullet",
+      0
+     ]
+    ]
+   }
+  },
+  "brunhild": {
+   "atk": {
+    "d": 4.1667,
+    "ev": [
+     [
+      1.85,
+      "p",
+      1,
+      "Brunhild_N_Skill1_bullet",
+      0
+     ],
+     [
+      2.3667,
+      "h",
+      0,
+      "Brunhild_N_Skill1_Hit",
+      0
+     ],
+     [
+      2.5,
+      "h",
+      0,
+      "noHit_m",
+      0
+     ]
+    ]
+   },
+   "skill": {
+    "d": 10.1333,
+    "ev": [
+     [
+      7.1667,
+      "h",
+      0,
+      "noHit_m",
+      0
+     ],
+     [
+      7.4167,
+      "h",
+      0,
+      "noHit_m",
+      0
+     ],
+     [
+      7.6667,
+      "h",
+      0,
+      "noHit_m",
+      0
+     ]
+    ]
+   }
+  },
+  "brunhild_s1": {
+   "atk": {
+    "d": 4.1667,
+    "ev": [
+     [
+      1.85,
+      "p",
+      1,
+      "Brunhild_N_Skill1_bullet",
+      0
+     ],
+     [
+      2.3667,
+      "h",
+      0,
+      "Brunhild_N_Skill1_Hit",
+      0
+     ],
+     [
+      2.5,
+      "h",
+      0,
+      "noHit_m",
+      0
+     ]
+    ]
+   },
+   "skill": {
+    "d": 10.1333,
+    "ev": [
+     [
+      7.1667,
+      "h",
+      0,
+      "noHit_m",
+      0
+     ],
+     [
+      7.4167,
+      "h",
+      0,
+      "noHit_m",
+      0
+     ],
+     [
+      7.6667,
+      "h",
+      0,
+      "noHit_m",
+      0
+     ]
+    ]
+   }
+  },
+  "constantia": {
+   "atk": {
+    "d": 2.6667,
+    "ev": [
+     [
+      0.36,
+      "p",
+      1,
+      "FX_bullet_Gun_ConstantiaS2",
+      0
+     ],
+     [
+      0.8667,
+      "p",
+      1,
+      "FX_bullet_Gun_ConstantiaS2",
+      0
+     ],
+     [
+      1.3667,
+      "p",
+      1,
+      "FX_bullet_Gun_ConstantiaS2",
+      0
+     ]
+    ]
+   },
+   "skill": {
+    "d": 2.8167,
+    "ev": [
+     [
+      0.0,
+      "e",
+      0,
+      "FX_hit_bori",
+      0
+     ],
+     [
+      1.0167,
+      "p",
+      1,
+      "FX_bullet_Gun_ConstantiaS2",
+      0
+     ]
+    ]
+   }
+  },
+  "constantia_s1": {
+   "atk": {
+    "d": 2.1667,
+    "ev": [
+     [
+      0.3333,
+      "p",
+      1,
+      "FX_bullet_Gun_ConstantiaS2",
+      0
+     ],
+     [
+      0.8667,
+      "p",
+      1,
+      "FX_bullet_Gun_ConstantiaS2",
+      0
+     ],
+     [
+      1.3667,
+      "p",
+      1,
+      "FX_bullet_Gun_ConstantiaS2",
+      0
+     ]
+    ]
+   },
+   "skill": {
+    "d": 2.8167,
+    "ev": [
+     [
+      0.0,
+      "e",
+      0,
+      "FX_hit_bori",
+      0
+     ],
+     [
+      1.0167,
+      "p",
+      1,
+      "FX_bullet_Gun_ConstantiaS2",
+      0
+     ]
+    ]
+   }
+  },
+  "constantia_s2": {
+   "atk": {
+    "d": 2.6667,
+    "ev": [
+     [
+      0.36,
+      "p",
+      1,
+      "FX_bullet_Gun_ConstantiaS2",
+      0
+     ],
+     [
+      0.8667,
+      "p",
+      1,
+      "FX_bullet_Gun_ConstantiaS2",
+      0
+     ],
+     [
+      1.3667,
+      "p",
+      1,
+      "FX_bullet_Gun_ConstantiaS2",
+      0
+     ]
+    ]
+   },
+   "skill": {
+    "d": 2.8167,
+    "ev": [
+     [
+      0.0,
+      "e",
+      0,
+      "FX_hit_bori_NS2",
+      0
+     ],
+     [
+      1.0167,
+      "p",
+      1,
+      "FX_bullet_Gun_ConstantiaS2",
+      0
+     ]
+    ]
+   }
+  },
+  "cyclopsprincess": {
+   "atk": {
+    "d": 8.6167,
+    "ev": [
+     [
+      4.6167,
+      "hg",
+      0,
+      "CyclopsePrincess_N_Skill1_Hit",
+      0
+     ]
+    ]
+   },
+   "skill": {
+    "d": 7.15,
+    "ev": [
+     [
+      2.25,
+      "h",
+      0,
+      "CyclopsePrincess_N_Skill2_Hit",
+      0
+     ],
+     [
+      2.45,
+      "h",
+      0,
+      "noHit_m",
+      0
+     ],
+     [
+      2.6667,
+      "h",
+      0,
+      "noHit_m",
+      0
+     ],
+     [
+      2.8667,
+      "h",
+      0,
+      "noHit_m",
+      0
+     ],
+     [
+      3.0833,
+      "h",
+      0,
+      "noHit_m",
+      0
+     ],
+     [
+      3.2833,
+      "h",
+      0,
+      "noHit_m",
+      0
+     ],
+     [
+      3.5,
+      "h",
+      0,
+      "noHit_m",
+      0
+     ],
+     [
+      3.7,
+      "h",
+      0,
+      "noHit_m",
+      0
+     ],
+     [
+      3.9167,
+      "h",
+      0,
+      "noHit_m",
+      0
+     ],
+     [
+      4.1167,
+      "h",
+      0,
+      "noHit_m",
+      0
+     ],
+     [
+      4.4167,
+      "h",
+      0,
+      "noHit_m",
+      0
+     ]
+    ]
+   }
+  },
+  "cyclopsprincess_s1": {
+   "atk": {
+    "d": 8.6167,
+    "ev": [
+     [
+      4.9167,
+      "h",
+      0,
+      "noHit_m",
+      0
+     ],
+     [
+      5.0833,
+      "h",
+      0,
+      "noHit_m",
+      0
+     ]
+    ]
+   },
+   "skill": {
+    "d": 7.15,
+    "ev": [
+     [
+      3.75,
+      "h",
+      0,
+      "CyclopsePrincess_NS1_Skill2_Hit",
+      0
+     ],
+     [
+      4.0,
+      "h",
+      0,
+      "noHit_m",
+      0
+     ],
+     [
+      4.25,
+      "h",
+      0,
+      "noHit_m",
+      0
+     ],
+     [
+      4.5,
+      "h",
+      0,
+      "noHit_m",
+      0
+     ]
+    ]
+   }
+  },
+  "cyclopsprincess_s2": {
+   "atk": {
+    "d": 8.6167,
+    "ev": [
+     [
+      4.6167,
+      "hg",
+      0,
+      "CyclopsePrincess_N_Skill1_Hit",
+      0
+     ]
+    ]
+   },
+   "skill": {
+    "d": 7.15,
+    "ev": [
+     [
+      2.25,
+      "h",
+      0,
+      "CyclopsePrincess_N_Skill2_Hit",
+      0
+     ],
+     [
+      2.45,
+      "h",
+      0,
+      "noHit_m",
+      0
+     ],
+     [
+      2.6667,
+      "h",
+      0,
+      "noHit_m",
+      0
+     ],
+     [
+      2.8667,
+      "h",
+      0,
+      "noHit_m",
+      0
+     ],
+     [
+      3.0833,
+      "h",
+      0,
+      "noHit_m",
+      0
+     ],
+     [
+      3.2833,
+      "h",
+      0,
+      "noHit_m",
+      0
+     ],
+     [
+      3.5,
+      "h",
+      0,
+      "noHit_m",
+      0
+     ],
+     [
+      3.7,
+      "h",
+      0,
+      "noHit_m",
+      0
+     ],
+     [
+      3.9167,
+      "h",
+      0,
+      "noHit_m",
+      0
+     ],
+     [
+      4.1167,
+      "h",
+      0,
+      "noHit_m",
+      0
+     ],
+     [
+      4.4167,
+      "h",
+      0,
+      "noHit_m",
+      0
+     ]
+    ]
+   }
+  },
+  "daphne": {
+   "atk": {
+    "d": 1.4667,
+    "ev": [
+     [
+      0.25,
+      "p",
+      1,
+      "FX_bullet_bug",
+      0
+     ],
+     [
+      1.2833,
+      "h",
+      0,
+      "daphne_hit_ver2",
+      0
+     ],
+     [
+      1.4667,
+      "h",
+      0,
+      "daphne_hit_ver2",
+      0
+     ]
+    ]
+   },
+   "skill": {
+    "d": 3.8667,
+    "ev": [
+     [
+      1.5667,
+      "p",
+      1,
+      "FX_bullet_bug 2",
+      0
+     ],
+     [
+      2.4167,
+      "h",
+      0,
+      "skill_2_nanobot_",
+      0
+     ],
+     [
+      2.6667,
+      "h",
+      0,
+      "skill_2_nanobot_",
+      0
+     ],
+     [
+      2.8833,
+      "h",
+      0,
+      "skill_2_nanobot_",
+      0
+     ],
+     [
+      3.1,
+      "h",
+      0,
+      "skill_2_nanobot_",
+      0
+     ],
+     [
+      3.3667,
+      "h",
+      0,
+      "skill_2_nanobot_",
+      0
+     ]
+    ]
+   }
+  },
+  "daphne_s1": {
+   "atk": {
+    "d": 1.5833,
+    "ev": [
+     [
+      0.25,
+      "p",
+      1,
+      "FX_bullet_bug",
+      0
+     ],
+     [
+      1.4,
+      "h",
+      0,
+      "daphne_hit_ver2",
+      0
+     ],
+     [
+      1.5833,
+      "h",
+      0,
+      "daphne_hit_ver2",
+      0
+     ]
+    ]
+   },
+   "skill": {
+    "d": 3.8667,
+    "ev": [
+     [
+      1.5667,
+      "p",
+      1,
+      "FX_bullet_bug 2",
+      0
+     ],
+     [
+      2.4167,
+      "h",
+      0,
+      "skill_2_nanobot_",
+      0
+     ],
+     [
+      2.6667,
+      "h",
+      0,
+      "skill_2_nanobot_",
+      0
+     ],
+     [
+      2.8833,
+      "h",
+      0,
+      "skill_2_nanobot_",
+      0
+     ],
+     [
+      3.1,
+      "h",
+      0,
+      "skill_2_nanobot_",
+      0
+     ],
+     [
+      3.3667,
+      "h",
+      0,
+      "skill_2_nanobot_",
+      0
+     ]
+    ]
+   }
+  },
+  "daphne_s2": {
+   "atk": {
+    "d": 0.9,
+    "ev": [
+     [
+      0.25,
+      "p",
+      1,
+      "Daphne_NS2_FX_bullet_bug",
+      1
+     ]
+    ]
+   },
+   "skill": {
+    "d": 3.8667,
+    "ev": [
+     [
+      1.5667,
+      "p",
+      1,
+      "Daphne_NS2_FX_bullet_bug2",
+      1
+     ]
+    ]
+   }
+  },
+  "e_BlackKnight_N": {
+   "atk": {
+    "d": 5.6833,
+    "ev": [
+     [
+      3.1167,
+      "h",
+      0,
+      "noHit_m",
+      0
+     ]
+    ]
+   }
+  },
+  "e_Centurion_N": {
+   "atk": {
+    "d": 2.8833,
+    "ev": [
+     [
+      0.7333,
+      "p",
+      2,
+      "Centurion_bullet",
+      0
+     ],
+     [
+      0.7333,
+      "p",
+      1,
+      "Centurion_bullet",
+      0
+     ],
+     [
+      0.9333,
+      "p",
+      2,
+      "Centurion_bullet",
+      0
+     ],
+     [
+      0.9333,
+      "p",
+      1,
+      "Centurion_bullet",
+      0
+     ],
+     [
+      1.1333,
+      "p",
+      2,
+      "Centurion_bullet",
+      0
+     ],
+     [
+      1.1333,
+      "p",
+      1,
+      "Centurion_bullet",
+      0
+     ],
+     [
+      1.3333,
+      "p",
+      2,
+      "Centurion_bullet",
+      0
+     ],
+     [
+      1.3333,
+      "p",
+      1,
+      "Centurion_bullet",
+      0
+     ],
+     [
+      1.5333,
+      "p",
+      2,
+      "Centurion_bullet",
+      0
+     ],
+     [
+      1.5333,
+      "p",
+      1,
+      "Centurion_bullet",
+      0
+     ],
+     [
+      1.7333,
+      "p",
+      2,
+      "Centurion_bullet",
+      0
+     ],
+     [
+      1.7333,
+      "p",
+      1,
+      "Centurion_bullet",
+      0
+     ],
+     [
+      1.9333,
+      "p",
+      2,
+      "Centurion_bullet",
+      0
+     ],
+     [
+      1.9333,
+      "p",
+      1,
+      "Centurion_bullet",
+      0
+     ],
+     [
+      2.1333,
+      "p",
+      2,
+      "Centurion_bullet",
+      0
+     ],
+     [
+      2.1333,
+      "p",
+      1,
+      "Centurion_bullet",
+      0
+     ]
+    ]
+   },
+   "skill": {
+    "d": 1.2833,
+    "ev": [
+     [
+      0.7167,
+      "h",
+      0,
+      "CenturionCF_skill2_Hit",
+      0
+     ]
+    ]
+   }
+  },
+  "e_Destroyer_N": {
+   "atk": {
+    "d": 6.3833,
+    "ev": [
+     [
+      3.3167,
+      "h",
+      0,
+      "MP_Destroyer_Lazer_Hit",
+      0
+     ],
+     [
+      3.6,
+      "h",
+      0,
+      "MP_Destroyer_Lazer_Hit",
+      0
+     ],
+     [
+      3.8833,
+      "h",
+      0,
+      "MP_Destroyer_Lazer_Hit",
+      0
+     ],
+     [
+      4.1833,
+      "h",
+      0,
+      "MP_Destroyer_Lazer_Hit",
+      0
+     ],
+     [
+      4.4667,
+      "h",
+      0,
+      "MP_Destroyer_Lazer_Hit",
+      0
+     ]
+    ]
+   }
+  },
+  "e_DoomEater_N": {
+   "atk": {
+    "d": 8.5833,
+    "ev": [
+     [
+      5.4167,
+      "h",
+      0,
+      "noHit_m",
+      0
+     ]
+    ]
+   },
+   "skill": {
+    "d": 2.45,
+    "ev": [
+     [
+      0.8333,
+      "p",
+      1,
+      "DoomEater_skill2_bullet",
+      0
+     ],
+     [
+      0.9833,
+      "p",
+      2,
+      "DoomEater_skill2_bullet",
+      0
+     ],
+     [
+      1.15,
+      "p",
+      3,
+      "DoomEater_skill2_bullet",
+      0
+     ],
+     [
+      1.2833,
+      "p",
+      4,
+      "DoomEater_skill2_bullet",
+      0
+     ],
+     [
+      1.4167,
+      "p",
+      1,
+      "DoomEater_skill2_bullet",
+      0
+     ],
+     [
+      1.5333,
+      "p",
+      2,
+      "DoomEater_skill2_bullet",
+      0
+     ],
+     [
+      1.6333,
+      "p",
+      3,
+      "DoomEater_skill2_bullet",
+      0
+     ],
+     [
+      1.7167,
+      "p",
+      4,
+      "DoomEater_skill2_bullet",
+      0
+     ],
+     [
+      1.7833,
+      "p",
+      1,
+      "DoomEater_skill2_bullet",
+      0
+     ]
+    ]
+   }
+  },
+  "e_Drone_N": {
+   "atk": {
+    "d": 2.4167,
+    "ev": [
+     [
+      1.7667,
+      "p",
+      1,
+      "FX_bullet_shock_Missile_MP",
+      0
+     ]
+    ]
+   }
+  },
+  "e_EmperorChick_N": {
+   "skill": {
+    "d": 3.9667,
+    "ev": [
+     [
+      1.2833,
+      "p",
+      4,
+      "BCM_skill2_bullet",
+      0
+     ],
+     [
+      1.3,
+      "h",
+      0,
+      "EmperorChick_skill2_hit",
+      0
+     ],
+     [
+      1.3667,
+      "p",
+      4,
+      "BCM_skill2_bullet",
+      0
+     ],
+     [
+      1.5167,
+      "p",
+      4,
+      "BCM_skill2_bullet",
+      0
+     ],
+     [
+      1.6667,
+      "p",
+      4,
+      "BCM_skill2_bullet",
+      0
+     ],
+     [
+      1.7167,
+      "h",
+      0,
+      "EmperorChick_skill2_hit",
+      0
+     ],
+     [
+      1.8167,
+      "p",
+      4,
+      "BCM_skill2_bullet",
+      0
+     ],
+     [
+      1.9667,
+      "p",
+      4,
+      "BCM_skill2_bullet",
+      0
+     ],
+     [
+      2.1333,
+      "p",
+      4,
+      "BCM_skill2_bullet",
+      0
+     ],
+     [
+      2.15,
+      "h",
+      0,
+      "EmperorChick_skill2_hit",
+      0
+     ],
+     [
+      2.3333,
+      "p",
+      4,
+      "BCM_skill2_bullet",
+      0
+     ],
+     [
+      2.4833,
+      "p",
+      4,
+      "BCM_skill2_bullet",
+      0
+     ],
+     [
+      2.6,
+      "h",
+      0,
+      "EmperorChick_skill2_hit",
+      0
+     ],
+     [
+      2.6333,
+      "p",
+      4,
+      "BCM_skill2_bullet",
+      0
+     ],
+     [
+      2.7833,
+      "p",
+      4,
+      "BCM_skill2_bullet",
+      0
+     ]
+    ]
+   }
+  },
+  "e_Executioner_EW": {
+   "atk": {
+    "d": 2.3667,
+    "ev": [
+     [
+      0.9833,
+      "h",
+      0,
+      "noHit_m",
+      0
+     ],
+     [
+      1.2667,
+      "h",
+      0,
+      "noHit_m",
+      0
+     ]
+    ]
+   },
+   "skill": {
+    "d": 3.0833,
+    "ev": [
+     [
+      1.25,
+      "h",
+      0,
+      "noHit_m",
+      0
+     ],
+     [
+      1.5,
+      "h",
+      0,
+      "noHit_m",
+      0
+     ],
+     [
+      2.0,
+      "h",
+      0,
+      "noHit_m",
+      0
+     ]
+    ]
+   }
+  },
+  "e_Fallen_N": {
+   "skill": {
+    "d": 3.85,
+    "ev": [
+     [
+      0.5,
+      "p",
+      1,
+      "FX_Vibration_Bullet",
+      1
+     ],
+     [
+      2.55,
+      "h",
+      0,
+      "Fallen_lighting_1",
+      0
+     ],
+     [
+      3.2333,
+      "h",
+      0,
+      "Fallen_lighting",
+      0
+     ]
+    ]
+   }
+  },
+  "e_Fortress_N": {
+   "atk": {
+    "d": 1.7333,
+    "ev": [
+     [
+      0.55,
+      "p",
+      2,
+      "MP_Fortress_bullet",
+      0
+     ],
+     [
+      0.5833,
+      "p",
+      1,
+      "MP_Fortress_bullet",
+      0
+     ],
+     [
+      0.6833,
+      "p",
+      2,
+      "MP_Fortress_bullet",
+      0
+     ],
+     [
+      0.7167,
+      "p",
+      1,
+      "MP_Fortress_bullet",
+      0
+     ],
+     [
+      0.8167,
+      "p",
+      2,
+      "MP_Fortress_bullet",
+      0
+     ],
+     [
+      0.85,
+      "p",
+      1,
+      "MP_Fortress_bullet",
+      0
+     ],
+     [
+      0.95,
+      "p",
+      2,
+      "MP_Fortress_bullet",
+      0
+     ],
+     [
+      0.9833,
+      "p",
+      1,
+      "MP_Fortress_bullet",
+      0
+     ],
+     [
+      1.0833,
+      "p",
+      2,
+      "MP_Fortress_bullet",
+      0
+     ],
+     [
+      1.1167,
+      "p",
+      1,
+      "MP_Fortress_bullet",
+      0
+     ],
+     [
+      1.2167,
+      "p",
+      2,
+      "MP_Fortress_bullet",
+      0
+     ],
+     [
+      1.25,
+      "p",
+      1,
+      "MP_Fortress_bullet",
+      0
+     ],
+     [
+      1.35,
+      "p",
+      2,
+      "MP_Fortress_bullet",
+      0
+     ],
+     [
+      1.3833,
+      "p",
+      1,
+      "MP_Fortress_bullet",
+      0
+     ],
+     [
+      1.4833,
+      "p",
+      2,
+      "MP_Fortress_bullet",
+      0
+     ],
+     [
+      1.5167,
+      "p",
+      1,
+      "MP_Fortress_bullet",
+      0
+     ]
+    ]
+   },
+   "skill": {
+    "d": 4.4333,
+    "ev": [
+     [
+      2.0,
+      "h",
+      0,
+      "noHit_m",
+      0
+     ],
+     [
+      2.1333,
+      "h",
+      0,
+      "Fortress_skill1_hit",
+      0
+     ],
+     [
+      2.2667,
+      "h",
+      0,
+      "Fortress_skill1_hit",
+      0
+     ],
+     [
+      2.4,
+      "h",
+      0,
+      "Fortress_skill1_hit",
+      0
+     ],
+     [
+      2.5333,
+      "h",
+      0,
+      "Fortress_skill1_hit",
+      0
+     ],
+     [
+      2.6667,
+      "h",
+      0,
+      "Fortress_skill1_hit",
+      0
+     ],
+     [
+      2.8,
+      "h",
+      0,
+      "Fortress_skill1_hit",
+      0
+     ],
+     [
+      2.9333,
+      "h",
+      0,
+      "Fortress_skill1_hit",
+      0
+     ],
+     [
+      3.0667,
+      "h",
+      0,
+      "Fortress_skill1_hit",
+      0
+     ]
+    ]
+   }
+  },
+  "e_Gigantes_N": {
+   "atk": {
+    "d": 8.1333,
+    "ev": [
+     [
+      0.5,
+      "p",
+      1,
+      "Juggernaut_bullet",
+      0
+     ],
+     [
+      0.6,
+      "p",
+      1,
+      "Juggernaut_bullet",
+      0
+     ],
+     [
+      0.7,
+      "p",
+      1,
+      "Juggernaut_bullet",
+      0
+     ],
+     [
+      0.8,
+      "p",
+      1,
+      "Juggernaut_bullet",
+      0
+     ],
+     [
+      0.9,
+      "p",
+      1,
+      "Gigantes_bullet",
+      0
+     ],
+     [
+      1.0,
+      "p",
+      1,
+      "Gigantes_bullet",
+      0
+     ],
+     [
+      1.1,
+      "p",
+      1,
+      "Juggernaut_bullet",
+      0
+     ],
+     [
+      1.2,
+      "p",
+      1,
+      "Juggernaut_bullet",
+      0
+     ],
+     [
+      1.3,
+      "p",
+      1,
+      "Juggernaut_bullet",
+      0
+     ],
+     [
+      1.4,
+      "p",
+      1,
+      "Juggernaut_bullet",
+      0
+     ],
+     [
+      1.5,
+      "p",
+      1,
+      "Juggernaut_bullet",
+      0
+     ],
+     [
+      1.6,
+      "p",
+      1,
+      "Juggernaut_bullet",
+      0
+     ],
+     [
+      1.7,
+      "p",
+      1,
+      "Juggernaut_bullet",
+      0
+     ],
+     [
+      1.8,
+      "p",
+      1,
+      "Juggernaut_bullet",
+      0
+     ],
+     [
+      1.9,
+      "p",
+      1,
+      "Juggernaut_bullet",
+      0
+     ],
+     [
+      2.0,
+      "p",
+      1,
+      "Juggernaut_bullet",
+      0
+     ],
+     [
+      2.1,
+      "p",
+      1,
+      "Juggernaut_bullet",
+      0
+     ],
+     [
+      2.2,
+      "p",
+      1,
+      "Juggernaut_bullet",
+      0
+     ],
+     [
+      2.3,
+      "p",
+      1,
+      "Juggernaut_bullet",
+      0
+     ],
+     [
+      2.4,
+      "p",
+      1,
+      "Juggernaut_bullet",
+      0
+     ],
+     [
+      4.25,
+      "h",
+      0,
+      "noHit_m",
+      0
+     ],
+     [
+      4.95,
+      "h",
+      0,
+      "noHit_m",
+      0
+     ]
+    ]
+   },
+   "skill": {
+    "d": 3.9667,
+    "ev": [
+     [
+      1.05,
+      "h",
+      0,
+      "noHit_m",
+      0
+     ],
+     [
+      1.2,
+      "h",
+      0,
+      "noHit_m",
+      0
+     ]
+    ]
+   }
+  },
+  "e_Goltarion_N": {
+   "atk": {
+    "d": 5.6833,
+    "ev": [
+     [
+      3.1,
+      "h",
+      0,
+      "noHit_m",
+      0
+     ]
+    ]
+   }
+  },
+  "e_Harvester_N": {
+   "atk": {
+    "d": 5.25,
+    "ev": [
+     [
+      1.0,
+      "h",
+      0,
+      "noHit_m",
+      0
+     ],
+     [
+      1.3167,
+      "h",
+      0,
+      "noHit_m",
+      0
+     ],
+     [
+      1.4333,
+      "h",
+      0,
+      "noHit_m",
+      0
+     ],
+     [
+      1.6,
+      "h",
+      0,
+      "noHit_m",
+      0
+     ],
+     [
+      1.7667,
+      "h",
+      0,
+      "noHit_m",
+      0
+     ],
+     [
+      3.9667,
+      "h",
+      0,
+      "noHit_m",
+      0
+     ]
+    ]
+   },
+   "skill": {
+    "d": 1.45,
+    "ev": [
+     [
+      0.4833,
+      "h",
+      0,
+      "Harvest_skill2_hit",
+      0
+     ]
+    ]
+   }
+  },
+  "e_Intruder_N": {
+   "atk": {
+    "d": 3.3833,
+    "ev": [
+     [
+      1.6167,
+      "h",
+      0,
+      "noHit_m",
+      0
+     ],
+     [
+      1.8333,
+      "h",
+      0,
+      "noHit_m",
+      0
+     ]
+    ]
+   },
+   "skill": {
+    "d": 5.5667,
+    "ev": [
+     [
+      3.7167,
+      "e",
+      0,
+      "Intruder_N_Skill2_Hit",
+      0
+     ]
+    ]
+   }
+  },
+  "e_IronPrince_N": {
+   "atk": {
+    "d": 11.0,
+    "ev": [
+     [
+      1.6167,
+      "eg",
+      0,
+      "IronPrince_skill1_debuff",
+      0
+     ],
+     [
+      2.4333,
+      "eg",
+      0,
+      "IronPrince_skill1_debuff_ground",
+      0
+     ],
+     [
+      7.2833,
+      "h",
+      0,
+      "noHit_m",
+      0
+     ],
+     [
+      7.3667,
+      "h",
+      0,
+      "noHit_m",
+      0
+     ],
+     [
+      7.5333,
+      "h",
+      0,
+      "noHit_m",
+      0
+     ],
+     [
+      7.9833,
+      "e",
+      0,
+      "IronPrince_skill1_Last_debuff",
+      0
+     ],
+     [
+      8.6167,
+      "h",
+      0,
+      "Ironprince_skill1_Headsymbol_fx",
+      0
+     ]
+    ]
+   },
+   "skill": {
+    "d": 21.0,
+    "ev": [
+     [
+      16.3833,
+      "h",
+      0,
+      "noHit_m",
+      0
+     ],
+     [
+      16.8,
+      "h",
+      0,
+      "noHit_m",
+      0
+     ],
+     [
+      17.2667,
+      "h",
+      0,
+      "noHit_m",
+      0
+     ]
+    ]
+   }
+  },
+  "e_Juggernaut_N": {
+   "atk": {
+    "d": 8.1333,
+    "ev": [
+     [
+      0.5,
+      "p",
+      1,
+      "Juggernaut_bullet",
+      0
+     ],
+     [
+      0.6,
+      "p",
+      1,
+      "Juggernaut_bullet",
+      0
+     ],
+     [
+      0.7,
+      "p",
+      1,
+      "Juggernaut_bullet",
+      0
+     ],
+     [
+      0.8,
+      "p",
+      1,
+      "Juggernaut_bullet",
+      0
+     ],
+     [
+      0.9,
+      "p",
+      1,
+      "Juggernaut_bullet",
+      0
+     ],
+     [
+      1.0,
+      "p",
+      1,
+      "Juggernaut_bullet",
+      0
+     ],
+     [
+      1.1,
+      "p",
+      1,
+      "Juggernaut_bullet",
+      0
+     ],
+     [
+      1.2,
+      "p",
+      1,
+      "Juggernaut_bullet",
+      0
+     ],
+     [
+      1.3,
+      "p",
+      1,
+      "Juggernaut_bullet",
+      0
+     ],
+     [
+      1.4,
+      "p",
+      1,
+      "Juggernaut_bullet",
+      0
+     ],
+     [
+      1.5,
+      "p",
+      1,
+      "Juggernaut_bullet",
+      0
+     ],
+     [
+      1.6,
+      "p",
+      1,
+      "Juggernaut_bullet",
+      0
+     ],
+     [
+      1.7,
+      "p",
+      1,
+      "Juggernaut_bullet",
+      0
+     ],
+     [
+      1.8,
+      "p",
+      1,
+      "Juggernaut_bullet",
+      0
+     ],
+     [
+      1.9,
+      "p",
+      1,
+      "Juggernaut_bullet",
+      0
+     ],
+     [
+      2.0,
+      "p",
+      1,
+      "Juggernaut_bullet",
+      0
+     ],
+     [
+      2.1,
+      "p",
+      1,
+      "Juggernaut_bullet",
+      0
+     ],
+     [
+      2.2,
+      "p",
+      1,
+      "Juggernaut_bullet",
+      0
+     ],
+     [
+      2.3,
+      "p",
+      1,
+      "Juggernaut_bullet",
+      0
+     ],
+     [
+      2.4,
+      "p",
+      1,
+      "Juggernaut_bullet",
+      0
+     ],
+     [
+      4.25,
+      "h",
+      0,
+      "noHit_m",
+      0
+     ],
+     [
+      4.95,
+      "h",
+      0,
+      "noHit_m",
+      0
+     ]
+    ]
+   },
+   "skill": {
+    "d": 3.9667,
+    "ev": [
+     [
+      1.05,
+      "h",
+      0,
+      "noHit_m",
+      0
+     ]
+    ]
+   }
+  },
+  "e_Legion_N": {
+   "atk": {
+    "d": 2.6833,
+    "ev": [
+     [
+      0.6667,
+      "p",
+      1,
+      "Legion_bullet",
+      0
+     ],
+     [
+      0.7833,
+      "p",
+      1,
+      "Legion_bullet",
+      0
+     ],
+     [
+      0.8667,
+      "p",
+      1,
+      "Legion_bullet",
+      0
+     ],
+     [
+      0.95,
+      "p",
+      1,
+      "Legion_bullet",
+      0
+     ],
+     [
+      1.05,
+      "p",
+      1,
+      "Legion_bullet",
+      0
+     ],
+     [
+      1.0833,
+      "p",
+      1,
+      "Legion_bullet",
+      0
+     ],
+     [
+      1.1667,
+      "p",
+      1,
+      "Legion_bullet",
+      0
+     ],
+     [
+      1.25,
+      "p",
+      1,
+      "Legion_bullet",
+      0
+     ],
+     [
+      1.3,
+      "p",
+      1,
+      "Legion_bullet",
+      0
+     ],
+     [
+      1.3833,
+      "p",
+      1,
+      "Legion_bullet",
+      0
+     ],
+     [
+      1.4667,
+      "p",
+      1,
+      "Legion_bullet",
+      0
+     ],
+     [
+      1.5333,
+      "p",
+      1,
+      "Legion_bullet",
+      0
+     ],
+     [
+      1.5833,
+      "p",
+      1,
+      "Legion_bullet",
+      0
+     ],
+     [
+      1.65,
+      "p",
+      1,
+      "Legion_bullet",
+      0
+     ],
+     [
+      1.7333,
+      "p",
+      1,
+      "Legion_bullet",
+      0
+     ],
+     [
+      1.8,
+      "p",
+      1,
+      "Legion_bullet",
+      0
+     ],
+     [
+      1.8667,
+      "p",
+      1,
+      "Legion_bullet",
+      0
+     ]
+    ]
+   },
+   "skill": {
+    "d": 1.25,
+    "ev": [
+     [
+      0.6,
+      "h",
+      0,
+      "Legion_skill2_hit",
+      0
+     ]
+    ]
+   }
+  },
+  "e_Nidhogg_N": {
+   "atk": {
+    "d": 7.15,
+    "ev": [
+     [
+      4.55,
+      "hg",
+      0,
+      "nidhogg_skill1_hit",
+      0
+     ]
+    ]
+   },
+   "skill": {
+    "d": 10.5667,
+    "ev": [
+     [
+      6.4333,
+      "h",
+      0,
+      "NIDHOGG_SKLL2_HIT",
+      0
+     ]
+    ]
+   }
+  },
+  "e_Phalangites_N": {
+   "atk": {
+    "d": 2.6833,
+    "ev": [
+     [
+      0.6667,
+      "p",
+      1,
+      "FX_bullet_Gun",
+      0
+     ],
+     [
+      0.7833,
+      "p",
+      1,
+      "FX_bullet_Gun",
+      0
+     ],
+     [
+      0.8667,
+      "p",
+      1,
+      "FX_bullet_Gun",
+      0
+     ],
+     [
+      0.95,
+      "p",
+      1,
+      "FX_bullet_Gun",
+      0
+     ],
+     [
+      1.05,
+      "p",
+      1,
+      "FX_bullet_Gun",
+      0
+     ],
+     [
+      1.0833,
+      "p",
+      1,
+      "FX_bullet_Gun",
+      0
+     ],
+     [
+      1.1667,
+      "p",
+      1,
+      "FX_bullet_Gun",
+      0
+     ],
+     [
+      1.25,
+      "p",
+      1,
+      "FX_bullet_Gun",
+      0
+     ],
+     [
+      1.3,
+      "p",
+      1,
+      "FX_bullet_Gun",
+      0
+     ],
+     [
+      1.3833,
+      "p",
+      1,
+      "FX_bullet_Gun",
+      0
+     ],
+     [
+      1.4667,
+      "p",
+      1,
+      "FX_bullet_Gun",
+      0
+     ],
+     [
+      1.5333,
+      "p",
+      1,
+      "FX_bullet_Gun",
+      0
+     ],
+     [
+      1.5833,
+      "p",
+      1,
+      "FX_bullet_Gun",
+      0
+     ],
+     [
+      1.65,
+      "p",
+      1,
+      "FX_bullet_Gun",
+      0
+     ]
+    ]
+   }
+  },
+  "e_Predator_N": {
+   "atk": {
+    "d": 2.9167,
+    "ev": [
+     [
+      1.4167,
+      "h",
+      0,
+      "Hit_x2",
+      0
+     ]
+    ]
+   },
+   "skill": {
+    "d": 5.9167,
+    "ev": [
+     [
+      1.15,
+      "h",
+      0,
+      "PD_skill2_hit",
+      0
+     ],
+     [
+      1.3833,
+      "h",
+      0,
+      "PD_skill2_hit",
+      0
+     ],
+     [
+      1.6667,
+      "h",
+      0,
+      "PD_skill2_hit",
+      0
+     ],
+     [
+      1.9167,
+      "h",
+      0,
+      "PD_skill2_hit",
+      0
+     ],
+     [
+      2.2333,
+      "h",
+      0,
+      "PD_skill2_hit",
+      0
+     ],
+     [
+      2.5,
+      "h",
+      0,
+      "PD_skill2_hit",
+      0
+     ],
+     [
+      2.8167,
+      "h",
+      0,
+      "PD_skill2_hit",
+      0
+     ],
+     [
+      3.0833,
+      "h",
+      0,
+      "PD_skill2_hit",
+      0
+     ],
+     [
+      3.3333,
+      "h",
+      0,
+      "PD_skill2_hit",
+      0
+     ],
+     [
+      3.5667,
+      "h",
+      0,
+      "PD_skill2_hit",
+      0
+     ],
+     [
+      3.8833,
+      "h",
+      0,
+      "PD_skill2_hit",
+      0
+     ]
+    ]
+   }
+  },
+  "e_PuppHead_N": {
+   "skill": {
+    "d": 5.65,
+    "ev": [
+     [
+      1.0833,
+      "e",
+      0,
+      "FX_hit_MP_PuppHead_skill3",
+      0
+     ],
+     [
+      3.7167,
+      "h",
+      0,
+      "MP_PuPphead_skill2_hit",
+      0
+     ],
+     [
+      3.8167,
+      "h",
+      0,
+      "noHit_m",
+      0
+     ]
+    ]
+   }
+  },
+  "e_Rampart_N": {
+   "atk": {
+    "d": 2.6833,
+    "ev": [
+     [
+      0.6667,
+      "p",
+      1,
+      "FX_bullet_Gun",
+      0
+     ],
+     [
+      0.7833,
+      "p",
+      1,
+      "FX_bullet_Gun",
+      0
+     ],
+     [
+      0.8667,
+      "p",
+      1,
+      "FX_bullet_Gun",
+      0
+     ],
+     [
+      0.95,
+      "p",
+      1,
+      "FX_bullet_Gun",
+      0
+     ],
+     [
+      1.05,
+      "p",
+      1,
+      "FX_bullet_Gun",
+      0
+     ],
+     [
+      1.0833,
+      "p",
+      1,
+      "FX_bullet_Gun",
+      0
+     ],
+     [
+      1.1667,
+      "p",
+      1,
+      "FX_bullet_Gun",
+      0
+     ],
+     [
+      1.25,
+      "p",
+      1,
+      "FX_bullet_Gun",
+      0
+     ],
+     [
+      1.3,
+      "p",
+      1,
+      "FX_bullet_Gun",
+      0
+     ],
+     [
+      1.3833,
+      "p",
+      1,
+      "FX_bullet_Gun",
+      0
+     ],
+     [
+      1.4667,
+      "p",
+      1,
+      "FX_bullet_Gun",
+      0
+     ],
+     [
+      1.5333,
+      "p",
+      1,
+      "FX_bullet_Gun",
+      0
+     ],
+     [
+      1.5833,
+      "p",
+      1,
+      "FX_bullet_Gun",
+      0
+     ],
+     [
+      1.65,
+      "p",
+      1,
+      "FX_bullet_Gun",
+      0
+     ]
+    ]
+   }
+  },
+  "empress": {
+   "atk": {
+    "d": 4.2667,
+    "ev": [
+     [
+      2.4667,
+      "h",
+      0,
+      "Empress_skill1_ice_Hit",
+      0
+     ]
+    ]
+   },
+   "skill": {
+    "d": 4.3333,
+    "ev": [
+     [
+      2.2833,
+      "h",
+      0,
+      "noHit_m",
+      0
+     ],
+     [
+      3.9667,
+      "h",
+      0,
+      "Empress_skill2_ice_first_Hit",
+      0
+     ],
+     [
+      3.9833,
+      "h",
+      0,
+      "Empris_skill2_Ice_Hit",
+      0
+     ]
+    ]
+   }
+  },
+  "empress_s1": {
+   "atk": {
+    "d": 4.3167,
+    "ev": [
+     [
+      2.4667,
+      "h",
+      0,
+      "Empress_skill1_ice_Hit",
+      0
+     ]
+    ]
+   },
+   "skill": {
+    "d": 4.3333,
+    "ev": [
+     [
+      2.2833,
+      "h",
+      0,
+      "noHit_m",
+      0
+     ],
+     [
+      3.9667,
+      "h",
+      0,
+      "Empress_skill2_ice_first_Hit",
+      0
+     ],
+     [
+      3.9833,
+      "h",
+      0,
+      "Empris_skill2_Ice_Hit",
+      0
+     ]
+    ]
+   }
+  },
+  "eternity": {
+   "atk": {
+    "d": 2.8333,
+    "ev": [
+     [
+      0.5667,
+      "p",
+      1,
+      "Eternity_skill1_bullet",
+      0
+     ],
+     [
+      0.6667,
+      "h",
+      0,
+      "Eternity_skill1_Hit",
+      0
+     ],
+     [
+      0.7667,
+      "p",
+      1,
+      "Eternity_skill1_bullet",
+      0
+     ],
+     [
+      0.9667,
+      "p",
+      1,
+      "Eternity_skill1_bullet",
+      0
+     ],
+     [
+      1.1667,
+      "p",
+      1,
+      "Eternity_skill1_bullet",
+      0
+     ],
+     [
+      1.3667,
+      "p",
+      1,
+      "Eternity_skill1_bullet",
+      0
+     ],
+     [
+      1.5667,
+      "p",
+      1,
+      "Eternity_skill1_bullet",
+      0
+     ],
+     [
+      1.7667,
+      "p",
+      1,
+      "Eternity_skill1_bullet",
+      0
+     ],
+     [
+      1.9667,
+      "p",
+      1,
+      "Eternity_skill1_bullet",
+      0
+     ]
+    ]
+   },
+   "skill": {
+    "d": 5.65,
+    "ev": [
+     [
+      2.3333,
+      "h",
+      0,
+      "noHit_m",
+      0
+     ],
+     [
+      2.5167,
+      "h",
+      0,
+      "noHit_m",
+      0
+     ],
+     [
+      2.7167,
+      "h",
+      0,
+      "noHit_m",
+      0
+     ],
+     [
+      2.9,
+      "h",
+      0,
+      "noHit_m",
+      0
+     ],
+     [
+      3.0667,
+      "h",
+      0,
+      "noHit_m",
+      0
+     ],
+     [
+      3.2,
+      "h",
+      0,
+      "noHit_m",
+      0
+     ],
+     [
+      3.3833,
+      "h",
+      0,
+      "noHit_m",
+      0
+     ],
+     [
+      3.5667,
+      "h",
+      0,
+      "noHit_m",
+      0
+     ],
+     [
+      3.7333,
+      "h",
+      0,
+      "noHit_m",
+      0
+     ],
+     [
+      3.9,
+      "h",
+      0,
+      "noHit_m",
+      0
+     ],
+     [
+      4.0333,
+      "h",
+      0,
+      "noHit_m",
+      0
+     ]
+    ]
+   }
+  },
+  "eternity_s1": {
+   "atk": {
+    "d": 2.8333,
+    "ev": [
+     [
+      0.5667,
+      "p",
+      1,
+      "Eternity_skill1_bullet",
+      0
+     ],
+     [
+      0.6667,
+      "h",
+      0,
+      "Eternity_skill1_Hit",
+      0
+     ],
+     [
+      0.7667,
+      "p",
+      1,
+      "Eternity_skill1_bullet",
+      0
+     ],
+     [
+      0.9667,
+      "p",
+      1,
+      "Eternity_skill1_bullet",
+      0
+     ],
+     [
+      1.1667,
+      "p",
+      1,
+      "Eternity_skill1_bullet",
+      0
+     ],
+     [
+      1.3667,
+      "p",
+      1,
+      "Eternity_skill1_bullet",
+      0
+     ],
+     [
+      1.5667,
+      "p",
+      1,
+      "Eternity_skill1_bullet",
+      0
+     ],
+     [
+      1.7667,
+      "p",
+      1,
+      "Eternity_skill1_bullet",
+      0
+     ],
+     [
+      1.9667,
+      "p",
+      1,
+      "Eternity_skill1_bullet",
+      0
+     ]
+    ]
+   },
+   "skill": {
+    "d": 5.65,
+    "ev": [
+     [
+      2.3333,
+      "h",
+      0,
+      "noHit_m",
+      0
+     ],
+     [
+      2.5167,
+      "h",
+      0,
+      "noHit_m",
+      0
+     ],
+     [
+      2.7167,
+      "h",
+      0,
+      "noHit_m",
+      0
+     ],
+     [
+      2.9,
+      "h",
+      0,
+      "noHit_m",
+      0
+     ],
+     [
+      3.0667,
+      "h",
+      0,
+      "noHit_m",
+      0
+     ],
+     [
+      3.2,
+      "h",
+      0,
+      "noHit_m",
+      0
+     ],
+     [
+      3.3833,
+      "h",
+      0,
+      "noHit_m",
+      0
+     ],
+     [
+      3.5667,
+      "h",
+      0,
+      "noHit_m",
+      0
+     ],
+     [
+      3.7333,
+      "h",
+      0,
+      "noHit_m",
+      0
+     ],
+     [
+      3.9,
+      "h",
+      0,
+      "noHit_m",
+      0
+     ],
+     [
+      4.0333,
+      "h",
+      0,
+      "noHit_m",
+      0
+     ]
+    ]
+   }
+  },
+  "eternity_s2": {
+   "atk": {
+    "d": 2.8333,
+    "ev": [
+     [
+      0.5667,
+      "p",
+      1,
+      "Eternity_skill1_bullet",
+      0
+     ],
+     [
+      0.6667,
+      "h",
+      0,
+      "Eternity_skill1_Hit",
+      0
+     ],
+     [
+      0.7667,
+      "p",
+      1,
+      "Eternity_skill1_bullet",
+      0
+     ],
+     [
+      0.9667,
+      "p",
+      1,
+      "Eternity_skill1_bullet",
+      0
+     ],
+     [
+      1.1667,
+      "p",
+      1,
+      "Eternity_skill1_bullet",
+      0
+     ],
+     [
+      1.3667,
+      "p",
+      1,
+      "Eternity_skill1_bullet",
+      0
+     ],
+     [
+      1.5667,
+      "p",
+      1,
+      "Eternity_skill1_bullet",
+      0
+     ],
+     [
+      1.7667,
+      "p",
+      1,
+      "Eternity_skill1_bullet",
+      0
+     ],
+     [
+      1.9667,
+      "p",
+      1,
+      "Eternity_skill1_bullet",
+      0
+     ]
+    ]
+   },
+   "skill": {
+    "d": 5.65,
+    "ev": [
+     [
+      2.3333,
+      "h",
+      0,
+      "noHit_m",
+      0
+     ],
+     [
+      2.5167,
+      "h",
+      0,
+      "noHit_m",
+      0
+     ],
+     [
+      2.7167,
+      "h",
+      0,
+      "noHit_m",
+      0
+     ],
+     [
+      2.9,
+      "h",
+      0,
+      "noHit_m",
+      0
+     ],
+     [
+      3.0667,
+      "h",
+      0,
+      "noHit_m",
+      0
+     ],
+     [
+      3.2,
+      "h",
+      0,
+      "noHit_m",
+      0
+     ],
+     [
+      3.3833,
+      "h",
+      0,
+      "noHit_m",
+      0
+     ],
+     [
+      3.5667,
+      "h",
+      0,
+      "noHit_m",
+      0
+     ],
+     [
+      3.7333,
+      "h",
+      0,
+      "noHit_m",
+      0
+     ],
+     [
+      3.9,
+      "h",
+      0,
+      "noHit_m",
+      0
+     ],
+     [
+      4.0333,
+      "h",
+      0,
+      "noHit_m",
+      0
+     ]
+    ]
+   }
+  },
+  "fafnir": {
+   "atk": {
+    "d": 6.1333,
+    "ev": [
+     [
+      1.6333,
+      "h",
+      0,
+      "fafnir_skill1_elec_hit",
+      0
+     ],
+     [
+      2.0,
+      "h",
+      0,
+      "fafnir_skill1_elec_hit",
+      0
+     ],
+     [
+      2.2833,
+      "h",
+      0,
+      "fafnir_skill1_elec_hit",
+      0
+     ],
+     [
+      2.5667,
+      "h",
+      0,
+      "fafnir_skill1_elec_hit",
+      0
+     ],
+     [
+      3.15,
+      "h",
+      0,
+      "fafnir_skill1_elec_hit",
+      0
+     ],
+     [
+      4.5333,
+      "hg",
+      0,
+      "fafnir_N_Skill1_A",
+      0
+     ],
+     [
+      4.5667,
+      "h",
+      0,
+      "noHit_m",
+      0
+     ]
+    ]
+   },
+   "skill": {
+    "d": 11.0,
+    "ev": [
+     [
+      8.1333,
+      "h",
+      0,
+      "noHit_m",
+      0
+     ],
+     [
+      8.6,
+      "h",
+      0,
+      "fafnir_skill1_elec_hit",
+      0
+     ],
+     [
+      8.6667,
+      "h",
+      0,
+      "fafnir_skill1_elec_hit",
+      0
+     ],
+     [
+      8.7167,
+      "h",
+      0,
+      "fafnir_skill1_elec_hit",
+      0
+     ],
+     [
+      8.75,
+      "h",
+      0,
+      "fafnir_skill1_elec_hit",
+      0
+     ],
+     [
+      8.85,
+      "h",
+      0,
+      "fafnir_skill1_elec_hit",
+      0
+     ],
+     [
+      8.95,
+      "h",
+      0,
+      "fafnir_skill1_elec_hit",
+      0
+     ],
+     [
+      9.0167,
+      "h",
+      0,
+      "fafnir_skill1_elec_hit",
+      0
+     ],
+     [
+      9.0667,
+      "h",
+      0,
+      "fafnir_skill1_elec_hit",
+      0
+     ]
+    ]
+   }
+  },
+  "fafnir_s1": {
+   "atk": {
+    "d": 6.1667,
+    "ev": [
+     [
+      1.6333,
+      "h",
+      0,
+      "vfx_fafnir_ns1_hit_01",
+      0
+     ],
+     [
+      2.0,
+      "h",
+      0,
+      "vfx_fafnir_ns1_hit_02",
+      0
+     ],
+     [
+      2.2833,
+      "h",
+      0,
+      "vfx_fafnir_ns1_hit_03",
+      0
+     ],
+     [
+      2.5667,
+      "h",
+      0,
+      "vfx_fafnir_ns1_hit_04",
+      0
+     ],
+     [
+      3.15,
+      "h",
+      0,
+      "vfx_fafnir_ns1_hit_04_last",
+      0
+     ],
+     [
+      4.5333,
+      "hg",
+      0,
+      "vfx_fafnir_ns1_Skill1_A",
+      0
+     ],
+     [
+      4.5667,
+      "h",
+      0,
+      "noHit_m",
+      0
+     ]
+    ]
+   },
+   "skill": {
+    "d": 10.8833,
+    "ev": [
+     [
+      7.9167,
+      "h",
+      0,
+      "noHit_m",
+      0
+     ],
+     [
+      7.95,
+      "h",
+      0,
+      "fafnir_skill1_elec_hit",
+      0
+     ],
+     [
+      8.0167,
+      "h",
+      0,
+      "fafnir_skill1_elec_hit",
+      0
+     ],
+     [
+      8.0667,
+      "h",
+      0,
+      "fafnir_skill1_elec_hit",
+      0
+     ],
+     [
+      8.1,
+      "h",
+      0,
+      "fafnir_skill1_elec_hit",
+      0
+     ],
+     [
+      8.2,
+      "h",
+      0,
+      "fafnir_skill1_elec_hit",
+      0
+     ],
+     [
+      8.3,
+      "h",
+      0,
+      "fafnir_skill1_elec_hit",
+      0
+     ],
+     [
+      8.3667,
+      "h",
+      0,
+      "fafnir_skill1_elec_hit",
+      0
+     ],
+     [
+      8.4167,
+      "h",
+      0,
+      "fafnir_skill1_elec_hit",
+      0
+     ]
+    ]
+   }
+  },
+  "fafnir_s2": {
+   "atk": {
+    "d": 6.1333,
+    "ev": [
+     [
+      1.6333,
+      "h",
+      0,
+      "vfx_fafnir_ns2_skill1_hit_01",
+      0
+     ],
+     [
+      2.0,
+      "h",
+      0,
+      "vfx_fafnir_ns2_skill1_hit_01",
+      0
+     ],
+     [
+      2.2833,
+      "h",
+      0,
+      "vfx_fafnir_ns2_skill1_hit_01",
+      0
+     ],
+     [
+      2.5667,
+      "h",
+      0,
+      "vfx_fafnir_ns2_skill1_hit_01",
+      0
+     ],
+     [
+      3.15,
+      "h",
+      0,
+      "vfx_fafnir_ns2_skill1_hit02",
+      0
+     ],
+     [
+      4.5333,
+      "hg",
+      0,
+      "vfx_fafnir_ns2_skill1_kickhit",
+      0
+     ],
+     [
+      4.5667,
+      "h",
+      0,
+      "noHit_m",
+      0
+     ]
+    ]
+   },
+   "skill": {
+    "d": 11.0,
+    "ev": [
+     [
+      8.1333,
+      "h",
+      0,
+      "noHit_m",
+      0
+     ],
+     [
+      8.6,
+      "h",
+      0,
+      "fafnir_skill1_elec_hit",
+      0
+     ],
+     [
+      8.6667,
+      "h",
+      0,
+      "fafnir_skill1_elec_hit",
+      0
+     ],
+     [
+      8.7167,
+      "h",
+      0,
+      "fafnir_skill1_elec_hit",
+      0
+     ],
+     [
+      8.75,
+      "h",
+      0,
+      "fafnir_skill1_elec_hit",
+      0
+     ],
+     [
+      8.85,
+      "h",
+      0,
+      "fafnir_skill1_elec_hit",
+      0
+     ],
+     [
+      8.95,
+      "h",
+      0,
+      "fafnir_skill1_elec_hit",
+      0
+     ],
+     [
+      9.0167,
+      "h",
+      0,
+      "fafnir_skill1_elec_hit",
+      0
+     ],
+     [
+      9.0667,
+      "h",
+      0,
+      "fafnir_skill1_elec_hit",
+      0
+     ]
+    ]
+   }
+  },
+  "gnome": {
+   "atk": {
+    "d": 2.1167,
+    "ev": [
+     [
+      0.7833,
+      "p",
+      1,
+      "Gnome_bullet",
+      0
+     ],
+     [
+      0.8833,
+      "p",
+      1,
+      "Gnome_bullet",
+      0
+     ],
+     [
+      0.9833,
+      "p",
+      1,
+      "Gnome_bullet",
+      0
+     ],
+     [
+      1.0833,
+      "p",
+      1,
+      "Gnome_bullet",
+      0
+     ],
+     [
+      1.1833,
+      "p",
+      1,
+      "Gnome_bullet",
+      0
+     ],
+     [
+      1.2833,
+      "p",
+      1,
+      "Gnome_bullet",
+      0
+     ],
+     [
+      1.3833,
+      "p",
+      1,
+      "Gnome_bullet",
+      0
+     ],
+     [
+      1.4833,
+      "p",
+      1,
+      "Gnome_bullet",
+      0
+     ],
+     [
+      1.5833,
+      "p",
+      1,
+      "Gnome_bullet",
+      0
+     ],
+     [
+      1.6833,
+      "p",
+      1,
+      "Gnome_bullet",
+      0
+     ]
+    ]
+   }
+  },
+  "gnome_s1": {
+   "atk": {
+    "d": 2.1167,
+    "ev": [
+     [
+      0.7833,
+      "p",
+      1,
+      "Gnome_bullet",
+      0
+     ],
+     [
+      0.8833,
+      "p",
+      1,
+      "Gnome_bullet",
+      0
+     ],
+     [
+      0.9833,
+      "p",
+      1,
+      "Gnome_bullet",
+      0
+     ],
+     [
+      1.0833,
+      "p",
+      1,
+      "Gnome_bullet",
+      0
+     ],
+     [
+      1.1833,
+      "p",
+      1,
+      "Gnome_bullet",
+      0
+     ],
+     [
+      1.2833,
+      "p",
+      1,
+      "Gnome_bullet",
+      0
+     ],
+     [
+      1.3833,
+      "p",
+      1,
+      "Gnome_bullet",
+      0
+     ],
+     [
+      1.4833,
+      "p",
+      1,
+      "Gnome_bullet",
+      0
+     ],
+     [
+      1.5833,
+      "p",
+      1,
+      "Gnome_bullet",
+      0
+     ],
+     [
+      1.6833,
+      "p",
+      1,
+      "Gnome_bullet",
+      0
+     ]
+    ]
+   }
+  },
+  "gnome_s2": {
+   "atk": {
+    "d": 2.1167,
+    "ev": [
+     [
+      0.7833,
+      "p",
+      1,
+      "Gnome_bullet",
+      0
+     ],
+     [
+      0.8833,
+      "p",
+      1,
+      "Gnome_bullet",
+      0
+     ],
+     [
+      0.9833,
+      "p",
+      1,
+      "Gnome_bullet",
+      0
+     ],
+     [
+      1.0833,
+      "p",
+      1,
+      "Gnome_bullet",
+      0
+     ],
+     [
+      1.1833,
+      "p",
+      1,
+      "Gnome_bullet",
+      0
+     ],
+     [
+      1.2833,
+      "p",
+      1,
+      "Gnome_bullet",
+      0
+     ],
+     [
+      1.3833,
+      "p",
+      1,
+      "Gnome_bullet",
+      0
+     ],
+     [
+      1.4833,
+      "p",
+      1,
+      "Gnome_bullet",
+      0
+     ],
+     [
+      1.5833,
+      "p",
+      1,
+      "Gnome_bullet",
+      0
+     ],
+     [
+      1.6833,
+      "p",
+      1,
+      "Gnome_bullet",
+      0
+     ]
+    ]
+   }
+  },
+  "harpy": {
+   "atk": {
+    "d": 2.3167,
+    "ev": [
+     [
+      0.85,
+      "p",
+      3,
+      "Harpy_skill12_bullet2",
+      0
+     ],
+     [
+      0.9,
+      "p",
+      3,
+      "Harpy_skill12_bullet2",
+      0
+     ],
+     [
+      0.95,
+      "p",
+      3,
+      "Harpy_skill12_bullet2",
+      0
+     ],
+     [
+      1.0,
+      "p",
+      3,
+      "Harpy_skill12_bullet2",
+      0
+     ],
+     [
+      1.8,
+      "p",
+      4,
+      "Harpy_skill12_bullet2",
+      0
+     ],
+     [
+      1.85,
+      "p",
+      4,
+      "Harpy_skill12_bullet2",
+      0
+     ],
+     [
+      1.9,
+      "p",
+      4,
+      "Harpy_skill12_bullet2",
+      0
+     ],
+     [
+      1.95,
+      "p",
+      4,
+      "Harpy_skill12_bullet2",
+      0
+     ]
+    ]
+   },
+   "skill": {
+    "d": 8.35,
+    "ev": [
+     [
+      2.25,
+      "p",
+      1,
+      "Harpy_skill12_bullet",
+      0
+     ],
+     [
+      2.2833,
+      "p",
+      2,
+      "Harpy_skill12_bullet",
+      0
+     ],
+     [
+      2.3333,
+      "p",
+      1,
+      "Harpy_skill12_bullet",
+      0
+     ],
+     [
+      2.4,
+      "p",
+      1,
+      "Harpy_skill12_bullet",
+      0
+     ],
+     [
+      2.4333,
+      "p",
+      2,
+      "Harpy_skill12_bullet",
+      0
+     ],
+     [
+      2.5167,
+      "p",
+      1,
+      "Harpy_skill12_bullet",
+      0
+     ],
+     [
+      2.6,
+      "p",
+      2,
+      "Harpy_skill12_bullet",
+      0
+     ],
+     [
+      2.6667,
+      "p",
+      1,
+      "Harpy_skill12_bullet",
+      0
+     ],
+     [
+      2.7167,
+      "p",
+      2,
+      "Harpy_skill12_bullet",
+      0
+     ],
+     [
+      2.9667,
+      "h",
+      0,
+      "noHit_m",
+      0
+     ],
+     [
+      3.2667,
+      "h",
+      0,
+      "noHit_m",
+      0
+     ],
+     [
+      3.65,
+      "h",
+      0,
+      "noHit_m",
+      0
+     ],
+     [
+      4.2833,
+      "h",
+      0,
+      "Harpy_skill2_Last_Lazer_HIt",
+      0
+     ],
+     [
+      5.9333,
+      "p",
+      2,
+      "Harpy_skill12_bullet_ver2",
+      0
+     ],
+     [
+      5.9833,
+      "p",
+      2,
+      "Harpy_skill12_bullet_ver2",
+      0
+     ],
+     [
+      6.0333,
+      "p",
+      1,
+      "Harpy_skill12_bullet_ver2",
+      0
+     ],
+     [
+      6.1,
+      "p",
+      1,
+      "Harpy_skill12_bullet_ver2",
+      0
+     ],
+     [
+      6.1667,
+      "p",
+      2,
+      "Harpy_skill12_bullet_ver2",
+      0
+     ]
+    ]
+   }
+  },
+  "harpy_s1": {
+   "atk": {
+    "d": 2.3167,
+    "ev": [
+     [
+      0.85,
+      "p",
+      3,
+      "Harpy_NS1_Bullet",
+      0
+     ],
+     [
+      1.8,
+      "p",
+      4,
+      "Harpy_NS1_Bullet",
+      0
+     ]
+    ]
+   },
+   "skill": {
+    "d": 8.35,
+    "ev": [
+     [
+      2.25,
+      "p",
+      1,
+      "Harpy_NS1_Bullet_skill2_first",
+      0
+     ],
+     [
+      2.3333,
+      "p",
+      1,
+      "Harpy_NS1_Bullet_skill2_first",
+      0
+     ],
+     [
+      2.4333,
+      "p",
+      2,
+      "Harpy_NS1_Bullet_skill2_first",
+      0
+     ],
+     [
+      2.5667,
+      "p",
+      2,
+      "Harpy_NS1_Bullet_skill2_first",
+      0
+     ],
+     [
+      2.6833,
+      "p",
+      1,
+      "Harpy_NS1_Bullet_skill2_first",
+      0
+     ],
+     [
+      2.9667,
+      "h",
+      0,
+      "noHit_m",
+      0
+     ],
+     [
+      3.2667,
+      "h",
+      0,
+      "noHit_m",
+      0
+     ],
+     [
+      3.65,
+      "h",
+      0,
+      "noHit_m",
+      0
+     ],
+     [
+      4.2833,
+      "h",
+      0,
+      "Harpy_skill2_Last_Lazer_HIt",
+      0
+     ],
+     [
+      5.9333,
+      "p",
+      2,
+      "Harpy_NS1_Bullet_skill2",
+      0
+     ],
+     [
+      5.9833,
+      "p",
+      2,
+      "Harpy_NS1_Bullet_skill2",
+      0
+     ],
+     [
+      6.0333,
+      "p",
+      1,
+      "Harpy_NS1_Bullet_skill2",
+      0
+     ],
+     [
+      6.1,
+      "p",
+      1,
+      "Harpy_NS1_Bullet_skill2",
+      0
+     ],
+     [
+      6.1667,
+      "p",
+      2,
+      "Harpy_NS1_Bullet_skill2",
+      0
+     ]
+    ]
+   }
+  },
+  "harpy_s2": {
+   "atk": {
+    "d": 2.3167,
+    "ev": [
+     [
+      0.85,
+      "p",
+      3,
+      "Harpy_NS2_Bullet",
+      0
+     ],
+     [
+      1.8,
+      "p",
+      4,
+      "Harpy_NS2_Bullet",
+      0
+     ]
+    ]
+   },
+   "skill": {
+    "d": 8.35,
+    "ev": [
+     [
+      2.25,
+      "p",
+      1,
+      "Harpy_NS2_Bullet_skill2_first",
+      0
+     ],
+     [
+      2.3333,
+      "p",
+      1,
+      "Harpy_NS2_Bullet_skill2_first",
+      0
+     ],
+     [
+      2.4333,
+      "p",
+      2,
+      "Harpy_NS2_Bullet_skill2_first",
+      0
+     ],
+     [
+      2.5667,
+      "p",
+      2,
+      "Harpy_NS2_Bullet_skill2_first",
+      0
+     ],
+     [
+      2.6833,
+      "p",
+      1,
+      "Harpy_NS2_Bullet_skill2_first",
+      0
+     ],
+     [
+      2.9667,
+      "h",
+      0,
+      "noHit_m",
+      0
+     ],
+     [
+      3.2667,
+      "h",
+      0,
+      "noHit_m",
+      0
+     ],
+     [
+      3.65,
+      "h",
+      0,
+      "noHit_m",
+      0
+     ],
+     [
+      4.2833,
+      "h",
+      0,
+      "Harpy_skill2_Last_Lazer_HIt",
+      0
+     ],
+     [
+      5.9333,
+      "p",
+      2,
+      "Harpy_NS2_Bullet_skill2",
+      0
+     ],
+     [
+      5.9833,
+      "p",
+      2,
+      "Harpy_NS2_Bullet_skill2",
+      0
+     ],
+     [
+      6.0333,
+      "p",
+      1,
+      "Harpy_NS2_Bullet_skill2",
+      0
+     ],
+     [
+      6.1,
+      "p",
+      1,
+      "Harpy_NS2_Bullet_skill2",
+      0
+     ],
+     [
+      6.1667,
+      "p",
+      2,
+      "Harpy_NS2_Bullet_skill2",
+      0
+     ]
+    ]
+   }
+  },
+  "hela": {
+   "atk": {
+    "d": 8.3333,
+    "ev": [
+     [
+      0.8833,
+      "eg",
+      0,
+      "Meca_1_paticle",
+      0
+     ],
+     [
+      4.3667,
+      "h",
+      0,
+      "hela_beam_hit_main",
+      0
+     ]
+    ]
+   }
+  },
+  "hela_s1": {
+   "atk": {
+    "d": 8.3333,
+    "ev": [
+     [
+      0.8833,
+      "eg",
+      0,
+      "Meca_1_paticle",
+      0
+     ],
+     [
+      4.3667,
+      "h",
+      0,
+      "hela_beam_hit_main",
+      0
+     ]
+    ]
+   }
+  },
+  "hraesvelgr": {
+   "atk": {
+    "d": 2.8333,
+    "ev": [
+     [
+      1.0167,
+      "p",
+      1,
+      "Hraesvelgr_skill1_Lazer_bullet",
+      0
+     ],
+     [
+      1.6,
+      "p",
+      1,
+      "Hraesvelgr_skill1_Lazer_bullet",
+      0
+     ]
+    ]
+   },
+   "skill": {
+    "d": 9.0,
+    "ev": [
+     [
+      6.45,
+      "h",
+      0,
+      "noHit_m",
+      0
+     ]
+    ]
+   }
+  },
+  "hraesvelgr_s1": {
+   "atk": {
+    "d": 2.8333,
+    "ev": [
+     [
+      1.0167,
+      "p",
+      1,
+      "Hraesvelgr_NS1_skill1_Lazer_bullet",
+      0
+     ],
+     [
+      1.6,
+      "p",
+      1,
+      "Hraesvelgr_NS1_skill1_Lazer_bullet",
+      0
+     ]
+    ]
+   },
+   "skill": {
+    "d": 9.0,
+    "ev": [
+     [
+      6.45,
+      "h",
+      0,
+      "noHit_m",
+      0
+     ]
+    ]
+   }
+  },
+  "hraesvelgr_s2": {
+   "atk": {
+    "d": 2.8333,
+    "ev": [
+     [
+      1.0167,
+      "p",
+      1,
+      "Hraesvelgr_skill1_Lazer_bullet",
+      0
+     ],
+     [
+      1.6,
+      "p",
+      1,
+      "Hraesvelgr_skill1_Lazer_bullet",
+      0
+     ]
+    ]
+   },
+   "skill": {
+    "d": 9.0,
+    "ev": [
+     [
+      6.45,
+      "h",
+      0,
+      "noHit_m",
+      0
+     ]
+    ]
+   }
+  },
+  "impet": {
+   "atk": {
+    "d": 3.4833,
+    "ev": [
+     [
+      1.2,
+      "p",
+      1,
+      "rpg_bullet_fx",
+      0
+     ]
+    ]
+   },
+   "skill": {
+    "d": 5.2167,
+    "ev": [
+     [
+      3.0167,
+      "p",
+      2,
+      "2rpg_bullet_fx",
+      0
+     ]
+    ]
+   }
+  },
+  "impet_s1": {
+   "atk": {
+    "d": 3.4833,
+    "ev": [
+     [
+      1.2,
+      "p",
+      1,
+      "Impet_NS1_skill1_bullet",
+      0
+     ]
+    ]
+   },
+   "skill": {
+    "d": 5.2167,
+    "ev": [
+     [
+      3.0167,
+      "p",
+      2,
+      "Impet_NS1_skill2_bullet",
+      0
+     ]
+    ]
+   }
+  },
+  "impet_s2": {
+   "atk": {
+    "d": 3.4833,
+    "ev": [
+     [
+      1.2,
+      "p",
+      1,
+      "eff_Impet_ns2_bullet_1",
+      0
+     ]
+    ]
+   },
+   "skill": {
+    "d": 5.2167,
+    "ev": [
+     [
+      3.0167,
+      "p",
+      2,
+      "eff_Impet_ns2_bullet_2",
+      0
+     ]
+    ]
+   }
+  },
+  "khan": {
+   "atk": {
+    "d": 4.7667,
+    "ev": [
+     [
+      2.15,
+      "p",
+      1,
+      "FX_blackLilith_bullet",
+      0
+     ],
+     [
+      2.2,
+      "p",
+      1,
+      "FX_blackLilith_bullet",
+      0
+     ],
+     [
+      2.25,
+      "p",
+      1,
+      "FX_blackLilith_bullet",
+      0
+     ],
+     [
+      2.3,
+      "p",
+      1,
+      "FX_blackLilith_bullet",
+      0
+     ],
+     [
+      2.95,
+      "h",
+      0,
+      "Khan_skill1_hit",
+      0
+     ],
+     [
+      3.0167,
+      "h",
+      0,
+      "Khan_skill1_hit",
+      0
+     ],
+     [
+      3.0833,
+      "h",
+      0,
+      "Khan_skill1_hit",
+      0
+     ],
+     [
+      3.15,
+      "h",
+      0,
+      "Khan_skill1_hit",
+      0
+     ],
+     [
+      3.2167,
+      "h",
+      0,
+      "Khan_skill1_hit",
+      0
+     ],
+     [
+      3.2833,
+      "h",
+      0,
+      "Khan_skill1_hit",
+      0
+     ],
+     [
+      3.35,
+      "h",
+      0,
+      "Khan_skill1_hit",
+      0
+     ],
+     [
+      3.4167,
+      "h",
+      0,
+      "Khan_skill1_hit",
+      0
+     ],
+     [
+      3.9,
+      "h",
+      0,
+      "noHit_m",
+      0
+     ]
+    ]
+   },
+   "skill": {
+    "d": 5.5333,
+    "ev": [
+     [
+      1.8333,
+      "h",
+      0,
+      "noHit_m",
+      0
+     ],
+     [
+      2.0333,
+      "h",
+      0,
+      "noHit_m",
+      0
+     ],
+     [
+      2.2,
+      "h",
+      0,
+      "noHit_m",
+      0
+     ],
+     [
+      2.3667,
+      "h",
+      0,
+      "noHit_m",
+      0
+     ],
+     [
+      2.5333,
+      "h",
+      0,
+      "noHit_m",
+      0
+     ],
+     [
+      2.7,
+      "h",
+      0,
+      "noHit_m",
+      0
+     ],
+     [
+      2.8667,
+      "h",
+      0,
+      "noHit_m",
+      0
+     ],
+     [
+      3.0333,
+      "h",
+      0,
+      "noHit_m",
+      0
+     ],
+     [
+      3.4167,
+      "h",
+      0,
+      "noHit_m",
+      0
+     ],
+     [
+      3.55,
+      "h",
+      0,
+      "noHit_m",
+      0
+     ],
+     [
+      3.65,
+      "h",
+      0,
+      "noHit_m",
+      0
+     ],
+     [
+      3.75,
+      "h",
+      0,
+      "noHit_m",
+      0
+     ],
+     [
+      3.8333,
+      "h",
+      0,
+      "noHit_m",
+      0
+     ],
+     [
+      3.9167,
+      "h",
+      0,
+      "noHit_m",
+      0
+     ],
+     [
+      4.0,
+      "h",
+      0,
+      "noHit_m",
+      0
+     ]
+    ]
+   }
+  },
+  "khan_s1": {
+   "atk": {
+    "d": 4.7667,
+    "ev": [
+     [
+      2.15,
+      "p",
+      1,
+      "FX_blackLilith_bullet",
+      0
+     ],
+     [
+      2.2,
+      "p",
+      1,
+      "FX_blackLilith_bullet",
+      0
+     ],
+     [
+      2.25,
+      "p",
+      1,
+      "FX_blackLilith_bullet",
+      0
+     ],
+     [
+      2.3,
+      "p",
+      1,
+      "FX_blackLilith_bullet",
+      0
+     ],
+     [
+      2.95,
+      "h",
+      0,
+      "Khan_skill1_hit",
+      0
+     ],
+     [
+      3.0167,
+      "h",
+      0,
+      "Khan_skill1_hit",
+      0
+     ],
+     [
+      3.0833,
+      "h",
+      0,
+      "Khan_skill1_hit",
+      0
+     ],
+     [
+      3.15,
+      "h",
+      0,
+      "Khan_skill1_hit",
+      0
+     ],
+     [
+      3.2167,
+      "h",
+      0,
+      "Khan_skill1_hit",
+      0
+     ],
+     [
+      3.2833,
+      "h",
+      0,
+      "Khan_skill1_hit",
+      0
+     ],
+     [
+      3.35,
+      "h",
+      0,
+      "Khan_skill1_hit",
+      0
+     ],
+     [
+      3.4167,
+      "h",
+      0,
+      "Khan_skill1_hit",
+      0
+     ],
+     [
+      3.9,
+      "h",
+      0,
+      "noHit_m",
+      0
+     ]
+    ]
+   },
+   "skill": {
+    "d": 5.5333,
+    "ev": [
+     [
+      1.8333,
+      "h",
+      0,
+      "noHit_m",
+      0
+     ],
+     [
+      2.0333,
+      "h",
+      0,
+      "noHit_m",
+      0
+     ],
+     [
+      2.2,
+      "h",
+      0,
+      "noHit_m",
+      0
+     ],
+     [
+      2.3667,
+      "h",
+      0,
+      "noHit_m",
+      0
+     ],
+     [
+      2.5333,
+      "h",
+      0,
+      "noHit_m",
+      0
+     ],
+     [
+      2.7,
+      "h",
+      0,
+      "noHit_m",
+      0
+     ],
+     [
+      2.8667,
+      "h",
+      0,
+      "noHit_m",
+      0
+     ],
+     [
+      3.0333,
+      "h",
+      0,
+      "noHit_m",
+      0
+     ],
+     [
+      3.4167,
+      "h",
+      0,
+      "noHit_m",
+      0
+     ],
+     [
+      3.55,
+      "h",
+      0,
+      "noHit_m",
+      0
+     ],
+     [
+      3.65,
+      "h",
+      0,
+      "noHit_m",
+      0
+     ],
+     [
+      3.75,
+      "h",
+      0,
+      "noHit_m",
+      0
+     ],
+     [
+      3.8333,
+      "h",
+      0,
+      "noHit_m",
+      0
+     ],
+     [
+      3.9167,
+      "h",
+      0,
+      "noHit_m",
+      0
+     ],
+     [
+      4.0,
+      "h",
+      0,
+      "noHit_m",
+      0
+     ]
+    ]
+   }
+  },
+  "khan_s2": {
+   "atk": {
+    "d": 4.7667,
+    "ev": [
+     [
+      2.15,
+      "p",
+      1,
+      "Khan_NS2_skill1_bullet",
+      0
+     ],
+     [
+      2.2,
+      "p",
+      1,
+      "Khan_NS2_skill1_bullet",
+      0
+     ],
+     [
+      2.25,
+      "p",
+      1,
+      "Khan_NS2_skill1_bullet",
+      0
+     ],
+     [
+      2.3,
+      "p",
+      1,
+      "Khan_NS2_skill1_bullet",
+      0
+     ],
+     [
+      2.95,
+      "h",
+      0,
+      "Khan_NS2_skill1_Loop_hit",
+      0
+     ],
+     [
+      3.0333,
+      "h",
+      0,
+      "Khan_NS2_skill1_Loop_hit",
+      0
+     ],
+     [
+      3.1667,
+      "h",
+      0,
+      "Khan_NS2_skill1_Loop_hit",
+      0
+     ],
+     [
+      3.3167,
+      "h",
+      0,
+      "Khan_NS2_skill1_Loop_hit",
+      0
+     ],
+     [
+      3.4167,
+      "h",
+      0,
+      "Khan_NS2_skill1_Loop_hit",
+      0
+     ],
+     [
+      3.9,
+      "h",
+      0,
+      "noHit_m",
+      0
+     ]
+    ]
+   },
+   "skill": {
+    "d": 5.5333,
+    "ev": [
+     [
+      1.8333,
+      "h",
+      0,
+      "Khan_NS2_skill2_Hit",
+      0
+     ],
+     [
+      2.0333,
+      "h",
+      0,
+      "Khan_NS2_skill2_Hit",
+      0
+     ],
+     [
+      2.2,
+      "h",
+      0,
+      "Khan_NS2_skill2_Hit",
+      0
+     ],
+     [
+      2.3667,
+      "h",
+      0,
+      "Khan_NS2_skill2_Hit",
+      0
+     ],
+     [
+      2.5333,
+      "h",
+      0,
+      "Khan_NS2_skill2_Hit",
+      0
+     ],
+     [
+      2.7,
+      "h",
+      0,
+      "Khan_NS2_skill2_Hit",
+      0
+     ],
+     [
+      2.8667,
+      "h",
+      0,
+      "Khan_NS2_skill2_Hit",
+      0
+     ],
+     [
+      3.0333,
+      "h",
+      0,
+      "Khan_NS2_skill2_Hit",
+      0
+     ],
+     [
+      3.4167,
+      "h",
+      0,
+      "Khan_NS2_skill2_Last_Swordhit",
+      0
+     ],
+     [
+      3.55,
+      "h",
+      0,
+      "noHit_m",
+      0
+     ],
+     [
+      3.65,
+      "h",
+      0,
+      "noHit_m",
+      0
+     ],
+     [
+      3.75,
+      "h",
+      0,
+      "noHit_m",
+      0
+     ],
+     [
+      3.8333,
+      "h",
+      0,
+      "noHit_m",
+      0
+     ],
+     [
+      3.9167,
+      "h",
+      0,
+      "noHit_m",
+      0
+     ],
+     [
+      4.0,
+      "h",
+      0,
+      "noHit_m",
+      0
+     ]
+    ]
+   }
+  },
+  "labiata": {
+   "atk": {
+    "d": 6.1667,
+    "ev": [
+     [
+      2.1,
+      "h",
+      0,
+      "Labiata_skill1_bag_hit",
+      0
+     ],
+     [
+      2.9333,
+      "h",
+      0,
+      "Labiata_skill1_hit_first",
+      0
+     ],
+     [
+      4.0167,
+      "h",
+      0,
+      "Labiata_skill1_hit",
+      0
+     ]
+    ]
+   },
+   "skill": {
+    "d": 11.5,
+    "ev": [
+     [
+      9.15,
+      "h",
+      0,
+      "Labiata_skill2_hit",
+      0
+     ]
+    ]
+   }
+  },
+  "labiata_s1": {
+   "atk": {
+    "d": 6.1667,
+    "ev": [
+     [
+      2.1,
+      "h",
+      0,
+      "Labiata_NS1_skill1_Bag_Hit",
+      0
+     ],
+     [
+      2.9333,
+      "h",
+      0,
+      "noHit_m",
+      0
+     ],
+     [
+      4.0667,
+      "h",
+      0,
+      "noHit_m",
+      0
+     ]
+    ]
+   },
+   "skill": {
+    "d": 11.5167,
+    "ev": [
+     [
+      9.2,
+      "h",
+      0,
+      "Labiata_NS1_skill2_Basic_Hit",
+      0
+     ],
+     [
+      9.4,
+      "h",
+      0,
+      "Labiata_NS1_skill2_Basic_Hit",
+      0
+     ],
+     [
+      9.6167,
+      "h",
+      0,
+      "noHit_m",
+      0
+     ]
+    ]
+   }
+  },
+  "lemonadealpha": {
+   "atk": {
+    "d": 3.8333,
+    "ev": [
+     [
+      2.0167,
+      "e",
+      0,
+      "Lemonade_skill1_Enemy_digital_panel",
+      0
+     ],
+     [
+      2.6,
+      "e",
+      0,
+      "Lemonade_skill1_error_fx",
+      0
+     ],
+     [
+      3.0833,
+      "h",
+      0,
+      "Lemonade_skill1_Hit",
+      0
+     ]
+    ]
+   },
+   "skill": {
+    "d": 8.0,
+    "ev": [
+     [
+      4.9,
+      "h",
+      0,
+      "noHit_m",
+      0
+     ],
+     [
+      5.2,
+      "h",
+      0,
+      "noHit_m",
+      0
+     ],
+     [
+      5.4833,
+      "h",
+      0,
+      "noHit_m",
+      0
+     ]
+    ]
+   }
+  },
+  "lemonadealpha_s1": {
+   "atk": {
+    "d": 3.8333,
+    "ev": [
+     [
+      2.0167,
+      "e",
+      0,
+      "Lemonade_skill1_Enemy_digital_panel",
+      0
+     ],
+     [
+      2.6,
+      "e",
+      0,
+      "Lemonade_skill1_error_fx",
+      0
+     ],
+     [
+      3.0833,
+      "h",
+      0,
+      "Lemonade_skill1_Hit",
+      0
+     ]
+    ]
+   },
+   "skill": {
+    "d": 8.0,
+    "ev": [
+     [
+      4.9,
+      "h",
+      0,
+      "noHit_m",
+      0
+     ],
+     [
+      5.2,
+      "h",
+      0,
+      "noHit_m",
+      0
+     ],
+     [
+      5.4833,
+      "h",
+      0,
+      "noHit_m",
+      0
+     ]
+    ]
+   }
+  },
+  "lemonadealpha_s2": {
+   "atk": {
+    "d": 3.8333,
+    "ev": [
+     [
+      2.0167,
+      "e",
+      0,
+      "Lemonade_skill1_Enemy_digital_panel",
+      0
+     ],
+     [
+      2.6,
+      "e",
+      0,
+      "Lemonade_skill1_error_fx",
+      0
+     ],
+     [
+      3.0833,
+      "h",
+      0,
+      "Lemonade_skill1_Hit",
+      0
+     ]
+    ]
+   },
+   "skill": {
+    "d": 8.0,
+    "ev": [
+     [
+      4.9,
+      "h",
+      0,
+      "noHit_m",
+      0
+     ],
+     [
+      5.2,
+      "h",
+      0,
+      "noHit_m",
+      0
+     ],
+     [
+      5.4833,
+      "h",
+      0,
+      "noHit_m",
+      0
+     ]
+    ]
+   }
+  },
+  "leona": {
+   "atk": {
+    "d": 2.3333,
+    "ev": [
+     [
+      0.85,
+      "p",
+      1,
+      "hand_gun_shot",
+      0
+     ],
+     [
+      0.9833,
+      "p",
+      1,
+      "hand_gun_shot",
+      0
+     ],
+     [
+      1.35,
+      "p",
+      1,
+      "hand_gun_shot",
+      0
+     ]
+    ]
+   },
+   "skill": {
+    "d": 4.5,
+    "ev": [
+     [
+      1.9667,
+      "b",
+      0,
+      "Leona_skill2_buff_machine_event",
+      0
+     ]
+    ]
+   }
+  },
+  "leona_s1": {
+   "atk": {
+    "d": 2.3333,
+    "ev": [
+     [
+      0.85,
+      "p",
+      1,
+      "hand_gun_shot",
+      0
+     ],
+     [
+      0.9833,
+      "p",
+      1,
+      "hand_gun_shot",
+      0
+     ],
+     [
+      1.35,
+      "p",
+      1,
+      "hand_gun_shot",
+      0
+     ]
+    ]
+   },
+   "skill": {
+    "d": 4.5,
+    "ev": [
+     [
+      1.9667,
+      "b",
+      0,
+      "Leona_skill2_buff_machine_event",
+      0
+     ]
+    ]
+   }
+  },
+  "leona_s2": {
+   "atk": {
+    "d": 2.3333,
+    "ev": [
+     [
+      0.85,
+      "p",
+      1,
+      "hand_gun_shot",
+      0
+     ],
+     [
+      0.9833,
+      "p",
+      1,
+      "hand_gun_shot",
+      0
+     ],
+     [
+      1.35,
+      "p",
+      1,
+      "hand_gun_shot",
+      0
+     ]
+    ]
+   },
+   "skill": {
+    "d": 4.5,
+    "ev": [
+     [
+      1.9667,
+      "b",
+      0,
+      "Leona_NS2_skill2_buff_machine_event",
+      0
+     ]
+    ]
+   }
+  },
+  "leprechaun": {
+   "atk": {
+    "d": 4.1667,
+    "ev": [
+     [
+      1.8833,
+      "p",
+      1,
+      "FX_Leprechaun_bullet",
+      0
+     ],
+     [
+      1.95,
+      "p",
+      1,
+      "FX_Leprechaun_bullet",
+      0
+     ],
+     [
+      2.0,
+      "p",
+      1,
+      "FX_Leprechaun_bullet",
+      0
+     ],
+     [
+      2.05,
+      "p",
+      1,
+      "FX_Leprechaun_bullet",
+      0
+     ],
+     [
+      2.1833,
+      "p",
+      1,
+      "FX_Leprechaun_bullet",
+      0
+     ],
+     [
+      2.2667,
+      "p",
+      1,
+      "FX_Leprechaun_bullet",
+      0
+     ],
+     [
+      2.3167,
+      "p",
+      1,
+      "FX_Leprechaun_bullet",
+      0
+     ],
+     [
+      2.3667,
+      "p",
+      1,
+      "FX_Leprechaun_bullet",
+      0
+     ],
+     [
+      2.4167,
+      "p",
+      1,
+      "FX_Leprechaun_bullet",
+      0
+     ],
+     [
+      2.5,
+      "p",
+      1,
+      "FX_Leprechaun_bullet",
+      0
+     ],
+     [
+      2.55,
+      "p",
+      1,
+      "FX_Leprechaun_bullet",
+      0
+     ],
+     [
+      2.6,
+      "p",
+      1,
+      "FX_Leprechaun_bullet",
+      0
+     ]
+    ]
+   },
+   "skill": {
+    "d": 2.8833,
+    "ev": [
+     [
+      0.9167,
+      "p",
+      1,
+      "FX_Leprechaun_bullet",
+      0
+     ],
+     [
+      0.9833,
+      "p",
+      1,
+      "FX_Leprechaun_bullet",
+      0
+     ],
+     [
+      1.0333,
+      "p",
+      1,
+      "FX_Leprechaun_bullet",
+      0
+     ],
+     [
+      1.0833,
+      "p",
+      1,
+      "FX_Leprechaun_bullet",
+      0
+     ],
+     [
+      1.15,
+      "p",
+      1,
+      "FX_Leprechaun_bullet",
+      0
+     ],
+     [
+      1.2,
+      "p",
+      1,
+      "FX_Leprechaun_bullet",
+      0
+     ],
+     [
+      1.25,
+      "p",
+      1,
+      "FX_Leprechaun_bullet",
+      0
+     ],
+     [
+      1.3,
+      "p",
+      1,
+      "FX_Leprechaun_bullet",
+      0
+     ],
+     [
+      1.3667,
+      "p",
+      1,
+      "FX_Leprechaun_bullet",
+      0
+     ],
+     [
+      1.4333,
+      "p",
+      1,
+      "FX_Leprechaun_bullet",
+      0
+     ],
+     [
+      1.4833,
+      "p",
+      1,
+      "FX_Leprechaun_bullet",
+      0
+     ],
+     [
+      1.5333,
+      "p",
+      1,
+      "FX_Leprechaun_bullet",
+      0
+     ],
+     [
+      1.6,
+      "p",
+      1,
+      "FX_Leprechaun_bullet",
+      0
+     ],
+     [
+      1.65,
+      "p",
+      1,
+      "FX_Leprechaun_bullet",
+      0
+     ],
+     [
+      1.7,
+      "p",
+      1,
+      "FX_Leprechaun_bullet",
+      0
+     ],
+     [
+      1.7667,
+      "p",
+      1,
+      "FX_Leprechaun_bullet",
+      0
+     ],
+     [
+      1.8333,
+      "p",
+      1,
+      "FX_Leprechaun_bullet",
+      0
+     ],
+     [
+      1.8833,
+      "p",
+      1,
+      "FX_Leprechaun_bullet",
+      0
+     ],
+     [
+      1.9333,
+      "p",
+      1,
+      "FX_Leprechaun_bullet",
+      0
+     ],
+     [
+      1.9833,
+      "p",
+      1,
+      "FX_Leprechaun_bullet",
+      0
+     ],
+     [
+      2.05,
+      "p",
+      1,
+      "FX_Leprechaun_bullet",
+      0
+     ],
+     [
+      2.1,
+      "p",
+      1,
+      "FX_Leprechaun_bullet",
+      0
+     ],
+     [
+      2.15,
+      "p",
+      1,
+      "FX_Leprechaun_bullet",
+      0
+     ],
+     [
+      2.2167,
+      "p",
+      1,
+      "FX_Leprechaun_bullet",
+      0
+     ],
+     [
+      2.2833,
+      "p",
+      1,
+      "FX_Leprechaun_bullet",
+      0
+     ]
+    ]
+   }
+  },
+  "leprechaun_s1": {
+   "atk": {
+    "d": 4.1667,
+    "ev": [
+     [
+      1.8833,
+      "p",
+      1,
+      "FX_Leprechaun_bullet",
+      0
+     ],
+     [
+      1.95,
+      "p",
+      1,
+      "FX_Leprechaun_bullet",
+      0
+     ],
+     [
+      2.0,
+      "p",
+      1,
+      "FX_Leprechaun_bullet",
+      0
+     ],
+     [
+      2.05,
+      "p",
+      1,
+      "FX_Leprechaun_bullet",
+      0
+     ],
+     [
+      2.1833,
+      "p",
+      1,
+      "FX_Leprechaun_bullet",
+      0
+     ],
+     [
+      2.2667,
+      "p",
+      1,
+      "FX_Leprechaun_bullet",
+      0
+     ],
+     [
+      2.3167,
+      "p",
+      1,
+      "FX_Leprechaun_bullet",
+      0
+     ],
+     [
+      2.3667,
+      "p",
+      1,
+      "FX_Leprechaun_bullet",
+      0
+     ],
+     [
+      2.4167,
+      "p",
+      1,
+      "FX_Leprechaun_bullet",
+      0
+     ],
+     [
+      2.5,
+      "p",
+      1,
+      "FX_Leprechaun_bullet",
+      0
+     ],
+     [
+      2.55,
+      "p",
+      1,
+      "FX_Leprechaun_bullet",
+      0
+     ],
+     [
+      2.6,
+      "p",
+      1,
+      "FX_Leprechaun_bullet",
+      0
+     ]
+    ]
+   },
+   "skill": {
+    "d": 2.8833,
+    "ev": [
+     [
+      0.9167,
+      "p",
+      1,
+      "FX_Leprechaun_bullet",
+      0
+     ],
+     [
+      0.9833,
+      "p",
+      1,
+      "FX_Leprechaun_bullet",
+      0
+     ],
+     [
+      1.0333,
+      "p",
+      1,
+      "FX_Leprechaun_bullet",
+      0
+     ],
+     [
+      1.0833,
+      "p",
+      1,
+      "FX_Leprechaun_bullet",
+      0
+     ],
+     [
+      1.15,
+      "p",
+      1,
+      "FX_Leprechaun_bullet",
+      0
+     ],
+     [
+      1.2,
+      "p",
+      1,
+      "FX_Leprechaun_bullet",
+      0
+     ],
+     [
+      1.25,
+      "p",
+      1,
+      "FX_Leprechaun_bullet",
+      0
+     ],
+     [
+      1.3,
+      "p",
+      1,
+      "FX_Leprechaun_bullet",
+      0
+     ],
+     [
+      1.3667,
+      "p",
+      1,
+      "FX_Leprechaun_bullet",
+      0
+     ],
+     [
+      1.4333,
+      "p",
+      1,
+      "FX_Leprechaun_bullet",
+      0
+     ],
+     [
+      1.4833,
+      "p",
+      1,
+      "FX_Leprechaun_bullet",
+      0
+     ],
+     [
+      1.5333,
+      "p",
+      1,
+      "FX_Leprechaun_bullet",
+      0
+     ],
+     [
+      1.6,
+      "p",
+      1,
+      "FX_Leprechaun_bullet",
+      0
+     ],
+     [
+      1.65,
+      "p",
+      1,
+      "FX_Leprechaun_bullet",
+      0
+     ],
+     [
+      1.7,
+      "p",
+      1,
+      "FX_Leprechaun_bullet",
+      0
+     ],
+     [
+      1.7667,
+      "p",
+      1,
+      "FX_Leprechaun_bullet",
+      0
+     ],
+     [
+      1.8333,
+      "p",
+      1,
+      "FX_Leprechaun_bullet",
+      0
+     ],
+     [
+      1.8833,
+      "p",
+      1,
+      "FX_Leprechaun_bullet",
+      0
+     ],
+     [
+      1.9333,
+      "p",
+      1,
+      "FX_Leprechaun_bullet",
+      0
+     ],
+     [
+      1.9833,
+      "p",
+      1,
+      "FX_Leprechaun_bullet",
+      0
+     ],
+     [
+      2.05,
+      "p",
+      1,
+      "FX_Leprechaun_bullet",
+      0
+     ],
+     [
+      2.1,
+      "p",
+      1,
+      "FX_Leprechaun_bullet",
+      0
+     ],
+     [
+      2.15,
+      "p",
+      1,
+      "FX_Leprechaun_bullet",
+      0
+     ],
+     [
+      2.2167,
+      "p",
+      1,
+      "FX_Leprechaun_bullet",
+      0
+     ],
+     [
+      2.2833,
+      "p",
+      1,
+      "FX_Leprechaun_bullet",
+      0
+     ]
+    ]
+   }
+  },
+  "leprechaun_s2": {
+   "atk": {
+    "d": 4.1667,
+    "ev": [
+     [
+      1.8833,
+      "p",
+      1,
+      "FX_Leprechaun_bullet",
+      0
+     ],
+     [
+      1.95,
+      "p",
+      1,
+      "FX_Leprechaun_bullet",
+      0
+     ],
+     [
+      2.0,
+      "p",
+      1,
+      "FX_Leprechaun_bullet",
+      0
+     ],
+     [
+      2.05,
+      "p",
+      1,
+      "FX_Leprechaun_bullet",
+      0
+     ],
+     [
+      2.1833,
+      "p",
+      1,
+      "FX_Leprechaun_bullet",
+      0
+     ],
+     [
+      2.2667,
+      "p",
+      1,
+      "FX_Leprechaun_bullet",
+      0
+     ],
+     [
+      2.3167,
+      "p",
+      1,
+      "FX_Leprechaun_bullet",
+      0
+     ],
+     [
+      2.3667,
+      "p",
+      1,
+      "FX_Leprechaun_bullet",
+      0
+     ],
+     [
+      2.4167,
+      "p",
+      1,
+      "FX_Leprechaun_bullet",
+      0
+     ],
+     [
+      2.5,
+      "p",
+      1,
+      "FX_Leprechaun_bullet",
+      0
+     ],
+     [
+      2.55,
+      "p",
+      1,
+      "FX_Leprechaun_bullet",
+      0
+     ],
+     [
+      2.6,
+      "p",
+      1,
+      "FX_Leprechaun_bullet",
+      0
+     ]
+    ]
+   },
+   "skill": {
+    "d": 2.8833,
+    "ev": [
+     [
+      0.9167,
+      "p",
+      1,
+      "FX_Leprechaun_bullet",
+      0
+     ],
+     [
+      0.9833,
+      "p",
+      1,
+      "FX_Leprechaun_bullet",
+      0
+     ],
+     [
+      1.0333,
+      "p",
+      1,
+      "FX_Leprechaun_bullet",
+      0
+     ],
+     [
+      1.0833,
+      "p",
+      1,
+      "FX_Leprechaun_bullet",
+      0
+     ],
+     [
+      1.15,
+      "p",
+      1,
+      "FX_Leprechaun_bullet",
+      0
+     ],
+     [
+      1.2,
+      "p",
+      1,
+      "FX_Leprechaun_bullet",
+      0
+     ],
+     [
+      1.25,
+      "p",
+      1,
+      "FX_Leprechaun_bullet",
+      0
+     ],
+     [
+      1.3,
+      "p",
+      1,
+      "FX_Leprechaun_bullet",
+      0
+     ],
+     [
+      1.3667,
+      "p",
+      1,
+      "FX_Leprechaun_bullet",
+      0
+     ],
+     [
+      1.4333,
+      "p",
+      1,
+      "FX_Leprechaun_bullet",
+      0
+     ],
+     [
+      1.4833,
+      "p",
+      1,
+      "FX_Leprechaun_bullet",
+      0
+     ],
+     [
+      1.5333,
+      "p",
+      1,
+      "FX_Leprechaun_bullet",
+      0
+     ],
+     [
+      1.6,
+      "p",
+      1,
+      "FX_Leprechaun_bullet",
+      0
+     ],
+     [
+      1.65,
+      "p",
+      1,
+      "FX_Leprechaun_bullet",
+      0
+     ],
+     [
+      1.7,
+      "p",
+      1,
+      "FX_Leprechaun_bullet",
+      0
+     ],
+     [
+      1.7667,
+      "p",
+      1,
+      "FX_Leprechaun_bullet",
+      0
+     ],
+     [
+      1.8333,
+      "p",
+      1,
+      "FX_Leprechaun_bullet",
+      0
+     ],
+     [
+      1.8833,
+      "p",
+      1,
+      "FX_Leprechaun_bullet",
+      0
+     ],
+     [
+      1.9333,
+      "p",
+      1,
+      "FX_Leprechaun_bullet",
+      0
+     ],
+     [
+      1.9833,
+      "p",
+      1,
+      "FX_Leprechaun_bullet",
+      0
+     ],
+     [
+      2.05,
+      "p",
+      1,
+      "FX_Leprechaun_bullet",
+      0
+     ],
+     [
+      2.1,
+      "p",
+      1,
+      "FX_Leprechaun_bullet",
+      0
+     ],
+     [
+      2.15,
+      "p",
+      1,
+      "FX_Leprechaun_bullet",
+      0
+     ],
+     [
+      2.2167,
+      "p",
+      1,
+      "FX_Leprechaun_bullet",
+      0
+     ],
+     [
+      2.2833,
+      "p",
+      1,
+      "FX_Leprechaun_bullet",
+      0
+     ]
+    ]
+   }
+  },
+  "lrl": {
+   "atk": {
+    "d": 9.9167,
+    "ev": [
+     [
+      3.65,
+      "h",
+      0,
+      "Hit_x2",
+      0
+     ],
+     [
+      3.6667,
+      "h",
+      0,
+      "Hit_x2",
+      0
+     ],
+     [
+      3.6833,
+      "h",
+      0,
+      "Hit_x2",
+      0
+     ]
+    ]
+   },
+   "skill": {
+    "d": 7.5,
+    "ev": [
+     [
+      3.1667,
+      "h",
+      0,
+      "noHit_m",
+      0
+     ]
+    ]
+   }
+  },
+  "lrl_s1": {
+   "atk": {
+    "d": 9.9167,
+    "ev": [
+     [
+      3.65,
+      "h",
+      0,
+      "Hit_x2",
+      0
+     ],
+     [
+      3.6667,
+      "h",
+      0,
+      "Hit_x2",
+      0
+     ],
+     [
+      3.6833,
+      "h",
+      0,
+      "Hit_x2",
+      0
+     ]
+    ]
+   },
+   "skill": {
+    "d": 7.5,
+    "ev": [
+     [
+      3.1667,
+      "h",
+      0,
+      "Hit",
+      0
+     ]
+    ]
+   }
+  },
+  "lrl_s2": {
+   "atk": {
+    "d": 9.9167,
+    "ev": [
+     [
+      3.65,
+      "h",
+      0,
+      "Hit_x2",
+      0
+     ],
+     [
+      3.6667,
+      "h",
+      0,
+      "Hit_x2",
+      0
+     ],
+     [
+      3.6833,
+      "h",
+      0,
+      "Hit_x2",
+      0
+     ]
+    ]
+   },
+   "skill": {
+    "d": 7.5,
+    "ev": [
+     [
+      3.1667,
+      "h",
+      0,
+      "Hit",
+      0
+     ]
+    ]
+   }
+  },
+  "lrlrose": {
+   "atk": {
+    "d": 9.9167,
+    "ev": [
+     [
+      3.65,
+      "h",
+      0,
+      "Hit_x2",
+      0
+     ],
+     [
+      3.6667,
+      "h",
+      0,
+      "Hit_x2",
+      0
+     ],
+     [
+      3.6833,
+      "h",
+      0,
+      "Hit_x2",
+      0
+     ]
+    ]
+   },
+   "skill": {
+    "d": 7.5,
+    "ev": [
+     [
+      3.1667,
+      "h",
+      0,
+      "noHit_m",
+      0
+     ]
+    ]
+   }
+  },
+  "mercury": {
+   "atk": {
+    "d": 7.5,
+    "ev": [
+     [
+      4.5,
+      "h",
+      0,
+      "noHit_m",
+      0
+     ],
+     [
+      4.6333,
+      "h",
+      0,
+      "noHit_m",
+      0
+     ],
+     [
+      4.85,
+      "h",
+      0,
+      "noHit_m",
+      0
+     ],
+     [
+      5.0333,
+      "h",
+      0,
+      "noHit_m",
+      0
+     ],
+     [
+      5.1333,
+      "h",
+      0,
+      "noHit_m",
+      0
+     ],
+     [
+      5.3333,
+      "h",
+      0,
+      "noHit_m",
+      0
+     ],
+     [
+      5.5833,
+      "h",
+      0,
+      "noHit_m",
+      0
+     ],
+     [
+      5.7,
+      "h",
+      0,
+      "noHit_m",
+      0
+     ],
+     [
+      6.25,
+      "h",
+      0,
+      "noHit_m",
+      0
+     ],
+     [
+      6.4333,
+      "h",
+      0,
+      "noHit_m",
+      0
+     ],
+     [
+      6.6167,
+      "h",
+      0,
+      "noHit_m",
+      0
+     ]
+    ]
+   },
+   "skill": {
+    "d": 6.25,
+    "ev": [
+     [
+      3.25,
+      "e",
+      0,
+      "Mercury_N_Skill2_Hit",
+      0
+     ]
+    ]
+   }
+  },
+  "mercury_s1": {
+   "atk": {
+    "d": 7.5,
+    "ev": [
+     [
+      4.5,
+      "h",
+      0,
+      "noHit_m",
+      0
+     ],
+     [
+      4.6333,
+      "h",
+      0,
+      "noHit_m",
+      0
+     ],
+     [
+      4.85,
+      "h",
+      0,
+      "noHit_m",
+      0
+     ],
+     [
+      5.0333,
+      "h",
+      0,
+      "noHit_m",
+      0
+     ],
+     [
+      5.1333,
+      "h",
+      0,
+      "noHit_m",
+      0
+     ],
+     [
+      5.3333,
+      "h",
+      0,
+      "noHit_m",
+      0
+     ],
+     [
+      5.5833,
+      "h",
+      0,
+      "noHit_m",
+      0
+     ],
+     [
+      5.7,
+      "h",
+      0,
+      "noHit_m",
+      0
+     ],
+     [
+      6.25,
+      "h",
+      0,
+      "noHit_m",
+      0
+     ],
+     [
+      6.4333,
+      "h",
+      0,
+      "noHit_m",
+      0
+     ],
+     [
+      6.6167,
+      "h",
+      0,
+      "noHit_m",
+      0
+     ]
+    ]
+   },
+   "skill": {
+    "d": 6.25,
+    "ev": [
+     [
+      3.25,
+      "e",
+      0,
+      "Mercury_N_Skill2_Hit",
+      0
+     ]
+    ]
+   }
+  },
+  "mercury_s2": {
+   "atk": {
+    "d": 7.5,
+    "ev": [
+     [
+      4.5,
+      "h",
+      0,
+      "noHit_m",
+      0
+     ],
+     [
+      4.6333,
+      "h",
+      0,
+      "noHit_m",
+      0
+     ],
+     [
+      4.85,
+      "h",
+      0,
+      "noHit_m",
+      0
+     ],
+     [
+      5.0333,
+      "h",
+      0,
+      "noHit_m",
+      0
+     ],
+     [
+      5.1333,
+      "h",
+      0,
+      "noHit_m",
+      0
+     ],
+     [
+      5.3333,
+      "h",
+      0,
+      "noHit_m",
+      0
+     ],
+     [
+      5.5833,
+      "h",
+      0,
+      "noHit_m",
+      0
+     ],
+     [
+      5.7,
+      "h",
+      0,
+      "noHit_m",
+      0
+     ],
+     [
+      6.25,
+      "h",
+      0,
+      "noHit_m",
+      0
+     ],
+     [
+      6.4333,
+      "h",
+      0,
+      "noHit_m",
+      0
+     ],
+     [
+      6.6167,
+      "h",
+      0,
+      "noHit_m",
+      0
+     ]
+    ]
+   },
+   "skill": {
+    "d": 6.25,
+    "ev": [
+     [
+      3.25,
+      "e",
+      0,
+      "Mercury_NS2_Skill2_Hit",
+      0
+     ]
+    ]
+   }
+  },
+  "nymph": {
+   "atk": {
+    "d": 4.1667,
+    "ev": [
+     [
+      1.8833,
+      "p",
+      1,
+      "FX_Leprechaun_bullet",
+      0
+     ],
+     [
+      1.95,
+      "p",
+      1,
+      "FX_Leprechaun_bullet",
+      0
+     ],
+     [
+      2.0,
+      "p",
+      1,
+      "FX_Leprechaun_bullet",
+      0
+     ],
+     [
+      2.05,
+      "p",
+      1,
+      "FX_Leprechaun_bullet",
+      0
+     ],
+     [
+      2.1833,
+      "p",
+      1,
+      "FX_Leprechaun_bullet",
+      0
+     ],
+     [
+      2.2667,
+      "p",
+      1,
+      "FX_Leprechaun_bullet",
+      0
+     ],
+     [
+      2.3167,
+      "p",
+      1,
+      "FX_Leprechaun_bullet",
+      0
+     ],
+     [
+      2.3667,
+      "p",
+      1,
+      "FX_Leprechaun_bullet",
+      0
+     ],
+     [
+      2.4167,
+      "p",
+      1,
+      "FX_Leprechaun_bullet",
+      0
+     ],
+     [
+      2.5,
+      "p",
+      1,
+      "FX_Leprechaun_bullet",
+      0
+     ],
+     [
+      2.55,
+      "p",
+      1,
+      "FX_Leprechaun_bullet",
+      0
+     ],
+     [
+      2.6,
+      "p",
+      1,
+      "FX_Leprechaun_bullet",
+      0
+     ]
+    ]
+   },
+   "skill": {
+    "d": 2.8833,
+    "ev": [
+     [
+      0.9167,
+      "p",
+      1,
+      "FX_Leprechaun_bullet",
+      0
+     ],
+     [
+      0.9833,
+      "p",
+      1,
+      "FX_Leprechaun_bullet",
+      0
+     ],
+     [
+      1.0333,
+      "p",
+      1,
+      "FX_Leprechaun_bullet",
+      0
+     ],
+     [
+      1.0833,
+      "p",
+      1,
+      "FX_Leprechaun_bullet",
+      0
+     ],
+     [
+      1.15,
+      "p",
+      1,
+      "FX_Leprechaun_bullet",
+      0
+     ],
+     [
+      1.2,
+      "p",
+      1,
+      "FX_Leprechaun_bullet",
+      0
+     ],
+     [
+      1.25,
+      "p",
+      1,
+      "FX_Leprechaun_bullet",
+      0
+     ],
+     [
+      1.3,
+      "p",
+      1,
+      "FX_Leprechaun_bullet",
+      0
+     ],
+     [
+      1.3667,
+      "p",
+      1,
+      "FX_Leprechaun_bullet",
+      0
+     ],
+     [
+      1.4333,
+      "p",
+      1,
+      "FX_Leprechaun_bullet",
+      0
+     ],
+     [
+      1.4833,
+      "p",
+      1,
+      "FX_Leprechaun_bullet",
+      0
+     ],
+     [
+      1.5333,
+      "p",
+      1,
+      "FX_Leprechaun_bullet",
+      0
+     ],
+     [
+      1.6,
+      "p",
+      1,
+      "FX_Leprechaun_bullet",
+      0
+     ],
+     [
+      1.65,
+      "p",
+      1,
+      "FX_Leprechaun_bullet",
+      0
+     ],
+     [
+      1.7,
+      "p",
+      1,
+      "FX_Leprechaun_bullet",
+      0
+     ],
+     [
+      1.7667,
+      "p",
+      1,
+      "FX_Leprechaun_bullet",
+      0
+     ],
+     [
+      1.8333,
+      "p",
+      1,
+      "FX_Leprechaun_bullet",
+      0
+     ],
+     [
+      1.8833,
+      "p",
+      1,
+      "FX_Leprechaun_bullet",
+      0
+     ],
+     [
+      1.9333,
+      "p",
+      1,
+      "FX_Leprechaun_bullet",
+      0
+     ],
+     [
+      1.9833,
+      "p",
+      1,
+      "FX_Leprechaun_bullet",
+      0
+     ],
+     [
+      2.05,
+      "p",
+      1,
+      "FX_Leprechaun_bullet",
+      0
+     ],
+     [
+      2.1,
+      "p",
+      1,
+      "FX_Leprechaun_bullet",
+      0
+     ],
+     [
+      2.15,
+      "p",
+      1,
+      "FX_Leprechaun_bullet",
+      0
+     ],
+     [
+      2.2167,
+      "p",
+      1,
+      "FX_Leprechaun_bullet",
+      0
+     ],
+     [
+      2.2833,
+      "p",
+      1,
+      "FX_Leprechaun_bullet",
+      0
+     ]
+    ]
+   }
+  },
+  "nymph_s1": {
+   "atk": {
+    "d": 4.1667,
+    "ev": [
+     [
+      1.8833,
+      "p",
+      1,
+      "FX_Leprechaun_bullet",
+      0
+     ],
+     [
+      1.95,
+      "p",
+      1,
+      "FX_Leprechaun_bullet",
+      0
+     ],
+     [
+      2.0,
+      "p",
+      1,
+      "FX_Leprechaun_bullet",
+      0
+     ],
+     [
+      2.05,
+      "p",
+      1,
+      "FX_Leprechaun_bullet",
+      0
+     ],
+     [
+      2.1833,
+      "p",
+      1,
+      "FX_Leprechaun_bullet",
+      0
+     ],
+     [
+      2.2667,
+      "p",
+      1,
+      "FX_Leprechaun_bullet",
+      0
+     ],
+     [
+      2.3167,
+      "p",
+      1,
+      "FX_Leprechaun_bullet",
+      0
+     ],
+     [
+      2.3667,
+      "p",
+      1,
+      "FX_Leprechaun_bullet",
+      0
+     ],
+     [
+      2.4167,
+      "p",
+      1,
+      "FX_Leprechaun_bullet",
+      0
+     ],
+     [
+      2.5,
+      "p",
+      1,
+      "FX_Leprechaun_bullet",
+      0
+     ],
+     [
+      2.55,
+      "p",
+      1,
+      "FX_Leprechaun_bullet",
+      0
+     ],
+     [
+      2.6,
+      "p",
+      1,
+      "FX_Leprechaun_bullet",
+      0
+     ]
+    ]
+   },
+   "skill": {
+    "d": 2.8833,
+    "ev": [
+     [
+      0.9167,
+      "p",
+      1,
+      "FX_Leprechaun_bullet",
+      0
+     ],
+     [
+      0.9833,
+      "p",
+      1,
+      "FX_Leprechaun_bullet",
+      0
+     ],
+     [
+      1.0333,
+      "p",
+      1,
+      "FX_Leprechaun_bullet",
+      0
+     ],
+     [
+      1.0833,
+      "p",
+      1,
+      "FX_Leprechaun_bullet",
+      0
+     ],
+     [
+      1.15,
+      "p",
+      1,
+      "FX_Leprechaun_bullet",
+      0
+     ],
+     [
+      1.2,
+      "p",
+      1,
+      "FX_Leprechaun_bullet",
+      0
+     ],
+     [
+      1.25,
+      "p",
+      1,
+      "FX_Leprechaun_bullet",
+      0
+     ],
+     [
+      1.3,
+      "p",
+      1,
+      "FX_Leprechaun_bullet",
+      0
+     ],
+     [
+      1.3667,
+      "p",
+      1,
+      "FX_Leprechaun_bullet",
+      0
+     ],
+     [
+      1.4333,
+      "p",
+      1,
+      "FX_Leprechaun_bullet",
+      0
+     ],
+     [
+      1.4833,
+      "p",
+      1,
+      "FX_Leprechaun_bullet",
+      0
+     ],
+     [
+      1.5333,
+      "p",
+      1,
+      "FX_Leprechaun_bullet",
+      0
+     ],
+     [
+      1.6,
+      "p",
+      1,
+      "FX_Leprechaun_bullet",
+      0
+     ],
+     [
+      1.65,
+      "p",
+      1,
+      "FX_Leprechaun_bullet",
+      0
+     ],
+     [
+      1.7,
+      "p",
+      1,
+      "FX_Leprechaun_bullet",
+      0
+     ],
+     [
+      1.7667,
+      "p",
+      1,
+      "FX_Leprechaun_bullet",
+      0
+     ],
+     [
+      1.8333,
+      "p",
+      1,
+      "FX_Leprechaun_bullet",
+      0
+     ],
+     [
+      1.8833,
+      "p",
+      1,
+      "FX_Leprechaun_bullet",
+      0
+     ],
+     [
+      1.9333,
+      "p",
+      1,
+      "FX_Leprechaun_bullet",
+      0
+     ],
+     [
+      1.9833,
+      "p",
+      1,
+      "FX_Leprechaun_bullet",
+      0
+     ],
+     [
+      2.05,
+      "p",
+      1,
+      "FX_Leprechaun_bullet",
+      0
+     ],
+     [
+      2.1,
+      "p",
+      1,
+      "FX_Leprechaun_bullet",
+      0
+     ],
+     [
+      2.15,
+      "p",
+      1,
+      "FX_Leprechaun_bullet",
+      0
+     ],
+     [
+      2.2167,
+      "p",
+      1,
+      "FX_Leprechaun_bullet",
+      0
+     ],
+     [
+      2.2833,
+      "p",
+      1,
+      "FX_Leprechaun_bullet",
+      0
+     ]
+    ]
+   }
+  },
+  "nymph_s2": {
+   "atk": {
+    "d": 4.1667,
+    "ev": [
+     [
+      1.8833,
+      "p",
+      1,
+      "FX_Leprechaun_bullet",
+      0
+     ],
+     [
+      1.95,
+      "p",
+      1,
+      "FX_Leprechaun_bullet",
+      0
+     ],
+     [
+      2.0,
+      "p",
+      1,
+      "FX_Leprechaun_bullet",
+      0
+     ],
+     [
+      2.05,
+      "p",
+      1,
+      "FX_Leprechaun_bullet",
+      0
+     ],
+     [
+      2.1833,
+      "p",
+      1,
+      "FX_Leprechaun_bullet",
+      0
+     ],
+     [
+      2.2667,
+      "p",
+      1,
+      "FX_Leprechaun_bullet",
+      0
+     ],
+     [
+      2.3167,
+      "p",
+      1,
+      "FX_Leprechaun_bullet",
+      0
+     ],
+     [
+      2.3667,
+      "p",
+      1,
+      "FX_Leprechaun_bullet",
+      0
+     ],
+     [
+      2.4167,
+      "p",
+      1,
+      "FX_Leprechaun_bullet",
+      0
+     ],
+     [
+      2.5,
+      "p",
+      1,
+      "FX_Leprechaun_bullet",
+      0
+     ],
+     [
+      2.55,
+      "p",
+      1,
+      "FX_Leprechaun_bullet",
+      0
+     ],
+     [
+      2.6,
+      "p",
+      1,
+      "FX_Leprechaun_bullet",
+      0
+     ]
+    ]
+   },
+   "skill": {
+    "d": 2.8833,
+    "ev": [
+     [
+      0.9167,
+      "p",
+      1,
+      "FX_Leprechaun_bullet",
+      0
+     ],
+     [
+      0.9833,
+      "p",
+      1,
+      "FX_Leprechaun_bullet",
+      0
+     ],
+     [
+      1.0333,
+      "p",
+      1,
+      "FX_Leprechaun_bullet",
+      0
+     ],
+     [
+      1.0833,
+      "p",
+      1,
+      "FX_Leprechaun_bullet",
+      0
+     ],
+     [
+      1.15,
+      "p",
+      1,
+      "FX_Leprechaun_bullet",
+      0
+     ],
+     [
+      1.2,
+      "p",
+      1,
+      "FX_Leprechaun_bullet",
+      0
+     ],
+     [
+      1.25,
+      "p",
+      1,
+      "FX_Leprechaun_bullet",
+      0
+     ],
+     [
+      1.3,
+      "p",
+      1,
+      "FX_Leprechaun_bullet",
+      0
+     ],
+     [
+      1.3667,
+      "p",
+      1,
+      "FX_Leprechaun_bullet",
+      0
+     ],
+     [
+      1.4333,
+      "p",
+      1,
+      "FX_Leprechaun_bullet",
+      0
+     ],
+     [
+      1.4833,
+      "p",
+      1,
+      "FX_Leprechaun_bullet",
+      0
+     ],
+     [
+      1.5333,
+      "p",
+      1,
+      "FX_Leprechaun_bullet",
+      0
+     ],
+     [
+      1.6,
+      "p",
+      1,
+      "FX_Leprechaun_bullet",
+      0
+     ],
+     [
+      1.65,
+      "p",
+      1,
+      "FX_Leprechaun_bullet",
+      0
+     ],
+     [
+      1.7,
+      "p",
+      1,
+      "FX_Leprechaun_bullet",
+      0
+     ],
+     [
+      1.7667,
+      "p",
+      1,
+      "FX_Leprechaun_bullet",
+      0
+     ],
+     [
+      1.8333,
+      "p",
+      1,
+      "FX_Leprechaun_bullet",
+      0
+     ],
+     [
+      1.8833,
+      "p",
+      1,
+      "FX_Leprechaun_bullet",
+      0
+     ],
+     [
+      1.9333,
+      "p",
+      1,
+      "FX_Leprechaun_bullet",
+      0
+     ],
+     [
+      1.9833,
+      "p",
+      1,
+      "FX_Leprechaun_bullet",
+      0
+     ],
+     [
+      2.05,
+      "p",
+      1,
+      "FX_Leprechaun_bullet",
+      0
+     ],
+     [
+      2.1,
+      "p",
+      1,
+      "FX_Leprechaun_bullet",
+      0
+     ],
+     [
+      2.15,
+      "p",
+      1,
+      "FX_Leprechaun_bullet",
+      0
+     ],
+     [
+      2.2167,
+      "p",
+      1,
+      "FX_Leprechaun_bullet",
+      0
+     ],
+     [
+      2.2833,
+      "p",
+      1,
+      "FX_Leprechaun_bullet",
+      0
+     ]
+    ]
+   }
+  },
+  "phoenix": {
+   "atk": {
+    "d": 3.2,
+    "ev": [
+     [
+      0.7833,
+      "p",
+      1,
+      "Phoenix_skill1_bullet",
+      0
+     ],
+     [
+      1.5167,
+      "p",
+      1,
+      "Phoenix_skill1_bullet",
+      0
+     ],
+     [
+      2.3667,
+      "p",
+      1,
+      "Phoenix_skill1_bullet",
+      0
+     ]
+    ]
+   },
+   "skill": {
+    "d": 13.2667,
+    "ev": [
+     [
+      3.3667,
+      "h",
+      0,
+      "noHit_m",
+      0
+     ],
+     [
+      4.0833,
+      "h",
+      0,
+      "noHit_m",
+      0
+     ],
+     [
+      5.1833,
+      "h",
+      0,
+      "noHit_m",
+      0
+     ],
+     [
+      6.1333,
+      "h",
+      0,
+      "noHit_m",
+      0
+     ],
+     [
+      7.5667,
+      "h",
+      0,
+      "noHit_m",
+      0
+     ],
+     [
+      8.2667,
+      "h",
+      0,
+      "noHit_m",
+      0
+     ],
+     [
+      9.4,
+      "h",
+      0,
+      "noHit_m",
+      0
+     ],
+     [
+      10.3333,
+      "h",
+      0,
+      "noHit_m",
+      0
+     ]
+    ]
+   }
+  },
+  "phoenix_s1": {
+   "skill": {
+    "d": 13.2667,
+    "ev": [
+     [
+      3.3667,
+      "h",
+      0,
+      "noHit_m",
+      0
+     ],
+     [
+      4.0833,
+      "h",
+      0,
+      "noHit_m",
+      0
+     ],
+     [
+      5.1833,
+      "h",
+      0,
+      "noHit_m",
+      0
+     ],
+     [
+      6.1333,
+      "h",
+      0,
+      "noHit_m",
+      0
+     ],
+     [
+      7.5667,
+      "h",
+      0,
+      "noHit_m",
+      0
+     ],
+     [
+      8.2667,
+      "h",
+      0,
+      "noHit_m",
+      0
+     ],
+     [
+      9.4,
+      "h",
+      0,
+      "noHit_m",
+      0
+     ],
+     [
+      10.3333,
+      "h",
+      0,
+      "noHit_m",
+      0
+     ]
+    ]
+   }
+  },
+  "phoenix_s2": {
+   "atk": {
+    "d": 3.2,
+    "ev": [
+     [
+      0.7833,
+      "p",
+      1,
+      "Phoenix_ns2_skill1_bullet",
+      0
+     ],
+     [
+      1.5167,
+      "p",
+      1,
+      "Phoenix_ns2_skill1_bullet",
+      0
+     ],
+     [
+      2.3667,
+      "p",
+      1,
+      "Phoenix_ns2_skill1_bullet",
+      0
+     ]
+    ]
+   },
+   "skill": {
+    "d": 13.2667,
+    "ev": [
+     [
+      3.3667,
+      "h",
+      0,
+      "noHit_m",
+      0
+     ],
+     [
+      4.0833,
+      "h",
+      0,
+      "noHit_m",
+      0
+     ],
+     [
+      5.1833,
+      "h",
+      0,
+      "noHit_m",
+      0
+     ],
+     [
+      6.1333,
+      "h",
+      0,
+      "noHit_m",
+      0
+     ],
+     [
+      7.5667,
+      "h",
+      0,
+      "noHit_m",
+      0
+     ],
+     [
+      8.2667,
+      "h",
+      0,
+      "noHit_m",
+      0
+     ],
+     [
+      9.4,
+      "h",
+      0,
+      "noHit_m",
+      0
+     ],
+     [
+      10.3333,
+      "h",
+      0,
+      "noHit_m",
+      0
+     ]
+    ]
+   }
+  },
+  "ramiel": {
+   "atk": {
+    "d": 5.5,
+    "ev": [
+     [
+      3.0,
+      "p",
+      1,
+      "Ramiel_N_bullet",
+      0
+     ],
+     [
+      4.25,
+      "hg",
+      0,
+      "Ramiel_N_Skill1_Hit",
+      0
+     ],
+     [
+      4.3333,
+      "h",
+      0,
+      "noHit_m",
+      0
+     ],
+     [
+      4.4167,
+      "h",
+      0,
+      "noHit_m",
+      0
+     ],
+     [
+      4.5,
+      "h",
+      0,
+      "noHit_m",
+      0
+     ],
+     [
+      4.5833,
+      "h",
+      0,
+      "noHit_m",
+      0
+     ],
+     [
+      4.6667,
+      "h",
+      0,
+      "noHit_m",
+      0
+     ],
+     [
+      4.75,
+      "h",
+      0,
+      "noHit_m",
+      0
+     ],
+     [
+      4.8333,
+      "h",
+      0,
+      "noHit_m",
+      0
+     ],
+     [
+      4.9167,
+      "h",
+      0,
+      "noHit_m",
+      0
+     ]
+    ]
+   },
+   "skill": {
+    "d": 11.5,
+    "ev": [
+     [
+      8.1667,
+      "hg",
+      0,
+      "Ramiel_N_Skill2_Hit",
+      0
+     ],
+     [
+      8.3333,
+      "h",
+      0,
+      "noHit_m",
+      0
+     ],
+     [
+      8.5,
+      "h",
+      0,
+      "noHit_m",
+      0
+     ],
+     [
+      8.6667,
+      "h",
+      0,
+      "noHit_m",
+      0
+     ],
+     [
+      8.8333,
+      "h",
+      0,
+      "noHit_m",
+      0
+     ],
+     [
+      9.0,
+      "h",
+      0,
+      "noHit_m",
+      0
+     ],
+     [
+      9.1667,
+      "h",
+      0,
+      "noHit_m",
+      0
+     ],
+     [
+      9.3333,
+      "h",
+      0,
+      "noHit_m",
+      0
+     ],
+     [
+      9.5,
+      "h",
+      0,
+      "noHit_m",
+      0
+     ],
+     [
+      9.6667,
+      "h",
+      0,
+      "noHit_m",
+      0
+     ],
+     [
+      9.8333,
+      "h",
+      0,
+      "noHit_m",
+      0
+     ],
+     [
+      10.0,
+      "h",
+      0,
+      "noHit_m",
+      0
+     ],
+     [
+      10.1667,
+      "h",
+      0,
+      "noHit_m",
+      0
+     ],
+     [
+      10.3333,
+      "h",
+      0,
+      "noHit_m",
+      0
+     ],
+     [
+      10.5,
+      "h",
+      0,
+      "noHit_m",
+      0
+     ],
+     [
+      10.6667,
+      "h",
+      0,
+      "noHit_m",
+      0
+     ]
+    ]
+   }
+  },
+  "ramiel_s1": {
+   "atk": {
+    "d": 5.5,
+    "ev": [
+     [
+      3.0,
+      "p",
+      1,
+      "Ramiel_N_bullet",
+      0
+     ],
+     [
+      4.25,
+      "hg",
+      0,
+      "Ramiel_N_Skill1_Hit",
+      0
+     ],
+     [
+      4.3333,
+      "h",
+      0,
+      "noHit_m",
+      0
+     ],
+     [
+      4.4167,
+      "h",
+      0,
+      "noHit_m",
+      0
+     ],
+     [
+      4.5,
+      "h",
+      0,
+      "noHit_m",
+      0
+     ],
+     [
+      4.5833,
+      "h",
+      0,
+      "noHit_m",
+      0
+     ],
+     [
+      4.6667,
+      "h",
+      0,
+      "noHit_m",
+      0
+     ],
+     [
+      4.75,
+      "h",
+      0,
+      "noHit_m",
+      0
+     ],
+     [
+      4.8333,
+      "h",
+      0,
+      "noHit_m",
+      0
+     ],
+     [
+      4.9167,
+      "h",
+      0,
+      "noHit_m",
+      0
+     ]
+    ]
+   },
+   "skill": {
+    "d": 11.5,
+    "ev": [
+     [
+      8.1667,
+      "hg",
+      0,
+      "Ramiel_N_Skill2_Hit",
+      0
+     ],
+     [
+      8.3333,
+      "h",
+      0,
+      "noHit_m",
+      0
+     ],
+     [
+      8.5,
+      "h",
+      0,
+      "noHit_m",
+      0
+     ],
+     [
+      8.6667,
+      "h",
+      0,
+      "noHit_m",
+      0
+     ],
+     [
+      8.8333,
+      "h",
+      0,
+      "noHit_m",
+      0
+     ],
+     [
+      9.0,
+      "h",
+      0,
+      "noHit_m",
+      0
+     ],
+     [
+      9.1667,
+      "h",
+      0,
+      "noHit_m",
+      0
+     ],
+     [
+      9.3333,
+      "h",
+      0,
+      "noHit_m",
+      0
+     ],
+     [
+      9.5,
+      "h",
+      0,
+      "noHit_m",
+      0
+     ],
+     [
+      9.6667,
+      "h",
+      0,
+      "noHit_m",
+      0
+     ],
+     [
+      9.8333,
+      "h",
+      0,
+      "noHit_m",
+      0
+     ],
+     [
+      10.0,
+      "h",
+      0,
+      "noHit_m",
+      0
+     ],
+     [
+      10.1667,
+      "h",
+      0,
+      "noHit_m",
+      0
+     ],
+     [
+      10.3333,
+      "h",
+      0,
+      "noHit_m",
+      0
+     ],
+     [
+      10.5,
+      "h",
+      0,
+      "noHit_m",
+      0
+     ],
+     [
+      10.6667,
+      "h",
+      0,
+      "noHit_m",
+      0
+     ]
+    ]
+   }
+  },
+  "ramiel_s2": {
+   "atk": {
+    "d": 5.5,
+    "ev": [
+     [
+      3.0,
+      "p",
+      1,
+      "vfx_Ramiel_NS2_bullet",
+      0
+     ],
+     [
+      4.25,
+      "hg",
+      0,
+      "vfx_Ramiel_NS2_Skill1_Hit",
+      0
+     ],
+     [
+      4.3333,
+      "h",
+      0,
+      "noHit_m",
+      0
+     ],
+     [
+      4.4167,
+      "h",
+      0,
+      "noHit_m",
+      0
+     ],
+     [
+      4.5,
+      "h",
+      0,
+      "noHit_m",
+      0
+     ],
+     [
+      4.5833,
+      "h",
+      0,
+      "noHit_m",
+      0
+     ],
+     [
+      4.6667,
+      "h",
+      0,
+      "noHit_m",
+      0
+     ],
+     [
+      4.75,
+      "h",
+      0,
+      "noHit_m",
+      0
+     ],
+     [
+      4.8333,
+      "h",
+      0,
+      "noHit_m",
+      0
+     ],
+     [
+      4.9167,
+      "h",
+      0,
+      "noHit_m",
+      0
+     ]
+    ]
+   },
+   "skill": {
+    "d": 11.5,
+    "ev": [
+     [
+      8.3333,
+      "h",
+      0,
+      "noHit_m",
+      0
+     ],
+     [
+      8.5,
+      "h",
+      0,
+      "noHit_m",
+      0
+     ],
+     [
+      8.6667,
+      "h",
+      0,
+      "noHit_m",
+      0
+     ],
+     [
+      8.8333,
+      "h",
+      0,
+      "noHit_m",
+      0
+     ],
+     [
+      9.0,
+      "h",
+      0,
+      "noHit_m",
+      0
+     ],
+     [
+      9.1667,
+      "h",
+      0,
+      "noHit_m",
+      0
+     ],
+     [
+      9.3333,
+      "h",
+      0,
+      "noHit_m",
+      0
+     ],
+     [
+      9.5,
+      "h",
+      0,
+      "noHit_m",
+      0
+     ],
+     [
+      9.6667,
+      "h",
+      0,
+      "noHit_m",
+      0
+     ],
+     [
+      9.8333,
+      "h",
+      0,
+      "noHit_m",
+      0
+     ],
+     [
+      10.0,
+      "h",
+      0,
+      "noHit_m",
+      0
+     ],
+     [
+      10.1667,
+      "h",
+      0,
+      "noHit_m",
+      0
+     ],
+     [
+      10.3333,
+      "h",
+      0,
+      "noHit_m",
+      0
+     ],
+     [
+      10.5,
+      "h",
+      0,
+      "noHit_m",
+      0
+     ],
+     [
+      10.6667,
+      "h",
+      0,
+      "noHit_m",
+      0
+     ]
+    ]
+   }
+  },
+  "raven": {
+   "atk": {
+    "d": 1.8,
+    "ev": [
+     [
+      0.95,
+      "p",
+      1,
+      "FX_Raven_skill1_bullet",
+      0
+     ]
+    ]
+   },
+   "skill": {
+    "d": 3.4333,
+    "ev": [
+     [
+      2.0,
+      "e",
+      0,
+      "Raven_skill2_Scofe_Dot",
+      0
+     ]
+    ]
+   }
+  },
+  "raven_s1": {
+   "atk": {
+    "d": 1.8,
+    "ev": [
+     [
+      0.95,
+      "p",
+      1,
+      "FX_Raven_skill1_bullet",
+      0
+     ]
+    ]
+   },
+   "skill": {
+    "d": 3.4333,
+    "ev": [
+     [
+      2.0,
+      "e",
+      0,
+      "Raven_skill2_Scofe_Dot",
+      0
+     ]
+    ]
+   }
+  },
+  "saraqael": {
+   "atk": {
+    "d": 5.0,
+    "ev": [
+     [
+      2.4167,
+      "h",
+      0,
+      "noHit_m",
+      0
+     ],
+     [
+      2.6667,
+      "h",
+      0,
+      "noHit_m",
+      0
+     ],
+     [
+      3.0,
+      "h",
+      0,
+      "noHit_m",
+      0
+     ],
+     [
+      3.2833,
+      "h",
+      0,
+      "noHit_m",
+      0
+     ]
+    ]
+   },
+   "skill": {
+    "d": 7.65,
+    "ev": [
+     [
+      0.7,
+      "eg",
+      0,
+      "Saraqael_skill2_enemy_head_Ring",
+      0
+     ],
+     [
+      4.9333,
+      "e",
+      0,
+      "Saraqael_skill2_enemy_BG",
+      0
+     ],
+     [
+      6.2667,
+      "eg",
+      0,
+      "Saraqael_skill2_enemy_Last_head_Ring",
+      0
+     ],
+     [
+      6.4167,
+      "hg",
+      0,
+      "Saraqael_skill2_Last_Hit",
+      0
+     ],
+     [
+      6.4667,
+      "eg",
+      0,
+      "Saraqael_skill2_Last_Ground_Smoke",
+      0
+     ],
+     [
+      6.5,
+      "hg",
+      0,
+      "Saraqael_skill2_Last_Big_Hit",
+      0
+     ],
+     [
+      7.0833,
+      "eg",
+      0,
+      "Saraqael_skill2_Last_Hit_after",
+      0
+     ]
+    ]
+   }
+  },
+  "saraqael_s1": {
+   "atk": {
+    "d": 5.0,
+    "ev": [
+     [
+      2.4167,
+      "h",
+      0,
+      "noHit_m",
+      0
+     ],
+     [
+      2.6667,
+      "h",
+      0,
+      "noHit_m",
+      0
+     ],
+     [
+      3.0,
+      "h",
+      0,
+      "noHit_m",
+      0
+     ],
+     [
+      3.2833,
+      "h",
+      0,
+      "noHit_m",
+      0
+     ]
+    ]
+   },
+   "skill": {
+    "d": 7.65,
+    "ev": [
+     [
+      0.7,
+      "eg",
+      0,
+      "Saraqael_skill2_enemy_head_Ring",
+      0
+     ],
+     [
+      4.9333,
+      "e",
+      0,
+      "Saraqael_skill2_enemy_BG",
+      0
+     ],
+     [
+      6.2667,
+      "eg",
+      0,
+      "Saraqael_skill2_enemy_Last_head_Ring",
+      0
+     ],
+     [
+      6.4167,
+      "hg",
+      0,
+      "Saraqael_skill2_Last_Hit",
+      0
+     ],
+     [
+      6.4667,
+      "eg",
+      0,
+      "Saraqael_skill2_Last_Ground_Smoke",
+      0
+     ],
+     [
+      6.5,
+      "hg",
+      0,
+      "Saraqael_skill2_Last_Big_Hit",
+      0
+     ],
+     [
+      7.0833,
+      "eg",
+      0,
+      "Saraqael_skill2_Last_Hit_after",
+      0
+     ]
+    ]
+   }
+  },
+  "saraqael_s2": {
+   "atk": {
+    "d": 5.0,
+    "ev": [
+     [
+      2.4167,
+      "h",
+      0,
+      "noHit_m",
+      0
+     ],
+     [
+      2.6667,
+      "h",
+      0,
+      "noHit_m",
+      0
+     ],
+     [
+      3.0,
+      "h",
+      0,
+      "noHit_m",
+      0
+     ],
+     [
+      3.2833,
+      "h",
+      0,
+      "noHit_m",
+      0
+     ]
+    ]
+   },
+   "skill": {
+    "d": 7.65,
+    "ev": [
+     [
+      0.7,
+      "eg",
+      0,
+      "Saraqael_skill2_enemy_head_Ring",
+      0
+     ],
+     [
+      4.9333,
+      "e",
+      0,
+      "Saraqael_skill2_enemy_BG",
+      0
+     ],
+     [
+      6.2667,
+      "eg",
+      0,
+      "Saraqael_skill2_enemy_Last_head_Ring",
+      0
+     ],
+     [
+      6.4167,
+      "hg",
+      0,
+      "Saraqael_skill2_Last_Hit",
+      0
+     ],
+     [
+      6.4667,
+      "eg",
+      0,
+      "Saraqael_skill2_Last_Ground_Smoke",
+      0
+     ],
+     [
+      6.5,
+      "hg",
+      0,
+      "Saraqael_skill2_Last_Big_Hit",
+      0
+     ],
+     [
+      7.0833,
+      "eg",
+      0,
+      "Saraqael_skill2_Last_Hit_after",
+      0
+     ]
+    ]
+   }
+  },
+  "sleipnir": {
+   "atk": {
+    "d": 7.6333,
+    "ev": [
+     [
+      1.6833,
+      "p",
+      2,
+      "Sleipnir_bullet2",
+      0
+     ],
+     [
+      1.7,
+      "p",
+      1,
+      "Sleipnir_bullet2",
+      0
+     ],
+     [
+      1.7167,
+      "p",
+      2,
+      "Sleipnir_bullet2",
+      0
+     ],
+     [
+      1.7333,
+      "p",
+      1,
+      "Sleipnir_bullet2",
+      0
+     ],
+     [
+      1.75,
+      "p",
+      2,
+      "Sleipnir_bullet2",
+      0
+     ],
+     [
+      1.7667,
+      "p",
+      1,
+      "Sleipnir_bullet2",
+      0
+     ],
+     [
+      1.9667,
+      "p",
+      1,
+      "Sleipnir_bullet",
+      0
+     ],
+     [
+      1.9833,
+      "p",
+      2,
+      "Sleipnir_bullet",
+      0
+     ],
+     [
+      2.0,
+      "p",
+      1,
+      "Sleipnir_bullet",
+      0
+     ],
+     [
+      2.0167,
+      "p",
+      2,
+      "Sleipnir_bullet",
+      0
+     ],
+     [
+      2.0333,
+      "p",
+      1,
+      "Sleipnir_bullet",
+      0
+     ],
+     [
+      2.0667,
+      "p",
+      2,
+      "Sleipnir_bullet",
+      0
+     ],
+     [
+      2.0833,
+      "p",
+      1,
+      "Sleipnir_bullet",
+      0
+     ],
+     [
+      2.1167,
+      "p",
+      2,
+      "Sleipnir_bullet",
+      0
+     ],
+     [
+      2.2333,
+      "p",
+      1,
+      "Sleipnir_bullet2",
+      0
+     ],
+     [
+      2.25,
+      "p",
+      2,
+      "Sleipnir_bullet2",
+      0
+     ],
+     [
+      2.2667,
+      "p",
+      1,
+      "Sleipnir_bullet2",
+      0
+     ],
+     [
+      2.2833,
+      "p",
+      2,
+      "Sleipnir_bullet2",
+      0
+     ],
+     [
+      2.3,
+      "p",
+      1,
+      "Sleipnir_bullet2",
+      0
+     ],
+     [
+      2.3167,
+      "p",
+      2,
+      "Sleipnir_bullet2",
+      0
+     ],
+     [
+      2.3333,
+      "p",
+      1,
+      "Sleipnir_bullet2",
+      0
+     ],
+     [
+      2.35,
+      "p",
+      2,
+      "Sleipnir_bullet2",
+      0
+     ],
+     [
+      2.3667,
+      "p",
+      1,
+      "Sleipnir_bullet2",
+      0
+     ],
+     [
+      2.3833,
+      "p",
+      2,
+      "Sleipnir_bullet2",
+      0
+     ],
+     [
+      2.4,
+      "p",
+      1,
+      "Sleipnir_bullet2",
+      0
+     ],
+     [
+      2.5167,
+      "p",
+      2,
+      "Sleipnir_bullet",
+      0
+     ],
+     [
+      2.5333,
+      "p",
+      1,
+      "Sleipnir_bullet",
+      0
+     ],
+     [
+      2.55,
+      "p",
+      2,
+      "Sleipnir_bullet",
+      0
+     ],
+     [
+      2.5667,
+      "p",
+      1,
+      "Sleipnir_bullet",
+      0
+     ],
+     [
+      2.5833,
+      "p",
+      2,
+      "Sleipnir_bullet",
+      0
+     ],
+     [
+      2.6,
+      "p",
+      1,
+      "Sleipnir_bullet",
+      0
+     ],
+     [
+      2.6167,
+      "p",
+      2,
+      "Sleipnir_bullet",
+      0
+     ],
+     [
+      2.6333,
+      "p",
+      1,
+      "Sleipnir_bullet",
+      0
+     ],
+     [
+      2.65,
+      "p",
+      2,
+      "Sleipnir_bullet",
+      0
+     ],
+     [
+      2.6667,
+      "p",
+      1,
+      "Sleipnir_bullet",
+      0
+     ],
+     [
+      4.65,
+      "p",
+      1,
+      "Sleipnir_skill1_lastfire_bullet",
+      0
+     ],
+     [
+      4.6833,
+      "h",
+      0,
+      "noHit_m",
+      0
+     ]
+    ]
+   },
+   "skill": {
+    "d": 9.5,
+    "ev": [
+     [
+      3.4333,
+      "h",
+      0,
+      "Sleipnir_skill2_attack",
+      0
+     ]
+    ]
+   }
+  },
+  "sleipnir_s1": {
+   "atk": {
+    "d": 7.6333,
+    "ev": [
+     [
+      1.6833,
+      "p",
+      2,
+      "Sleipnir_bullet2",
+      0
+     ],
+     [
+      1.7,
+      "p",
+      1,
+      "Sleipnir_bullet2",
+      0
+     ],
+     [
+      1.7167,
+      "p",
+      2,
+      "Sleipnir_bullet2",
+      0
+     ],
+     [
+      1.7333,
+      "p",
+      1,
+      "Sleipnir_bullet2",
+      0
+     ],
+     [
+      1.75,
+      "p",
+      2,
+      "Sleipnir_bullet2",
+      0
+     ],
+     [
+      1.7667,
+      "p",
+      1,
+      "Sleipnir_bullet2",
+      0
+     ],
+     [
+      1.9667,
+      "p",
+      1,
+      "Sleipnir_bullet",
+      0
+     ],
+     [
+      1.9833,
+      "p",
+      2,
+      "Sleipnir_bullet",
+      0
+     ],
+     [
+      2.0,
+      "p",
+      1,
+      "Sleipnir_bullet",
+      0
+     ],
+     [
+      2.0167,
+      "p",
+      2,
+      "Sleipnir_bullet",
+      0
+     ],
+     [
+      2.0333,
+      "p",
+      1,
+      "Sleipnir_bullet",
+      0
+     ],
+     [
+      2.0667,
+      "p",
+      2,
+      "Sleipnir_bullet",
+      0
+     ],
+     [
+      2.0833,
+      "p",
+      1,
+      "Sleipnir_bullet",
+      0
+     ],
+     [
+      2.1167,
+      "p",
+      2,
+      "Sleipnir_bullet",
+      0
+     ],
+     [
+      2.2333,
+      "p",
+      1,
+      "Sleipnir_bullet2",
+      0
+     ],
+     [
+      2.25,
+      "p",
+      2,
+      "Sleipnir_bullet2",
+      0
+     ],
+     [
+      2.2667,
+      "p",
+      1,
+      "Sleipnir_bullet2",
+      0
+     ],
+     [
+      2.2833,
+      "p",
+      2,
+      "Sleipnir_bullet2",
+      0
+     ],
+     [
+      2.3,
+      "p",
+      1,
+      "Sleipnir_bullet2",
+      0
+     ],
+     [
+      2.3167,
+      "p",
+      2,
+      "Sleipnir_bullet2",
+      0
+     ],
+     [
+      2.3333,
+      "p",
+      1,
+      "Sleipnir_bullet2",
+      0
+     ],
+     [
+      2.35,
+      "p",
+      2,
+      "Sleipnir_bullet2",
+      0
+     ],
+     [
+      2.3667,
+      "p",
+      1,
+      "Sleipnir_bullet2",
+      0
+     ],
+     [
+      2.3833,
+      "p",
+      2,
+      "Sleipnir_bullet2",
+      0
+     ],
+     [
+      2.4,
+      "p",
+      1,
+      "Sleipnir_bullet2",
+      0
+     ],
+     [
+      2.5167,
+      "p",
+      2,
+      "Sleipnir_bullet",
+      0
+     ],
+     [
+      2.5333,
+      "p",
+      1,
+      "Sleipnir_bullet",
+      0
+     ],
+     [
+      2.55,
+      "p",
+      2,
+      "Sleipnir_bullet",
+      0
+     ],
+     [
+      2.5667,
+      "p",
+      1,
+      "Sleipnir_bullet",
+      0
+     ],
+     [
+      2.5833,
+      "p",
+      2,
+      "Sleipnir_bullet",
+      0
+     ],
+     [
+      2.6,
+      "p",
+      1,
+      "Sleipnir_bullet",
+      0
+     ],
+     [
+      2.6167,
+      "p",
+      2,
+      "Sleipnir_bullet",
+      0
+     ],
+     [
+      2.6333,
+      "p",
+      1,
+      "Sleipnir_bullet",
+      0
+     ],
+     [
+      2.65,
+      "p",
+      2,
+      "Sleipnir_bullet",
+      0
+     ],
+     [
+      2.6667,
+      "p",
+      1,
+      "Sleipnir_bullet",
+      0
+     ],
+     [
+      4.65,
+      "p",
+      1,
+      "Sleipnir_skill1_lastfire_bullet",
+      0
+     ],
+     [
+      4.6833,
+      "h",
+      0,
+      "noHit_m",
+      0
+     ]
+    ]
+   },
+   "skill": {
+    "d": 9.5,
+    "ev": [
+     [
+      3.4333,
+      "h",
+      0,
+      "Sleipnir_skill2_attack",
+      0
+     ]
+    ]
+   }
+  },
+  "sleipnir_s2": {
+   "atk": {
+    "d": 7.6333,
+    "ev": [
+     [
+      1.6833,
+      "p",
+      2,
+      "Sleipnir_NS2_skill1_Red_bullet",
+      0
+     ],
+     [
+      1.7167,
+      "p",
+      2,
+      "Sleipnir_NS2_skill1_Red_bullet",
+      0
+     ],
+     [
+      1.75,
+      "p",
+      2,
+      "Sleipnir_NS2_skill1_Green_bullet",
+      0
+     ],
+     [
+      1.7667,
+      "p",
+      1,
+      "Sleipnir_NS2_skill1_blue_bullet",
+      0
+     ],
+     [
+      1.9667,
+      "p",
+      1,
+      "Sleipnir_NS2_skill1_Green_bullet",
+      0
+     ],
+     [
+      2.0,
+      "p",
+      1,
+      "Sleipnir_NS2_skill1_Red_bullet",
+      0
+     ],
+     [
+      2.0333,
+      "p",
+      1,
+      "Sleipnir_NS2_skill1_Red_bullet",
+      0
+     ],
+     [
+      2.0667,
+      "p",
+      2,
+      "Sleipnir_NS2_skill1_Red_bullet",
+      0
+     ],
+     [
+      2.0833,
+      "p",
+      1,
+      "Sleipnir_NS2_skill1_Green_bullet",
+      0
+     ],
+     [
+      2.1167,
+      "p",
+      2,
+      "Sleipnir_NS2_skill1_Red_bullet",
+      0
+     ],
+     [
+      2.2333,
+      "p",
+      1,
+      "Sleipnir_NS2_skill1_Green_bullet",
+      0
+     ],
+     [
+      2.2667,
+      "p",
+      1,
+      "Sleipnir_NS2_skill1_blue_bullet",
+      0
+     ],
+     [
+      2.3,
+      "p",
+      1,
+      "Sleipnir_NS2_skill1_Red_bullet",
+      0
+     ],
+     [
+      2.3167,
+      "p",
+      2,
+      "Sleipnir_NS2_skill1_Green_bullet",
+      0
+     ],
+     [
+      2.35,
+      "p",
+      2,
+      "Sleipnir_NS2_skill1_Red_bullet",
+      0
+     ],
+     [
+      2.3833,
+      "p",
+      2,
+      "Sleipnir_NS2_skill1_blue_bullet",
+      0
+     ],
+     [
+      2.4,
+      "p",
+      1,
+      "Sleipnir_NS2_skill1_blue_bullet",
+      0
+     ],
+     [
+      2.5167,
+      "p",
+      2,
+      "Sleipnir_NS2_skill1_Red_bullet",
+      0
+     ],
+     [
+      2.55,
+      "p",
+      2,
+      "Sleipnir_NS2_skill1_blue_bullet",
+      0
+     ],
+     [
+      2.5667,
+      "p",
+      1,
+      "Sleipnir_NS2_skill1_Red_bullet",
+      0
+     ],
+     [
+      2.6,
+      "p",
+      1,
+      "Sleipnir_NS2_skill1_Green_bullet",
+      0
+     ],
+     [
+      2.6333,
+      "p",
+      1,
+      "Sleipnir_NS2_skill1_Red_bullet",
+      0
+     ],
+     [
+      2.6667,
+      "p",
+      1,
+      "Sleipnir_NS2_skill1_blue_bullet",
+      0
+     ],
+     [
+      4.5833,
+      "h",
+      0,
+      "Sleipnir_NS2_skill1_last_Hit",
+      0
+     ]
+    ]
+   },
+   "skill": {
+    "d": 9.5,
+    "ev": [
+     [
+      3.4167,
+      "h",
+      0,
+      "Sleipnir_NS2_skill2_Hit",
+      0
+     ]
+    ]
+   }
+  },
+  "thetis": {
+   "atk": {
+    "d": 4.0,
+    "ev": [
+     [
+      0.6167,
+      "h",
+      0,
+      "Thetis_Skill1_Hit",
+      0
+     ],
+     [
+      0.7833,
+      "e",
+      0,
+      "Thetis_skill1_Ground_Hit",
+      0
+     ],
+     [
+      0.95,
+      "h",
+      0,
+      "Thetis_Skill1_Hit",
+      0
+     ],
+     [
+      1.1167,
+      "e",
+      0,
+      "Thetis_skill1_Ground_Hit",
+      0
+     ],
+     [
+      1.3,
+      "h",
+      0,
+      "Thetis_Skill1_Hit",
+      0
+     ],
+     [
+      1.5,
+      "e",
+      0,
+      "Thetis_skill1_Ground_Hit",
+      0
+     ],
+     [
+      1.7,
+      "h",
+      0,
+      "Thetis_Skill1_Hit",
+      0
+     ],
+     [
+      1.9,
+      "e",
+      0,
+      "Thetis_skill1_Ground_Hit",
+      0
+     ],
+     [
+      2.1,
+      "h",
+      0,
+      "Thetis_Skill1_Hit",
+      0
+     ]
+    ]
+   },
+   "skill": {
+    "d": 5.0,
+    "ev": [
+     [
+      2.7667,
+      "p",
+      1,
+      "Thetis_skill2_Small_Missile",
+      0
+     ],
+     [
+      2.8,
+      "p",
+      2,
+      "Thetis_skill2_Small_Missile",
+      0
+     ],
+     [
+      3.05,
+      "p",
+      1,
+      "Thetis_skill2_Small_Missile",
+      0
+     ],
+     [
+      3.1667,
+      "p",
+      2,
+      "Thetis_skill2_Small_Missile",
+      0
+     ],
+     [
+      3.3,
+      "p",
+      1,
+      "Thetis_skill2_Small_Missile",
+      0
+     ],
+     [
+      3.3833,
+      "p",
+      2,
+      "Thetis_skill2_Small_Missile",
+      0
+     ],
+     [
+      3.6167,
+      "p",
+      1,
+      "Thetis_skill2_Small_Missile",
+      0
+     ],
+     [
+      3.75,
+      "p",
+      2,
+      "Thetis_skill2_Small_Missile",
+      0
+     ],
+     [
+      4.35,
+      "p",
+      1,
+      "Thetis_skill2_big_Missile",
+      0
+     ],
+     [
+      4.35,
+      "p",
+      2,
+      "Thetis_skill2_big_Missile",
+      0
+     ]
+    ]
+   }
+  },
+  "thetis_s1": {
+   "atk": {
+    "d": 4.0,
+    "ev": [
+     [
+      1.4167,
+      "p",
+      1,
+      "Thetis_NS1_skill1_fire_bullet",
+      0
+     ],
+     [
+      1.6,
+      "p",
+      1,
+      "Thetis_NS1_skill1_fire_bullet",
+      0
+     ],
+     [
+      1.8333,
+      "p",
+      1,
+      "Thetis_NS1_skill1_fire_bullet",
+      0
+     ],
+     [
+      2.0833,
+      "p",
+      1,
+      "Thetis_NS1_skill1_fire_bullet",
+      0
+     ],
+     [
+      2.3333,
+      "p",
+      1,
+      "Thetis_NS1_skill1_fire_bullet",
+      0
+     ],
+     [
+      2.6,
+      "p",
+      1,
+      "Thetis_NS1_skill1_fire_bullet",
+      0
+     ],
+     [
+      2.8833,
+      "p",
+      1,
+      "Thetis_NS1_skill1_fire_bullet",
+      0
+     ]
+    ]
+   },
+   "skill": {
+    "d": 5.0,
+    "ev": [
+     [
+      2.1333,
+      "p",
+      2,
+      "Thetis_NS1_Missile",
+      0
+     ],
+     [
+      2.3833,
+      "p",
+      2,
+      "Thetis_NS1_Missile",
+      0
+     ],
+     [
+      2.65,
+      "p",
+      2,
+      "Thetis_NS1_Missile",
+      0
+     ],
+     [
+      2.8833,
+      "p",
+      2,
+      "Thetis_NS1_Missile",
+      0
+     ],
+     [
+      3.9833,
+      "e",
+      0,
+      "Thetis_NS1_skill2_Last_Hit",
+      0
+     ],
+     [
+      4.1833,
+      "eg",
+      0,
+      "Thetis_NS1_skill2_Ground_Aura",
+      0
+     ]
+    ]
+   }
+  },
+  "thetis_s2": {
+   "atk": {
+    "d": 4.0,
+    "ev": [
+     [
+      0.6167,
+      "h",
+      0,
+      "Thetis_Skill1_Hit",
+      0
+     ],
+     [
+      0.7833,
+      "e",
+      0,
+      "Thetis_skill1_Ground_Hit",
+      0
+     ],
+     [
+      0.95,
+      "h",
+      0,
+      "Thetis_Skill1_Hit",
+      0
+     ],
+     [
+      1.1167,
+      "e",
+      0,
+      "Thetis_skill1_Ground_Hit",
+      0
+     ],
+     [
+      1.3,
+      "h",
+      0,
+      "Thetis_Skill1_Hit",
+      0
+     ],
+     [
+      1.5,
+      "e",
+      0,
+      "Thetis_skill1_Ground_Hit",
+      0
+     ],
+     [
+      1.7,
+      "h",
+      0,
+      "Thetis_Skill1_Hit",
+      0
+     ],
+     [
+      1.9,
+      "e",
+      0,
+      "Thetis_skill1_Ground_Hit",
+      0
+     ],
+     [
+      2.1,
+      "h",
+      0,
+      "Thetis_Skill1_Hit",
+      0
+     ]
+    ]
+   },
+   "skill": {
+    "d": 5.0,
+    "ev": [
+     [
+      2.7667,
+      "p",
+      1,
+      "Thetis_skill2_Small_Missile",
+      0
+     ],
+     [
+      2.8,
+      "p",
+      2,
+      "Thetis_skill2_Small_Missile",
+      0
+     ],
+     [
+      3.05,
+      "p",
+      1,
+      "Thetis_skill2_Small_Missile",
+      0
+     ],
+     [
+      3.1667,
+      "p",
+      2,
+      "Thetis_skill2_Small_Missile",
+      0
+     ],
+     [
+      3.3,
+      "p",
+      1,
+      "Thetis_skill2_Small_Missile",
+      0
+     ],
+     [
+      3.3833,
+      "p",
+      2,
+      "Thetis_skill2_Small_Missile",
+      0
+     ],
+     [
+      3.6167,
+      "p",
+      1,
+      "Thetis_skill2_Small_Missile",
+      0
+     ],
+     [
+      3.75,
+      "p",
+      2,
+      "Thetis_skill2_Small_Missile",
+      0
+     ],
+     [
+      4.35,
+      "p",
+      1,
+      "Thetis_skill2_big_Missile",
+      0
+     ],
+     [
+      4.35,
+      "p",
+      2,
+      "Thetis_skill2_big_Missile",
+      0
+     ]
+    ]
+   }
+  },
+  "tiamat": {
+   "atk": {
+    "d": 2.8833,
+    "ev": [
+     [
+      0.4333,
+      "p",
+      1,
+      "Tiamat_Duke_skill1_bullet",
+      0
+     ],
+     [
+      0.45,
+      "p",
+      1,
+      "Tiamat_Duke_skill1_bullet",
+      0
+     ],
+     [
+      0.4667,
+      "p",
+      1,
+      "Tiamat_Duke_skill1_bullet",
+      0
+     ],
+     [
+      0.7833,
+      "h",
+      0,
+      "Tiamat_skill1_Hit_01",
+      0
+     ],
+     [
+      1.2167,
+      "h",
+      0,
+      "noHit_m",
+      0
+     ],
+     [
+      1.8333,
+      "h",
+      0,
+      "noHit_m",
+      0
+     ]
+    ]
+   },
+   "skill": {
+    "d": 9.2167,
+    "ev": [
+     [
+      0.75,
+      "h",
+      0,
+      "noHit_m",
+      0
+     ],
+     [
+      1.4667,
+      "h",
+      0,
+      "Tiamat_skill2_Dager_Hit_01",
+      0
+     ],
+     [
+      2.0833,
+      "h",
+      0,
+      "Tiamat_skill2_Dager_Hit_01",
+      0
+     ],
+     [
+      2.5333,
+      "h",
+      0,
+      "noHit_m",
+      0
+     ],
+     [
+      3.1167,
+      "h",
+      0,
+      "Tiamat_skill2_Dager_Hit_01",
+      0
+     ],
+     [
+      3.5,
+      "h",
+      0,
+      "Tiamat_skill2_Dager_Hit_01",
+      0
+     ],
+     [
+      3.65,
+      "h",
+      0,
+      "Tiamat_skill2_Dager_Hit_01",
+      0
+     ],
+     [
+      4.1,
+      "h",
+      0,
+      "noHit_m",
+      0
+     ],
+     [
+      6.6167,
+      "h",
+      0,
+      "Tiamat_skill2_front_UP_Hit",
+      0
+     ],
+     [
+      7.6167,
+      "h",
+      0,
+      "noHit_m",
+      0
+     ]
+    ]
+   }
+  },
+  "tiamat_s1": {
+   "atk": {
+    "d": 2.8833,
+    "ev": [
+     [
+      0.4333,
+      "p",
+      1,
+      "Tiamat_NS1_Duke_skill1_bullet",
+      0
+     ],
+     [
+      0.45,
+      "p",
+      1,
+      "Tiamat_NS1_Duke_skill1_bullet",
+      0
+     ],
+     [
+      0.4667,
+      "p",
+      1,
+      "Tiamat_NS1_Duke_skill1_bullet",
+      0
+     ],
+     [
+      0.7833,
+      "h",
+      0,
+      "Tiamat_NS1_skill1_Hit",
+      0
+     ],
+     [
+      1.2167,
+      "h",
+      0,
+      "Tiamat_NS1_skill1_Hit",
+      0
+     ],
+     [
+      1.8333,
+      "h",
+      0,
+      "Tiamat_NS1_skill1_Hit",
+      0
+     ]
+    ]
+   },
+   "skill": {
+    "d": 9.2167,
+    "ev": [
+     [
+      0.75,
+      "h",
+      0,
+      "Tiamat_NS1_skill1_Hit",
+      0
+     ],
+     [
+      1.4667,
+      "h",
+      0,
+      "Tiamat_NS1_skill1_Hit",
+      0
+     ],
+     [
+      2.0833,
+      "h",
+      0,
+      "Tiamat_NS1_skill1_Hit",
+      0
+     ],
+     [
+      2.5333,
+      "h",
+      0,
+      "Tiamat_NS1_skill1_Hit",
+      0
+     ],
+     [
+      3.1167,
+      "h",
+      0,
+      "Tiamat_NS1_skill1_Hit",
+      0
+     ],
+     [
+      3.5,
+      "h",
+      0,
+      "Tiamat_NS1_skill1_Hit",
+      0
+     ],
+     [
+      3.65,
+      "h",
+      0,
+      "Tiamat_NS1_skill1_Hit",
+      0
+     ],
+     [
+      4.1,
+      "h",
+      0,
+      "Tiamat_NS1_skill1_Hit",
+      0
+     ],
+     [
+      6.6167,
+      "h",
+      0,
+      "Tiamat_NS1_skill2_UP_Hit",
+      0
+     ],
+     [
+      7.6167,
+      "h",
+      0,
+      "noHit_m",
+      0
+     ]
+    ]
+   }
+  },
+  "tiamat_s2": {
+   "atk": {
+    "d": 2.8833,
+    "ev": [
+     [
+      0.4333,
+      "p",
+      1,
+      "Tiamat_NS2_Skill1_bullet",
+      0
+     ],
+     [
+      0.45,
+      "p",
+      1,
+      "Tiamat_NS2_Skill1_bullet",
+      0
+     ],
+     [
+      0.4667,
+      "p",
+      1,
+      "Tiamat_NS2_Skill1_bullet",
+      0
+     ],
+     [
+      0.7833,
+      "h",
+      0,
+      "noHit_m",
+      0
+     ],
+     [
+      1.2167,
+      "h",
+      0,
+      "noHit_m",
+      0
+     ],
+     [
+      1.85,
+      "h",
+      0,
+      "noHit_m",
+      0
+     ],
+     [
+      1.9,
+      "h",
+      0,
+      "noHit_m",
+      0
+     ]
+    ]
+   },
+   "skill": {
+    "d": 9.2167,
+    "ev": [
+     [
+      0.75,
+      "h",
+      0,
+      "noHit_m",
+      0
+     ],
+     [
+      1.4667,
+      "h",
+      0,
+      "Tiamat_NS2_Skill2_Hit",
+      0
+     ],
+     [
+      2.0833,
+      "h",
+      0,
+      "Tiamat_NS2_Skill2_Hit",
+      0
+     ],
+     [
+      2.5333,
+      "h",
+      0,
+      "noHit_m",
+      0
+     ],
+     [
+      3.1167,
+      "h",
+      0,
+      "Tiamat_NS2_Skill2_Hit",
+      0
+     ],
+     [
+      3.5,
+      "h",
+      0,
+      "Tiamat_NS2_Skill2_Hit",
+      0
+     ],
+     [
+      3.65,
+      "h",
+      0,
+      "Tiamat_NS2_Skill2_Hit",
+      0
+     ],
+     [
+      4.1,
+      "h",
+      0,
+      "noHit_m",
+      0
+     ],
+     [
+      6.6167,
+      "h",
+      0,
+      "Tiamat_NS2_Skill2_Hit",
+      0
+     ],
+     [
+      7.6167,
+      "h",
+      0,
+      "noHit_m",
+      0
+     ]
+    ]
+   }
+  },
+  "titania": {
+   "atk": {
+    "d": 4.0,
+    "ev": [
+     [
+      1.3833,
+      "eg",
+      0,
+      "Titania_skill1_Ground_ice_smoke",
+      0
+     ],
+     [
+      1.9667,
+      "eg",
+      0,
+      "Titania_skill1_Ground_ice",
+      0
+     ],
+     [
+      2.55,
+      "h",
+      0,
+      "noHit_m",
+      0
+     ]
+    ]
+   },
+   "skill": {
+    "d": 6.0,
+    "ev": [
+     [
+      4.45,
+      "h",
+      0,
+      "noHit_m",
+      0
+     ],
+     [
+      4.8667,
+      "h",
+      0,
+      "noHit_m",
+      0
+     ]
+    ]
+   }
+  },
+  "titania_s1": {
+   "atk": {
+    "d": 4.0,
+    "ev": [
+     [
+      1.3833,
+      "eg",
+      0,
+      "Titania_skill1_Ground_ice_smoke",
+      0
+     ],
+     [
+      1.9667,
+      "eg",
+      0,
+      "Titania_skill1_Ground_ice",
+      0
+     ],
+     [
+      2.55,
+      "h",
+      0,
+      "noHit_m",
+      0
+     ]
+    ]
+   },
+   "skill": {
+    "d": 6.0,
+    "ev": [
+     [
+      4.45,
+      "h",
+      0,
+      "noHit_m",
+      0
+     ],
+     [
+      4.8667,
+      "h",
+      0,
+      "noHit_m",
+      0
+     ]
+    ]
+   }
+  },
+  "titania_s2": {
+   "atk": {
+    "d": 4.0,
+    "ev": [
+     [
+      3.0833,
+      "p",
+      1,
+      "Titania_NS2_Skill1_bullet",
+      0
+     ],
+     [
+      3.4167,
+      "h",
+      0,
+      "noHit_m",
+      0
+     ]
+    ]
+   },
+   "skill": {
+    "d": 6.0,
+    "ev": [
+     [
+      4.45,
+      "h",
+      0,
+      "noHit_m",
+      0
+     ],
+     [
+      4.8667,
+      "h",
+      0,
+      "noHit_m",
+      0
+     ]
+    ]
+   }
+  },
+  "ullr": {
+   "atk": {
+    "d": 4.7333,
+    "ev": [
+     [
+      2.1833,
+      "h",
+      0,
+      "noHit_m",
+      0
+     ]
+    ]
+   },
+   "skill": {
+    "d": 9.8333,
+    "ev": [
+     [
+      2.6333,
+      "h",
+      0,
+      "noHit_m",
+      0
+     ],
+     [
+      3.9667,
+      "h",
+      0,
+      "noHit_m",
+      0
+     ],
+     [
+      6.3333,
+      "h",
+      0,
+      "noHit_m",
+      0
+     ],
+     [
+      6.5,
+      "h",
+      0,
+      "noHit_m",
+      0
+     ]
+    ]
+   }
+  },
+  "ullr_s1": {
+   "atk": {
+    "d": 4.7333,
+    "ev": [
+     [
+      2.1833,
+      "h",
+      0,
+      "noHit_m",
+      0
+     ]
+    ]
+   },
+   "skill": {
+    "d": 9.8333,
+    "ev": [
+     [
+      2.6333,
+      "h",
+      0,
+      "noHit_m",
+      0
+     ],
+     [
+      3.9667,
+      "h",
+      0,
+      "noHit_m",
+      0
+     ],
+     [
+      6.3333,
+      "h",
+      0,
+      "noHit_m",
+      0
+     ],
+     [
+      6.5,
+      "h",
+      0,
+      "noHit_m",
+      0
+     ]
+    ]
+   }
+  },
+  "ullr_s2": {
+   "atk": {
+    "d": 4.7333,
+    "ev": [
+     [
+      2.1833,
+      "h",
+      0,
+      "noHit_m",
+      0
+     ]
+    ]
+   },
+   "skill": {
+    "d": 9.8333,
+    "ev": [
+     [
+      2.6333,
+      "h",
+      0,
+      "noHit_m",
+      0
+     ],
+     [
+      3.9667,
+      "h",
+      0,
+      "noHit_m",
+      0
+     ],
+     [
+      6.3333,
+      "h",
+      0,
+      "noHit_m",
+      0
+     ],
+     [
+      6.5,
+      "h",
+      0,
+      "noHit_m",
+      0
+     ]
+    ]
+   }
+  },
+  "undine": {
+   "atk": {
+    "d": 3.65,
+    "ev": [
+     [
+      1.6833,
+      "p",
+      1,
+      "Undine_skill1_bullet",
+      0
+     ],
+     [
+      1.9667,
+      "p",
+      2,
+      "Undine_skill1_bullet",
+      0
+     ],
+     [
+      2.2333,
+      "p",
+      1,
+      "Undine_skill1_bullet",
+      0
+     ]
+    ]
+   },
+   "skill": {
+    "d": 4.3833,
+    "ev": [
+     [
+      1.6167,
+      "p",
+      3,
+      "Undine_skill2_bullet",
+      0
+     ],
+     [
+      1.65,
+      "p",
+      4,
+      "Undine_skill2_bullet",
+      0
+     ]
+    ]
+   }
+  },
+  "undine_s1": {
+   "atk": {
+    "d": 3.65,
+    "ev": [
+     [
+      1.6833,
+      "p",
+      1,
+      "Undine_skill1_bullet",
+      0
+     ],
+     [
+      1.9667,
+      "p",
+      2,
+      "Undine_skill1_bullet",
+      0
+     ],
+     [
+      2.2333,
+      "p",
+      1,
+      "Undine_skill1_bullet",
+      0
+     ]
+    ]
+   },
+   "skill": {
+    "d": 4.3833,
+    "ev": [
+     [
+      1.6167,
+      "p",
+      3,
+      "Undine_skill2_bullet_NS1",
+      0
+     ],
+     [
+      1.65,
+      "p",
+      4,
+      "Undine_skill2_bullet_NS1",
+      0
+     ]
+    ]
+   }
+  },
+  "undine_s2": {
+   "atk": {
+    "d": 3.65,
+    "ev": [
+     [
+      1.25,
+      "p",
+      1,
+      "Undine_skill1_bullet",
+      0
+     ],
+     [
+      1.8333,
+      "p",
+      1,
+      "Undine_skill1_bullet",
+      0
+     ],
+     [
+      2.4167,
+      "p",
+      1,
+      "Undine_skill1_bullet",
+      0
+     ],
+     [
+      2.4333,
+      "h",
+      0,
+      "noHit_m",
+      0
+     ]
+    ]
+   },
+   "skill": {
+    "d": 4.3833,
+    "ev": [
+     [
+      0.7333,
+      "p",
+      2,
+      "Undine_NS2_skill2_bullet",
+      0
+     ],
+     [
+      0.75,
+      "p",
+      3,
+      "Undine_NS2_skill2_bullet",
+      0
+     ]
+    ]
+   }
+  },
+  "valkyrie": {
+   "atk": {
+    "d": 1.2833,
+    "ev": [
+     [
+      0.8,
+      "p",
+      1,
+      "violet_bullet",
+      0
+     ]
+    ]
+   },
+   "skill": {
+    "d": 1.8667,
+    "ev": [
+     [
+      0.8167,
+      "p",
+      1,
+      "violet_skill2_bullet",
+      0
+     ]
+    ]
+   }
+  },
+  "valkyrie_s1": {
+   "atk": {
+    "d": 1.2833,
+    "ev": [
+     [
+      0.8,
+      "p",
+      1,
+      "violet_bullet",
+      0
+     ]
+    ]
+   },
+   "skill": {
+    "d": 1.8667,
+    "ev": [
+     [
+      0.8167,
+      "p",
+      1,
+      "violet_skill2_bullet",
+      0
+     ]
+    ]
+   }
+  },
+  "valkyrie_s2": {
+   "atk": {
+    "d": 1.2833,
+    "ev": [
+     [
+      0.8,
+      "p",
+      1,
+      "Valkyrie_NS2_bullet2",
+      0
+     ]
+    ]
+   },
+   "skill": {
+    "d": 1.8667,
+    "ev": [
+     [
+      0.8167,
+      "p",
+      1,
+      "Valkyrie_NS2_skill2_bullet",
+      0
+     ]
+    ]
+   }
+  },
+  "zero": {
+   "atk": {
+    "d": 4.4333,
+    "ev": [
+     [
+      1.6,
+      "h",
+      0,
+      "noHit_m",
+      0
+     ],
+     [
+      2.0167,
+      "e",
+      0,
+      "Kunoichi_skill2_after_Lighting",
+      0
+     ],
+     [
+      2.4833,
+      "p",
+      1,
+      "KunoichiZero_skill1_Bullet",
+      0
+     ],
+     [
+      2.5167,
+      "p",
+      1,
+      "KunoichiZero_skill1_Bullet",
+      0
+     ]
+    ]
+   },
+   "skill": {
+    "d": 7.7,
+    "ev": [
+     [
+      3.5,
+      "h",
+      0,
+      "KunoichiZero_skill2_first_hit_F",
+      0
+     ],
+     [
+      3.7667,
+      "h",
+      0,
+      "Kunoichi_skill2_Hit_FX_F",
+      0
+     ],
+     [
+      4.1667,
+      "h",
+      0,
+      "Kunoichi_skill2_Hit_FX_F",
+      0
+     ],
+     [
+      4.6,
+      "e",
+      0,
+      "Kunoichi_skill2_after_Lighting",
+      0
+     ],
+     [
+      5.2167,
+      "e",
+      0,
+      "Kunoichi_skill2_after_Lighting",
+      0
+     ],
+     [
+      5.8333,
+      "e",
+      0,
+      "Kunoichi_skill2_after_Lighting",
+      0
+     ]
+    ]
+   }
+  },
+  "zero_s1": {
+   "atk": {
+    "d": 4.4333,
+    "ev": [
+     [
+      1.6,
+      "h",
+      0,
+      "noHit_m",
+      0
+     ],
+     [
+      2.0167,
+      "e",
+      0,
+      "Kunoichi_skill2_after_Lighting",
+      0
+     ],
+     [
+      2.4833,
+      "p",
+      1,
+      "KunoichiZero_skill1_Bullet",
+      0
+     ],
+     [
+      2.5167,
+      "p",
+      1,
+      "KunoichiZero_skill1_Bullet",
+      0
+     ]
+    ]
+   },
+   "skill": {
+    "d": 7.7,
+    "ev": [
+     [
+      3.5,
+      "h",
+      0,
+      "KunoichiZero_skill2_first_hit_F",
+      0
+     ],
+     [
+      3.7667,
+      "h",
+      0,
+      "Kunoichi_skill2_Hit_FX_F",
+      0
+     ],
+     [
+      4.1667,
+      "h",
+      0,
+      "Kunoichi_skill2_Hit_FX_F",
+      0
+     ],
+     [
+      4.6,
+      "e",
+      0,
+      "Kunoichi_skill2_after_Lighting",
+      0
+     ],
+     [
+      5.2167,
+      "e",
+      0,
+      "Kunoichi_skill2_after_Lighting",
+      0
+     ],
+     [
+      5.8333,
+      "e",
+      0,
+      "Kunoichi_skill2_after_Lighting",
+      0
+     ]
+    ]
+   }
+  },
+  "zero_s2": {
+   "atk": {
+    "d": 4.4333,
+    "ev": [
+     [
+      1.6,
+      "h",
+      0,
+      "noHit_m",
+      0
+     ],
+     [
+      2.0167,
+      "e",
+      0,
+      "Kunoichi_skill2_after_Lighting",
+      0
+     ],
+     [
+      2.4833,
+      "p",
+      1,
+      "KunoichiZero_NS2_skill1_Bullet",
+      0
+     ],
+     [
+      2.5167,
+      "p",
+      1,
+      "KunoichiZero_NS2_skill1_Bullet",
+      0
+     ]
+    ]
+   },
+   "skill": {
+    "d": 7.7,
+    "ev": [
+     [
+      3.4667,
+      "h",
+      0,
+      "KunoichiZero_skill2_first_hit_F",
+      0
+     ],
+     [
+      3.7667,
+      "h",
+      0,
+      "Kunoichi_skill2_Hit_FX_F",
+      0
+     ],
+     [
+      4.1667,
+      "h",
+      0,
+      "Kunoichi_skill2_Hit_FX_F",
+      0
+     ],
+     [
+      4.6,
+      "e",
+      0,
+      "Kunoichi_skill2_after_Lighting",
+      0
+     ],
+     [
+      5.2167,
+      "e",
+      0,
+      "Kunoichi_skill2_after_Lighting",
+      0
+     ],
+     [
+      5.8333,
+      "e",
+      0,
+      "Kunoichi_skill2_after_Lighting",
+      0
+     ]
+    ]
+   }
+  }
+ },
+ "fires": {
+  "amy": {
+   "1": "size_root/ch_root/ATK_point_1",
+   "2": "size_root/ch_root/ATK_point_2"
+  },
+  "amy_s1": {
+   "1": "size_root/ch_root/ATK_point_1",
+   "2": "size_root/ch_root/ATK_point_2"
+  },
+  "amy_s2": {
+   "1": "size_root/ch_root/ATK_point_1",
+   "2": "size_root/ch_root/ATK_point_2"
+  },
+  "andvari": {
+   "1": "size_root/FX/fire_point_01"
+  },
+  "andvari_s1": {
+   "1": "size_root/FX/fire_point_01"
+  },
+  "andvari_s2": {
+   "1": "size_root/FX/fire_point_01"
+  },
+  "azazel": {
+   "1": "Size_root/FX/Fire_point_01"
+  },
+  "azazel_s2": {
+   "1": "Size_root/FX/Fire_point_01"
+  },
+  "blacklilith": {
+   "1": "size_root/FX/fire_point_01",
+   "2": "size_root/ch_root/Global_CTRL/pelvis/body/arm/arm_l_up/arm_l_down/hand_l/BL_parts_hand_l_base/BL_gun_l_b/ATK_point_2",
+   "3": "size_root/ch_root/Global_CTRL/pelvis/body/arm/arm_l_up/arm_l_down/hand_l/BL_parts_hand_l_1/BL_gun_l_f/ATK_point_3",
+   "4": "size_root/ch_root/Global_CTRL/pelvis/body/arm/arm_r_up/arm_r_down/hand_r/BL_parts_hand_r_1/BL_gun_r_2/ATK_point_4"
+  },
+  "blacklilith_s1": {
+   "1": "size_root/FX/fire_point_01",
+   "2": "size_root/ch_root/Global_CTRL/pelvis/body/arm/arm_l_up/arm_l_down/hand_l/BL_parts_hand_l_base/BL_gun_l_b/ATK_point_2",
+   "3": "size_root/ch_root/Global_CTRL/pelvis/body/arm/arm_l_up/arm_l_down/hand_l/BL_parts_hand_l_1/BL_gun_l_f/ATK_point_3",
+   "4": "size_root/ch_root/Global_CTRL/pelvis/body/arm/arm_r_up/arm_r_down/hand_r/BL_parts_hand_r_1/BL_gun_r_2/ATK_point_4"
+  },
+  "blacklilith_s2": {
+   "1": "size_root/FX/fire_point_01",
+   "2": "size_root/ch_root/Global_CTRL/pelvis/body/arm/arm_l_up/arm_l_down/hand_l/BL_parts_hand_l_base/BL_gun_l_b/ATK_point_2",
+   "3": "size_root/ch_root/Global_CTRL/pelvis/body/arm/arm_l_up/arm_l_down/hand_l/BL_parts_hand_l_1/BL_gun_l_f/ATK_point_3",
+   "4": "size_root/ch_root/Global_CTRL/pelvis/body/arm/arm_r_up/arm_r_down/hand_r/BL_parts_hand_r_1/BL_gun_r_2/ATK_point_4"
+  },
+  "brownie": {
+   "1": "size_root/ch_root/fire_point"
+  },
+  "brownie_s1": {
+   "1": "size_root/ch_root/fire_point"
+  },
+  "brunhild": {
+   "1": "size_root/fire_point"
+  },
+  "brunhild_s1": {
+   "1": "size_root/fire_point"
+  },
+  "constantia": {
+   "1": "size_root_re/size_root/FX/firepoint"
+  },
+  "constantia_s1": {
+   "1": "size_root_re/size_root/FX/firepoint"
+  },
+  "constantia_s2": {
+   "1": "size_root_re/size_root/FX/firepoint"
+  },
+  "daphne": {
+   "1": "size_root/ch_root/fire_point"
+  },
+  "daphne_s1": {
+   "1": "size_root/ch_root/fire_point"
+  },
+  "daphne_s2": {
+   "1": "size_root/ch_root/fire_point"
+  },
+  "e_BigChick_N": {
+   "1": "size_root/root/Global_CTRL/bone_Body/bone_weapon_system_ik/bone_weapon/FX_ATK"
+  },
+  "e_Centurion_N": {
+   "1": "size_root/fire_point_01",
+   "2": "size_root/fire_point_02"
+  },
+  "e_Destroyer_N": {
+   "1": "size_root/fire_point_1",
+   "2": "size_root/fire_point_2"
+  },
+  "e_DoomEater_N": {
+   "1": "size_root/pelvis/body_01/body_02/body_03/body_04/neck_01/jaw_01/head/head_F_5/Fire_point_01",
+   "2": "size_root/pelvis/body_01/body_02/body_03/body_04/neck_01/jaw_01/head/head_F_4/Fire_point_02",
+   "3": "size_root/pelvis/body_01/body_02/body_03/body_04/neck_01/jaw_01/head/head_F_3/Fire_point_03",
+   "4": "size_root/pelvis/body_01/body_02/body_03/body_04/neck_01/jaw_01/head/head_F_2/Fire_point_04"
+  },
+  "e_Drone_N": {
+   "1": "size_root/root/Bone_body/Bone_canon/parts_canon/FX_ATK"
+  },
+  "e_EmperorChick_N": {
+   "1": "size_root/root/Global_CTRL/bone_Body/bone_weapon_system_ik/bone_weapon/FX_ATK",
+   "2": "size_root/Fire_point_02",
+   "3": "size_root/Fire_point_03",
+   "4": "size_root/Fire_point_04"
+  },
+  "e_Fallen_N": {
+   "1": "size_root/root/Global_CTRL/bone_Body/bone_weapon_system_ik/bone_weapon/FX_ATK"
+  },
+  "e_Fortress_N": {
+   "1": "size_root/fire_point_01",
+   "2": "size_root/fire_point_02"
+  },
+  "e_Gigantes_N": {
+   "1": "size_root/rotation_root/Global_CTRL/bone_plvis/bone_body/bone_RI_arm_down/Fire_1",
+   "2": "size_root/rotation_root/Global_CTRL/bone_plvis/bone_body/bone_LI_arm_down/bone_LI_arm_down/Fire_2"
+  },
+  "e_Intruder_N": {
+   "1": "size_root/CHA_point_set/Fire_point_01",
+   "2": "size_root/CHA_point_set/Fire_point_02"
+  },
+  "e_Juggernaut_N": {
+   "1": "size_root/rotation_root/Global_CTRL/bone_plvis/bone_body/bone_RI_arm_down/Fire_1",
+   "2": "size_root/rotation_root/Global_CTRL/bone_plvis/bone_body/bone_LI_arm_down/bone_LI_arm_down/Fire_2"
+  },
+  "e_Legion_N": {
+   "1": "size_root/FX/FIRE_POINT_01",
+   "2": "size_root/FX/FIRE_POINT_02",
+   "3": "size_root/FX/FIRE_POINT_03"
+  },
+  "e_NightChick_N": {
+   "1": "size_root/root/Global_CTRL/bone_Body/bone_weapon_system_ik/bone_weapon/FX_ATK"
+  },
+  "e_Phalangites_N": {
+   "1": "size_root/FIRE_POINT"
+  },
+  "e_PuppHead_N": {
+   "1": "size_root/bone_pelvis/bone_head/fire_point_1"
+  },
+  "e_Rampart_N": {
+   "1": "size_root/FIRE_POINT"
+  },
+  "eternity": {
+   "1": "size_root/COM_root motion modify/Global_CTRL/Bone_pelvis/Bone_Spine/Bone_UpperArm_R/Bone_Forearm_R/Bone_Hand_R/Bone_Hand_R_Move/Bone_GatlingGun/Fire_Point_01"
+  },
+  "eternity_s1": {
+   "1": "size_root/COM_root motion modify/Global_CTRL/Bone_pelvis/Bone_Spine/Bone_UpperArm_R/Bone_Forearm_R/Bone_Hand_R/Bone_Hand_R_Move/Bone_GatlingGun/Fire_Point_01"
+  },
+  "eternity_s2": {
+   "1": "size_root/COM_root motion modify/Global_CTRL/Bone_pelvis/Bone_Spine/Bone_UpperArm_R/Bone_Forearm_R/Bone_Hand_R/Bone_Hand_R_Move/Bone_GatlingGun/Fire_Point_01"
+  },
+  "gnome": {
+   "1": "size_root/fire_point_01",
+   "2": "size_root/fire_point_02"
+  },
+  "gnome_s1": {
+   "1": "size_root/fire_point_01",
+   "2": "size_root/fire_point_02"
+  },
+  "gnome_s2": {
+   "1": "size_root/fire_point_01",
+   "2": "size_root/fire_point_02"
+  },
+  "harpy": {
+   "1": "size_root/COM_root motion modify/Global_CTRL/Bone_pelvis/Bone_Spine/Bone_UpperArm_R/Bone_Forearm_R/Bone_Weapon_R/Fire_Point_R",
+   "2": "size_root/COM_root motion modify/Global_CTRL/Bone_pelvis/Bone_Spine/Bone_UpperArm_L/Bone_Forearm_L/Bone_Weapon_L/Fire_Point_L",
+   "3": "size_root/FX/fire_Point3",
+   "4": "size_root/FX/fire_Point4"
+  },
+  "harpy_s1": {
+   "1": "size_root/COM_root motion modify/Global_CTRL/Bone_pelvis/Bone_Spine/Bone_UpperArm_R/Bone_Forearm_R/Bone_Weapon_R/Fire_Point_R",
+   "2": "size_root/COM_root motion modify/Global_CTRL/Bone_pelvis/Bone_Spine/Bone_UpperArm_L/Bone_Forearm_L/Bone_Weapon_L/Fire_Point_L",
+   "3": "size_root/FX/fire_Point3",
+   "4": "size_root/FX/fire_Point4"
+  },
+  "harpy_s2": {
+   "1": "size_root/COM_root motion modify/Global_CTRL/Bone_pelvis/Bone_Spine/Bone_UpperArm_R/Bone_Forearm_R/Bone_Weapon_R/Fire_Point_R",
+   "2": "size_root/COM_root motion modify/Global_CTRL/Bone_pelvis/Bone_Spine/Bone_UpperArm_L/Bone_Forearm_L/Bone_Weapon_L/Fire_Point_L",
+   "3": "size_root/FX/fire_Point3",
+   "4": "size_root/FX/fire_Point4"
+  },
+  "hraesvelgr": {
+   "1": "size_root/FX/Fire_Point_01"
+  },
+  "hraesvelgr_s1": {
+   "1": "size_root/FX/Fire_Point_01"
+  },
+  "hraesvelgr_s2": {
+   "1": "size_root/FX/Fire_Point_01"
+  },
+  "impet": {
+   "1": "size_root/firepoint_01",
+   "2": "size_root/firepoint_02"
+  },
+  "impet_s1": {
+   "1": "size_root/firepoint_01",
+   "2": "size_root/firepoint_02"
+  },
+  "impet_s2": {
+   "1": "size_root/firepoint_01",
+   "2": "size_root/firepoint_02"
+  },
+  "khan": {
+   "1": "size_root/ch_root/Global_CTRL/pelvis/body/Arm_up_R/Arm_down_R/hand_R/hand_R_01/RF_hand_set/RF_weapon/ATK_point"
+  },
+  "khan_s1": {
+   "1": "size_root/ch_root/Global_CTRL/pelvis/body/Arm_up_R/Arm_down_R/hand_R/hand_R_01/RF_hand_set/RF_weapon/ATK_point"
+  },
+  "khan_s2": {
+   "1": "size_root/ch_root/Global_CTRL/pelvis/body/Arm_up_R/Arm_down_R/hand_R/hand_R_01/RF_hand_set/RF_weapon/ATK_point"
+  },
+  "leona": {
+   "1": "size_root/Fire_Point_01"
+  },
+  "leona_s1": {
+   "1": "size_root/Fire_Point_01"
+  },
+  "leona_s2": {
+   "1": "size_root/Fire_Point_01"
+  },
+  "leprechaun": {
+   "1": "size_root/ch_root/pelvis/body/FK_Arm_up_R/FK_Arm_down_R/FK_hand_R/FK_RF_hand_set/FK_RF_weapon/parts_FK_RF_weapon/ATK_point"
+  },
+  "leprechaun_s1": {
+   "1": "size_root/ch_root/pelvis/body/FK_Arm_up_R/FK_Arm_down_R/FK_hand_R/FK_RF_hand_set/FK_RF_weapon/parts_FK_RF_weapon/ATK_point"
+  },
+  "leprechaun_s2": {
+   "1": "size_root/ch_root/pelvis/body/FK_Arm_up_R/FK_Arm_down_R/FK_hand_R/FK_RF_hand_set/FK_RF_weapon/parts_FK_RF_weapon/ATK_point"
+  },
+  "nymph": {
+   "1": "size_root/ch_root/pelvis/body/FK_Arm_up_R/FK_Arm_down_R/FK_hand_R/FK_RF_hand_set/FK_RF_weapon/parts_FK_RF_weapon/ATK_point"
+  },
+  "nymph_s1": {
+   "1": "size_root/ch_root/pelvis/body/FK_Arm_up_R/FK_Arm_down_R/FK_hand_R/FK_RF_hand_set/FK_RF_weapon/parts_FK_RF_weapon/ATK_point"
+  },
+  "nymph_s2": {
+   "1": "size_root/ch_root/pelvis/body/FK_Arm_up_R/FK_Arm_down_R/FK_hand_R/FK_RF_hand_set/FK_RF_weapon/parts_FK_RF_weapon/ATK_point"
+  },
+  "phoenix": {
+   "1": "size_root/fire_point_01",
+   "2": "size_root/fire_point_02"
+  },
+  "phoenix_s1": {
+   "1": "size_root/fire_point_01",
+   "2": "size_root/fire_point_02"
+  },
+  "phoenix_s2": {
+   "1": "size_root/fire_point_01",
+   "2": "size_root/fire_point_02"
+  },
+  "ramiel": {
+   "1": "size_root/Fire_point"
+  },
+  "ramiel_s1": {
+   "1": "size_root/Fire_point"
+  },
+  "ramiel_s2": {
+   "1": "size_root/Fire_point"
+  },
+  "raven": {
+   "1": "size_root/fire_point_01",
+   "2": "size_root/fire_point_02"
+  },
+  "raven_s1": {
+   "1": "size_root/fire_point_01",
+   "2": "size_root/fire_point_02"
+  },
+  "sleipnir": {
+   "1": "size_root/rotation_root/Global_CTRL/bone_pelvis/wing_set/bone_R_wing/bone_R_wing_gun/R_gun_point",
+   "2": "size_root/rotation_root/Global_CTRL/bone_pelvis/wing_set/bone_L_wing/bone_L_wing_gun/L_gun_point"
+  },
+  "sleipnir_s1": {
+   "1": "size_root/rotation_root/Global_CTRL/bone_pelvis/wing_set/bone_R_wing/bone_R_wing_gun/R_gun_point",
+   "2": "size_root/rotation_root/Global_CTRL/bone_pelvis/wing_set/bone_L_wing/Spotlite_L/bone_L_wing_gun/L_gun_point"
+  },
+  "sleipnir_s2": {
+   "1": "size_root/rotation_root/Global_CTRL/bone_pelvis/wing_set/bone_R_wing/bone_R_wing_gun/R_gun_point",
+   "2": "size_root/rotation_root/Global_CTRL/bone_pelvis/wing_set/bone_L_wing/bone_L_wing_gun/L_gun_point"
+  },
+  "sylphid": {
+   "1": "size_root/rotation_root/Global_CTRL/bone_pelvis/bone_body/bone_R_arm_up/bone_R_arm_down/bone_R_hand/bone_weapon_gun_01/Fire_1",
+   "2": "size_root/fire_point_02",
+   "3": "size_root/fire_point_03"
+  },
+  "sylphid_s1": {
+   "1": "size_root/rotation_root/Global_CTRL/bone_pelvis/bone_body/bone_R_arm_up/bone_R_arm_down/bone_R_hand/bone_weapon_gun_01/Fire_1",
+   "2": "size_root/fire_point_02",
+   "3": "size_root/fire_point_03"
+  },
+  "thetis": {
+   "1": "size_root/FX/Fire_Point_01",
+   "2": "size_root/FX/Fire_Point_02"
+  },
+  "thetis_s1": {
+   "1": "size_root/COM_root motion modify/Global_CTRL/Bone_pelvis/Bone_Spine/Bone_UpperArm_L/Bone_Forearm_L/Bone_Hand_L/Bone_Hand_L_Move/Bone_Weapon/parts_Weapon/Fire_Point_01",
+   "2": "size_root/FX/Fire_Point_02"
+  },
+  "thetis_s2": {
+   "1": "size_root/FX/Fire_Point_01",
+   "2": "size_root/FX/Fire_Point_02"
+  },
+  "tiamat": {
+   "1": "size_root/FX/Fire_point_01"
+  },
+  "tiamat_s2": {
+   "1": "size_root/FX/Fire_point_01"
+  },
+  "titania_s2": {
+   "1": "size_root/Fire_point"
+  },
+  "undine": {
+   "1": "size_root/Fire1",
+   "2": "size_root/Fire2",
+   "3": "size_root/missile1",
+   "4": "size_root/missile2"
+  },
+  "undine_s1": {
+   "1": "size_root/Fire1",
+   "2": "size_root/Fire2",
+   "3": "size_root/missile1",
+   "4": "size_root/missile2"
+  },
+  "undine_s2": {
+   "1": "size_root/Fire1",
+   "2": "size_root/Fire2",
+   "3": "size_root/Fire3"
+  },
+  "valkyrie": {
+   "1": "size_root/firepoint_01"
+  },
+  "valkyrie_s1": {
+   "1": "size_root/firepoint_01"
+  },
+  "valkyrie_s2": {
+   "1": "size_root/firepoint_01"
+  },
+  "zero": {
+   "1": "size_root/FX/skill1/FirePoint_01"
+  },
+  "zero_s1": {
+   "1": "size_root/FX/skill1/FirePoint_01"
+  },
+  "zero_s2": {
+   "1": "size_root/FX/skill1/FirePoint_01"
+  }
+ },
+ "missing": [],
+ "alias": {
+  "Azazel_NS1_skill2_buff": "Azazel_NS1_skill2_buff_F",
+  "Hit_x5": "Hit_x2"
+ }
+}

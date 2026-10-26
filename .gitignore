@@ -1,0 +1,11 @@
+# Unity 작업 폴더(원작 에셋 복사본, 수 GB): tools/sdbuild/unity/setup.py, tools/fxbuild/fx_setup.py로 다시 만듦
+tools/sdbuild/unity/proj/
+tools/sdbuild/lab/
+# 받아 온 원본 데이터 캐시: tools/fetch_lao_data.py가 다시 받음
+tools/.lao_cache/
+# 로그와 임시 파일
+*.log
+__pycache__/
+*.pyc
+.DS_Store
+Thumbs.db

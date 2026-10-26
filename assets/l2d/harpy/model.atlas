@@ -1,0 +1,277 @@
+page0.webp
+	size: 3788, 3788
+	filter: Linear, Linear
+	pma: true
+Pinback button
+	bounds: 3665, 564, 119, 78
+angry
+	bounds: 1496, 384, 350, 396
+	rotate: 90
+arm_1_L
+	bounds: 3065, 351, 173, 354
+	rotate: 90
+arm_1_L for
+	bounds: 1989, 771, 173, 354
+	rotate: 90
+arm_2_L
+	bounds: 3299, 1120, 236, 386
+arm_R
+	bounds: 1183, 2018, 575, 395
+	offsets: 0, 0, 589, 395
+	rotate: 90
+arm_R for
+	bounds: 786, 2004, 575, 395
+	offsets: 0, 0, 589, 395
+	rotate: 90
+back hair_1
+	bounds: 2, 2581, 883, 1205
+back hair_2
+	bounds: 2593, 3331, 695, 455
+back hair_3
+	bounds: 887, 2595, 534, 708
+back hair_4
+	bounds: 2, 437, 338, 1001
+back hair_5
+	bounds: 1753, 3120, 746, 286
+blush
+	bounds: 3046, 60, 259, 136
+	offsets: 5, 22, 264, 177
+boob_L
+	bounds: 1472, 2, 321, 380
+boob_L_one
+	bounds: 786, 1612, 390, 475
+	rotate: 90
+boob_R
+	bounds: 1263, 1603, 413, 376
+	rotate: 90
+boob_R_one
+	bounds: 3144, 1831, 372, 455
+buckle
+	bounds: 3603, 179, 162, 106
+	rotate: 90
+cheerup_arm_L_lower
+	bounds: 3203, 770, 336, 348
+cheerup_arm_L_lower_for
+	bounds: 2720, 468, 336, 343
+	offsets: 1, 4, 337, 347
+	rotate: 90
+cheerup_arm_L_upper
+	bounds: 342, 534, 369, 449
+cheerup_arm_R_lower
+	bounds: 1070, 554, 424, 360
+	offsets: 0, 6, 424, 366
+cheerup_arm_R_lower_for
+	bounds: 1107, 128, 424, 363
+	offsets: 0, 3, 424, 366
+	rotate: 90
+cheerup_arm_R_upper
+	bounds: 1641, 1334, 313, 425
+	offsets: 0, 4, 333, 451
+	rotate: 90
+chest
+	bounds: 2105, 2028, 470, 552
+chest_one
+	bounds: 2577, 2232, 470, 552
+closed eye
+	bounds: 1894, 384, 350, 396
+	rotate: 90
+costume
+	bounds: 1145, 1194, 440, 407
+costume1
+	bounds: 697, 1203, 446, 407
+costume_back
+	bounds: 439, 80, 452, 312
+	rotate: 90
+costume_back1
+	bounds: 1121, 916, 450, 276
+eye
+	bounds: 3537, 1122, 186, 102
+	offsets: 0, 0, 186, 103
+	rotate: 90
+eye blow
+	bounds: 3518, 1747, 236, 100
+eye blow_angry
+	bounds: 1268, 58, 202, 68
+eye blow_basic
+	bounds: 3503, 1645, 236, 100
+eye blow_sadness
+	bounds: 3307, 2, 194, 91
+	rotate: 90
+eye blow_shy
+	bounds: 3594, 343, 207, 83
+	rotate: 90
+eye blow_smile
+	bounds: 3541, 894, 226, 99
+	rotate: 90
+eye blow_surprised
+	bounds: 3565, 552, 223, 98
+	rotate: 90
+eye blow_wink
+	bounds: 439, 10, 235, 68
+eye highlight
+	bounds: 3712, 3170, 151, 62
+	rotate: 90
+eye line1
+	bounds: 3438, 506, 262, 125
+	rotate: 90
+eye line2
+	bounds: 753, 15, 242, 96
+foot_L
+	bounds: 1753, 3408, 838, 378
+foot_R
+	bounds: 439, 1638, 345, 941
+front hair_1
+	bounds: 3049, 198, 151, 320
+	rotate: 90
+front hair_2
+	bounds: 3049, 2288, 435, 488
+front hair_3
+	bounds: 3290, 3323, 463, 481
+	rotate: 90
+front hair_3_1
+	bounds: 1587, 1105, 227, 422
+	rotate: 90
+front hair_3_2
+	bounds: 697, 1002, 199, 422
+	offsets: 28, 0, 227, 422
+	rotate: 90
+hair accessory_1_L
+	bounds: 2371, 2582, 109, 135
+	rotate: 90
+hair accessory_1_R
+	bounds: 1496, 756, 75, 158
+hair accessory_2_L
+	bounds: 3541, 777, 115, 133
+	rotate: 90
+hair accessory_2_R1
+	bounds: 3676, 824, 135, 78
+	rotate: 90
+hand_L
+	bounds: 2826, 2, 194, 218
+	rotate: 90
+hand_L for
+	bounds: 439, 1442, 194, 218
+	rotate: 90
+hand_R
+	bounds: 3537, 1310, 106, 225
+hand_R for
+	bounds: 3503, 1537, 106, 225
+	rotate: 90
+head
+	bounds: 2807, 806, 348, 394
+	rotate: 90
+lower body (torso)
+	bounds: 1580, 2043, 523, 537
+mouth_1
+	bounds: 2409, 1218, 81, 78
+mouth_shy
+	bounds: 3039, 1831, 61, 43
+mouth_smile
+	bounds: 2501, 3362, 86, 44
+neck
+	bounds: 2292, 396, 132, 205
+	rotate: 90
+nipple_L
+	bounds: 3712, 3031, 71, 137
+	offsets: 3, 0, 74, 137
+nipple_R
+	bounds: 3645, 1383, 141, 152
+occiput
+	bounds: 1573, 736, 367, 414
+	rotate: 90
+parts of knee
+	bounds: 3665, 644, 131, 90
+	rotate: 90
+pom-poms_1_L
+	bounds: 2182, 9, 373, 339
+	rotate: 90
+pom-poms_1_R
+	bounds: 2105, 1650, 461, 376
+pom-poms_2_L
+	bounds: 2345, 530, 334, 373
+	rotate: 90
+pom-poms_2_R
+	bounds: 342, 985, 353, 453
+pom-poms_3_L
+	bounds: 3039, 1508, 321, 462
+	rotate: 90
+pom-poms_3_R
+	bounds: 1641, 1649, 392, 462
+	rotate: 90
+pom-poms_back_1_L
+	bounds: 2568, 1570, 304, 469
+	rotate: 90
+pom-poms_back_1_R
+	bounds: 713, 552, 355, 448
+pom-poms_back_2_L
+	bounds: 3486, 2295, 300, 481
+pom-poms_back_2_R
+	bounds: 753, 113, 352, 437
+sadness
+	bounds: 2105, 1298, 350, 396
+	rotate: 90
+shoee_back_L
+	bounds: 3421, 331, 171, 173
+shoelace_L
+	bounds: 3641, 1132, 101, 136
+shoelace_R
+	bounds: 3400, 57, 195, 151
+shose_L
+	bounds: 3518, 1849, 265, 444
+shose_R
+	bounds: 1795, 5, 385, 377
+shose_back_R
+	bounds: 3642, 961, 169, 113
+	rotate: 90
+shy
+	bounds: 2503, 1218, 350, 396
+	rotate: 90
+side ponytail of stray hair_L
+	bounds: 1726, 2582, 536, 643
+	rotate: 90
+side ponytail of stray hair_R
+	bounds: 1423, 2606, 301, 697
+skirt belt_back
+	bounds: 2719, 215, 328, 251
+skirt_back_1
+	bounds: 3137, 2778, 573, 543
+skirt_back_2
+	bounds: 2, 3, 435, 432
+skirt_front
+	bounds: 2501, 2786, 634, 543
+skirt_side_L
+	bounds: 2523, 2, 192, 301
+	rotate: 90
+skirt_side_R
+	bounds: 2371, 2693, 425, 101
+	rotate: 90
+smile
+	bounds: 2901, 1156, 350, 396
+	rotate: 90
+string
+	bounds: 2577, 1876, 565, 354
+string_L
+	bounds: 1107, 2, 124, 159
+	rotate: 90
+string_R
+	bounds: 3597, 25, 151, 152
+sun visor_1
+	bounds: 2523, 196, 332, 194
+	rotate: 90
+sun visor_2
+	bounds: 3065, 526, 371, 242
+sun visor_3
+	bounds: 3645, 1270, 111, 138
+	rotate: 90
+surprised
+	bounds: 2011, 946, 350, 396
+	rotate: 90
+thigh_L
+	bounds: 887, 3305, 864, 481
+thigh_R
+	bounds: 2, 1440, 435, 1139
+white of the eye
+	bounds: 3371, 210, 230, 119
+wink
+	bounds: 2409, 866, 350, 396
+	rotate: 90

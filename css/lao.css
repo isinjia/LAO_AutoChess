@@ -1,0 +1,170 @@
+/* Last Origin look: the original fonts (Godo / Exo 2), charcoal panels, amber accent, chamfered corners,
+   slanted tabs, rank colours and role icons. Loaded last: overrides battle.css and shop.css. */
+@font-face { font-family: 'Godo'; src: url('../assets/fonts/GodoM.ttf') format('truetype'); font-weight: 400 600; font-display: swap; }
+@font-face { font-family: 'Godo'; src: url('../assets/fonts/GodoB.ttf') format('truetype'); font-weight: 700 900; font-display: swap; }
+@font-face { font-family: 'Exo2'; src: url('../assets/fonts/Exo2-SemiBold.otf') format('opentype'); font-weight: 400 600; font-display: swap; }
+@font-face { font-family: 'Exo2'; src: url('../assets/fonts/Exo2-Bold.otf') format('opentype'); font-weight: 700 800; font-display: swap; }
+@font-face { font-family: 'Exo2'; src: url('../assets/fonts/Exo2-BlackItalic.otf') format('opentype'); font-weight: 900; font-style: italic; font-display: swap; }
+
+:root {
+  --bg: #0d0f13;
+  --ink: #f2f2f2;
+  --muted: #9aa0ab;
+  --gold: #ffc21a;          /* the original's amber */
+  --gold-d: #d99a00;
+  --cyan: #2fd0ff;
+  --red: #ff4058;
+  --blue: #39b8ff;
+  --mana: #2fd0ff;
+  --panel: rgba(20, 23, 29, 0.94);
+  --panel2: #1c2027;
+  --line: rgba(255, 255, 255, 0.1);
+  --r-b: #69cc39; --r-a: #2eaeff; --r-s: #ffc21a; --r-ss: #ff8a1e;
+  --cut: 10px;
+}
+html, body { font-family: 'Godo', 'Malgun Gothic', sans-serif; letter-spacing: -0.2px; }
+.num, #timer, .cost, .rb b, .cnt, #lobbyParts, .imCard button, .card .cost { font-family: 'Exo2', 'Godo', sans-serif; }
+.t1 { --tc: var(--r-b); } .t2 { --tc: var(--r-a); } .t3 { --tc: var(--r-s); } .t4 { --tc: var(--r-ss); }
+
+/* ---------- chamfered shapes ---------- */
+.cut, button, .lobbyBox, #info, #itemModal .box, #roundResult .box, .tutCard, .storyBox, .stageCard, .rCard, .uCard, .card, .imCard, .slot, #controls, .rb {
+  clip-path: polygon(var(--cut) 0, 100% 0, 100% calc(100% - var(--cut)), calc(100% - var(--cut)) 100%, 0 100%, 0 var(--cut));
+}
+.rb, .slot, .ichip { --cut: 6px; }
+
+/* ---------- buttons ---------- */
+button { font-family: 'Godo', sans-serif; font-weight: 700; color: #e8e8e8; background: linear-gradient(#2c313a, #20242b); border: none; box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.12); padding: 9px 16px; letter-spacing: 0; }
+button:hover:not(:disabled) { background: linear-gradient(#3a414c, #2a2f37); }
+button.primary { color: #17130a; background: linear-gradient(#ffd34a, #ffb400); box-shadow: inset 0 -3px 0 rgba(0, 0, 0, 0.18); }
+button.primary:hover:not(:disabled) { background: linear-gradient(#ffe07a, #ffc21a); }
+button.quiet { background: transparent; box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.16); color: var(--muted); }
+button:disabled { opacity: 0.35; }
+
+/* ---------- battle HUD ---------- */
+#hud { padding: 10px 16px 18px; background: linear-gradient(rgba(5, 6, 9, 0.85), rgba(5, 6, 9, 0)); }
+#hud .tname { font-weight: 900; font-size: 15px; letter-spacing: 0.5px; }
+#hud .left .tname::before { content: ''; display: inline-block; width: 4px; height: 13px; margin-right: 7px; background: var(--blue); vertical-align: -1px; transform: skewX(-18deg); }
+#hud .right .tname::after { content: ''; display: inline-block; width: 4px; height: 13px; margin-left: 7px; background: var(--red); vertical-align: -1px; transform: skewX(-18deg); }
+#hud .tbar { height: 8px; border: none; border-radius: 0; background: rgba(255, 255, 255, 0.08); transform: skewX(-25deg); }
+#hud .left .tbar i { background: linear-gradient(90deg, #1d7fd1, var(--blue)); }
+#hud .right .tbar i { background: linear-gradient(270deg, #c22a3e, var(--red)); }
+#hud .mid { min-width: 96px; }
+#timer { font-weight: 900; font-style: italic; font-size: 26px; color: #fff; padding: 2px 16px 3px; background: rgba(0, 0, 0, 0.55); clip-path: polygon(12px 0, calc(100% - 12px) 0, 100% 50%, calc(100% - 12px) 100%, 12px 100%, 0 50%); border-bottom: 2px solid var(--gold); }
+#status { margin-top: 6px; font-size: 12px; color: #d9d9d9; background: rgba(0, 0, 0, 0.45); padding: 2px 10px; display: inline-block; }
+#runbar { top: 72px; gap: 4px; }
+.rb { border: none; background: rgba(12, 14, 18, 0.88); box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.1); border-radius: 0; padding: 4px 12px; font-size: 12px; color: var(--muted); }
+.rb b { color: #fff; font-weight: 700; margin-left: 2px; }
+.rb.hp b { color: #ff6b7d; } .rb.gold b { color: var(--gold); }
+.rb .xp { border-radius: 0; height: 4px; background: rgba(255, 255, 255, 0.12); }
+.rb .xp i { background: var(--cyan); }
+#controls { background: rgba(12, 14, 18, 0.9); border: none; border-radius: 0; padding: 5px; }
+.speed button { padding: 6px 11px; font-family: 'Exo2', sans-serif; font-style: italic; }
+.speed button.on { background: linear-gradient(#ffd34a, #ffb400); color: #17130a; box-shadow: none; }
+
+/* ---------- unit bars over the field: role icon, name, hp, gauge ---------- */
+.ubar { width: 84px; margin-left: -42px; }
+.ubar .nm { display: flex; align-items: center; justify-content: center; gap: 2px; font-size: 11px; font-weight: 700; text-shadow: 0 1px 2px #000, 0 0 3px #000; margin-bottom: 1px; }
+.ubar .nm .ricon { width: 17px; height: 17px; flex: none; filter: drop-shadow(0 1px 1px #000); }
+.ubar .nm .tags, .ubar .nm .tier.t1, .ubar .nm .tier.t2, .ubar .nm .tier.t3, .ubar .nm .tier.t4 { display: none; }
+.ubar .hp { height: 6px; border: none; border-radius: 0; background: rgba(0, 0, 0, 0.7); box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.9); transform: skewX(-20deg); }
+.ubar .hp i { background: linear-gradient(#a8f06a, #4dbb22); }
+.ubar.r .hp i { background: linear-gradient(#ff8d8d, #e0283f); }
+.ubar .mp { height: 3px; border: none; border-radius: 0; background: rgba(0, 0, 0, 0.6); margin-top: 1px; transform: skewX(-20deg); }
+.ubar .mp i { background: var(--cyan); }
+.ubar .stars { letter-spacing: -1px; font-size: 10px; }
+.ubar.enemy .nm { font-size: 10px; color: #ffd0d6; }
+.ubar.enemy .tier { font-size: 9px; padding: 0 3px; border-radius: 0; transform: skewX(-12deg); }
+.tier.enormal { background: #59606c; color: #fff; } .tier.eelite { background: #a259ff; color: #fff; } .tier.eboss { background: var(--red); }
+.num { font-weight: 900; font-style: italic; letter-spacing: -0.5px; }
+.num.crit { color: var(--gold); }
+.skillname { font-family: 'Godo', sans-serif; border-top: none; border-bottom: none; background: linear-gradient(90deg, transparent, rgba(0, 0, 0, 0.85) 12%, rgba(0, 0, 0, 0.85) 88%, transparent); border-left: 3px solid var(--gold); color: #fff; }
+.baseLabel { transform: translate(-50%, 0) skewX(-12deg) !important; border-radius: 0; background: rgba(10, 30, 60, 0.85); border: none; box-shadow: inset 0 0 0 1px rgba(80, 180, 255, 0.5); transform: translate(-50%, -100%) skewX(-12deg); }
+.gimAlert { font-family: 'Godo', sans-serif; letter-spacing: 1px; }
+
+/* synergy list */
+.syn .row { border-radius: 0; border: none; background: rgba(10, 12, 16, 0.78); box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.06); clip-path: polygon(0 0, calc(100% - 8px) 0, 100% 100%, 0 100%); }
+.syn.right .row { clip-path: polygon(8px 0, 100% 0, 100% 100%, 0 100%); }
+.syn .row.on { background: linear-gradient(90deg, rgba(255, 194, 26, 0.28), rgba(10, 12, 16, 0.85) 70%); box-shadow: inset 3px 0 0 var(--gold); }
+.syn.right .row.on { background: linear-gradient(270deg, rgba(255, 194, 26, 0.28), rgba(10, 12, 16, 0.85) 70%); box-shadow: inset -3px 0 0 var(--gold); }
+.syn .cnt { border-radius: 0; clip-path: polygon(25% 0, 75% 0, 100% 50%, 75% 100%, 25% 100%, 0 50%); background: rgba(255, 255, 255, 0.14); }
+.syn .row.class .cnt { border-radius: 0; }
+.syn .row.on .cnt { background: var(--gold); }
+
+/* formation cells: the tiles are drawn on the field itself (js/battle.js buildCells, flat hexagons under the
+   units); the drop zones stay invisible hit areas */
+.zone, .zone.filled, .zone.hot, .zone.blocked { border: none; border-radius: 0; background: none; box-shadow: none; clip-path: none; }
+
+/* ---------- bottom panel: gear, bench, shop ---------- */
+#panel { background: linear-gradient(#15181e, #0c0e12); border-top: none; box-shadow: 0 -1px 0 rgba(255, 194, 26, 0.45), 0 -12px 24px rgba(0, 0, 0, 0.5); }
+#items .ilbl, .ilbl { font-weight: 700; color: var(--gold); font-size: 11px; }
+.ichip { border: none; border-radius: 0; background: rgba(255, 255, 255, 0.05); box-shadow: inset 0 0 0 1px var(--tc, rgba(255, 255, 255, 0.12)); clip-path: polygon(6px 0, 100% 0, 100% calc(100% - 6px), calc(100% - 6px) 100%, 0 100%, 0 6px); }
+.ichip.empty { background: rgba(255, 255, 255, 0.025); box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.06); }
+.slot { border: none; border-radius: 0; background: rgba(255, 255, 255, 0.03); box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.07); }
+.slot.hot { background: rgba(255, 194, 26, 0.18); box-shadow: inset 0 0 0 2px var(--gold); }
+/* character card: portrait, rank strip on the left, name plate */
+.card, .chip, .uCard { border: none; border-radius: 0; background: #12151a; box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.08); }
+.card::before, .chip::before, .uCard::before { content: ''; position: absolute; left: 0; top: 0; bottom: 0; width: 4px; background: var(--tc); z-index: 2; }
+.card .meta, .uCard .meta { background: linear-gradient(rgba(10, 12, 16, 0.6), #0c0e12); padding: 3px 6px 4px 9px; }
+.card .nm, .uCard .nm { display: flex; align-items: center; gap: 4px; font-size: 13px; font-weight: 700; }
+.card .nm .ricon, .uCard .nm .ricon { width: 20px; height: 20px; flex: none; }
+.card .nm .tier, .uCard .nm .tier { display: none; }
+.card .tg, .uCard .tg { font-size: 10px; color: #8d94a0; }
+.card .cost { top: 4px; right: 4px; border-radius: 0; padding: 1px 8px; font-weight: 800; font-style: italic; color: #17130a; background: var(--gold); clip-path: polygon(5px 0, 100% 0, calc(100% - 5px) 100%, 0 100%); }
+.card.pair::after { border-radius: 0; background: var(--cyan); color: #04121a; font-weight: 700; clip-path: polygon(4px 0, 100% 0, calc(100% - 4px) 100%, 0 100%); }
+.card .gain { border-radius: 0; background: rgba(255, 194, 26, 0.92); font-weight: 700; clip-path: polygon(4px 0, 100% 0, calc(100% - 4px) 100%, 0 100%); }
+.chip .nm { background: linear-gradient(transparent, rgba(0, 0, 0, 0.85)); padding-left: 7px; font-weight: 700; }
+#shopBtns button { font-size: 13px; }
+#sellZone { border-radius: 0; border: none; box-shadow: inset 0 0 0 2px var(--red); background: rgba(90, 10, 22, 0.75); font-family: 'Godo', sans-serif; }
+
+/* ---------- popups ---------- */
+#info, #itemModal .box, #roundResult .box, .tutCard { border: none !important; border-radius: 0 !important; background: var(--panel) !important; box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.08), inset 0 3px 0 var(--gold) !important; }
+#info h3 { display: flex; align-items: center; gap: 6px; font-weight: 900; }
+#info h3 .ricon { width: 30px; height: 30px; }
+#info h3 .tier { display: none; }
+#info .sk { border-top-color: rgba(255, 255, 255, 0.08); }
+#info .sk b { color: var(--gold); }
+.mini { border-radius: 0; }
+.mini i { border-radius: 0; }
+#itemModal h2, #rrTitle { font-weight: 900; letter-spacing: 2px; }
+.imCard { border: none; border-radius: 0; background: #12151a; box-shadow: inset 0 0 0 1px var(--tc); }
+#roundResult .box { min-width: 300px; padding: 22px 40px; }
+#rrTitle.win { color: var(--gold); text-shadow: 0 0 18px rgba(255, 194, 26, 0.45); }
+#toast { border-radius: 0; clip-path: polygon(8px 0, 100% 0, calc(100% - 8px) 100%, 0 100%); font-family: 'Godo', sans-serif; padding: 8px 22px; }
+
+/* ---------- lobby ---------- */
+#lobby { background: linear-gradient(rgba(5, 6, 9, 0.35), rgba(5, 6, 9, 0.85)); }
+.lobbyBox { border: none; border-radius: 0; background: var(--panel); box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.07); --cut: 16px; }
+.lobbyBox header { padding: 16px 20px 10px; border-bottom: 1px solid rgba(255, 255, 255, 0.06); }
+.lobbyBox h1 { font-weight: 900; font-size: 22px; letter-spacing: 1px; display: flex; align-items: center; gap: 10px; }
+.lobbyBox h1::before { content: ''; width: 6px; height: 22px; background: var(--gold); transform: skewX(-18deg); }
+.lobbyBox .parts { font-family: 'Exo2', 'Godo', sans-serif; }
+#lobbyTabs { padding: 10px 16px 0; gap: 2px; border-bottom: 2px solid rgba(255, 194, 26, 0.6); }
+#lobbyTabs button { clip-path: polygon(10px 0, 100% 0, calc(100% - 10px) 100%, 0 100%); border-radius: 0; padding: 8px 26px; background: #262a32; box-shadow: none; }
+#lobbyTabs button.on { background: linear-gradient(#ffd34a, #ffb400); color: #17130a; }
+.chTabs button { clip-path: polygon(8px 0, 100% 0, calc(100% - 8px) 100%, 0 100%); }
+.chTabs button.on { background: rgba(255, 194, 26, 0.2); box-shadow: inset 0 -2px 0 var(--gold); color: #fff; }
+.chTitle { font-weight: 900; font-size: 18px; }
+.stageCard { border: none; border-radius: 0; background: #181b21; box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.07); position: relative; padding-left: 14px; }
+.stageCard::before { content: ''; position: absolute; left: 0; top: 0; bottom: 0; width: 4px; background: #49505c; }
+.stageCard.cleared::before { background: var(--gold); }
+.stageCard.boss::before { background: var(--red); }
+.stageCard .sn { font-weight: 900; font-size: 14px; }
+.stageCard .sg span { border-radius: 0; clip-path: polygon(4px 0, 100% 0, calc(100% - 4px) 100%, 0 100%); }
+.uCard .pic { height: 70px; }
+.uCard button { font-size: 11px; padding: 5px 8px; }
+.rCard { border: none; border-radius: 0; background: #181b21; box-shadow: inset 3px 0 0 var(--gold), inset 0 0 0 1px rgba(255, 255, 255, 0.07); }
+.rCard .rn { font-weight: 900; }
+.vol input[type=range] { accent-color: var(--gold); }
+
+/* ---------- story ---------- */
+.storyBox { border: none; border-radius: 0; background: rgba(8, 10, 14, 0.92); box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.08); --cut: 16px; }
+.storyBox #storyFace { border: none; border-radius: 0; clip-path: polygon(12px 0, 100% 0, calc(100% - 12px) 100%, 0 100%); box-shadow: none; }
+.storyName { display: inline-block; padding: 2px 14px; margin-bottom: 8px; color: #17130a !important; background: var(--gold); clip-path: polygon(6px 0, 100% 0, calc(100% - 6px) 100%, 0 100%); font-weight: 900; min-height: 0; }
+.storyBox.narr .storyName { display: none; }
+.storyBox.cmd .storyName { background: var(--cyan); }
+.storyText { font-size: 17px; }
+#storyChapter { font-weight: 900; }
+
+/* tutorial */
+#tut .tutSpot { border-radius: 0; box-shadow: 0 0 0 9999px rgba(0, 0, 0, 0.6), 0 0 0 2px var(--gold), 0 0 22px 4px rgba(255, 194, 26, 0.5); }
+#tut .tutCard { border: none; }

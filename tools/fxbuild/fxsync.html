@@ -1,0 +1,78 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>FX Sync</title>
+<base href="../../">
+<style>body{margin:0;background:#222;color:#ddd;font:12px monospace;padding:10px}.bad{color:#f66}</style></head>
+<body><div id="sum">running…</div><pre id="list"></pre>
+<script src="js/vendor/three.min.js"></script>
+<script src="js/sd.js"></script>
+<script src="js/fx/_meta.js"></script>
+<script>
+// Battle-level placement check of the original effects: for every rig, attack / skill clip and projectile event,
+// the web rig (js/sd.js, the same runtime the battle uses) is posed at the event's clip time and its _fire<n> is
+// compared on the nearest ancestor bone of _fire<n> that the web rig keeps: Unity's world position of that bone at the
+// event (tools/sdbuild/unity/proj/fx/C__<rig>__<clip>.anc.json, same bake as the fire positions the battle launches
+// projectiles from) against the web rig's. The fire point itself is Unity's own position, so a matching ancestor
+// means the projectile leaves from the right place on the drawn character.
+// Error is in % of the rig's height; an event "matches" within 3%.
+// Timing is checked in the game itself: BATTLE.fxSyncTiming() (see js/battle.js).
+window.DBG = new URLSearchParams(location.search).get('dbg');
+(async () => {
+  const renderer = new THREE.WebGLRenderer();
+  SD.renderer = renderer;
+  const M = window.FX_META;
+  const out = [], per = [];
+  let n = 0, ok = 0, errSum = 0, skipped = 0;
+  for (const rig of Object.keys(M.fires)) {
+    if (window.DBG && rig !== DBG) continue;
+    const t = await SD.prepare(rig);
+    if (!t) continue;
+    const c = SD.create(rig);
+    const nodes = t.data.nodes;
+    const H = t.height > 0 ? t.height : 5;
+    const byPath = new Map(nodes.map((x, i) => [x.path, i]));
+    const animName = (nodes.find((x) => x.path === '') || {}).n;
+    for (const clip of Object.keys(M.fires[rig])) {
+      if (!t.data.clips[clip]) continue;
+      let anc = null;
+      try { anc = await (await fetch(`tools/sdbuild/unity/proj/fx/C__${rig}__${clip}.anc.json`)).json(); } catch (e) { anc = null; }
+      if (!anc) continue;
+      let cn = 0, cok = 0, cerr = 0;
+      for (const e0 of (M.timelines[rig][clip].ev || []).filter((x) => x[1] === 'p')) {
+        const tt = e0[0], k = String(e0[2] || 1);
+        const row = anc[String(tt)] || anc[tt.toFixed(4).replace(/0+$/, '').replace(/[.]$/, '')];
+        const chain = row && row[k];
+        if (!chain || !chain.length) { skipped++; (window.SKIP = window.SKIP || []).push(rig + ':' + clip + ':' + tt + ':' + k + (row ? ' nochain' : ' notime')); continue; }
+        c.play(clip); c.speed = 1; c.time = 0;
+        c.update(Math.max(1e-4, tt)); // the clip playhead exactly at the event
+        const r0 = c.posU(0);
+        // the nearest ancestor of _fire<k> that the web rig keeps and poses (path relative to the animator root)
+        let hit = null;
+        // web paths are relative to the Animator's object (path ""): only ancestors up to it count
+        const ai = chain.findIndex((x) => x[0] === animName);
+        for (let a = 0; a <= (ai < 0 ? chain.length - 1 : ai) && !hit; a++) {
+          const path = chain.slice(a, ai < 0 ? chain.length - 1 : ai).map((x) => x[0]).reverse().join('/');
+          const idx = byPath.get(path);
+          if (idx == null) continue;
+          const W = c.W, o = idx * 12;
+          if (!(Math.abs(W[o]) + Math.abs(W[o + 1]) + Math.abs(W[o + 3]) + Math.abs(W[o + 4]) > 1e-6)) continue;
+          hit = { idx, want: [chain[a][1], chain[a][2]], depth: a };
+        }
+        if (!hit) { skipped++; (window.SKIP = window.SKIP || []).push(rig + ':' + clip + ':' + tt + ':' + k + ' noancestor ' + chain.map((x) => x[0]).join('<')); continue; }
+        const g = c.posU(hit.idx), got = [g[0] - r0[0], g[1] - r0[1]]; // Unity baked with the prefab root at the origin
+        const e = Math.hypot(got[0] - hit.want[0], got[1] - hit.want[1]) / H * 100;
+        if (window.DBG && rig === DBG) (window.DBGL = window.DBGL || []).push([clip, tt, k, nodes[hit.idx].n, got.map((x) => +x.toFixed(2)), hit.want, +e.toFixed(1)]);
+        n++; cn++; errSum += e; cerr += e;
+        if (e <= 3) { ok++; cok++; }
+      }
+      if (cn) per.push({ rig, clip, n: cn, ok: cok, err: cerr / cn });
+    }
+    c.dispose && c.dispose();
+  }
+  per.sort((a, b) => b.err - a.err);
+  document.getElementById('list').textContent = per.map((p) => `${p.err > 3 ? '!! ' : '   '}${p.rig}:${p.clip} events ${p.n} matched ${p.ok} mean error ${p.err.toFixed(2)}%`).join('\n');
+  document.getElementById('list').setAttribute('data-skip', (window.SKIP || []).join('|'));
+  if (window.DBGL) document.getElementById('list').textContent = DBGL.map((x) => JSON.stringify(x)).join(String.fromCharCode(10));
+  window.FXSYNC = { n, ok, mean: errSum / Math.max(1, n), per };
+  document.getElementById('sum').textContent = `placement: ${ok}/${n} events within 3% of height (${(ok / Math.max(1, n) * 100).toFixed(1)}%), mean error ${(errSum / Math.max(1, n)).toFixed(2)}%, not checkable ${skipped}`;
+})();
+</script></body></html>

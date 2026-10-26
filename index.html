@@ -1,0 +1,169 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>오르카 방어전</title>
+<link rel="stylesheet" href="css/battle.css">
+<link rel="stylesheet" href="css/shop.css">
+<link rel="stylesheet" href="css/lao.css">
+<link rel="stylesheet" href="css/czn.css">
+<link rel="preload" href="assets/fonts/GodoM.ttf" as="font" type="font/ttf" crossorigin>
+<link rel="preload" href="assets/fonts/GodoB.ttf" as="font" type="font/ttf" crossorigin>
+</head>
+<body>
+<div id="rotate">화면을 <b>가로</b>로 돌려 주세요</div>
+<div id="stage">
+  <div id="field">
+    <img id="bg" src="assets/bg_city.jpg" alt="">
+    <div id="gl"></div>
+    <div id="zones"></div>
+    <div id="overlay"></div>
+  </div>
+
+  <header id="hud">
+    <div class="team left">
+      <div class="tname" id="nameL">오르카 1소대</div>
+      <div class="tbar"><i id="hpL"></i></div>
+    </div>
+    <div class="mid">
+      <div id="timer">90</div>
+      <div id="status">대기 중</div>
+    </div>
+    <div class="team right">
+      <div class="tname" id="nameR">철충 토벌대</div>
+      <div class="tbar"><i id="hpR"></i></div>
+    </div>
+  </header>
+
+  <!-- synergies of each side (js/battle.js) -->
+  <aside id="synL" class="syn left"></aside>
+  <aside id="synR" class="syn right"></aside>
+  <div id="synTip" hidden></div>
+
+  <!-- run mode: commander status -->
+  <div id="runbar">
+    <div class="rbWave">
+      <div class="rbStage"><b id="rRound">1-1</b><span id="rStageName"></span></div>
+      <div class="rbW"><small>WAVE</small><b id="rWave">1</b><span>/<i id="rRounds">8</i></span></div>
+      <div class="rb hp"><span class="ic">◆</span>기지 <b id="rHp">20</b></div>
+    </div>
+    <div class="rbRes">
+      <span class="rb gold"><span class="coin"></span><b id="rGold">10</b></span>
+      <span class="rb lv"><small>LV</small><b id="rLv">3</b><span class="xp"><i id="rXp"></i></span></span>
+      <span class="rb cap"><small>배치</small><b id="rCap">0/3</b></span>
+    </div>
+  </div>
+  <button id="btnRetreat" class="quiet" title="작전 포기">II</button>
+
+  <footer id="controls">
+    <button id="btnStart" class="primary">전투 시작</button>
+    <button id="btnReset">다시 배치</button>
+    <button id="btnShuffle">팀 무작위</button>
+    <div class="speed">
+      <button data-speed="1" class="on">x1</button>
+      <button data-speed="2">x2</button>
+      <button data-speed="4">x4</button>
+    </div>
+  </footer>
+
+  <!-- run mode: bench + shop -->
+  <section id="panel">
+    <div id="benchBox"><div class="secT">대기석<small>BENCH</small></div><div id="bench"></div></div>
+    <div id="items" title="장비: 대원에게 끌어다 놓으면 장착"></div>
+    <div id="shopRow">
+      <div id="shop"></div>
+      <div id="sellZone">여기에 놓으면 판매</div>
+    </div>
+    <div id="shopBtns">
+      <button id="btnReroll" class="sub"><svg viewBox="0 0 24 24"><path d="M20 12a8 8 0 1 1-2.3-5.6M20 4v5h-5"/></svg><b>새로고침</b><small>●2</small></button>
+      <button id="btnXp" class="sub"><svg viewBox="0 0 24 24"><path d="M12 20V5M5 11l7-7 7 7"/></svg><b>경험치</b><small>●4</small></button>
+      <button id="btnFight" class="primary"><b>웨이브 시작</b><small>START</small></button>
+    </div>
+  </section>
+
+  <div id="info" hidden></div>
+  <div id="result" hidden><div class="box"><div id="resultText"></div><div id="resultSub"></div><button id="btnAgain" class="primary">다시 전투</button></div></div>
+  <div id="roundResult" hidden><div class="box"><div id="rrTitle"></div><div id="rrSub"></div><button id="btnNext" class="primary">로비로</button></div></div>
+  <!-- lobby: stages, units (unlock / level), research -->
+  <section id="lobby" hidden>
+    <div id="l2d"></div>
+    <div class="lbShade"></div>
+    <div id="lobbyHome">
+      <div class="lhLeft">
+        <div class="banner" data-page="stage" id="homeBanner"></div>
+        <div class="nextOp" data-page="stage" id="homeNext"></div>
+      </div>
+      <div class="lhSec">
+        <div class="secName" id="secName"></div>
+        <button class="secSwap" id="secSwap" title="부관 변경"><svg viewBox="0 0 24 24"><path d="M4 8h13l-3-3M20 16H7l3 3"/></svg>부관 변경</button>
+      </div>
+      <div class="lhMenu">
+        <button class="mOp" data-page="stage" id="btnOperation"><span class="en">OPERATION</span><span class="kr">작전 개시</span><span class="cur" id="homeCur"></span><span class="arrow">›</span></button>
+        <div class="mRow">
+          <button class="mTile" data-page="deck"><svg viewBox="0 0 24 24"><rect x="3" y="6" width="7" height="12" rx="1"/><rect x="14" y="6" width="7" height="12" rx="1"/><path d="M10 12h4"/></svg><span class="kr">편성</span><span class="en">DECK</span></button>
+          <button class="mTile" data-page="units"><svg viewBox="0 0 24 24"><circle cx="9" cy="8" r="3.2"/><path d="M3 20c0-3.6 2.7-6 6-6s6 2.4 6 6"/><circle cx="17" cy="9" r="2.4"/><path d="M15.5 14.2c3 .2 5.5 2.4 5.5 5.8"/></svg><span class="kr">대원</span><span class="en">MEMBERS</span></button>
+          <button class="mTile" data-page="research"><svg viewBox="0 0 24 24"><path d="M9 3h6M10 3v6l-5.5 9.5A1.6 1.6 0 0 0 5.9 21h12.2a1.6 1.6 0 0 0 1.4-2.5L14 9V3"/><path d="M7.5 15h9"/></svg><span class="kr">연구</span><span class="en">RESEARCH</span></button>
+          <button class="mTile" data-page="archive"><svg viewBox="0 0 24 24"><path d="M4 5.5C6.5 4 9.5 4 12 5.5 14.5 4 17.5 4 20 5.5V19c-2.5-1.5-5.5-1.5-8 0-2.5-1.5-5.5-1.5-8 0z"/><path d="M12 5.5V19"/></svg><span class="kr">기록</span><span class="en">ARCHIVE</span></button>
+        </div>
+      </div>
+    </div>
+    <div id="lobbyPage" hidden>
+      <header class="pgTop"><button class="pgBack" data-page="home" title="뒤로"><svg viewBox="0 0 24 24"><path d="M15 4l-8 8 8 8"/></svg></button><div class="pgTitle"><b id="pgTitle"></b><small id="pgEn"></small></div></header>
+      <div id="lobbyBody"></div>
+    </div>
+    <div class="lhTop">
+      <div class="prof"><div class="pAv"><img id="profPic" alt=""></div><div class="pInfo"><div class="pName">사령관<small>COMMANDER</small></div><div class="pLv"><small>LV</small><b id="profLv">1</b><span class="pXp"><i id="profXp"></i></span></div></div></div>
+      <div class="res"><span class="pill"><span class="gearI">⚙</span><b id="lobbyParts">0</b><small>부품</small></span><span class="pill"><span class="starI">★</span><b id="lobbyStars">0</b><small id="lobbyStarsMax">/24</small></span><button class="ico" data-page="home" id="btnHome" title="홈"><svg viewBox="0 0 24 24"><path d="M3 11l9-7 9 7M5.5 9.5V20h13V9.5"/></svg></button><button class="ico" data-page="settings" title="설정"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M12 2.5v3M12 18.5v3M2.5 12h3M18.5 12h3M5.3 5.3l2.1 2.1M16.6 16.6l2.1 2.1M5.3 18.7l2.1-2.1M16.6 7.4l2.1-2.1"/></svg></button></div>
+    </div>
+  </section>
+  <!-- supply shop (shop time) and elite reward -->
+  <div id="itemModal" hidden><div class="box"><h2 id="imTitle">보급 상점</h2><p id="imSub"></p><div id="imList"></div>
+    <div class="imBtns"><button id="imReroll">새로고침 <small>●2</small></button><button id="imClose" class="primary">나가기</button></div></div></div>
+  <!-- story scenes -->
+  <section id="story" hidden>
+    <img id="storyBg" alt="">
+    <div class="storyShade"></div>
+    <div class="storyTop">
+      <div class="storyTitle"><small class="en">STORY</small><span id="storyChapter"></span></div>
+      <button id="storySkip" class="quiet">건너뛰기 ▶▶</button>
+    </div>
+    <div class="storyBox">
+      <div class="storyPort"><img id="storyFace" alt=""></div>
+      <div class="storyName" id="storyName"></div>
+      <div class="storyText" id="storyText"></div>
+      <div class="storyNext"><i></i></div>
+    </div>
+  </section>
+  <div id="toast" hidden></div>
+  <div id="loading">SD 불러오는 중…</div>
+</div>
+
+<script src="js/vendor/three.min.js"></script>
+<script src="js/vendor/spine-player.min.js"></script>
+<script src="js/sd.js"></script>
+<script src="js/skins.js"></script>
+<script src="js/anim_events.js"></script>
+<script src="js/clip_meta.js"></script>
+<script src="js/lao_units.js"></script>
+<script src="js/roster.js"></script>
+<script src="js/stars.js"></script>
+<script src="js/items.js"></script>
+<script src="js/synergy.js"></script>
+<script src="js/sim.js"></script>
+<script src="js/lao_enemies.js"></script>
+<script src="js/story.js"></script>
+<script src="js/wavesim.js"></script>
+<script src="js/stage.js"></script>
+<script src="js/meta.js"></script>
+<script src="js/fx/_meta.js"></script>
+<script src="js/fxbake.js"></script>
+<script src="js/battle.js"></script>
+<script src="js/voices.js"></script>
+<script src="js/audio.js"></script>
+<script src="js/tutorial.js"></script>
+<script src="js/l2d.js"></script>
+<script src="js/shop.js"></script>
+<script>/* tools: index.html?fxbattle runs the stage-battle effect sync check (tools/fxbuild/fxbattle.js) */ if (/[?&]fxbattle/.test(location.search)) { const s = document.createElement('script'); s.src = 'tools/fxbuild/fxbattle.js'; document.body.appendChild(s); }</script>
+</body>
+</html>
