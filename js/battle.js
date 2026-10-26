@@ -1244,6 +1244,26 @@
     };
     Promise.resolve(SD.prepare(rig)).then(attach, attach);
   }
+  // the ally whose SD body is under the pointer (stage pixels): the rig's drawn extent, narrowed to the body so wings
+  // and long weapons do not reach into the next cell; nearer rows (drawn in front) win an overlap
+  function pickAt(px, py) {
+    const p = fieldToWorld(px, py);
+    let best = null;
+    for (const u of units) {
+      if (u.side !== 0 || u.s.enemy || !u.c || !u.holder.visible || u.dieT >= 0) continue;
+      const tpl = SD.template(u.c.tpl.id);
+      if (!tpl || !tpl.box) continue;
+      const fx = u.flip.scale.x, fy = u.flip.scale.y, rp = u.c.root.position, rs = u.c.root.scale.x, h = u.holder.position;
+      const xa = h.x + fx * (rp.x + rs * tpl.box.min.x), xb = h.x + fx * (rp.x + rs * tpl.box.max.x);
+      const ya = h.y + fy * (rp.y + rs * tpl.box.min.y), yb = h.y + fy * (rp.y + rs * tpl.box.max.y);
+      const mid = h.x, half = Math.min(Math.abs(xb - xa) / 2, 0.85 * u.k); // centred on the feet
+      const top = Math.min(Math.max(ya, yb), h.y + 2.6 * u.k), bottom = h.y - 0.3 * u.k; // feet to head (and the ring)
+      if (p.x < mid - half || p.x > mid + half || p.y < bottom || p.y > top) continue;
+      const score = u.order * 10 - Math.abs(p.x - mid);
+      if (!best || score > best.score) best = { score, col: u.col, row: u.row };
+    }
+    return best && { col: best.col, row: best.row };
+  }
   // px, py: the pointer in stage pixels; show: false while it is over a panel (the shop / bench draws its own chip)
   function dragMove(px, py, show) {
     if (!dragSD) return;
@@ -1297,7 +1317,7 @@
   else document.body.classList.add('run-mode');
   requestAnimationFrame(frame);
   Object.assign(api, {
-    MODE, start, cellRect, setCells, skinOf, roleIcon, setHeadIcons, dragBegin, dragMove, dragEnd,
+    MODE, start, cellRect, setCells, skinOf, roleIcon, setHeadIcons, dragBegin, dragMove, dragEnd, pickAt,
     tick(sec, fps = 30) { for (let i = 0; i < Math.round(sec * fps); i++) stepWorld(1 / fps); },
     cellStates: () => ({ fade: cellFade, states: Object.fromEntries(cells.map((c) => [c.col + ',' + c.row, c.state])) }), // debugging
     fxStats: () => ({ live: ofx.length, loaded: window.FXB ? FXB.loaded().length : 0, attached: units.filter((u) => u.fxa && u.fxa.attached).length, timelines: units.filter((u) => u.fxa).length }), // debugging

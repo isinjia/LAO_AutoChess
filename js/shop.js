@@ -518,7 +518,13 @@
     if (card) { e.preventDefault(); buy(+card.dataset.shop); return; }
     const ic = e.target.closest('[data-item]');
     if (ic) { e.preventDefault(); drag = { item: +ic.dataset.item, x0: e.clientX, y0: e.clientY, moved: false, ghost: null }; return; }
-    const from = locFromEl(e.target);
+    let from = locFromEl(e.target);
+    // pressing on an SD over the field grabs that unit, wherever its body reaches (rows stand close together, so a
+    // body can rise over the cell behind it, whose drop zone would otherwise take the press)
+    if ((!from || from.at === 'board') && e.target.closest && e.target.closest('#field')) {
+      const gp = window.toStage(e.clientX, e.clientY), hit = B.pickAt(gp.x, gp.y);
+      if (hit) from = { at: 'board', col: hit.col, row: hit.row };
+    }
     if (!from || from.at === 'sell') return;
     const u = st.unitAt(from);
     if (!u) return;
