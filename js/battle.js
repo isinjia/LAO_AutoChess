@@ -1043,8 +1043,8 @@
     filled: { line: 0x5fc0ff, lo: 0.6, fill: 0x5fc0ff, fo: 0.1 },
     can: { line: 0x5fc0ff, lo: 0.85, fill: 0x5fc0ff, fo: 0.16, pulse: 0.15 }, // a free cell the dragged unit may go to
     hot: { line: 0xc4f0ff, lo: 1.0, fill: 0x8fd8ff, fo: 0.32 }, // under the pointer: the drop is allowed
-    blocked: { line: 0xff7a7a, lo: 0.9, fill: 0xff6a6a, fo: 0.14 }, // under the pointer: the drop is not allowed
-    sel: { line: 0xffd36e, lo: 1.0, fill: 0xffd36e, fo: 0.16 }, // the dragged unit's own cell / the unit in the info panel
+    blocked: { line: 0xff7a7a, lo: 0.9, fill: 0xff6a6a, fo: 0.11 }, // under the pointer: the drop is not allowed
+    sel: { line: 0xffd36e, lo: 1.0, fill: 0xffd36e, fo: 0.12 }, // the dragged unit's own cell / the unit in the info panel
   };
   let cells = [], cellTex = null, cellGeo = null, cellFade = 1;
   function tileTex() {
@@ -1070,7 +1070,8 @@
     return cellTex;
   }
   function buildCells() {
-    for (const c of cells) { scene.remove(c.g); c.fill.material.dispose(); c.line.material.dispose(); }
+    const prev = {}; // the field is rebuilt between waves and after every move: the cells keep their states
+    for (const c of cells) { prev[c.col + ',' + c.row] = c.state; scene.remove(c.g); c.fill.material.dispose(); c.line.material.dispose(); }
     cells = []; cellFade = 1; infoCell = null;
     if (!isWave()) return;
     const tex = tileTex();
@@ -1085,7 +1086,7 @@
       fill.renderOrder = 60; line.renderOrder = 61; // under every unit's shadow (their orders start at 95)
       g.add(fill, line);
       scene.add(g);
-      cells.push({ col, row, g, fill, line, state: 'empty', lo: 0, fo: 0 });
+      cells.push({ col, row, g, fill, line, state: prev[col + ',' + row] || 'empty', lo: 0, fo: 0 });
     }
   }
   // { 'col,row': 'empty' | 'filled' | 'can' | 'hot' | 'blocked' | 'sel' }; cells left out keep their state
@@ -1191,6 +1192,7 @@
   Object.assign(api, {
     MODE, start, cellRect, setCells, skinOf, roleIcon, setHeadIcons,
     tick(sec, fps = 30) { for (let i = 0; i < Math.round(sec * fps); i++) stepWorld(1 / fps); },
+    cellStates: () => ({ fade: cellFade, states: Object.fromEntries(cells.map((c) => [c.col + ',' + c.row, c.state])) }), // debugging
     fxStats: () => ({ live: ofx.length, loaded: window.FXB ? FXB.loaded().length : 0, attached: units.filter((u) => u.fxa && u.fxa.attached).length, timelines: units.filter((u) => u.fxa).length }), // debugging
     setBg(url) { const bg = $('bg'); if (url && !bg.src.endsWith(url)) bg.src = url; }, // chapter backgrounds share one layout
     // info panel for a card that is not on the field (shop / bench)
