@@ -46,16 +46,27 @@
     e_IronPrince_N: { gim: ['summon', 'shield', 'silence'], cruel: ['regen'], tip: '최종 보스: 소환 · 방어막 · 봉인을 모두 사용합니다' },
   };
   const GIM_NAME = { summon: '소환', shield: '방어막', silence: '봉인', regen: '재생' };
+  // trick numbers, plain and cruel (tools/stage_test.js tunes them against a deck with no upgrades)
+  const GIM = {
+    plain: { summonN: 6, summonAt: [0.5], shieldAt: [2 / 3, 1 / 3], shieldT: 4, shieldCut: 0.8, regenWait: 1.5, regenRate: 0.03, silFirst: 9, silEvery: 14, silDur: 5, silN: 1 },
+    // cruel (chapters 4-8, some stages before): one extra trick, a second summon, a third shield. Softened 2026-10-26
+    // from 8 summons / 6 s 90% shields / 5% regen after 1 s / 2 seals of 7 s every 9 s, which no deck without upgrades beat
+    cruel: { summonN: 6, summonAt: [0.5, 0.2], shieldAt: [3 / 4, 1 / 2, 1 / 4], shieldT: 5, shieldCut: 0.85, regenWait: 1.3, regenRate: 0.035, silFirst: 8, silEvery: 12, silDur: 5, silN: 1 },
+  };
+  const gimOf = (u) => (u.cruel ? GIM.cruel : GIM.plain);
   const gimmicksOf = (rig, cruel) => {
     const g = GIMMICK[rig];
     if (!g) return [];
     return cruel ? [...new Set([...g.gim, ...g.cruel])] : g.gim.slice();
   };
   // g: the global stage index (chapter stages in a row); wave: 1.. within the stage
-  // stage factor tuned for 6-unit decks (tools/meta_test.js): +13% a stage through chapter 2 (stage 16), then +3% a stage
-  // so chapters 3-8 (stages 17-64) stay within reach of research, levels and gear
-  const stageK = (g) => Math.pow(1.13, Math.min(g, 16) - 1) * Math.pow(1.03, Math.max(0, g - 16));
-  const growth = (g, wave) => Math.pow(1.13, wave - 1) * stageK(g);
+  // stage factor tuned with no upgrades at all (tools/stage_test.js "강화 없음": no research, levels or unlocks): +4.5% a
+  // stage through chapter 2 (stage 16), then +0.4% a stage, so stage 64 is ~2.3x stage 1. A starting deck clears chapter 1
+  // every time and the last chapter about 60% of the time (a simple bot; the final bosses ~20%); upgrades are the margin.
+  // (The old +13% / +3% curve reached ~26x by stage 64: nothing past stage 12 could be cleared without upgrades.)
+  const CURVE = { early: 1.045, cap: 16, late: 1.004, wave: 1.13, boss: 0.4 }; // exposed for tuning
+  const stageK = (g) => Math.pow(CURVE.early, Math.min(g, CURVE.cap) - 1) * Math.pow(CURVE.late, Math.max(0, g - CURVE.cap));
+  const growth = (g, wave) => Math.pow(CURVE.wave, wave - 1) * stageK(g);
   // a stage's plan (js/story.js); without one, the old 10-wave layout with a rotating boss
   function planOf(opts, enemies) {
     if (opts.plan) return opts.plan;
@@ -161,7 +172,10 @@
       const kind = ENEMY[e.kind];
       const role = ['tank', 'attacker', 'support'][e.role] || 'attacker';
       // normals grow with the wave; an elite / boss always appears on the same wave, so it grows with the stage only
-      const rk = ROLE_K[role], g = (e.kind === 'normal' ? growth(stage, wave) : growth(stage, 4)) * (s.captain ? 1.6 : 1); // a captain: +60%
+      // a boss grows with stageK ** CURVE.boss: its tricks (and the cruel ones from chapter 4) already make it the stage's
+      // wall, so it climbs slower than the waves before it
+      const sg = e.kind === 'normal' ? growth(stage, wave) : e.kind === 'boss' ? Math.pow(CURVE.wave, 3) * Math.pow(stageK(stage), CURVE.boss) : growth(stage, 4);
+      const rk = ROLE_K[role], g = sg * (s.captain ? 1.6 : 1); // a captain: +60%
       const s1 = e.s1 || { range: 1, grid: [0, 0, 0, 0, 1, 0, 0, 0, 0] };
       const def = {
         id: s.rig, name: e.name, cls: ['light', 'heavy', 'air'][e.type] || 'light', role, tier: 0,
@@ -180,7 +194,7 @@
       if (e.kind === 'boss') {
         u.gim = gimmicksOf(s.rig, plan.cruel);
         u.cruel = !!plan.cruel;
-        u.done = {}; u.quietT = 0; u.silT = u.cruel ? 6 : 9; u.barrierT = 0;
+        u.done = {}; u.quietT = 0; u.silT = gimOf(u).silFirst; u.barrierT = 0;
       }
       events.push({ t: w.time, type: 'spawn', uid: u.uid });
       return u;
@@ -282,7 +296,7 @@
       if (kind === 'skill') m *= src.skillMul;
       const crit = rand() < (src.def.crit || 0);
       if (crit) m *= CRIT;
-      if (dst.barrierT > 0) m *= dst.cruel ? 0.1 : 0.2; // boss shield
+      if (dst.barrierT > 0) m *= 1 - gimOf(dst).shieldCut; // boss shield
       if (dst.gim) { dst.quietT = 0; dst.regenOn = false; } // regen waits for a lull
       const dv = dst.def.def * (dst.armourT > 0 ? ARMOUR : 1);
       const amount = Math.max(1, Math.round(src.def.atk * m * 300 / (300 + dv)));
@@ -307,10 +321,10 @@
     function hpTricks(e) {
       const f = e.hp / e.maxHp;
       if (e.gim.includes('summon')) {
-        const step = e.cruel && e.done.summon && !e.done.summon2 && f <= 0.2 ? 'summon2' : !e.done.summon && f <= 0.5 ? 'summon' : null;
-        if (step) {
-          e.done[step] = 1;
-          const n = e.cruel ? 8 : 6;
+        const G = gimOf(e), k = G.summonAt.findIndex((th, i) => !e.done['summon' + i] && f <= th);
+        if (k >= 0) {
+          e.done['summon' + k] = 1;
+          const n = G.summonN;
           const pool = Object.keys(enemies).filter((r) => enemies[r].kind === 'normal');
           for (let k = 0; k < n; k++) {
             const m = spawnEnemy({ rig: pool[(stage * 3 + k) % pool.length], row: k % 3, x: e.x + 0.8 + (k / 3 | 0) * 0.9 });
@@ -321,11 +335,12 @@
         }
       }
       if (e.gim.includes('shield')) {
-        (e.cruel ? [3 / 4, 1 / 2, 1 / 4] : [2 / 3, 1 / 3]).forEach((th, k) => {
+        const G = gimOf(e);
+        G.shieldAt.forEach((th, k) => {
           if (!e.done['s' + k] && f <= th) {
             e.done['s' + k] = 1;
-            e.barrierT = e.cruel ? 6 : 4;
-            gimmick(e, 'shield', `방어막 전개! ${e.barrierT}초간 피해 ${e.cruel ? 90 : 80}% 감소`);
+            e.barrierT = G.shieldT;
+            gimmick(e, 'shield', `방어막 전개! ${e.barrierT}초간 피해 ${Math.round(G.shieldCut * 100)}% 감소`);
           }
         });
       }
@@ -334,9 +349,10 @@
     function bossTricks(e, dt) {
       if (e.barrierT > 0) e.barrierT -= dt;
       e.quietT += dt;
-      if (e.gim.includes('regen') && e.quietT > (e.cruel ? 1 : 1.5) && e.hp < e.maxHp) {
-        if (!e.regenOn) { e.regenOn = true; gimmick(e, 'regen', `재생 시작! 초당 ${e.cruel ? 5 : 3}%`); }
-        const v = e.maxHp * (e.cruel ? 0.05 : 0.03) * dt;
+      const G = gimOf(e);
+      if (e.gim.includes('regen') && e.quietT > G.regenWait && e.hp < e.maxHp) {
+        if (!e.regenOn) { e.regenOn = true; gimmick(e, 'regen', `재생 시작! 초당 ${Math.round(G.regenRate * 100)}%`); }
+        const v = e.maxHp * G.regenRate * dt;
         e.hp = Math.min(e.maxHp, e.hp + v);
         e.regenAcc = (e.regenAcc || 0) + v;
         if (e.regenAcc >= e.maxHp * 0.02) { events.push({ t: w.time, type: 'heal', src: e.uid, dst: e.uid, amount: Math.round(e.regenAcc) }); e.regenAcc = 0; }
@@ -344,14 +360,14 @@
       if (e.gim.includes('silence')) {
         e.silT -= dt;
         if (e.silT <= 0) {
-          e.silT = e.cruel ? 9 : 14;
-          const dur = e.cruel ? 7 : 5;
+          e.silT = G.silEvery;
+          const dur = G.silDur;
           const order = alive(0).filter((a) => !(a.sealedT > 0)).sort((a, b) => b.dealt - a.dealt);
-          for (const a of order.slice(0, e.cruel ? 2 : 1)) {
+          for (const a of order.slice(0, G.silN)) {
             a.sealedT = dur; a.act = null;
             events.push({ t: w.time, type: 'seal', src: e.uid, dst: a.uid, dur });
           }
-          if (order.length) gimmick(e, 'silence', `${order[0].def.name}${e.cruel && order[1] ? ' 외 1명' : ''} 봉인! (${dur}초)`);
+          if (order.length) gimmick(e, 'silence', `${order[0].def.name}${G.silN > 1 && order[1] ? ` 외 ${Math.min(G.silN, order.length) - 1}명` : ''} 봉인! (${dur}초)`);
         }
       }
     }
@@ -461,6 +477,6 @@
     const gim = gimmicksOf(rig, plan.cruel);
     return { rig, name: enemies[rig].name, gim, gimNames: gim.map((g) => GIM_NAME[g]), tip: (GIMMICK[rig] || {}).tip || '', cruel: !!plan.cruel };
   }
-  const api = { create, STAR, FIELD, ENEMY, waveSpawns, reach, bossInfo, GIM_NAME, MANA_MAX, WAVES: 10 };
+  const api = { create, STAR, FIELD, ENEMY, CURVE, GIM, stageK, waveSpawns, reach, bossInfo, GIM_NAME, MANA_MAX, WAVES: 10 };
   if (typeof module !== 'undefined') module.exports = api; else root.WaveSim = api;
 })(this);

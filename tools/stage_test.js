@@ -1,4 +1,4 @@
-// Headless stages with a simple bot: node tools/stage_test.js [runs]
+// Headless stages with a simple bot: node tools/stage_test.js [runs] [--chapters]
 // Prints clear rate and waves reached per stage for a starter pool and for the full roster.
 const fs = require('fs');
 const path = require('path');
@@ -66,13 +66,28 @@ if (require.main === module) {
   const N = +process.argv[2] || 30;
   const starter = roster.ROSTER.filter((r) => r.tier <= 2).map((r) => r.id);
   const full = roster.ROSTER.map((r) => r.id);
-  for (const [name, pool, ups] of [['초기(B·A, 강화 없음)', starter, null], ['전원 해금', full, null], ['전원+강화', full, { atk: 1.3, hp: 1.3, baseHp: 10 }]]) {
+  // the curve (js/wavesim.js CURVE / GIM) is tuned on the first line: nothing bought at all
+  const chapters = process.argv.includes('--chapters'); // every stage, chapter averages and each chapter's hardest stage
+  for (const [name, pool, ups] of [['강화 없음(B·A만)', starter, null], ['해금만(강화 없음)', full, null], ['전원+강화', full, { atk: 1.3, hp: 1.3, baseHp: 10 }]]) {
     const line = [];
-    for (const stage of [1, 4, 8, 16, 24, 32, 48, 64]) {
-      let clear = 0, waves = 0;
-      for (let s = 1; s <= N; s++) { const st = playStage(stage, pool, s, ups); if (st.cleared) clear++; waves += st.cleared ? st.waves : st.wave - 1; }
-      line.push(`S${stage} 클리어 ${(clear / N * 100).toFixed(0)}% 평균 ${(waves / N).toFixed(1)}웨이브`);
+    if (chapters) {
+      for (let c = 0; c < STORY.CHAPTERS.length; c++) {
+        let sum = 0, low = 101, lowG = 0;
+        for (let i = 1; i <= STORY.PER_CHAPTER; i++) {
+          const g = c * STORY.PER_CHAPTER + i;
+          let clear = 0;
+          for (let s = 1; s <= N; s++) if (playStage(g, pool, s, ups).cleared) clear++;
+          const r = clear / N * 100; sum += r; if (r < low) { low = r; lowG = g; }
+        }
+        line.push(`${c + 1}장 평균 ${Math.round(sum / STORY.PER_CHAPTER)}% (최저 ${STORY.at(lowG).code} ${Math.round(low)}%)`);
+      }
+    } else {
+      for (const stage of [1, 4, 8, 16, 24, 32, 48, 64]) {
+        let clear = 0, waves = 0;
+        for (let s = 1; s <= N; s++) { const st = playStage(stage, pool, s, ups); if (st.cleared) clear++; waves += st.cleared ? st.waves : st.wave - 1; }
+        line.push(`S${stage} 클리어 ${(clear / N * 100).toFixed(0)}% 평균 ${(waves / N).toFixed(1)}웨이브`);
+      }
     }
-    console.log(name.padEnd(16), line.join(' | '));
+    console.log(name.padEnd(14), line.join(' | '));
   }
 }
