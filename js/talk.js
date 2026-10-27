@@ -162,7 +162,7 @@
       let im = stage.querySelector(`.stand[data-p="${p}"]:not(.leaving)`);
       if (!im) {
         im = document.createElement('img');
-        im.className = 'stand'; im.dataset.p = p; im.dataset.s = s; im.alt = '';
+        im.className = 'stand'; im.dataset.p = p; im.dataset.s = s; im.alt = ''; im.draggable = false;
         im.src = `assets/story/stand/${s}.webp`;
         stage.appendChild(im);
         const eff = n.app[p] === 'l' ? 'ap-l' : n.app[p] === 'r' ? 'ap-r' : 'ap-fade';

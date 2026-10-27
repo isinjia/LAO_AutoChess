@@ -1400,5 +1400,8 @@
   // live getters (Object.assign would copy their current values instead)
   Object.defineProperty(api, 'sim', { get: () => sim });
   Object.defineProperty(api, 'running', { get: () => running });
+  // a game, not a page: no long-press menu (save image / select) and no dragging pictures out of the stage
+  document.addEventListener('contextmenu', (e) => { if (e.target.closest && e.target.closest('#stage')) e.preventDefault(); });
+  document.addEventListener('dragstart', (e) => { if (e.target.closest && e.target.closest('#stage')) e.preventDefault(); });
   window.BATTLE = api;
 })();

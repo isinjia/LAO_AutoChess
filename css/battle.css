@@ -157,3 +157,9 @@ body.noHtag .ubar.tagged:not(.enemy) .st { top: 13px; right: -14px; left: auto; 
 .htagTip { position: fixed; z-index: 60; transform: translate(-50%, -100%) translateY(-5px); padding: 3px 8px; font-size: 11px; font-weight: 700; white-space: nowrap; color: #fff; background: rgba(10, 12, 18, 0.92); border: 1px solid rgba(255, 255, 255, 0.25); border-radius: 4px; pointer-events: none; }
 .htagTip[hidden] { display: none; }
 .vol.htagSet { grid-template-columns: auto 1fr; margin-bottom: 12px; }
+
+/* a game, not a page: a long press never selects, saves or highlights anything (phones show a blue selection box and a
+   "save image" menu on <img> otherwise). Pictures are not dragged out of the page either. */
+html, body, #stage, #stage * { -webkit-user-select: none; user-select: none; -webkit-touch-callout: none; -webkit-tap-highlight-color: transparent; }
+#stage img { -webkit-user-drag: none; user-drag: none; }
+#story .stand { pointer-events: none; } /* the dialogue art is scenery: a tap goes to the dialogue (next line) */
