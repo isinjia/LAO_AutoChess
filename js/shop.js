@@ -60,11 +60,11 @@
     $('profPic').src = icon(secretary());
   }
   function renderLobby() {
+    if (page === 'home') page = 'stage'; // no mobile-style home: the operation map is the hub
     renderTop();
-    const home = page === 'home';
+    const home = false;
     $('lobbyHome').hidden = !home;
     $('lobbyPage').hidden = home;
-    $('btnHome').hidden = home;
     $('lobby').dataset.page = page;
     if (home) { renderHome(); return; }
     if (L) L.pause(true);
@@ -73,6 +73,7 @@
     ({ stage: renderStagePage, deck: renderDeckPage, units: renderUnitsPage, archive: renderArchivePage, settings: renderSettingsPage })[page]();
   }
   function go(p) {
+    if (p === 'home') { if (page === 'stage') { meta.save(); showTitle(); return; } p = 'stage'; } // back: pages -> map -> title
     if (p === page) return;
     page = p;
     if (p === 'stage') { stageSel = nextStage(); chapterSel = S.at(stageSel).chapter.id; }
@@ -245,8 +246,9 @@
     $('lobby').hidden = false;
     $('roundResult').hidden = true;
     B.hideInfo();
-    page = 'home';
-    chapterSel = S.at(nextStage()).chapter.id;
+    page = 'stage';
+    stageSel = nextStage(); chapterSel = S.at(stageSel).chapter.id;
+    if (L) L.pause(true);
     renderLobby();
     A.bgm('title');
     T.signal('lobby');
@@ -272,6 +274,8 @@
     if (t.dataset.usel) { unitSel = t.dataset.usel; renderLobby(); return; }
     if (t.dataset.replay) { replay(t.dataset.replay); return; }
     if (t.dataset.go) {
+      const ga = S.at(+t.dataset.go);
+      if (ga.si === 0 && !meta.data.seen['c' + ga.chapter.id]) { startStage(+t.dataset.go); return; } // a new chapter: its party is set in startStage
       if (meta.data.deck.length < Math.min(DECK_N(), meta.data.unlocked.length)) { toast(`편성을 ${DECK_N()}명 채워 주세요`); go('deck'); return; }
       startStage(+t.dataset.go); return;
     }
@@ -314,13 +318,16 @@
     const scenes = [], ng = NG(), ngc = ng && ng.chapters && ng.chapters[a.chapter.id];
     if (ng && g === 1 && !meta.data.seen.ngp) { scenes.push(sceneNG(ng.prologue, ['NEW GAME+', `${meta.data.cycle}회차`])); meta.data.seen.ngp = 1; }
     if (a.si === 0 && !meta.data.seen['c' + a.chapter.id]) {
+      const party = meta.party();
+      if (party.length) { meta.setDeck(meta.partyDeck()); toast(`이번 작전 부대: ${party.map((id) => RO.BY_ID[id].name).join(', ')}`, true); }
       scenes.push(sceneIntro(a.chapter));
       if (ngc) scenes.push(sceneNG(ngc.intro, [`CHAPTER ${a.chapter.id}`, `${a.chapter.title} — 2회차`]));
       meta.data.seen['c' + a.chapter.id] = 1;
     }
     if (!meta.data.seen['s' + g]) { scenes.push(sceneStage(a)); meta.data.seen['s' + g] = 1; }
     meta.save();
-    if (scenes.length) { $('lobby').hidden = true; playStory(scenes, `${a.code} ${a.stage.name}`, () => beginStage(g)); } else beginStage(g);
+    $('lobby').hidden = true;
+    if (scenes.length) playStory(scenes, `${a.code} ${a.stage.name}`, () => beginStage(g)); else beginStage(g);
   }
   function beginStage(g) {
     const n = g;
@@ -328,10 +335,10 @@
     B.setBg(plan.bg);
     // the tutorial's first stage: three ★2 units already stand one per lane (front column), so the first waves are short
     // and nothing gets through while the player learns the shop
-    const starters = T.active() && n === 1 && meta.data.cycle === 1 ? [['nymph', 0, 0, 2], ['gnome', 0, 1, 2], ['leprechaun', 0, 2, 2]] : null;
+    const starters = T.active() && n === 1 && meta.data.cycle === 1 ? [['valkyrie', 0, 0, 2], ['leona', 0, 1, 2], ['nymph', 0, 2, 2]] : null;
     st = Stage.create({ roster: RO, stage: n, plan, seed: (Date.now() >>> 0) % 1000000, deck: meta.data.deck, pool: meta.data.unlocked, baseHp: meta.baseHp(), bonusGold: meta.bonusGold(), starters });
     $('lobby').hidden = true;
-    document.body.classList.remove('lobby');
+    document.body.classList.remove('lobby', 'fighting'); // straight from a result ("다음 작전"): the last fight is over
     relayout();
     phase = 'prep';
     B.hideInfo();
@@ -627,7 +634,9 @@
         (r.chapterDone ? `<br><b class="rrBonus">챕터 ${r.chapterDone} 클리어 보상</b> 전 대원 공격력·체력 +${Math.round(meta.RULES.bonusAtk * 100)}%, 기지 체력 +${meta.RULES.bonusBase}` : '') +
         (r.joined.length ? `<br><b class="rrJoin">합류</b> ${r.joined.map((id) => RO.BY_ID[id].name).join(', ')}` : '');
       if (r.joined.length) setTimeout(() => A.voice(r.joined[0], 'Join', true), 1600);
-      $('btnNext').textContent = '로비로';
+      const more = st.stage < S.total();
+      $('btnNext').textContent = r.ending ? '계속' : st.cleared ? (more ? `다음 작전 ${S.at(st.stage + 1).code} ▶` : '계속') : '다시 도전';
+      $('btnMap').hidden = !!r.ending;
       $('roundResult').hidden = false;
       renderHud();
       A.sfx(st.cleared ? 'win' : 'fail');
@@ -715,23 +724,30 @@
     if (st.buyXp()) { A.sfx('reinforce', 0.8); if (st.level > lv) { toast(`레벨 ${st.level}: 배치 ${st.cap()}명`, true); autoPlace(); changed(); T.signal('levelUp'); } else renderAll(); }
   };
   $('btnFight').onclick = fight;
-  $('btnNext').onclick = () => {
+  // after a stage: the epilogue when a chapter ends, then the ending, the next stage, a retry or the map
+  function afterStage(toMap) {
     $('roundResult').hidden = true;
-    const a = st && S.at(st.stage), r = lastResult, ending = !!(r && r.ending);
-    if (st && st.cleared && a.last && !meta.data.seen['o' + a.chapter.id]) {
+    const a = st && S.at(st.stage), r = lastResult, ending = !!(r && r.ending), cleared = !!(st && st.cleared), g = st ? st.stage : 1;
+    const next = () => {
+      if (ending) showEnding();
+      else if (toMap) openLobby();
+      else startStage(cleared ? Math.min(g + 1, S.total()) : g); // the story runs on, like a packaged game
+    };
+    if (cleared && a.last && !meta.data.seen['o' + a.chapter.id]) {
       meta.data.seen['o' + a.chapter.id] = 1; meta.save();
       const ng = NG(), ngc = ng && ng.chapters && ng.chapters[a.chapter.id];
       const scenes = [sceneOutro(a.chapter)];
       if (ngc) scenes.push(sceneNG(ngc.outro, ['EPILOGUE', `${a.chapter.title} — 2회차`]));
       if (ending && ng) scenes.push(sceneNG(ng.trueEnding, ['TRUE ENDING', '진엔딩']));
-      playStory(scenes, `챕터 ${a.chapter.id} · ${a.chapter.title} — 에필로그`, ending ? showEnding : openLobby);
+      playStory(scenes, `챕터 ${a.chapter.id} · ${a.chapter.title} — 에필로그`, next);
       return;
     }
-    if (ending) { showEnding(); return; }
-    openLobby();
-  };
+    next();
+  }
+  $('btnNext').onclick = () => afterStage(false);
+  $('btnMap').onclick = () => afterStage(true);
   $('btnRetreat').onclick = () => {
-    if (phase === 'prep' && window.confirm('작전을 포기하고 로비로 돌아갈까요?')) {
+    if (phase === 'prep' && window.confirm('작전을 포기하고 작전 지도로 돌아갈까요?')) {
       meta.finishStage(st.stage, false, st.wave - 1);
       openLobby();
     }

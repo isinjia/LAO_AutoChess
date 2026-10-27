@@ -336,34 +336,49 @@
   // cycle: the playthrough (1 = story, 2+ = new game plus: every boss cruel, every bug ngK times stronger)
   // new game plus: bugs ngK times stronger, ng0 at 1-1 easing to ng1 at the last stage (the whole squad and every
   // bonus make the early chapters trivial, while the late ones are already steep). tools/stage_test.js --story
-  const TUNE = { ng0: 2.4, ng1: 1.05 };
+  // chK: per-chapter strength of the bugs, set against the chapter's party (a weak party gets a gentler chapter)
+  const TUNE = { ng0: 2.4, ng1: 1.05, chK: { 3: 0.95, 4: 0.85, 5: 1.12, 6: 1.25 }, ngChK: { 4: 0.9, 6: 1.15 } }; // ngChK: the 2nd cycle (everyone in the squad)
   const ngK = (g) => TUNE.ng0 * Math.pow(TUNE.ng1 / TUNE.ng0, (g - 1) / Math.max(1, total() - 1));
   function plan(g, cycle = 1) {
     const a = at(g);
     const ng = cycle >= 2;
     const cruel = ng || (a.stage.cruel != null ? a.stage.cruel : a.chapter.cruel);
-    return { g, waves: 8, eliteWave: 4, final: a.stage.final, cruel, bg: a.chapter.bg, code: a.code, cycle, ngK: ng ? ngK(g) : 1 };
+    return { g, waves: 8, eliteWave: 4, final: a.stage.final, cruel, bg: a.chapter.bg, code: a.code, cycle, ngK: ng ? ngK(g) * (TUNE.ngChK[a.chapter.id] || 1) : TUNE.chK[a.chapter.id] || 1 };
   }
 
-  // who joins the squad (the deck pool) in the story: at the start, then on each chapter clear. Order follows the
-  // story's cast and the units' strength (B / A first, SS from chapter 2 on), with a tank and a support at each step; the 2nd cycle starts with everyone.
+  // who joins the squad (the deck pool): everyone who appears in the story joins at the start of the chapter where she
+  // first appears (JOIN[k] = the newcomers of chapter k + 1). Units the story never shows join in the 2nd cycle (NG_ONLY).
   const JOIN = {
-    0: ['brownie', 'gnome', 'leprechaun', 'impet', 'nymph', 'constantia', 'lrl'],
-    1: ['valkyrie', 'raven', 'banshee', 'andvari'],
-    2: ['undine', 'leona', 'sylphid', 'amy', 'daphne'],
-    3: ['blacklilith', 'labiata', 'hraesvelgr', 'empress', 'phoenix'],
-    4: ['khan', 'harpy', 'lemonadealpha', 'zero', 'thetis'],
-    5: ['eternity', 'titania', 'cyclopsprincess', 'blindprincess', 'sleipnir'],
-    6: ['mercury', 'tiamat', 'ullr', 'fafnir', 'azazel'],
-    7: ['brunhild', 'hela', 'ramiel', 'saraqael'],
+    0: ['leona', 'nymph', 'valkyrie', 'labiata', 'constantia'],
+    1: ['leprechaun', 'brownie', 'impet', 'gnome'],
+    2: ['raven', 'hraesvelgr', 'harpy', 'khan'],
+    3: ['lemonadealpha', 'lrl', 'amy', 'sylphid', 'banshee'],
+    4: ['blacklilith', 'titania', 'eternity', 'daphne'],
+    5: ['tiamat', 'mercury', 'undine', 'thetis'],
+    6: ['brunhild', 'hela'],
+    7: [],
   };
-  // the squad after `chapters` chapter clears (cycle 2+: everyone)
+  const NG_ONLY = ['andvari', 'empress', 'zero', 'phoenix', 'ramiel', 'blindprincess', 'saraqael', 'cyclopsprincess', 'sleipnir', 'azazel', 'ullr', 'fafnir'];
+  // each chapter's party: the squad its story follows. The deck of a chapter's first sortie is built from it (then the
+  // strongest of the rest), so the units on the field are the ones in the scenes
+  const PARTY = {
+    1: ['leona', 'valkyrie', 'nymph'], // 발할라의 돌격
+    2: ['brownie', 'leprechaun', 'gnome', 'impet'], // 스틸라인 출동
+    3: ['raven', 'hraesvelgr', 'harpy'], // 레이븐과 스카이 나이츠
+    4: ['lemonadealpha', 'lrl', 'amy', 'sylphid', 'banshee'], // 공무원과 둠 브링어
+    5: ['blacklilith', 'titania', 'eternity', 'daphne'], // 리리스의 호위대
+    6: ['tiamat', 'mercury', 'undine', 'thetis'], // 스트라이커즈와 호라이즌
+    7: ['leona', 'brownie', 'gnome', 'leprechaun', 'valkyrie', 'nymph'], // 스틸라인이 벽, 발할라가 칼
+    8: [], // 전원 집결: the strongest
+  };
+  // the squad after `chapters` chapter clears: the story's cast so far (cycle 2+: everyone)
   function squad(chapters, cycle = 1) {
     const out = [];
-    for (let c = 0; c <= (cycle >= 2 ? 7 : Math.min(7, chapters)); c++) out.push(...JOIN[c]);
+    for (let c = 0; c <= Math.min(7, cycle >= 2 ? 7 : chapters); c++) out.push(...JOIN[c]);
+    if (cycle >= 2) out.push(...NG_ONLY);
     return out;
   }
 
-  const api = { CHAPTERS, PER_CHAPTER, total, at, plan, JOIN, TUNE, squad };
+  const api = { CHAPTERS, PER_CHAPTER, total, at, plan, JOIN, NG_ONLY, PARTY, TUNE, squad };
   if (typeof module !== 'undefined') module.exports = api; else root.STORY = api;
 })(this);

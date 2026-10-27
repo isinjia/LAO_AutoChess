@@ -13,8 +13,7 @@
   // each step: target (selector or function returning an element / rect), text, and either `wait` (a signal) or a "다음" button
   const STEPS = {
     lobby: [
-      { target: '#btnOperation', text: '<b>오르카 방어전</b>에 오신 것을 환영합니다, 사령관님.<br>철충의 공세를 막아 기지를 지켜야 합니다. <b>작전 개시</b>를 눌러 주세요.', wait: 'page' },
-      { target: '#btnSortie', text: '챕터 1의 첫 작전 <b>1-1</b>입니다. 상점에는 <b>편성</b>한 대원 6명만 같은 확률로 나옵니다(지금은 자동 편성). <b>출격</b>하세요.', wait: 'stage' },
+      { target: '#btnSortie', text: '<b>오르카 방어전</b>에 오신 것을 환영합니다, 사령관님.<br>여기는 <b>작전 지도</b>입니다. 이야기는 스테이지를 깨며 차례로 이어집니다. 첫 작전 <b>1-1</b>에 <b>출격</b>하세요.', wait: 'stage' },
     ],
     stage: [
       { target: '#zones', text: '첫 작전이라 대원 <b>3명</b>이 진형에 먼저 서 있습니다.<br>진형의 세 줄이 철충이 오는 <b>세 레인</b>이에요. 줄마다 한 명씩 서 있으면 철충이 기지로 새지 않습니다. 끌어서 칸을 옮길 수 있어요.' },
@@ -29,7 +28,7 @@
     elite: [{ target: '#status', text: '다음은 <b>엘리트 웨이브</b>입니다. 단단하고 강한 철충이 섞여 나옵니다.<br>막으면 골드를 4 더 받고, 장비 보상을 고를 수 있습니다.' }],
     boss: [{ target: '#status', text: '<b>마지막 웨이브</b>입니다! 스테이지 대장이나 보스가 나옵니다. 보스는 <b>기믹</b>(소환·방어막·봉인·재생)이 있어요.<br>위 상태줄의 힌트를 보고 진형을 다듬으세요.' }],
     lobbyAfter: [
-      { target: '.lhMenu .mRow', text: '이야기가 진행되면 <b>대원</b>이 합류하고, 챕터를 깰 때마다 <b>전 대원이 강해집니다</b>.<br><b>편성</b>에서 데려갈 6명을 고르세요. 새로 합류한 대원은 <b>대원</b>에서 볼 수 있습니다.', last: true },
+      { target: '.lhNav', text: '이야기가 진행되면 <b>대원</b>이 합류하고, 챕터를 깰 때마다 <b>전 대원이 강해집니다</b>.<br><b>편성</b>에서 데려갈 6명을 고르세요. 새로 합류한 대원은 <b>대원</b>에서 볼 수 있습니다.', last: true },
     ],
   };
 

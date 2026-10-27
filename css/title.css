@@ -50,3 +50,18 @@
 .uDetail.locked .uArt { filter: grayscale(1) brightness(0.35); }
 #rrSub .rrBonus { color: var(--amber); }
 #rrSub .rrJoin { color: #7fd6ff; }
+
+/* packaged game: no mobile-style lobby home (secretary, banner, tiles, commander level). The operation map is the hub;
+   the top bar keeps progress and a plain menu */
+#lobbyHome, #lobby #l2d, #lobby .lbShade, .lhTop .prof { display: none !important; }
+.lhNav { display: inline-flex; gap: 6px; margin: 0 4px; }
+.lhNav button { height: 34px; min-width: 64px; padding: 0 14px; font-size: 14px; font-weight: 700; }
+#lobby[data-page="deck"] .lhNav [data-page="deck"], #lobby[data-page="units"] .lhNav [data-page="units"], #lobby[data-page="archive"] .lhNav [data-page="archive"] { color: #111; background: var(--amber); }
+#roundResult .rrBtns { display: flex; gap: 12px; justify-content: center; margin-top: 18px; }
+#roundResult .rrBtns button { min-width: 150px; height: 46px; font-size: 16px; font-weight: 700; }
+#roundResult .rrBtns button[hidden] { display: none; }
+@media (pointer: coarse) {
+  .lhNav button { height: 44px; min-width: 84px; font-size: 17px; }
+  #roundResult .rrBtns button { min-width: 190px; height: 58px; font-size: 20px; }
+}
+.lhTop .res { margin-left: auto; }

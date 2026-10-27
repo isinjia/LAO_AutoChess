@@ -79,11 +79,12 @@ if (require.main === module) {
         const done = cycle >= 2 ? STORY.CHAPTERS.length : c;
         const pool = STORY.squad(done, cycle), bon = Meta.chapterBonus(done);
         const ups = { atk: bon.atk, hp: bon.hp, baseHp: bon.base };
+        const deck = Meta.autoDeck(roster, pool, STORY.PARTY[c + 1] || []); // the chapter's party first, like the game
         let sum = 0, low = 101, lowG = 0;
         for (let i = 1; i <= STORY.PER_CHAPTER; i++) {
           const g = c * STORY.PER_CHAPTER + i;
           let clear = 0;
-          for (let s = 1; s <= N; s++) if (playStage(g, pool, s, ups, { cycle }).cleared) clear++;
+          for (let s = 1; s <= N; s++) if (playStage(g, pool, s, ups, { cycle, deck }).cleared) clear++;
           const r = clear / N * 100; sum += r; if (r < low) { low = r; lowG = g; }
         }
         line.push(`${c + 1}장 ${Math.round(sum / STORY.PER_CHAPTER)}% (최저 ${STORY.at(lowG).code} ${Math.round(low)}%)`);

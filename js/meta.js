@@ -63,7 +63,11 @@
         return fresh_;
       },
       // when each unit joins (cycle 1): 0 = from the start, n = after chapter n
-      joinsAfter(id) { const J = story().JOIN; for (const c in J) if (J[c].includes(id)) return +c; return 0; },
+      // when each unit joins (cycle 1): 0 = from the start, n = after chapter n, -1 = the 2nd cycle
+      joinsAfter(id) { const J = story().JOIN; for (const c in J) if (J[c].includes(id)) return +c; return -1; },
+      // the party of the chapter about to be played (js/story.js PARTY) and a deck built around it
+      party() { const c = Math.min(story().CHAPTERS.length, Math.floor(data.stageCleared / PER()) + 1); return (story().PARTY[c] || []).filter((id) => data.unlocked.includes(id)); },
+      partyDeck() { return autoDeck(roster, data.unlocked, m.party()); },
       // what a stage run gets from the story: chapter bonuses (WaveSim `upgrades`, Stage options)
       upgrades() { const b = chapterBonus(m.bonusChapters()); return { atk: b.atk, hp: b.hp, levels: {} }; },
       baseHp: () => 20 + chapterBonus(m.bonusChapters()).base,
@@ -74,7 +78,7 @@
       // the deck: saved picks still in the squad, filled up automatically to deckSize
       deck() {
         const d = [...new Set((data.deck || []).filter((id) => roster.BY_ID[id] && data.unlocked.includes(id)))].slice(0, RULES.deckSize);
-        for (const id of autoDeck(roster, data.unlocked)) { if (d.length >= RULES.deckSize) break; if (!d.includes(id)) d.push(id); }
+        for (const id of autoDeck(roster, data.unlocked, m.party())) { if (d.length >= RULES.deckSize) break; if (!d.includes(id)) d.push(id); }
         return d;
       },
       setDeck(ids) {
@@ -102,7 +106,7 @@
         data.cycle++;
         data.stageCleared = 0; data.best = {}; data.seen = {};
         m.sync();
-        data.deck = autoDeck(roster, data.unlocked);
+        data.deck = autoDeck(roster, data.unlocked, m.party());
         m.save();
         return true;
       },
@@ -115,12 +119,14 @@
   // a sensible deck from a pool: the best tank and the best support, then the strongest of the rest, with at most
   // two S and two SS cards (they cost 3-4 gold: an all-SS deck buys too few copies to merge and loses mid-game)
   const TIER_CAP = { 3: 2, 4: 2 };
-  function autoDeck(roster, pool) {
+  // prefer: a chapter's party, taken first (in its order) before the usual picks
+  function autoDeck(roster, pool, prefer = []) {
     const score = (id) => { const d = roster.BY_ID[id]; return d.tier * 100 + (d.atk * d.hp) / 1e6; };
     const list = pool.filter((id) => roster.BY_ID[id]).sort((a, b) => score(b) - score(a));
     const out = [], n = {};
     const fits = (id) => (n[roster.BY_ID[id].tier] || 0) < (TIER_CAP[roster.BY_ID[id].tier] || 9);
     const add = (id) => { out.push(id); const t = roster.BY_ID[id].tier; n[t] = (n[t] || 0) + 1; };
+    for (const id of prefer) if (out.length < RULES.deckSize && pool.includes(id) && roster.BY_ID[id] && !out.includes(id)) add(id);
     for (const role of ['tank', 'support']) { const id = list.find((x) => roster.BY_ID[x].role === role && !out.includes(x) && fits(x)); if (id) add(id); }
     for (const id of list) { if (out.length >= RULES.deckSize) break; if (!out.includes(id) && fits(id)) add(id); }
     for (const id of list) { if (out.length >= RULES.deckSize) break; if (!out.includes(id)) add(id); } // a small pool: anyone

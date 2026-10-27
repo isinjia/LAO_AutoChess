@@ -22,7 +22,7 @@ for (let a = 1; a <= A; a++) {
       let tries = 0, cleared = false;
       while (!cleared && tries < MAX) {
         tries++;
-        m.setDeck(Meta.autoDeck(roster, m.data.unlocked)); // the squad grows: re-pick like the "자동 편성" button
+        m.setDeck(m.partyDeck()); // the chapter's party first, like the game's first sortie of a chapter
         const st = playStage(g, m.data.unlocked, a * 100000 + cycle * 10000 + g * 100 + tries, m.upgrades(), { baseHp: m.baseHp(), deck: m.deck(), cycle });
         m.finishStage(g, st.cleared, st.cleared ? st.waves : st.wave - 1);
         cleared = st.cleared;

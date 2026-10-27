@@ -86,7 +86,7 @@
 
   <div id="info" hidden></div>
   <div id="result" hidden><div class="box"><div id="resultText"></div><div id="resultSub"></div><button id="btnAgain" class="primary">다시 전투</button></div></div>
-  <div id="roundResult" hidden><div class="box"><div id="rrTitle"></div><div id="rrSub"></div><button id="btnNext" class="primary">로비로</button></div></div>
+  <div id="roundResult" hidden><div class="box"><div id="rrTitle"></div><div id="rrSub"></div><div class="rrBtns"><button id="btnMap">작전 지도</button><button id="btnNext" class="primary">다음 작전</button></div></div></div>
   <!-- title: three save slots, new game / continue / next cycle (js/shop.js showTitle) -->
   <section id="title" hidden></section>
   <!-- ending: the cycle's last stage cleared -->
@@ -119,7 +119,7 @@
     </div>
     <div class="lhTop">
       <div class="prof"><div class="pAv"><img id="profPic" alt=""></div><div class="pInfo"><div class="pName">사령관<small>COMMANDER</small></div><div class="pLv"><small>LV</small><b id="profLv">1</b><span class="pXp"><i id="profXp"></i></span></div></div></div>
-      <div class="res"><span class="pill cyc"><b id="lobbyCycle">1</b><small>회차</small></span><span class="pill"><span class="starI">★</span><b id="lobbyStars">0</b><small id="lobbyStarsMax">/24</small></span><button class="ico" data-page="home" id="btnHome" title="홈"><svg viewBox="0 0 24 24"><path d="M3 11l9-7 9 7M5.5 9.5V20h13V9.5"/></svg></button><button class="ico" data-page="settings" title="설정"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M12 2.5v3M12 18.5v3M2.5 12h3M18.5 12h3M5.3 5.3l2.1 2.1M16.6 16.6l2.1 2.1M5.3 18.7l2.1-2.1M16.6 7.4l2.1-2.1"/></svg></button></div>
+      <div class="res"><span class="pill cyc"><b id="lobbyCycle">1</b><small>회차</small></span><span class="pill"><span class="starI">★</span><b id="lobbyStars">0</b><small id="lobbyStarsMax">/24</small></span><span class="lhNav"><button data-page="deck">편성</button><button data-page="units">대원</button><button data-page="archive">기록</button></span><button class="ico" data-page="settings" title="설정"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M12 2.5v3M12 18.5v3M2.5 12h3M18.5 12h3M5.3 5.3l2.1 2.1M16.6 16.6l2.1 2.1M5.3 18.7l2.1-2.1M16.6 7.4l2.1-2.1"/></svg></button></div>
     </div>
   </section>
   <!-- supply shop (shop time) and elite reward -->
