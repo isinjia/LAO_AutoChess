@@ -265,7 +265,7 @@
     if (out) { A.sfx('click'); const d = meta.data.deck.slice(); d.splice(+out.dataset.dout, 1); meta.setDeck(d); deckSlot = -1; renderLobby(); return; }
     if (t.tagName === 'BUTTON' && !t.disabled) A.sfx('click');
     if (t.id === 'l2d') { const sec = secretary(); if (L && L.touch()) A.voice(sec, ['Join', 'Reinforce', 'MVP', 'SortiePick'][Math.floor(Math.random() * 4)], true); return; }
-    if (t.id === 'secSwap') { const ids = L.ids, sec = ids[(ids.indexOf(secretary()) + 1) % ids.length]; try { localStorage.setItem(SEC_KEY, sec); } catch (err) { /* fine */ } renderLobby(); return; }
+    if (t.id === 'secSwap') { const ids = L.ids, sec = ids[(ids.indexOf(secretary()) + 1) % ids.length]; try { localStorage.setItem(SEC_KEY, sec); } catch (err) { /* fine */ } renderLobby(); A.voice(sec, 'Join', true); return; }
     if (t.dataset.page) { go(t.dataset.page); return; }
     if (t.dataset.ch) { chapterSel = +t.dataset.ch; const first = (chapterSel - 1) * S.PER_CHAPTER + 1; stageSel = Math.max(first, Math.min(first + S.PER_CHAPTER - 1, nextStage())); renderLobby(); return; }
     if (t.dataset.sel) { stageSel = +t.dataset.sel; renderLobby(); return; }
@@ -575,6 +575,7 @@
       T.signal('merge');
     } else {
       A.sfx('purchase');
+      if (st.units().filter((x) => x.u.id === id).length === 1) A.voice(id, 'Join');
     }
     autoPlace();
     changed();
@@ -625,6 +626,7 @@
       $('rrSub').innerHTML = (st.cleared ? `${st.waves}웨이브를 모두 막았습니다` : `${res.wave}웨이브에서 기지가 무너졌습니다`) +
         (r.chapterDone ? `<br><b class="rrBonus">챕터 ${r.chapterDone} 클리어 보상</b> 전 대원 공격력·체력 +${Math.round(meta.RULES.bonusAtk * 100)}%, 기지 체력 +${meta.RULES.bonusBase}` : '') +
         (r.joined.length ? `<br><b class="rrJoin">합류</b> ${r.joined.map((id) => RO.BY_ID[id].name).join(', ')}` : '');
+      if (r.joined.length) setTimeout(() => A.voice(r.joined[0], 'Join', true), 1600);
       $('btnNext').textContent = '로비로';
       $('roundResult').hidden = false;
       renderHud();
