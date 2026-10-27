@@ -1,2 +1,2 @@
 // Game version shown on the title screen (bottom right). Bump it with each release pushed to GitHub Pages.
-window.GAME_VERSION = { v: 'V1.00', date: '2026.10.27' };
+window.GAME_VERSION = { v: 'V0.51' };
