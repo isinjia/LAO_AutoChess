@@ -207,7 +207,6 @@
     textEl.textContent = '';
     typing = { full: n.t, n: 0 };
     log.push([n.name || '', n.t, n.who]);
-    if (n.voice && window.AUDIO) AUDIO.voice(n.voice, 'Join'); // a line of life when someone steps in (cooldowns keep it rare)
     busy = false;
   }
 
