@@ -47,6 +47,9 @@ UNITS = {
     "lrlrose": "PECS_LRL_N", "amy": "BR_Amy_N", "cyclopsprincess": "PECS_CyclopsePrincess_N", "blindprincess": "PECS_BlindPrincess_N",
     # Sisters of Valhalla, chapter 1 (2026-10-27)
     "alvis": "BR_Alvis_N", "sandman": "BR_SandMan_N",
+    # chapter squads filled from the same units (2026-10-27)
+    "mari": "BR_Marie_N", "griffon": "BR_PA00EL_N", "lindwurm": "BR_Lindwurm_N", "may": "BR_May_N",
+    "pero": "3P_CSPerrault_N", "hachiko": "3P_Hachiko_N", "lancermina": "ST_Lancer_N",
 }
 
 # NS1 / NS2 skins: <id>_s1 / <id>_s2 (the card game's ★2 / ★3 look); built only when asked for
@@ -729,6 +732,10 @@ def apply_unity_meshes(nodes, uid, atlas):
         by_path.setdefault(n["path"], []).append(i)
     seen = {}
     for part in data["parts"]:
+        # a prefab whose root is named "~..." (페로): Unity writes "~<root>(Clone)/size_root/..", the web rig "~size_root/.."
+        m = re.match(r"^~[^/]*\(Clone\)/(.*)$", part["path"])
+        if m and part["path"] not in by_path:
+            part["path"] = "~" + m.group(1)
         key = (part["path"], part["sib"])
         if key not in seen:
             seen[key] = sum(1 for k in seen if k[0] == part["path"])

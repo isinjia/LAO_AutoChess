@@ -353,11 +353,11 @@
   // Units the story never fields join in the 2nd cycle (NG_ONLY).
   const JOIN = {
     0: ['leona', 'valkyrie', 'nymph', 'andvari', 'alvis', 'sandman'],
-    1: ['brownie', 'leprechaun', 'gnome', 'impet', 'phoenix'],
-    2: ['raven', 'harpy', 'hraesvelgr', 'sleipnir'],
-    3: ['lemonadealpha', 'lrl', 'amy', 'sylphid', 'banshee'],
-    4: ['blacklilith', 'eternity', 'titania', 'daphne'],
-    5: ['mercury', 'tiamat', 'thetis', 'undine', 'ullr'],
+    1: ['brownie', 'leprechaun', 'gnome', 'impet', 'phoenix', 'mari'],
+    2: ['raven', 'harpy', 'hraesvelgr', 'sleipnir', 'griffon', 'lindwurm'],
+    3: ['lemonadealpha', 'lrl', 'amy', 'sylphid', 'banshee', 'may'],
+    4: ['blacklilith', 'eternity', 'titania', 'daphne', 'pero', 'hachiko'],
+    5: ['mercury', 'tiamat', 'thetis', 'undine', 'ullr', 'lancermina'],
     6: ['khan', 'brunhild', 'hela'],
     7: ['constantia', 'labiata'],
   };
@@ -365,11 +365,11 @@
   // each chapter's party: who the scenes send into the field (the deck of the chapter's first sortie, no outsiders)
   const PARTY = {
     1: ['leona', 'valkyrie', 'nymph', 'andvari', 'alvis', 'sandman'], // 발할라의 돌격 (+안드바리: 발할라 보급, +알비스·샌드걸: 발할라 II)
-    2: ['brownie', 'leprechaun', 'gnome', 'impet', 'phoenix'], // 스틸라인 출동 (+피닉스: 스틸 라인 지원부대)
-    3: ['raven', 'harpy', 'hraesvelgr', 'sleipnir'], // 레이븐과 스카이 나이츠 (+슬레이프니르). 칸은 배에 남는다
-    4: ['lemonadealpha', 'lrl', 'amy', 'sylphid', 'banshee'], // 공무원과 둠 브링어
-    5: ['blacklilith', 'eternity', 'titania', 'daphne'], // 리리스와 셋 ("셋. 더는 안 받아")
-    6: ['mercury', 'tiamat', 'thetis', 'undine', 'ullr'], // 스트라이커즈와 호라이즌 (+우르)
+    2: ['brownie', 'leprechaun', 'gnome', 'impet', 'phoenix', 'mari'], // 스틸라인 출동 (+피닉스: 스틸 라인 지원부대, +마리)
+    3: ['raven', 'harpy', 'hraesvelgr', 'sleipnir', 'griffon', 'lindwurm'], // 레이븐과 스카이 나이츠 (+슬레이프니르·그리폰·린트블룸). 칸은 배에 남는다
+    4: ['lemonadealpha', 'lrl', 'amy', 'sylphid', 'banshee', 'may'], // 공무원과 둠 브링어 (+메이)
+    5: ['blacklilith', 'eternity', 'titania', 'daphne', 'pero', 'hachiko'], // 리리스와 셋 ("셋. 더는 안 받아") + 컴패니언 페로·하치코
+    6: ['mercury', 'tiamat', 'thetis', 'undine', 'ullr', 'lancermina'], // 스트라이커즈와 호라이즌 (+우르·랜서 미나)
     7: ['brownie', 'gnome', 'leprechaun', 'leona', 'valkyrie', 'nymph'], // 스틸라인이 벽, 발할라가 칼
     8: ['brownie', 'gnome', 'leprechaun', 'leona', 'valkyrie', 'blacklilith'], // "스틸라인이 벽, 발할라가 칼, 리리스가 내 옆"
   };

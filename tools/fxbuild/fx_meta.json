@@ -327,6 +327,57 @@
    "hit": "skill_hit_simple",
    "hitScale": 1.0
   },
+  "FX_bullet_hand_Missile": {
+   "type": 0,
+   "T": 1.0,
+   "hit": "explosion_hit",
+   "hitScale": 1.5
+  },
+  "FX_PA00EL_Framebullet": {
+   "type": 0,
+   "T": 1.0,
+   "hit": "PA00EL_skill_2_hit",
+   "hitScale": 1.5
+  },
+  "fire_Hit": {
+   "type": -1
+  },
+  "PA00EL_NS2_FX_bullet_hand_Missile": {
+   "type": 0,
+   "T": 0.65,
+   "hit": "Griffon_skill1_hit",
+   "hitScale": 0.6
+  },
+  "PA00EL_NS2_skill2_FX_bullet_hand_Missile": {
+   "type": 0,
+   "T": 0.45,
+   "hit": "Griffon_skill1_hit",
+   "hitScale": 0.45
+  },
+  "PA00EL_NS2_skill2_FX_bullet_hand_Missile_ver2": {
+   "type": 0,
+   "T": 0.45,
+   "hit": "Griffon_skill2_hit",
+   "hitScale": 0.68
+  },
+  "Griffon_skill2_last_hit_before_fx": {
+   "type": -1
+  },
+  "Griffon_skill2_Ground_hit": {
+   "type": -1
+  },
+  "Hachiko_bullet": {
+   "type": 1,
+   "T": 0.65,
+   "hit": "Hachiko_skill1_hit",
+   "hitScale": 0.75
+  },
+  "Hachiko_Skin_bullet": {
+   "type": 0,
+   "T": 0.25,
+   "hit": "Hachiko_skin_skill1_hit",
+   "hitScale": 1.0
+  },
   "Harpy_skill12_bullet2": {
    "type": 2,
    "T": 0.5,
@@ -474,6 +525,9 @@
   "Labiata_NS1_skill2_Basic_Hit": {
    "type": -1
   },
+  "Lancer_NS1_skill2_Sheild_Spawn": {
+   "type": -1
+  },
   "Lemonade_skill1_Enemy_digital_panel": {
    "type": -1
   },
@@ -495,8 +549,53 @@
    "hit": "skill_hit_simple",
    "hitScale": 1.0
   },
+  "Lindwurm_skill1_Hit": {
+   "type": -1
+  },
+  "Lindwurm_skill2_bullet": {
+   "type": 2,
+   "T": 0.55,
+   "hit": "Lindwurm_skill2_Hit",
+   "hitScale": 1.0
+  },
+  "Lindwurm_NS1_skill1_Hit": {
+   "type": -1
+  },
+  "Lindwurm_NS1_skill2_bullet": {
+   "type": 2,
+   "T": 0.55,
+   "hit": "Lindwurm_NS1_skill2_Hit",
+   "hitScale": 1.0
+  },
+  "Lindwurm_NS2_skill1_hit": {
+   "type": -1
+  },
+  "Lindwurm_NS2_skill2_bullet": {
+   "type": 2,
+   "T": 0.35,
+   "hit": "Lindwurm_NS2_skill2_Heart_hit",
+   "hitScale": 1.0
+  },
+  "Lindwurm_NS2_skill2_last_Heart_hit": {
+   "type": -1
+  },
+  "Lindwurm_NS2_Last_Hit_deco": {
+   "type": -1
+  },
   "Hit": {
    "type": -1
+  },
+  "FX_bullet_RailGun_Gun": {
+   "type": 0,
+   "T": 0.3,
+   "hit": "FX_Hit_RailGun",
+   "hitScale": 1.0
+  },
+  "FX_bullet_RailGun_Gun_no_hit_fx": {
+   "type": 0,
+   "T": 0.3,
+   "hit": "",
+   "hitScale": 1.0
   },
   "Mercury_N_Skill2_Hit": {
    "type": -1
@@ -545,12 +644,6 @@
   },
   "Raven_skill2_Scofe_Dot": {
    "type": -1
-  },
-  "FX_bullet_hand_Missile": {
-   "type": 0,
-   "T": 1.0,
-   "hit": "explosion_hit",
-   "hitScale": 1.5
   },
   "Saraqael_skill2_enemy_head_Ring": {
    "type": -1
@@ -831,6 +924,24 @@
   "Legion_skill1_hit": {
    "type": -1
   },
+  "explosion_hit": {
+   "type": -1
+  },
+  "PA00EL_skill_2_hit": {
+   "type": -1
+  },
+  "Griffon_skill1_hit": {
+   "type": -1
+  },
+  "Griffon_skill2_hit": {
+   "type": -1
+  },
+  "Hachiko_skill1_hit": {
+   "type": -1
+  },
+  "Hachiko_skin_skill1_hit": {
+   "type": -1
+  },
   "Harpy_skill1_bullet_Hit": {
    "type": -1
   },
@@ -879,13 +990,22 @@
   "Khan_NS2_skill1_Bullet_hit": {
    "type": -1
   },
+  "Lindwurm_skill2_Hit": {
+   "type": -1
+  },
+  "Lindwurm_NS1_skill2_Hit": {
+   "type": -1
+  },
+  "Lindwurm_NS2_skill2_Heart_hit": {
+   "type": -1
+  },
+  "FX_Hit_RailGun": {
+   "type": -1
+  },
   "Phoenix_skill1_hit": {
    "type": -1
   },
   "Raven_skill1_Hit": {
-   "type": -1
-  },
-  "explosion_hit": {
    "type": -1
   },
   "Sleipnir_hit2": {
@@ -5783,6 +5903,294 @@
     ]
    }
   },
+  "griffon": {
+   "atk": {
+    "d": 1.4667,
+    "ev": [
+     [
+      0.5,
+      "p",
+      1,
+      "FX_bullet_hand_Missile",
+      0
+     ],
+     [
+      0.65,
+      "p",
+      2,
+      "FX_bullet_hand_Missile",
+      0
+     ]
+    ]
+   },
+   "skill": {
+    "d": 10.8833,
+    "ev": [
+     [
+      3.2333,
+      "p",
+      1,
+      "FX_bullet_hand_Missile",
+      0
+     ],
+     [
+      3.45,
+      "p",
+      2,
+      "FX_bullet_hand_Missile",
+      0
+     ],
+     [
+      3.6833,
+      "p",
+      3,
+      "FX_bullet_hand_Missile",
+      0
+     ],
+     [
+      3.95,
+      "p",
+      4,
+      "FX_bullet_hand_Missile",
+      0
+     ],
+     [
+      6.4833,
+      "p",
+      2,
+      "FX_PA00EL_Framebullet",
+      0
+     ],
+     [
+      6.5333,
+      "p",
+      3,
+      "FX_PA00EL_Framebullet",
+      0
+     ],
+     [
+      6.5833,
+      "p",
+      1,
+      "FX_PA00EL_Framebullet",
+      0
+     ],
+     [
+      6.6333,
+      "p",
+      4,
+      "FX_PA00EL_Framebullet",
+      0
+     ],
+     [
+      7.7167,
+      "h",
+      0,
+      "fire_Hit",
+      0
+     ]
+    ]
+   }
+  },
+  "griffon_s1": {
+   "atk": {
+    "d": 1.4667,
+    "ev": [
+     [
+      0.5,
+      "p",
+      1,
+      "FX_bullet_hand_Missile",
+      0
+     ],
+     [
+      0.65,
+      "p",
+      2,
+      "FX_bullet_hand_Missile",
+      0
+     ]
+    ]
+   },
+   "skill": {
+    "d": 10.8833,
+    "ev": [
+     [
+      3.2333,
+      "p",
+      1,
+      "FX_bullet_hand_Missile",
+      0
+     ],
+     [
+      3.45,
+      "p",
+      2,
+      "FX_bullet_hand_Missile",
+      0
+     ],
+     [
+      3.6833,
+      "p",
+      3,
+      "FX_bullet_hand_Missile",
+      0
+     ],
+     [
+      3.95,
+      "p",
+      4,
+      "FX_bullet_hand_Missile",
+      0
+     ],
+     [
+      6.4833,
+      "p",
+      2,
+      "FX_PA00EL_Framebullet",
+      0
+     ],
+     [
+      6.5333,
+      "p",
+      3,
+      "FX_PA00EL_Framebullet",
+      0
+     ],
+     [
+      6.5833,
+      "p",
+      1,
+      "FX_PA00EL_Framebullet",
+      0
+     ],
+     [
+      6.6333,
+      "p",
+      4,
+      "FX_PA00EL_Framebullet",
+      0
+     ],
+     [
+      7.7167,
+      "h",
+      0,
+      "fire_Hit",
+      0
+     ]
+    ]
+   }
+  },
+  "griffon_s2": {
+   "atk": {
+    "d": 1.4667,
+    "ev": [
+     [
+      0.5,
+      "p",
+      1,
+      "PA00EL_NS2_FX_bullet_hand_Missile",
+      0
+     ],
+     [
+      0.65,
+      "p",
+      2,
+      "PA00EL_NS2_FX_bullet_hand_Missile",
+      0
+     ]
+    ]
+   },
+   "skill": {
+    "d": 10.8667,
+    "ev": [
+     [
+      3.45,
+      "p",
+      2,
+      "PA00EL_NS2_skill2_FX_bullet_hand_Missile",
+      0
+     ],
+     [
+      3.95,
+      "p",
+      4,
+      "PA00EL_NS2_skill2_FX_bullet_hand_Missile",
+      0
+     ],
+     [
+      6.4833,
+      "p",
+      2,
+      "PA00EL_NS2_skill2_FX_bullet_hand_Missile_ver2",
+      0
+     ],
+     [
+      6.5333,
+      "p",
+      3,
+      "PA00EL_NS2_skill2_FX_bullet_hand_Missile_ver2",
+      0
+     ],
+     [
+      6.5833,
+      "p",
+      1,
+      "PA00EL_NS2_skill2_FX_bullet_hand_Missile_ver2",
+      0
+     ],
+     [
+      6.6333,
+      "p",
+      4,
+      "PA00EL_NS2_skill2_FX_bullet_hand_Missile_ver2",
+      0
+     ],
+     [
+      7.2167,
+      "e",
+      0,
+      "Griffon_skill2_last_hit_before_fx",
+      0
+     ],
+     [
+      7.7167,
+      "hg",
+      0,
+      "Griffon_skill2_Ground_hit",
+      0
+     ]
+    ]
+   }
+  },
+  "hachiko": {
+   "atk": {
+    "d": 2.5,
+    "ev": [
+     [
+      1.5167,
+      "p",
+      1,
+      "Hachiko_bullet",
+      0
+     ]
+    ]
+   }
+  },
+  "hachiko_s1": {
+   "atk": {
+    "d": 2.5,
+    "ev": [
+     [
+      1.5167,
+      "p",
+      1,
+      "Hachiko_Skin_bullet",
+      0
+     ]
+    ]
+   }
+  },
   "harpy": {
    "atk": {
     "d": 2.3167,
@@ -7141,6 +7549,95 @@
     ]
    }
   },
+  "lancermina": {
+   "atk": {
+    "d": 4.3,
+    "ev": [
+     [
+      1.7167,
+      "h",
+      0,
+      "noHit_m",
+      0
+     ],
+     [
+      3.15,
+      "h",
+      0,
+      "noHit_m",
+      0
+     ]
+    ]
+   }
+  },
+  "lancermina_s1": {
+   "atk": {
+    "d": 4.3,
+    "ev": [
+     [
+      1.7167,
+      "h",
+      0,
+      "noHit_m",
+      0
+     ],
+     [
+      3.15,
+      "h",
+      0,
+      "noHit_m",
+      0
+     ],
+     [
+      3.3333,
+      "h",
+      0,
+      "noHit_m",
+      0
+     ],
+     [
+      3.5333,
+      "h",
+      0,
+      "noHit_m",
+      0
+     ]
+    ]
+   },
+   "skill": {
+    "d": 2.7833,
+    "ev": [
+     [
+      2.15,
+      "eg",
+      0,
+      "Lancer_NS1_skill2_Sheild_Spawn",
+      0
+     ]
+    ]
+   }
+  },
+  "lancermina_s2": {
+   "atk": {
+    "d": 4.3,
+    "ev": [
+     [
+      1.7167,
+      "h",
+      0,
+      "noHit_m",
+      0
+     ],
+     [
+      3.15,
+      "h",
+      0,
+      "noHit_m",
+      0
+     ]
+    ]
+   }
+  },
   "lemonadealpha": {
    "atk": {
     "d": 3.8333,
@@ -8236,6 +8733,392 @@
     ]
    }
   },
+  "lindwurm": {
+   "atk": {
+    "d": 4.1,
+    "ev": [
+     [
+      1.4667,
+      "h",
+      0,
+      "Lindwurm_skill1_Hit",
+      0
+     ],
+     [
+      1.5667,
+      "h",
+      0,
+      "Lindwurm_skill1_Hit",
+      0
+     ],
+     [
+      1.6667,
+      "h",
+      0,
+      "Lindwurm_skill1_Hit",
+      0
+     ],
+     [
+      1.7667,
+      "h",
+      0,
+      "Lindwurm_skill1_Hit",
+      0
+     ],
+     [
+      1.8667,
+      "h",
+      0,
+      "Lindwurm_skill1_Hit",
+      0
+     ],
+     [
+      1.9667,
+      "h",
+      0,
+      "Lindwurm_skill1_Hit",
+      0
+     ],
+     [
+      2.0667,
+      "h",
+      0,
+      "Lindwurm_skill1_Hit",
+      0
+     ],
+     [
+      2.1667,
+      "h",
+      0,
+      "Lindwurm_skill1_Hit",
+      0
+     ],
+     [
+      2.2667,
+      "h",
+      0,
+      "Lindwurm_skill1_Hit",
+      0
+     ],
+     [
+      2.3667,
+      "h",
+      0,
+      "Lindwurm_skill1_Hit",
+      0
+     ],
+     [
+      2.45,
+      "h",
+      0,
+      "Lindwurm_skill1_Hit",
+      0
+     ],
+     [
+      2.5333,
+      "h",
+      0,
+      "Lindwurm_skill1_Hit",
+      0
+     ]
+    ]
+   },
+   "skill": {
+    "d": 3.0833,
+    "ev": [
+     [
+      1.5167,
+      "p",
+      1,
+      "Lindwurm_skill2_bullet",
+      0
+     ],
+     [
+      1.6833,
+      "p",
+      1,
+      "Lindwurm_skill2_bullet",
+      0
+     ],
+     [
+      1.85,
+      "p",
+      1,
+      "Lindwurm_skill2_bullet",
+      0
+     ],
+     [
+      1.95,
+      "p",
+      1,
+      "Lindwurm_skill2_bullet",
+      0
+     ]
+    ]
+   }
+  },
+  "lindwurm_s1": {
+   "atk": {
+    "d": 4.1,
+    "ev": [
+     [
+      1.4667,
+      "h",
+      0,
+      "Lindwurm_NS1_skill1_Hit",
+      0
+     ],
+     [
+      1.5667,
+      "h",
+      0,
+      "Lindwurm_NS1_skill1_Hit",
+      0
+     ],
+     [
+      1.6667,
+      "h",
+      0,
+      "Lindwurm_NS1_skill1_Hit",
+      0
+     ],
+     [
+      1.7667,
+      "h",
+      0,
+      "Lindwurm_NS1_skill1_Hit",
+      0
+     ],
+     [
+      1.8667,
+      "h",
+      0,
+      "Lindwurm_NS1_skill1_Hit",
+      0
+     ],
+     [
+      1.9667,
+      "h",
+      0,
+      "Lindwurm_NS1_skill1_Hit",
+      0
+     ],
+     [
+      2.0667,
+      "h",
+      0,
+      "Lindwurm_NS1_skill1_Hit",
+      0
+     ],
+     [
+      2.1667,
+      "h",
+      0,
+      "Lindwurm_NS1_skill1_Hit",
+      0
+     ],
+     [
+      2.2667,
+      "h",
+      0,
+      "Lindwurm_NS1_skill1_Hit",
+      0
+     ],
+     [
+      2.3667,
+      "h",
+      0,
+      "Lindwurm_NS1_skill1_Hit",
+      0
+     ],
+     [
+      2.45,
+      "h",
+      0,
+      "Lindwurm_NS1_skill1_Hit",
+      0
+     ],
+     [
+      2.5333,
+      "h",
+      0,
+      "Lindwurm_NS1_skill1_Hit",
+      0
+     ]
+    ]
+   },
+   "skill": {
+    "d": 3.0833,
+    "ev": [
+     [
+      1.5167,
+      "p",
+      1,
+      "Lindwurm_NS1_skill2_bullet",
+      0
+     ],
+     [
+      1.6833,
+      "p",
+      1,
+      "Lindwurm_NS1_skill2_bullet",
+      0
+     ],
+     [
+      1.85,
+      "p",
+      1,
+      "Lindwurm_NS1_skill2_bullet",
+      0
+     ],
+     [
+      1.95,
+      "p",
+      1,
+      "Lindwurm_NS1_skill2_bullet",
+      0
+     ]
+    ]
+   }
+  },
+  "lindwurm_s2": {
+   "atk": {
+    "d": 4.1,
+    "ev": [
+     [
+      1.4667,
+      "h",
+      0,
+      "Lindwurm_skill1_Hit",
+      0
+     ],
+     [
+      1.5667,
+      "h",
+      0,
+      "Lindwurm_NS2_skill1_hit",
+      0
+     ],
+     [
+      1.6667,
+      "h",
+      0,
+      "Lindwurm_NS2_skill1_hit",
+      0
+     ],
+     [
+      1.7667,
+      "h",
+      0,
+      "Lindwurm_NS2_skill1_hit",
+      0
+     ],
+     [
+      1.8667,
+      "h",
+      0,
+      "Lindwurm_NS2_skill1_hit",
+      0
+     ],
+     [
+      1.9667,
+      "h",
+      0,
+      "Lindwurm_NS2_skill1_hit",
+      0
+     ],
+     [
+      2.0667,
+      "h",
+      0,
+      "Lindwurm_NS2_skill1_hit",
+      0
+     ],
+     [
+      2.1667,
+      "h",
+      0,
+      "Lindwurm_NS2_skill1_hit",
+      0
+     ],
+     [
+      2.2667,
+      "h",
+      0,
+      "Lindwurm_NS2_skill1_hit",
+      0
+     ],
+     [
+      2.3667,
+      "h",
+      0,
+      "Lindwurm_NS2_skill1_hit",
+      0
+     ],
+     [
+      2.45,
+      "h",
+      0,
+      "Lindwurm_NS2_skill1_hit",
+      0
+     ],
+     [
+      2.5333,
+      "h",
+      0,
+      "Lindwurm_NS2_skill1_hit",
+      0
+     ]
+    ]
+   },
+   "skill": {
+    "d": 3.0833,
+    "ev": [
+     [
+      1.5167,
+      "p",
+      1,
+      "Lindwurm_NS2_skill2_bullet",
+      0
+     ],
+     [
+      1.6833,
+      "p",
+      1,
+      "Lindwurm_NS2_skill2_bullet",
+      0
+     ],
+     [
+      1.85,
+      "p",
+      1,
+      "Lindwurm_NS2_skill2_bullet",
+      0
+     ],
+     [
+      1.95,
+      "p",
+      1,
+      "Lindwurm_NS2_skill2_bullet",
+      0
+     ],
+     [
+      2.4167,
+      "e",
+      0,
+      "Lindwurm_NS2_skill2_last_Heart_hit",
+      0
+     ],
+     [
+      2.65,
+      "e",
+      0,
+      "Lindwurm_NS2_Last_Hit_deco",
+      0
+     ]
+    ]
+   }
+  },
   "lrl": {
    "atk": {
     "d": 9.9167,
@@ -8388,6 +9271,2058 @@
     "ev": [
      [
       3.1667,
+      "h",
+      0,
+      "noHit_m",
+      0
+     ]
+    ]
+   }
+  },
+  "mari": {
+   "atk": {
+    "d": 5.75,
+    "ev": [
+     [
+      2.0167,
+      "p",
+      4,
+      "FX_bullet_RailGun_Gun",
+      0
+     ],
+     [
+      2.35,
+      "p",
+      1,
+      "FX_bullet_RailGun_Gun",
+      0
+     ],
+     [
+      2.5167,
+      "p",
+      3,
+      "FX_bullet_RailGun_Gun",
+      0
+     ],
+     [
+      2.6833,
+      "p",
+      2,
+      "FX_bullet_RailGun_Gun",
+      0
+     ],
+     [
+      2.8167,
+      "p",
+      4,
+      "FX_bullet_RailGun_Gun",
+      0
+     ],
+     [
+      2.9333,
+      "p",
+      3,
+      "FX_bullet_RailGun_Gun",
+      0
+     ],
+     [
+      3.4833,
+      "p",
+      1,
+      "FX_bullet_RailGun_Gun",
+      0
+     ],
+     [
+      3.5833,
+      "p",
+      4,
+      "FX_bullet_RailGun_Gun",
+      0
+     ],
+     [
+      3.65,
+      "p",
+      3,
+      "FX_bullet_RailGun_Gun",
+      0
+     ],
+     [
+      3.9333,
+      "p",
+      2,
+      "FX_bullet_RailGun_Gun",
+      0
+     ],
+     [
+      4.1667,
+      "p",
+      1,
+      "FX_bullet_RailGun_Gun",
+      0
+     ],
+     [
+      4.2,
+      "p",
+      2,
+      "FX_bullet_RailGun_Gun",
+      0
+     ],
+     [
+      4.4333,
+      "p",
+      1,
+      "FX_bullet_RailGun_Gun",
+      0
+     ],
+     [
+      4.5167,
+      "p",
+      3,
+      "FX_bullet_RailGun_Gun",
+      0
+     ],
+     [
+      4.6333,
+      "p",
+      4,
+      "FX_bullet_RailGun_Gun",
+      0
+     ]
+    ]
+   },
+   "skill": {
+    "d": 5.7333,
+    "ev": [
+     [
+      1.7833,
+      "p",
+      1,
+      "FX_bullet_RailGun_Gun",
+      0
+     ],
+     [
+      1.8167,
+      "p",
+      2,
+      "FX_bullet_RailGun_Gun_no_hit_fx",
+      0
+     ],
+     [
+      1.85,
+      "p",
+      3,
+      "FX_bullet_RailGun_Gun",
+      0
+     ],
+     [
+      1.8833,
+      "p",
+      4,
+      "FX_bullet_RailGun_Gun_no_hit_fx",
+      0
+     ],
+     [
+      1.9333,
+      "p",
+      1,
+      "FX_bullet_RailGun_Gun_no_hit_fx",
+      0
+     ],
+     [
+      1.9667,
+      "p",
+      2,
+      "FX_bullet_RailGun_Gun",
+      0
+     ],
+     [
+      2.0,
+      "p",
+      3,
+      "FX_bullet_RailGun_Gun_no_hit_fx",
+      0
+     ],
+     [
+      2.0333,
+      "p",
+      4,
+      "FX_bullet_RailGun_Gun",
+      0
+     ],
+     [
+      2.0833,
+      "p",
+      1,
+      "FX_bullet_RailGun_Gun_no_hit_fx",
+      0
+     ],
+     [
+      2.1167,
+      "p",
+      2,
+      "FX_bullet_RailGun_Gun_no_hit_fx",
+      0
+     ],
+     [
+      2.15,
+      "p",
+      3,
+      "FX_bullet_RailGun_Gun_no_hit_fx",
+      0
+     ],
+     [
+      2.1833,
+      "p",
+      4,
+      "FX_bullet_RailGun_Gun",
+      0
+     ],
+     [
+      2.2333,
+      "p",
+      1,
+      "FX_bullet_RailGun_Gun_no_hit_fx",
+      0
+     ],
+     [
+      2.2667,
+      "p",
+      2,
+      "FX_bullet_RailGun_Gun_no_hit_fx",
+      0
+     ],
+     [
+      2.3,
+      "p",
+      3,
+      "FX_bullet_RailGun_Gun_no_hit_fx",
+      0
+     ],
+     [
+      2.3333,
+      "p",
+      4,
+      "FX_bullet_RailGun_Gun",
+      0
+     ],
+     [
+      2.3833,
+      "p",
+      1,
+      "FX_bullet_RailGun_Gun_no_hit_fx",
+      0
+     ],
+     [
+      2.4167,
+      "p",
+      2,
+      "FX_bullet_RailGun_Gun",
+      0
+     ],
+     [
+      2.45,
+      "p",
+      3,
+      "FX_bullet_RailGun_Gun_no_hit_fx",
+      0
+     ],
+     [
+      2.4833,
+      "p",
+      4,
+      "FX_bullet_RailGun_Gun",
+      0
+     ],
+     [
+      2.5333,
+      "p",
+      1,
+      "FX_bullet_RailGun_Gun_no_hit_fx",
+      0
+     ],
+     [
+      2.5667,
+      "p",
+      2,
+      "FX_bullet_RailGun_Gun_no_hit_fx",
+      0
+     ],
+     [
+      2.6,
+      "p",
+      3,
+      "FX_bullet_RailGun_Gun_no_hit_fx",
+      0
+     ],
+     [
+      2.6333,
+      "p",
+      4,
+      "FX_bullet_RailGun_Gun_no_hit_fx",
+      0
+     ],
+     [
+      2.6833,
+      "p",
+      1,
+      "FX_bullet_RailGun_Gun",
+      0
+     ],
+     [
+      2.7167,
+      "p",
+      2,
+      "FX_bullet_RailGun_Gun_no_hit_fx",
+      0
+     ],
+     [
+      2.75,
+      "p",
+      3,
+      "FX_bullet_RailGun_Gun",
+      0
+     ],
+     [
+      2.7833,
+      "p",
+      4,
+      "FX_bullet_RailGun_Gun_no_hit_fx",
+      0
+     ],
+     [
+      2.8333,
+      "p",
+      1,
+      "FX_bullet_RailGun_Gun_no_hit_fx",
+      0
+     ],
+     [
+      2.8667,
+      "p",
+      2,
+      "FX_bullet_RailGun_Gun_no_hit_fx",
+      0
+     ],
+     [
+      2.9,
+      "p",
+      3,
+      "FX_bullet_RailGun_Gun",
+      0
+     ],
+     [
+      2.9333,
+      "p",
+      4,
+      "FX_bullet_RailGun_Gun_no_hit_fx",
+      0
+     ],
+     [
+      2.9833,
+      "p",
+      1,
+      "FX_bullet_RailGun_Gun",
+      0
+     ],
+     [
+      3.0167,
+      "p",
+      2,
+      "FX_bullet_RailGun_Gun_no_hit_fx",
+      0
+     ],
+     [
+      3.05,
+      "p",
+      3,
+      "FX_bullet_RailGun_Gun",
+      0
+     ],
+     [
+      3.0833,
+      "p",
+      4,
+      "FX_bullet_RailGun_Gun_no_hit_fx",
+      0
+     ],
+     [
+      3.1333,
+      "p",
+      1,
+      "FX_bullet_RailGun_Gun_no_hit_fx",
+      0
+     ],
+     [
+      3.1667,
+      "p",
+      2,
+      "FX_bullet_RailGun_Gun_no_hit_fx",
+      0
+     ],
+     [
+      3.2,
+      "p",
+      3,
+      "FX_bullet_RailGun_Gun",
+      0
+     ],
+     [
+      3.2333,
+      "p",
+      4,
+      "FX_bullet_RailGun_Gun_no_hit_fx",
+      0
+     ],
+     [
+      3.2833,
+      "p",
+      1,
+      "FX_bullet_RailGun_Gun",
+      0
+     ],
+     [
+      3.3167,
+      "p",
+      2,
+      "FX_bullet_RailGun_Gun_no_hit_fx",
+      0
+     ],
+     [
+      3.35,
+      "p",
+      3,
+      "FX_bullet_RailGun_Gun",
+      0
+     ],
+     [
+      3.3833,
+      "p",
+      4,
+      "FX_bullet_RailGun_Gun_no_hit_fx",
+      0
+     ],
+     [
+      3.4333,
+      "p",
+      1,
+      "FX_bullet_RailGun_Gun_no_hit_fx",
+      0
+     ],
+     [
+      3.4667,
+      "p",
+      2,
+      "FX_bullet_RailGun_Gun",
+      0
+     ],
+     [
+      3.5,
+      "p",
+      3,
+      "FX_bullet_RailGun_Gun_no_hit_fx",
+      0
+     ],
+     [
+      3.5333,
+      "p",
+      4,
+      "FX_bullet_RailGun_Gun",
+      0
+     ],
+     [
+      3.5833,
+      "p",
+      1,
+      "FX_bullet_RailGun_Gun_no_hit_fx",
+      0
+     ],
+     [
+      3.6167,
+      "p",
+      2,
+      "FX_bullet_RailGun_Gun_no_hit_fx",
+      0
+     ],
+     [
+      3.65,
+      "p",
+      3,
+      "FX_bullet_RailGun_Gun_no_hit_fx",
+      0
+     ],
+     [
+      3.6833,
+      "p",
+      4,
+      "FX_bullet_RailGun_Gun",
+      0
+     ],
+     [
+      3.7333,
+      "p",
+      1,
+      "FX_bullet_RailGun_Gun_no_hit_fx",
+      0
+     ],
+     [
+      3.7667,
+      "p",
+      2,
+      "FX_bullet_RailGun_Gun_no_hit_fx",
+      0
+     ],
+     [
+      3.8,
+      "p",
+      3,
+      "FX_bullet_RailGun_Gun",
+      0
+     ],
+     [
+      3.8333,
+      "p",
+      4,
+      "FX_bullet_RailGun_Gun_no_hit_fx",
+      0
+     ],
+     [
+      3.8833,
+      "p",
+      1,
+      "FX_bullet_RailGun_Gun",
+      0
+     ],
+     [
+      3.9167,
+      "p",
+      2,
+      "FX_bullet_RailGun_Gun_no_hit_fx",
+      0
+     ],
+     [
+      3.95,
+      "p",
+      3,
+      "FX_bullet_RailGun_Gun_no_hit_fx",
+      0
+     ],
+     [
+      3.9833,
+      "p",
+      4,
+      "FX_bullet_RailGun_Gun_no_hit_fx",
+      0
+     ],
+     [
+      4.0333,
+      "p",
+      1,
+      "FX_bullet_RailGun_Gun",
+      0
+     ],
+     [
+      4.0667,
+      "p",
+      2,
+      "FX_bullet_RailGun_Gun_no_hit_fx",
+      0
+     ],
+     [
+      4.1,
+      "p",
+      3,
+      "FX_bullet_RailGun_Gun",
+      0
+     ],
+     [
+      4.1333,
+      "p",
+      4,
+      "FX_bullet_RailGun_Gun_no_hit_fx",
+      0
+     ],
+     [
+      4.1833,
+      "p",
+      1,
+      "FX_bullet_RailGun_Gun_no_hit_fx",
+      0
+     ],
+     [
+      4.2167,
+      "p",
+      2,
+      "FX_bullet_RailGun_Gun",
+      0
+     ],
+     [
+      4.25,
+      "p",
+      3,
+      "FX_bullet_RailGun_Gun_no_hit_fx",
+      0
+     ],
+     [
+      4.2833,
+      "p",
+      4,
+      "FX_bullet_RailGun_Gun",
+      0
+     ],
+     [
+      4.3333,
+      "p",
+      1,
+      "FX_bullet_RailGun_Gun_no_hit_fx",
+      0
+     ],
+     [
+      4.3667,
+      "p",
+      2,
+      "FX_bullet_RailGun_Gun_no_hit_fx",
+      0
+     ],
+     [
+      4.4,
+      "p",
+      3,
+      "FX_bullet_RailGun_Gun_no_hit_fx",
+      0
+     ],
+     [
+      4.4333,
+      "p",
+      4,
+      "FX_bullet_RailGun_Gun",
+      0
+     ],
+     [
+      4.4833,
+      "p",
+      1,
+      "FX_bullet_RailGun_Gun_no_hit_fx",
+      0
+     ],
+     [
+      4.5167,
+      "p",
+      2,
+      "FX_bullet_RailGun_Gun_no_hit_fx",
+      0
+     ],
+     [
+      4.55,
+      "p",
+      3,
+      "FX_bullet_RailGun_Gun_no_hit_fx",
+      0
+     ],
+     [
+      4.5833,
+      "p",
+      4,
+      "FX_bullet_RailGun_Gun",
+      0
+     ]
+    ]
+   }
+  },
+  "mari_s1": {
+   "atk": {
+    "d": 5.7333,
+    "ev": [
+     [
+      2.0167,
+      "p",
+      4,
+      "FX_bullet_RailGun_Gun",
+      0
+     ],
+     [
+      2.35,
+      "p",
+      1,
+      "FX_bullet_RailGun_Gun",
+      0
+     ],
+     [
+      2.5167,
+      "p",
+      3,
+      "FX_bullet_RailGun_Gun",
+      0
+     ],
+     [
+      2.6833,
+      "p",
+      2,
+      "FX_bullet_RailGun_Gun",
+      0
+     ],
+     [
+      2.8167,
+      "p",
+      4,
+      "FX_bullet_RailGun_Gun",
+      0
+     ],
+     [
+      2.9333,
+      "p",
+      3,
+      "FX_bullet_RailGun_Gun",
+      0
+     ],
+     [
+      3.4833,
+      "p",
+      1,
+      "FX_bullet_RailGun_Gun",
+      0
+     ],
+     [
+      3.5833,
+      "p",
+      4,
+      "FX_bullet_RailGun_Gun",
+      0
+     ],
+     [
+      3.65,
+      "p",
+      3,
+      "FX_bullet_RailGun_Gun",
+      0
+     ],
+     [
+      3.9333,
+      "p",
+      2,
+      "FX_bullet_RailGun_Gun",
+      0
+     ],
+     [
+      4.1667,
+      "p",
+      1,
+      "FX_bullet_RailGun_Gun",
+      0
+     ],
+     [
+      4.2,
+      "p",
+      2,
+      "FX_bullet_RailGun_Gun",
+      0
+     ],
+     [
+      4.4333,
+      "p",
+      1,
+      "FX_bullet_RailGun_Gun",
+      0
+     ],
+     [
+      4.5167,
+      "p",
+      3,
+      "FX_bullet_RailGun_Gun",
+      0
+     ],
+     [
+      4.6333,
+      "p",
+      4,
+      "FX_bullet_RailGun_Gun",
+      0
+     ]
+    ]
+   },
+   "skill": {
+    "d": 5.7333,
+    "ev": [
+     [
+      1.7833,
+      "p",
+      1,
+      "FX_bullet_RailGun_Gun",
+      0
+     ],
+     [
+      1.8167,
+      "p",
+      2,
+      "FX_bullet_RailGun_Gun_no_hit_fx",
+      0
+     ],
+     [
+      1.85,
+      "p",
+      3,
+      "FX_bullet_RailGun_Gun",
+      0
+     ],
+     [
+      1.8833,
+      "p",
+      4,
+      "FX_bullet_RailGun_Gun_no_hit_fx",
+      0
+     ],
+     [
+      1.9333,
+      "p",
+      1,
+      "FX_bullet_RailGun_Gun_no_hit_fx",
+      0
+     ],
+     [
+      1.9667,
+      "p",
+      2,
+      "FX_bullet_RailGun_Gun",
+      0
+     ],
+     [
+      2.0,
+      "p",
+      3,
+      "FX_bullet_RailGun_Gun_no_hit_fx",
+      0
+     ],
+     [
+      2.0333,
+      "p",
+      4,
+      "FX_bullet_RailGun_Gun",
+      0
+     ],
+     [
+      2.0833,
+      "p",
+      1,
+      "FX_bullet_RailGun_Gun_no_hit_fx",
+      0
+     ],
+     [
+      2.1167,
+      "p",
+      2,
+      "FX_bullet_RailGun_Gun_no_hit_fx",
+      0
+     ],
+     [
+      2.15,
+      "p",
+      3,
+      "FX_bullet_RailGun_Gun_no_hit_fx",
+      0
+     ],
+     [
+      2.1833,
+      "p",
+      4,
+      "FX_bullet_RailGun_Gun",
+      0
+     ],
+     [
+      2.2333,
+      "p",
+      1,
+      "FX_bullet_RailGun_Gun_no_hit_fx",
+      0
+     ],
+     [
+      2.2667,
+      "p",
+      2,
+      "FX_bullet_RailGun_Gun_no_hit_fx",
+      0
+     ],
+     [
+      2.3,
+      "p",
+      3,
+      "FX_bullet_RailGun_Gun_no_hit_fx",
+      0
+     ],
+     [
+      2.3333,
+      "p",
+      4,
+      "FX_bullet_RailGun_Gun",
+      0
+     ],
+     [
+      2.3833,
+      "p",
+      1,
+      "FX_bullet_RailGun_Gun_no_hit_fx",
+      0
+     ],
+     [
+      2.4167,
+      "p",
+      2,
+      "FX_bullet_RailGun_Gun",
+      0
+     ],
+     [
+      2.45,
+      "p",
+      3,
+      "FX_bullet_RailGun_Gun_no_hit_fx",
+      0
+     ],
+     [
+      2.4833,
+      "p",
+      4,
+      "FX_bullet_RailGun_Gun",
+      0
+     ],
+     [
+      2.5333,
+      "p",
+      1,
+      "FX_bullet_RailGun_Gun_no_hit_fx",
+      0
+     ],
+     [
+      2.5667,
+      "p",
+      2,
+      "FX_bullet_RailGun_Gun_no_hit_fx",
+      0
+     ],
+     [
+      2.6,
+      "p",
+      3,
+      "FX_bullet_RailGun_Gun_no_hit_fx",
+      0
+     ],
+     [
+      2.6333,
+      "p",
+      4,
+      "FX_bullet_RailGun_Gun_no_hit_fx",
+      0
+     ],
+     [
+      2.6833,
+      "p",
+      1,
+      "FX_bullet_RailGun_Gun",
+      0
+     ],
+     [
+      2.7167,
+      "p",
+      2,
+      "FX_bullet_RailGun_Gun_no_hit_fx",
+      0
+     ],
+     [
+      2.75,
+      "p",
+      3,
+      "FX_bullet_RailGun_Gun",
+      0
+     ],
+     [
+      2.7833,
+      "p",
+      4,
+      "FX_bullet_RailGun_Gun_no_hit_fx",
+      0
+     ],
+     [
+      2.8333,
+      "p",
+      1,
+      "FX_bullet_RailGun_Gun_no_hit_fx",
+      0
+     ],
+     [
+      2.8667,
+      "p",
+      2,
+      "FX_bullet_RailGun_Gun_no_hit_fx",
+      0
+     ],
+     [
+      2.9,
+      "p",
+      3,
+      "FX_bullet_RailGun_Gun",
+      0
+     ],
+     [
+      2.9333,
+      "p",
+      4,
+      "FX_bullet_RailGun_Gun_no_hit_fx",
+      0
+     ],
+     [
+      2.9833,
+      "p",
+      1,
+      "FX_bullet_RailGun_Gun",
+      0
+     ],
+     [
+      3.0167,
+      "p",
+      2,
+      "FX_bullet_RailGun_Gun_no_hit_fx",
+      0
+     ],
+     [
+      3.05,
+      "p",
+      3,
+      "FX_bullet_RailGun_Gun",
+      0
+     ],
+     [
+      3.0833,
+      "p",
+      4,
+      "FX_bullet_RailGun_Gun_no_hit_fx",
+      0
+     ],
+     [
+      3.1333,
+      "p",
+      1,
+      "FX_bullet_RailGun_Gun_no_hit_fx",
+      0
+     ],
+     [
+      3.1667,
+      "p",
+      2,
+      "FX_bullet_RailGun_Gun_no_hit_fx",
+      0
+     ],
+     [
+      3.2,
+      "p",
+      3,
+      "FX_bullet_RailGun_Gun",
+      0
+     ],
+     [
+      3.2333,
+      "p",
+      4,
+      "FX_bullet_RailGun_Gun_no_hit_fx",
+      0
+     ],
+     [
+      3.2833,
+      "p",
+      1,
+      "FX_bullet_RailGun_Gun",
+      0
+     ],
+     [
+      3.3167,
+      "p",
+      2,
+      "FX_bullet_RailGun_Gun_no_hit_fx",
+      0
+     ],
+     [
+      3.35,
+      "p",
+      3,
+      "FX_bullet_RailGun_Gun",
+      0
+     ],
+     [
+      3.3833,
+      "p",
+      4,
+      "FX_bullet_RailGun_Gun_no_hit_fx",
+      0
+     ],
+     [
+      3.4333,
+      "p",
+      1,
+      "FX_bullet_RailGun_Gun_no_hit_fx",
+      0
+     ],
+     [
+      3.4667,
+      "p",
+      2,
+      "FX_bullet_RailGun_Gun",
+      0
+     ],
+     [
+      3.5,
+      "p",
+      3,
+      "FX_bullet_RailGun_Gun_no_hit_fx",
+      0
+     ],
+     [
+      3.5333,
+      "p",
+      4,
+      "FX_bullet_RailGun_Gun",
+      0
+     ],
+     [
+      3.5833,
+      "p",
+      1,
+      "FX_bullet_RailGun_Gun_no_hit_fx",
+      0
+     ],
+     [
+      3.6167,
+      "p",
+      2,
+      "FX_bullet_RailGun_Gun_no_hit_fx",
+      0
+     ],
+     [
+      3.65,
+      "p",
+      3,
+      "FX_bullet_RailGun_Gun_no_hit_fx",
+      0
+     ],
+     [
+      3.6833,
+      "p",
+      4,
+      "FX_bullet_RailGun_Gun",
+      0
+     ],
+     [
+      3.7333,
+      "p",
+      1,
+      "FX_bullet_RailGun_Gun_no_hit_fx",
+      0
+     ],
+     [
+      3.7667,
+      "p",
+      2,
+      "FX_bullet_RailGun_Gun_no_hit_fx",
+      0
+     ],
+     [
+      3.8,
+      "p",
+      3,
+      "FX_bullet_RailGun_Gun",
+      0
+     ],
+     [
+      3.8333,
+      "p",
+      4,
+      "FX_bullet_RailGun_Gun_no_hit_fx",
+      0
+     ],
+     [
+      3.8833,
+      "p",
+      1,
+      "FX_bullet_RailGun_Gun",
+      0
+     ],
+     [
+      3.9167,
+      "p",
+      2,
+      "FX_bullet_RailGun_Gun_no_hit_fx",
+      0
+     ],
+     [
+      3.95,
+      "p",
+      3,
+      "FX_bullet_RailGun_Gun_no_hit_fx",
+      0
+     ],
+     [
+      3.9833,
+      "p",
+      4,
+      "FX_bullet_RailGun_Gun_no_hit_fx",
+      0
+     ],
+     [
+      4.0333,
+      "p",
+      1,
+      "FX_bullet_RailGun_Gun",
+      0
+     ],
+     [
+      4.0667,
+      "p",
+      2,
+      "FX_bullet_RailGun_Gun_no_hit_fx",
+      0
+     ],
+     [
+      4.1,
+      "p",
+      3,
+      "FX_bullet_RailGun_Gun",
+      0
+     ],
+     [
+      4.1333,
+      "p",
+      4,
+      "FX_bullet_RailGun_Gun_no_hit_fx",
+      0
+     ],
+     [
+      4.1833,
+      "p",
+      1,
+      "FX_bullet_RailGun_Gun_no_hit_fx",
+      0
+     ],
+     [
+      4.2167,
+      "p",
+      2,
+      "FX_bullet_RailGun_Gun",
+      0
+     ],
+     [
+      4.25,
+      "p",
+      3,
+      "FX_bullet_RailGun_Gun_no_hit_fx",
+      0
+     ],
+     [
+      4.2833,
+      "p",
+      4,
+      "FX_bullet_RailGun_Gun",
+      0
+     ],
+     [
+      4.3333,
+      "p",
+      1,
+      "FX_bullet_RailGun_Gun_no_hit_fx",
+      0
+     ],
+     [
+      4.3667,
+      "p",
+      2,
+      "FX_bullet_RailGun_Gun_no_hit_fx",
+      0
+     ],
+     [
+      4.4,
+      "p",
+      3,
+      "FX_bullet_RailGun_Gun_no_hit_fx",
+      0
+     ],
+     [
+      4.4333,
+      "p",
+      4,
+      "FX_bullet_RailGun_Gun",
+      0
+     ],
+     [
+      4.4833,
+      "p",
+      1,
+      "FX_bullet_RailGun_Gun_no_hit_fx",
+      0
+     ],
+     [
+      4.5167,
+      "p",
+      2,
+      "FX_bullet_RailGun_Gun_no_hit_fx",
+      0
+     ],
+     [
+      4.55,
+      "p",
+      3,
+      "FX_bullet_RailGun_Gun_no_hit_fx",
+      0
+     ],
+     [
+      4.5833,
+      "p",
+      4,
+      "FX_bullet_RailGun_Gun",
+      0
+     ]
+    ]
+   }
+  },
+  "mari_s2": {
+   "atk": {
+    "d": 5.75,
+    "ev": [
+     [
+      2.0167,
+      "p",
+      4,
+      "FX_bullet_RailGun_Gun",
+      0
+     ],
+     [
+      2.35,
+      "p",
+      1,
+      "FX_bullet_RailGun_Gun",
+      0
+     ],
+     [
+      2.5167,
+      "p",
+      3,
+      "FX_bullet_RailGun_Gun",
+      0
+     ],
+     [
+      2.6833,
+      "p",
+      2,
+      "FX_bullet_RailGun_Gun",
+      0
+     ],
+     [
+      2.8167,
+      "p",
+      4,
+      "FX_bullet_RailGun_Gun",
+      0
+     ],
+     [
+      2.9333,
+      "p",
+      3,
+      "FX_bullet_RailGun_Gun",
+      0
+     ],
+     [
+      3.4833,
+      "p",
+      1,
+      "FX_bullet_RailGun_Gun",
+      0
+     ],
+     [
+      3.5833,
+      "p",
+      4,
+      "FX_bullet_RailGun_Gun",
+      0
+     ],
+     [
+      3.65,
+      "p",
+      3,
+      "FX_bullet_RailGun_Gun",
+      0
+     ],
+     [
+      3.9333,
+      "p",
+      2,
+      "FX_bullet_RailGun_Gun",
+      0
+     ],
+     [
+      4.1667,
+      "p",
+      1,
+      "FX_bullet_RailGun_Gun",
+      0
+     ],
+     [
+      4.2,
+      "p",
+      2,
+      "FX_bullet_RailGun_Gun",
+      0
+     ],
+     [
+      4.4333,
+      "p",
+      1,
+      "FX_bullet_RailGun_Gun",
+      0
+     ],
+     [
+      4.5167,
+      "p",
+      3,
+      "FX_bullet_RailGun_Gun",
+      0
+     ],
+     [
+      4.6333,
+      "p",
+      4,
+      "FX_bullet_RailGun_Gun",
+      0
+     ]
+    ]
+   },
+   "skill": {
+    "d": 5.7333,
+    "ev": [
+     [
+      1.7833,
+      "p",
+      1,
+      "FX_bullet_RailGun_Gun",
+      0
+     ],
+     [
+      1.8167,
+      "p",
+      2,
+      "FX_bullet_RailGun_Gun_no_hit_fx",
+      0
+     ],
+     [
+      1.85,
+      "p",
+      3,
+      "FX_bullet_RailGun_Gun",
+      0
+     ],
+     [
+      1.8833,
+      "p",
+      4,
+      "FX_bullet_RailGun_Gun_no_hit_fx",
+      0
+     ],
+     [
+      1.9333,
+      "p",
+      1,
+      "FX_bullet_RailGun_Gun_no_hit_fx",
+      0
+     ],
+     [
+      1.9667,
+      "p",
+      2,
+      "FX_bullet_RailGun_Gun",
+      0
+     ],
+     [
+      2.0,
+      "p",
+      3,
+      "FX_bullet_RailGun_Gun_no_hit_fx",
+      0
+     ],
+     [
+      2.0333,
+      "p",
+      4,
+      "FX_bullet_RailGun_Gun",
+      0
+     ],
+     [
+      2.0833,
+      "p",
+      1,
+      "FX_bullet_RailGun_Gun_no_hit_fx",
+      0
+     ],
+     [
+      2.1167,
+      "p",
+      2,
+      "FX_bullet_RailGun_Gun_no_hit_fx",
+      0
+     ],
+     [
+      2.15,
+      "p",
+      3,
+      "FX_bullet_RailGun_Gun_no_hit_fx",
+      0
+     ],
+     [
+      2.1833,
+      "p",
+      4,
+      "FX_bullet_RailGun_Gun",
+      0
+     ],
+     [
+      2.2333,
+      "p",
+      1,
+      "FX_bullet_RailGun_Gun_no_hit_fx",
+      0
+     ],
+     [
+      2.2667,
+      "p",
+      2,
+      "FX_bullet_RailGun_Gun_no_hit_fx",
+      0
+     ],
+     [
+      2.3,
+      "p",
+      3,
+      "FX_bullet_RailGun_Gun_no_hit_fx",
+      0
+     ],
+     [
+      2.3333,
+      "p",
+      4,
+      "FX_bullet_RailGun_Gun",
+      0
+     ],
+     [
+      2.3833,
+      "p",
+      1,
+      "FX_bullet_RailGun_Gun_no_hit_fx",
+      0
+     ],
+     [
+      2.4167,
+      "p",
+      2,
+      "FX_bullet_RailGun_Gun",
+      0
+     ],
+     [
+      2.45,
+      "p",
+      3,
+      "FX_bullet_RailGun_Gun_no_hit_fx",
+      0
+     ],
+     [
+      2.4833,
+      "p",
+      4,
+      "FX_bullet_RailGun_Gun",
+      0
+     ],
+     [
+      2.5333,
+      "p",
+      1,
+      "FX_bullet_RailGun_Gun_no_hit_fx",
+      0
+     ],
+     [
+      2.5667,
+      "p",
+      2,
+      "FX_bullet_RailGun_Gun_no_hit_fx",
+      0
+     ],
+     [
+      2.6,
+      "p",
+      3,
+      "FX_bullet_RailGun_Gun_no_hit_fx",
+      0
+     ],
+     [
+      2.6333,
+      "p",
+      4,
+      "FX_bullet_RailGun_Gun_no_hit_fx",
+      0
+     ],
+     [
+      2.6833,
+      "p",
+      1,
+      "FX_bullet_RailGun_Gun",
+      0
+     ],
+     [
+      2.7167,
+      "p",
+      2,
+      "FX_bullet_RailGun_Gun_no_hit_fx",
+      0
+     ],
+     [
+      2.75,
+      "p",
+      3,
+      "FX_bullet_RailGun_Gun",
+      0
+     ],
+     [
+      2.7833,
+      "p",
+      4,
+      "FX_bullet_RailGun_Gun_no_hit_fx",
+      0
+     ],
+     [
+      2.8333,
+      "p",
+      1,
+      "FX_bullet_RailGun_Gun_no_hit_fx",
+      0
+     ],
+     [
+      2.8667,
+      "p",
+      2,
+      "FX_bullet_RailGun_Gun_no_hit_fx",
+      0
+     ],
+     [
+      2.9,
+      "p",
+      3,
+      "FX_bullet_RailGun_Gun",
+      0
+     ],
+     [
+      2.9333,
+      "p",
+      4,
+      "FX_bullet_RailGun_Gun_no_hit_fx",
+      0
+     ],
+     [
+      2.9833,
+      "p",
+      1,
+      "FX_bullet_RailGun_Gun",
+      0
+     ],
+     [
+      3.0167,
+      "p",
+      2,
+      "FX_bullet_RailGun_Gun_no_hit_fx",
+      0
+     ],
+     [
+      3.05,
+      "p",
+      3,
+      "FX_bullet_RailGun_Gun",
+      0
+     ],
+     [
+      3.0833,
+      "p",
+      4,
+      "FX_bullet_RailGun_Gun_no_hit_fx",
+      0
+     ],
+     [
+      3.1333,
+      "p",
+      1,
+      "FX_bullet_RailGun_Gun_no_hit_fx",
+      0
+     ],
+     [
+      3.1667,
+      "p",
+      2,
+      "FX_bullet_RailGun_Gun_no_hit_fx",
+      0
+     ],
+     [
+      3.2,
+      "p",
+      3,
+      "FX_bullet_RailGun_Gun",
+      0
+     ],
+     [
+      3.2333,
+      "p",
+      4,
+      "FX_bullet_RailGun_Gun_no_hit_fx",
+      0
+     ],
+     [
+      3.2833,
+      "p",
+      1,
+      "FX_bullet_RailGun_Gun",
+      0
+     ],
+     [
+      3.3167,
+      "p",
+      2,
+      "FX_bullet_RailGun_Gun_no_hit_fx",
+      0
+     ],
+     [
+      3.35,
+      "p",
+      3,
+      "FX_bullet_RailGun_Gun",
+      0
+     ],
+     [
+      3.3833,
+      "p",
+      4,
+      "FX_bullet_RailGun_Gun_no_hit_fx",
+      0
+     ],
+     [
+      3.4333,
+      "p",
+      1,
+      "FX_bullet_RailGun_Gun_no_hit_fx",
+      0
+     ],
+     [
+      3.4667,
+      "p",
+      2,
+      "FX_bullet_RailGun_Gun",
+      0
+     ],
+     [
+      3.5,
+      "p",
+      3,
+      "FX_bullet_RailGun_Gun_no_hit_fx",
+      0
+     ],
+     [
+      3.5333,
+      "p",
+      4,
+      "FX_bullet_RailGun_Gun",
+      0
+     ],
+     [
+      3.5833,
+      "p",
+      1,
+      "FX_bullet_RailGun_Gun_no_hit_fx",
+      0
+     ],
+     [
+      3.6167,
+      "p",
+      2,
+      "FX_bullet_RailGun_Gun_no_hit_fx",
+      0
+     ],
+     [
+      3.65,
+      "p",
+      3,
+      "FX_bullet_RailGun_Gun_no_hit_fx",
+      0
+     ],
+     [
+      3.6833,
+      "p",
+      4,
+      "FX_bullet_RailGun_Gun",
+      0
+     ],
+     [
+      3.7333,
+      "p",
+      1,
+      "FX_bullet_RailGun_Gun_no_hit_fx",
+      0
+     ],
+     [
+      3.7667,
+      "p",
+      2,
+      "FX_bullet_RailGun_Gun_no_hit_fx",
+      0
+     ],
+     [
+      3.8,
+      "p",
+      3,
+      "FX_bullet_RailGun_Gun",
+      0
+     ],
+     [
+      3.8333,
+      "p",
+      4,
+      "FX_bullet_RailGun_Gun_no_hit_fx",
+      0
+     ],
+     [
+      3.8833,
+      "p",
+      1,
+      "FX_bullet_RailGun_Gun",
+      0
+     ],
+     [
+      3.9167,
+      "p",
+      2,
+      "FX_bullet_RailGun_Gun_no_hit_fx",
+      0
+     ],
+     [
+      3.95,
+      "p",
+      3,
+      "FX_bullet_RailGun_Gun_no_hit_fx",
+      0
+     ],
+     [
+      3.9833,
+      "p",
+      4,
+      "FX_bullet_RailGun_Gun_no_hit_fx",
+      0
+     ],
+     [
+      4.0333,
+      "p",
+      1,
+      "FX_bullet_RailGun_Gun",
+      0
+     ],
+     [
+      4.0667,
+      "p",
+      2,
+      "FX_bullet_RailGun_Gun_no_hit_fx",
+      0
+     ],
+     [
+      4.1,
+      "p",
+      3,
+      "FX_bullet_RailGun_Gun",
+      0
+     ],
+     [
+      4.1333,
+      "p",
+      4,
+      "FX_bullet_RailGun_Gun_no_hit_fx",
+      0
+     ],
+     [
+      4.1833,
+      "p",
+      1,
+      "FX_bullet_RailGun_Gun_no_hit_fx",
+      0
+     ],
+     [
+      4.2167,
+      "p",
+      2,
+      "FX_bullet_RailGun_Gun",
+      0
+     ],
+     [
+      4.25,
+      "p",
+      3,
+      "FX_bullet_RailGun_Gun_no_hit_fx",
+      0
+     ],
+     [
+      4.2833,
+      "p",
+      4,
+      "FX_bullet_RailGun_Gun",
+      0
+     ],
+     [
+      4.3333,
+      "p",
+      1,
+      "FX_bullet_RailGun_Gun_no_hit_fx",
+      0
+     ],
+     [
+      4.3667,
+      "p",
+      2,
+      "FX_bullet_RailGun_Gun_no_hit_fx",
+      0
+     ],
+     [
+      4.4,
+      "p",
+      3,
+      "FX_bullet_RailGun_Gun_no_hit_fx",
+      0
+     ],
+     [
+      4.4333,
+      "p",
+      4,
+      "FX_bullet_RailGun_Gun",
+      0
+     ],
+     [
+      4.4833,
+      "p",
+      1,
+      "FX_bullet_RailGun_Gun_no_hit_fx",
+      0
+     ],
+     [
+      4.5167,
+      "p",
+      2,
+      "FX_bullet_RailGun_Gun_no_hit_fx",
+      0
+     ],
+     [
+      4.55,
+      "p",
+      3,
+      "FX_bullet_RailGun_Gun_no_hit_fx",
+      0
+     ],
+     [
+      4.5833,
+      "p",
+      4,
+      "FX_bullet_RailGun_Gun",
+      0
+     ]
+    ]
+   }
+  },
+  "may": {
+   "atk": {
+    "d": 7.9833,
+    "ev": [
+     [
+      5.6333,
+      "h",
+      0,
+      "noHit_m",
+      0
+     ],
+     [
+      6.05,
+      "h",
+      0,
+      "noHit_m",
+      0
+     ],
+     [
+      6.5167,
+      "h",
+      0,
+      "noHit_m",
+      0
+     ],
+     [
+      7.0333,
+      "h",
+      0,
+      "noHit_m",
+      0
+     ]
+    ]
+   }
+  },
+  "may_s1": {
+   "atk": {
+    "d": 7.9833,
+    "ev": [
+     [
+      5.6333,
+      "h",
+      0,
+      "Hit_x2",
+      0
+     ],
+     [
+      6.05,
+      "h",
+      0,
+      "Hit_x2",
+      0
+     ],
+     [
+      6.5167,
+      "h",
+      0,
+      "Hit_x2",
+      0
+     ],
+     [
+      7.0333,
+      "h",
+      0,
+      "Hit_x2",
+      0
+     ]
+    ]
+   }
+  },
+  "may_s2": {
+   "atk": {
+    "d": 7.9833,
+    "ev": [
+     [
+      5.6333,
+      "h",
+      0,
+      "noHit_m",
+      0
+     ],
+     [
+      6.05,
+      "h",
+      0,
+      "noHit_m",
+      0
+     ],
+     [
+      6.5167,
+      "h",
+      0,
+      "noHit_m",
+      0
+     ],
+     [
+      7.0333,
       "h",
       0,
       "noHit_m",
@@ -9492,6 +12427,126 @@
       "p",
       1,
       "FX_Leprechaun_bullet",
+      0
+     ]
+    ]
+   }
+  },
+  "pero": {
+   "atk": {
+    "d": 5.0667,
+    "ev": [
+     [
+      1.85,
+      "h",
+      0,
+      "noHit_m",
+      0
+     ],
+     [
+      2.6167,
+      "h",
+      0,
+      "noHit_m",
+      0
+     ],
+     [
+      3.2667,
+      "h",
+      0,
+      "noHit_m",
+      0
+     ]
+    ]
+   },
+   "skill": {
+    "d": 2.1,
+    "ev": [
+     [
+      1.0,
+      "h",
+      0,
+      "noHit_m",
+      0
+     ]
+    ]
+   }
+  },
+  "pero_s1": {
+   "atk": {
+    "d": 5.0667,
+    "ev": [
+     [
+      1.85,
+      "h",
+      0,
+      "noHit_m",
+      0
+     ],
+     [
+      2.6167,
+      "h",
+      0,
+      "noHit_m",
+      0
+     ],
+     [
+      3.2667,
+      "h",
+      0,
+      "noHit_m",
+      0
+     ]
+    ]
+   },
+   "skill": {
+    "d": 2.1,
+    "ev": [
+     [
+      1.0,
+      "h",
+      0,
+      "noHit_m",
+      0
+     ]
+    ]
+   }
+  },
+  "pero_s2": {
+   "atk": {
+    "d": 5.0667,
+    "ev": [
+     [
+      1.85,
+      "h",
+      0,
+      "noHit_m",
+      0
+     ],
+     [
+      2.6167,
+      "h",
+      0,
+      "noHit_m",
+      0
+     ],
+     [
+      3.2667,
+      "h",
+      0,
+      "noHit_m",
+      0
+     ]
+    ]
+   },
+   "skill": {
+    "d": 2.1,
+    "ev": [
+     [
+      1.0,
+      "h",
+      0,
+      "noHit_m",
       0
      ]
     ]
@@ -13697,6 +16752,33 @@
    "1": "size_root/fire_point_01",
    "2": "size_root/fire_point_02"
   },
+  "griffon": {
+   "1": "size_root/pelvis/body/Arm_up_L/Arm_down_L/hand_L/weapon_L_1/parts_weapon_L_1",
+   "2": "size_root/pelvis/body/Arm_up_L/Arm_down_L/hand_L/weapon_L_2/parts_weapon_L_2",
+   "3": "size_root/pelvis/body/Arm_up_R/Arm_down_R/hand_R/weapon_R_main/weapon_R_1/parts_weapon_R_1",
+   "4": "size_root/pelvis/body/Arm_up_R/Arm_down_R/hand_R/weapon_R_main/weapon_R_2/parts_weapon_R_2"
+  },
+  "griffon_s1": {
+   "1": "size_root/pelvis/body/Arm_up_L/Arm_down_L/hand_L/weapon_L_1/parts_weapon_L_1",
+   "2": "size_root/pelvis/body/Arm_up_L/Arm_down_L/hand_L/weapon_L_2/parts_weapon_L_2",
+   "3": "size_root/pelvis/body/Arm_up_R/Arm_down_R/hand_R/weapon_R_main/weapon_R_1/parts_weapon_R_1",
+   "4": "size_root/pelvis/body/Arm_up_R/Arm_down_R/hand_R/weapon_R_main/weapon_R_2/parts_weapon_R_2"
+  },
+  "griffon_s2": {
+   "1": "size_root/pelvis/body/Arm_up_L/Arm_down_L/hand_L/weapon_L_1/parts_weapon_L_1",
+   "2": "size_root/pelvis/body/Arm_up_L/Arm_down_L/hand_L/weapon_L_2/parts_weapon_L_2",
+   "3": "size_root/pelvis/body/Arm_up_R/Arm_down_R/hand_R/weapon_R_main/weapon_R_1/parts_weapon_R_1",
+   "4": "size_root/pelvis/body/Arm_up_R/Arm_down_R/hand_R/weapon_R_main/weapon_R_2/parts_weapon_R_2"
+  },
+  "hachiko": {
+   "1": "size_root/ch_root/pelvis/body/FK_Arm_up_R/FK_Arm_down_R/FK_hand_R/FK_RF_hand_set/FK_RF_weapon/ATK_point"
+  },
+  "hachiko_s1": {
+   "1": "size_root/ch_root/pelvis/body/FK_Arm_up_R/FK_Arm_down_R/FK_hand_R/FK_RF_hand_set/FK_RF_weapon/ATK_point"
+  },
+  "hachiko_s2": {
+   "1": "size_root/ch_root/pelvis/body/FK_Arm_up_R/FK_Arm_down_R/FK_hand_R/FK_RF_hand_set/FK_RF_weapon/ATK_point"
+  },
   "harpy": {
    "1": "size_root/COM_root motion modify/Global_CTRL/Bone_pelvis/Bone_Spine/Bone_UpperArm_R/Bone_Forearm_R/Bone_Weapon_R/Fire_Point_R",
    "2": "size_root/COM_root motion modify/Global_CTRL/Bone_pelvis/Bone_Spine/Bone_UpperArm_L/Bone_Forearm_L/Bone_Weapon_L/Fire_Point_L",
@@ -13745,6 +16827,18 @@
   "khan_s2": {
    "1": "size_root/ch_root/Global_CTRL/pelvis/body/Arm_up_R/Arm_down_R/hand_R/hand_R_01/RF_hand_set/RF_weapon/ATK_point"
   },
+  "lancermina": {
+   "1": "size_root/fire_point_01",
+   "2": "size_root/fire_point_02"
+  },
+  "lancermina_s1": {
+   "1": "size_root/fire_point_01",
+   "2": "size_root/fire_point_02"
+  },
+  "lancermina_s2": {
+   "1": "size_root/fire_point_01",
+   "2": "size_root/fire_point_02"
+  },
   "leona": {
    "1": "size_root/Fire_Point_01"
   },
@@ -13762,6 +16856,36 @@
   },
   "leprechaun_s2": {
    "1": "size_root/ch_root/pelvis/body/FK_Arm_up_R/FK_Arm_down_R/FK_hand_R/FK_RF_hand_set/FK_RF_weapon/parts_FK_RF_weapon/ATK_point"
+  },
+  "lindwurm": {
+   "1": "size_root/fire_point_01",
+   "2": "size_root/fire_point_02"
+  },
+  "lindwurm_s1": {
+   "1": "size_root/fire_point_01",
+   "2": "size_root/fire_point_02"
+  },
+  "lindwurm_s2": {
+   "1": "size_root/fire_point_01",
+   "2": "size_root/fire_point_02"
+  },
+  "mari": {
+   "1": "size_root/skill1_attach/drone_set/drone_01",
+   "2": "size_root/skill1_attach/drone_set/drone_02",
+   "3": "size_root/skill1_attach/drone_set/drone_03",
+   "4": "size_root/skill1_attach/drone_set/drone_04"
+  },
+  "mari_s1": {
+   "1": "size_root/skill1_attach/drone_set/drone_01",
+   "2": "size_root/skill1_attach/drone_set/drone_02",
+   "3": "size_root/skill1_attach/drone_set/drone_03",
+   "4": "size_root/skill1_attach/drone_set/drone_04"
+  },
+  "mari_s2": {
+   "1": "size_root/skill1_attach/drone_set/drone_01",
+   "2": "size_root/skill1_attach/drone_set/drone_02",
+   "3": "size_root/skill1_attach/drone_set/drone_03",
+   "4": "size_root/skill1_attach/drone_set/drone_04"
   },
   "nymph": {
    "1": "size_root/ch_root/pelvis/body/FK_Arm_up_R/FK_Arm_down_R/FK_hand_R/FK_RF_hand_set/FK_RF_weapon/parts_FK_RF_weapon/ATK_point"

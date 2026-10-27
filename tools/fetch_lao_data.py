@@ -43,6 +43,8 @@ SD_UNITS = {
     "eternity": "3P_Eternity", "ullr": "ST_Ullr", "saraqael": "DS_Saraqael", "lrl": "PECS_LRL",
     "amy": "BR_Amy", "cyclopsprincess": "PECS_CyclopsePrincess", "blindprincess": "PECS_BlindPrincess",
     "alvis": "BR_Alvis", "sandman": "BR_SandMan",
+    "mari": "BR_Marie", "griffon": "BR_PA00EL", "lindwurm": "BR_Lindwurm", "may": "BR_May",
+    "pero": "3P_CSPerrault", "hachiko": "3P_Hachiko", "lancermina": "ST_Lancer",
 }
 LOCALES = ["UNIT", "SKILL_00", "SKILL_01", "SKILL_02", "SKILL_03"]
 

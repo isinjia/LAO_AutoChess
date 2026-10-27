@@ -16,6 +16,7 @@
     cyclopsprincess: 'slash', blindprincess: 'energy', brunhild: 'expM', tiamat: 'laserBig', khan: 'rifle', labiata: 'swing',
     lrl: 'energy', constantia: 'laserBig', titania: 'ice', mercury: 'slash', empress: 'expM', fafnir: 'elec', ramiel: 'energy',
     alvis: 'gun', sandman: 'missile',
+    mari: 'laser', griffon: 'missile', lindwurm: 'mg', may: 'expM', pero: 'slash', hachiko: 'cannon', lancermina: 'swing',
   };
   // per-effect loudness (rapid-fire weapons and routine hits sit lower than UI cues and warnings)
   const SFX_VOL = {
