@@ -17,9 +17,8 @@
       { target: '#btnSortie', text: '챕터 1의 첫 작전 <b>1-1</b>입니다. 상점에는 <b>편성</b>한 대원 6명만 같은 확률로 나옵니다(지금은 자동 편성). <b>출격</b>하세요.', wait: 'stage' },
     ],
     stage: [
-      { target: '#shop', text: '<b>상점</b>입니다. 카드를 누르면 대원을 영입합니다.<br>카드 왼쪽 위 숫자가 가격(골드)입니다. 한 명 영입해 보세요.', wait: 'buy' },
-      { target: '#zones', text: '영입한 대원은 <b>3×3 진형</b>에 자동으로 배치됩니다. 끌어서 다른 칸으로 옮길 수 있어요.<br>오른쪽 앞줄에는 보호기와 사거리가 짧은 대원, 왼쪽 뒷줄에는 원거리 대원이 좋습니다.' },
-      { target: '.rbRes', text: '골드가 남았다면 더 영입하세요. 위쪽에 <b>배치 인원</b>이 표시됩니다.<br>같은 대원 <b>2명</b>이 모이면 한 단계 높은 별로 합성됩니다(최대 <b>★7</b>). 은별부터 스킨이 바뀌어요.' },
+      { target: '#zones', text: '첫 작전이라 대원 <b>3명</b>이 진형에 먼저 서 있습니다.<br>진형의 세 줄이 철충이 오는 <b>세 레인</b>이에요. 줄마다 한 명씩 서 있으면 철충이 기지로 새지 않습니다. 끌어서 칸을 옮길 수 있어요.' },
+      { target: '#shop', text: '<b>상점</b>입니다. 카드를 누르면 대원을 영입합니다(왼쪽 위 숫자가 가격).<br>지금은 배치 인원 3명이 차 있어 새 대원은 <b>대기석</b>으로 갑니다. 같은 대원 <b>2명</b>이 모이면 한 단계 높은 별로 합성돼요. 한 명 영입해 보세요.', wait: 'buy' },
       { target: '#btnFight', text: '준비가 끝나면 <b>웨이브 시작</b>!<br>철충은 오른쪽에서 레인을 따라 다가옵니다. 막지 못한 철충은 왼쪽 <b>기지 체력</b>을 깎습니다.', wait: 'fight' },
     ],
     afterWave1: [
@@ -46,6 +45,7 @@
     el('tutNext').onclick = () => advance();
   }
 
+  const TOUCH = !!(window.matchMedia && matchMedia('(pointer: coarse)').matches);
   function rectOf(target) {
     const nodes = typeof target === 'function' ? [target()] : [...document.querySelectorAll(target)];
     const rs = nodes.filter(Boolean).map((n) => n.getBoundingClientRect()).filter((r) => r.width && r.height);
@@ -72,7 +72,7 @@
       Object.assign(spot.style, { display: 'block', left: r.left - pad + 'px', top: r.top - pad + 'px', width: r.width + pad * 2 + 'px', height: r.height + pad * 2 + 'px' });
     } else spot.style.display = 'none';
     // the card goes below the target if there is room, else above
-    const cw = Math.min(360, stage.width - 24);
+    const cw = Math.min(TOUCH ? 470 : 360, stage.width - 24); // phones: the whole stage is scaled down, so a wider card
     card.style.width = cw + 'px';
     const ch = card.offsetHeight || 120;
     let top = r ? r.top - stage.top + r.height + 14 : stage.height / 2 - ch / 2;

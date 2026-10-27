@@ -4,6 +4,7 @@
 //
 // introBg / stageBg / outroBg: original dialogue backgrounds behind the prologue, the stage scenes and the epilogue
 // line: [speaker, text]   speaker = roster unit id (portrait), 'commander' (the player) or 'narr' (narration)
+// ['scene', { bg, place: [small, large], fx }]: a cut to another place in the middle of a scene (js/talk.js)
 // stage.final: 'elite' (a stage captain) or a boss rig with tricks; stage 4 and 8 of a chapter are boss stages
 // stage.cruel: the boss comes "cruel" (one extra trick, harsher numbers); a chapter's `cruel` is the default
 //
@@ -30,7 +31,7 @@
         ['labiata', '레오나 대장. 지금 제가 지휘권자예요. 대기해 주세요.'],
         ['leona', '들었어. 그리고 거절할게. 시가전은 발할라의 주특기야. 사령관이 간 해안 도로는 내 구역이고. 님프, 발키리, 따라와!'],
         ['nymph', '자, 잠깐만요, 레오나님! 라비아타님 말씀도… 아하하, 네, 갈게요. 가요.'],
-        ['narr', '한편, 등대에서.'],
+        ['scene', { bg: 'BG_EV_09_07', place: ['한편', '해안의 옛 등대'], fx: 'overcast' }],
         ['constantia', '어머… 주인님, 통신기가… 빗물 고인 데에 떨어졌어요. 죄송해요.'],
         ['commander', '…콘스탄챠. 라비아타가 걱정하겠군.'],
         ['constantia', '언니는 침착한 분이니까요. 후후, 비가 그칠 때까지는 아무도 못 와요. 차라도 끓일게요. 주인님은 거기 앉아 계세요.'],
@@ -68,7 +69,7 @@
         ['brownie', '헤헤, 레프리콘 상병님! 발자국이 있지 말입니다! 분명 각하 발자국임다! 이쪽임다!'],
         ['gnome', '…그건 레오나 대장님 전투화 자국 같은데요.'],
         ['leprechaun', '브라우니! 멈추십시오! 거긴 도시 안쪽… 아자젤 맙소사. 임펫 중사님, 쫓아가죠.'],
-        ['narr', '한편, 등대에서.'],
+        ['scene', { bg: 'BG_EV_09_07', place: ['한편', '해안의 옛 등대'], fx: 'overcast' }],
         ['constantia', '주인님, 샌드위치예요. 오늘은 제가 좋아하는 걸로 만들어 봤거든요.'],
         ['commander', '…저 소리. 포성이다. 레프리콘의 기관총 소리야.'],
         ['constantia', '어머, 그러네요. 언니가 훈련을 시키나 봐요. 후후, 주인님은 드세요. 식어요.'],
@@ -104,7 +105,7 @@
         ['harpy', '책에서 봤어! 실종자는 높은 곳에 올라가서 신호를 기다린대. 이 근처에서 제일 높은 건… 협곡 대교!'],
         ['hraesvelgr', '레이더에 협곡 대교 방향 열원 다수. 사령관님일 가능성은 낮습니다만, 확인은 필요하군요. 다들 들으십시오. 생환이 1순위입니다.'],
         ['raven', '오케이. 하르페이아, 흐레스벨그, 가자. 레오나랑 브라우니는 땅에서 헤매게 두고.'],
-        ['narr', '한편, 등대 꼭대기에서.'],
+        ['scene', { bg: 'BG_LightTower', place: ['한편', '등대 꼭대기'], fx: 'rain' }],
         ['commander', '협곡 대교 쪽에 연기. 공중 전투다. …레이븐이군.'],
         ['constantia', '눈이 좋으시네요. 후후. 그래도 주인님은 여기가 더 안전해요. 저 다리까지는 걸어서 세 시간이거든요.'],
         ['commander', '통신기는.'],
@@ -140,7 +141,7 @@
         ['amy', '후후, LRL. 우리 자기가 들으면 좋아하겠군요. 저도 가겠어요. 정보전은 제 전공이니까.'],
         ['sylphid', '호위는 초 쿨한 내가 맡는다. 호위기가 뚫리면 초 굴욕이거든? 그런 일은 없어.'],
         ['banshee', '저는… 명령만 주십시오. 공장 진입, 가능합니다. 감정은… 잘 모르겠습니다. 가겠습니다.'],
-        ['narr', '한편, 등대에서.'],
+        ['scene', { bg: 'BG_EV_09_07', place: ['한편', '해안의 옛 등대'], fx: 'overcast' }],
         ['constantia', '통신기를 분해해서 말리고 있어요. 어머, 예비 배터리가… 제 가방에 있었네요. 후후.'],
         ['commander', '그럼 고칠 수 있는 거군.'],
         ['constantia', '기판이 조금만 더 마르면요. 주인님, 그동안 책이라도 읽으세요. 등대지기가 두고 간 책이 있거든요.'],
@@ -176,7 +177,7 @@
         ['titania', '흐응. 여왕도 간다. 너희만 보내면 바보 같은 짓을 할 테니까.'],
         ['daphne', '어머나! 그, 그럼 간호사도 필요하겠네요… 티타니아 언니도 가시잖아요. 추, 출전할게요!'],
         ['blacklilith', '좋아. 셋. 더는 안 받아. 주인님, 리리스가 가요.'],
-        ['narr', '한편, 등대에서.'],
+        ['scene', { bg: 'BG_EV_09_07', place: ['한편', '해안의 옛 등대'] }],
         ['constantia', '…주인님, 잠드셨네요. 밤새 서류를 보셨으니까요.'],
         ['constantia', '하루만. 하루만 이렇게 쉬시게 해 드리고 싶었거든요. 나쁜 콘스탄챠네요. 후후… 언니한테는 비밀이에요.'],
       ],
@@ -211,7 +212,7 @@
         ['undine', '노… 농! 싫, 싫은 건 더위라구! 용광로가 더운 건 어쩔 수 없잖아! 흥!'],
         ['mercury', '그리고 이것! 철충이 좋아하는 소리 주파수를 본녀가 연구했사와요. 길잡이 메기의 울음과 아주 유사…'],
         ['tiamat', '머큐리, 그냥 쏴. 후훗.'],
-        ['narr', '한편, 등대에서.'],
+        ['scene', { bg: 'BG_EV_09_07', place: ['한편', '해안의 옛 등대'] }],
         ['commander', '…공장 쪽에서 사이렌. 그리고 저 이상한 소리. 머큐리군.'],
         ['constantia', '…머큐리 양이네요. 저건 못 속이겠어요. 주인님. 통신기는… 사실 아까 말랐어요. 배터리도 넣었어요.'],
         ['commander', '콘스탄챠.'],

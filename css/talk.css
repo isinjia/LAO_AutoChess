@@ -94,3 +94,22 @@
 #story .taskbox div { display: flex; gap: 12px; justify-content: center; }
 #story .taskbox button { min-width: 120px; height: 38px; font-size: 15px; font-weight: 700; }
 #story .taskbox button.y { color: #111; background: var(--y); }
+
+/* scene effects (['scene', { fx }] in the story lines): rain - slanted streaks drifting down, a cool dim (outdoors) */
+#story .train { position: absolute; inset: -10% -10%; z-index: 5; pointer-events: none; opacity: 0; transition: opacity 0.6s;
+  background-image: repeating-linear-gradient(104deg, transparent 0 22px, rgba(200, 220, 255, 0.16) 22px 23px, transparent 23px 46px),
+    repeating-linear-gradient(98deg, transparent 0 37px, rgba(210, 225, 255, 0.11) 37px 38px, transparent 38px 75px);
+  background-size: 300px 220px, 420px 300px; animation: trainFall 0.42s linear infinite; }
+#story[data-fx="rain"] .train { opacity: 1; }
+#story[data-fx="rain"] .tbg { filter: brightness(0.72) saturate(0.75) hue-rotate(-8deg); }
+/* overcast: indoors on a rainy day - no streaks, a grey cool light (the windows lose their blue sky) */
+#story[data-fx="overcast"] .tbg { filter: brightness(0.62) saturate(0.35) contrast(0.95) hue-rotate(-12deg); }
+@keyframes trainFall { to { background-position: -48px 220px, -60px 300px; } }
+
+/* phones (touch): the dialogue buttons at a finger's size (the stage is shown at about half size) */
+@media (pointer: coarse) {
+  #story .tbar { gap: 18px; bottom: calc(22 * var(--u)); }
+  #story .tbar button, #story .tskip { height: 46px; min-width: 132px; font-size: 18px; border-image-width: 0 26px 0 31px; }
+  #story .tskip { right: calc(90 * var(--u)); bottom: calc(22 * var(--u)); }
+  #story .taskbox button { min-width: 160px; height: 56px; font-size: 20px; }
+}

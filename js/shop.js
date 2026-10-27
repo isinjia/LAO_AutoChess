@@ -326,7 +326,10 @@
     const n = g;
     const plan = meta.plan(g);
     B.setBg(plan.bg);
-    st = Stage.create({ roster: RO, stage: n, plan, seed: (Date.now() >>> 0) % 1000000, deck: meta.data.deck, pool: meta.data.unlocked, baseHp: meta.baseHp(), bonusGold: meta.bonusGold() });
+    // the tutorial's first stage: three ★2 units already stand one per lane (front column), so the first waves are short
+    // and nothing gets through while the player learns the shop
+    const starters = T.active() && n === 1 && meta.data.cycle === 1 ? [['nymph', 0, 0, 2], ['gnome', 0, 1, 2], ['leprechaun', 0, 2, 2]] : null;
+    st = Stage.create({ roster: RO, stage: n, plan, seed: (Date.now() >>> 0) % 1000000, deck: meta.data.deck, pool: meta.data.unlocked, baseHp: meta.baseHp(), bonusGold: meta.bonusGold(), starters });
     $('lobby').hidden = true;
     document.body.classList.remove('lobby');
     relayout();

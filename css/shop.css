@@ -199,3 +199,15 @@ body.lobby #panel, body.lobby #runbar, body.lobby #zones, body.lobby #controls, 
 .stageCard .sBtns { display: flex; gap: 4px; }
 .stageCard .sBtns .primary { flex: 1; }
 @keyframes nextBlink { 50% { opacity: 0.2; } }
+
+/* phones (touch): the 1280x720 stage is shown at about half size, so the tutorial card's text and buttons are made
+   larger to stay readable and hittable with a finger */
+@media (pointer: coarse) {
+  #tut .tutCard { font-size: 19px; line-height: 1.5; padding: 18px 20px 16px; }
+  #tut .tutBtns { gap: 14px; margin-top: 14px; }
+  #tut .tutBtns button { min-width: 130px; min-height: 58px; padding: 10px 26px; font-size: 22px; font-weight: 700; }
+}
+
+/* touch: the field (SD bodies, formation cells) and the bottom panel take the finger for dragging units and gear;
+   without this the phone browser turns the move into a pan / scroll and cancels the drag (pointercancel) */
+#field, #zones, .zone, #panel, #bench, #items, #shopRow { touch-action: none; }

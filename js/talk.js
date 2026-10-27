@@ -6,6 +6,8 @@
 //   TALK.playScenes([{ lines: [[who, text], ...], bg: 'BG_Lobby', place: ['CHAPTER 1', '서른 날'] }, ...], title)
 //     -> Promise, resolves when the scenes end or are skipped
 //   who: a roster unit id (stands in assets/story/stand/<id>.webp, tools/build_story_art.py), 'commander' or 'narr'
+//   ['scene', { bg, place: [small, large], fx: 'rain' }] in the lines: a cut to another place ("한편, 등대에서"):
+//     dip to black, the new background, the place caption, the stage cleared; fx: 'rain' (rain over the scene, outdoors) / 'overcast' (a grey rainy-day light, indoors)
 //
 // Time runs on its own requestAnimationFrame clock (paused while the tab is hidden).
 (function () {
@@ -64,11 +66,17 @@
   function fromScenes(scenes) {
     const out = [];
     for (const sc of scenes) {
-      const slots = { L: null, R: null };
-      let lastSide = null, first = true;
+      let slots = { L: null, R: null };
+      let lastSide = null, first = true, cut = null, fx = sc.fx || '';
       for (const [who, text] of sc.lines || []) {
+        if (who === 'scene') { cut = text || {}; continue; } // the next line opens the new place
         const n = { who, t: text || '', app: {}, cast: [] };
-        if (first) { n.bg = sc.bg || ''; n.place = sc.place || null; n.newScene = true; first = false; }
+        if (first) { n.bg = sc.bg || ''; n.place = sc.place || null; n.newScene = true; n.fx = fx; first = false; }
+        if (cut) {
+          slots = { L: null, R: null }; lastSide = null; fx = cut.fx || '';
+          n.bg = cut.bg || ''; n.place = cut.place || null; n.newScene = true; n.cut = true; n.fx = fx;
+          cut = null;
+        }
         const unit = window.ROSTER && ROSTER.BY_ID[who];
         if (unit) {
           let side = slots.L === who ? 'L' : slots.R === who ? 'R' : null;
@@ -114,6 +122,7 @@
       stage.innerHTML = '';
       fxEl.style.opacity = 1; // scenes open from black
       root.classList.remove('logon', 'asking', 'ready', 'nar');
+      root.dataset.fx = '';
       root.classList.add('nobox');
       placeEl.classList.remove('on');
       setBtn();
@@ -179,11 +188,13 @@
     const g = gen;
     cur = n; busy = true; typing = null; autoWait = 0;
     root.classList.remove('ready');
-    if (n.newScene && idx > 0) { // a new scene: dip to black, swap, come back
+    if (n.newScene && idx > 0) { // a new scene: dip to black, swap, come back (a cut to another place: a longer dip)
       root.classList.add('nobox');
-      await tween(fastOn ? 0.1 : 0.35, (k) => { fxEl.style.opacity = k; });
+      await tween(fastOn ? 0.1 : n.cut ? 0.6 : 0.35, (k) => { fxEl.style.opacity = k; });
       if (g !== gen) return;
+      if (n.cut && !fastOn) { await tw(250); if (g !== gen) return; }
     }
+    if (n.newScene) root.dataset.fx = n.fx || '';
     const bgP = setBg(n.bg);
     setCast(n, n.newScene);
     if (+fxEl.style.opacity > 0) { await bgP; await tween(fastOn ? 0.12 : 0.45, (k) => { fxEl.style.opacity = 1 - k; }); if (g !== gen) return; }
@@ -218,8 +229,7 @@
   function next() {
     if (!cur || busy || root.classList.contains('logon') || root.classList.contains('asking')) return;
     if (typing) { finishTyping(); return; }
-    if (window.AUDIO) AUDIO.sfx('click', 0.5);
-    go(idx + 1);
+    go(idx + 1); // no touch sound in the dialogue: the letters' blips are its sound
   }
   function end() {
     gen++;
@@ -273,7 +283,6 @@
     if (b) {
       e.stopPropagation();
       const k = b.dataset.k;
-      if (window.AUDIO) AUDIO.sfx('click', 0.5);
       if (k === 'auto') { autoOn = !autoOn; fastOn = false; setBtn(); if (!typing && cur && !busy) autoWait = 0.6; }
       else if (k === 'fast') { fastOn = !fastOn; setBtn(); if (!typing && cur && !busy) autoWait = 0.1; }
       else if (k === 'log') openLog();

@@ -61,6 +61,8 @@
       cost, reroll, buy, sell, move, buyXp, lineup, boardCount, cap, finishWave, unitAt, units, freeReroll,
       equip, buyItem, rerollItems, closeItemShop, takeReward, itemTier, mergeItems, fits: (it) => fits(it),
     };
+    // opts.starters: [[id, col, row, star]] already on the formation, free (the tutorial's first stage)
+    for (const [id, col, row, star] of opts.starters || []) if (roster.BY_ID[id]) st.board[col + ',' + row] = newUnit(id, star || 1);
 
     function cost(id) { return roster.BY_ID[id].tier; }
     function cap() { return st.level; }
