@@ -67,7 +67,7 @@
       joinsAfter(id) { const J = story().JOIN; for (const c in J) if (J[c].includes(id)) return +c; return -1; },
       // the party of the chapter about to be played (js/story.js PARTY) and a deck built around it
       party() { const c = Math.min(story().CHAPTERS.length, Math.floor(data.stageCleared / PER()) + 1); return (story().PARTY[c] || []).filter((id) => data.unlocked.includes(id)); },
-      partyDeck() { return autoDeck(roster, data.unlocked, m.party()); },
+      partyDeck() { const p = m.party(); return p.length ? p.slice(0, RULES.deckSize) : autoDeck(roster, data.unlocked); }, // the scene's party only
       // what a stage run gets from the story: chapter bonuses (WaveSim `upgrades`, Stage options)
       upgrades() { const b = chapterBonus(m.bonusChapters()); return { atk: b.atk, hp: b.hp, levels: {} }; },
       baseHp: () => 20 + chapterBonus(m.bonusChapters()).base,
@@ -78,8 +78,7 @@
       // the deck: saved picks still in the squad, filled up automatically to deckSize
       deck() {
         const d = [...new Set((data.deck || []).filter((id) => roster.BY_ID[id] && data.unlocked.includes(id)))].slice(0, RULES.deckSize);
-        for (const id of autoDeck(roster, data.unlocked, m.party())) { if (d.length >= RULES.deckSize) break; if (!d.includes(id)) d.push(id); }
-        return d;
+        return d.length ? d : m.partyDeck();
       },
       setDeck(ids) {
         const d = [...new Set(ids.filter((id) => data.unlocked.includes(id)))].slice(0, RULES.deckSize);
@@ -106,7 +105,7 @@
         data.cycle++;
         data.stageCleared = 0; data.best = {}; data.seen = {};
         m.sync();
-        data.deck = autoDeck(roster, data.unlocked, m.party());
+        data.deck = m.partyDeck();
         m.save();
         return true;
       },

@@ -79,7 +79,8 @@ if (require.main === module) {
         const done = cycle >= 2 ? STORY.CHAPTERS.length : c;
         const pool = STORY.squad(done, cycle), bon = Meta.chapterBonus(done);
         const ups = { atk: bon.atk, hp: bon.hp, baseHp: bon.base };
-        const deck = Meta.autoDeck(roster, pool, STORY.PARTY[c + 1] || []); // the chapter's party first, like the game
+        const party = (STORY.PARTY[c + 1] || []).filter((id) => pool.includes(id));
+        const deck = party.length ? party : Meta.autoDeck(roster, pool); // the chapter's party, like the game
         let sum = 0, low = 101, lowG = 0;
         for (let i = 1; i <= STORY.PER_CHAPTER; i++) {
           const g = c * STORY.PER_CHAPTER + i;

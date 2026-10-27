@@ -276,7 +276,7 @@
     if (t.dataset.go) {
       const ga = S.at(+t.dataset.go);
       if (ga.si === 0 && !meta.data.seen['c' + ga.chapter.id]) { startStage(+t.dataset.go); return; } // a new chapter: its party is set in startStage
-      if (meta.data.deck.length < Math.min(DECK_N(), meta.data.unlocked.length)) { toast(`편성을 ${DECK_N()}명 채워 주세요`); go('deck'); return; }
+      if (meta.data.deck.length < Math.min(3, meta.data.unlocked.length)) { toast('편성에 대원을 3명 이상 넣어 주세요'); go('deck'); return; } // a scene's party can be 4 or 5
       startStage(+t.dataset.go); return;
     }
     if (t.dataset.dslot) { const i = +t.dataset.dslot; deckSlot = deckSlot === i ? -1 : i; renderLobby(); return; }

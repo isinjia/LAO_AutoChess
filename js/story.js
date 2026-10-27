@@ -337,7 +337,7 @@
   // new game plus: bugs ngK times stronger, ng0 at 1-1 easing to ng1 at the last stage (the whole squad and every
   // bonus make the early chapters trivial, while the late ones are already steep). tools/stage_test.js --story
   // chK: per-chapter strength of the bugs, set against the chapter's party (a weak party gets a gentler chapter)
-  const TUNE = { ng0: 2.4, ng1: 1.05, chK: { 3: 0.95, 4: 0.85, 5: 1.12, 6: 1.25 }, ngChK: { 4: 0.9, 6: 1.15 } }; // ngChK: the 2nd cycle (everyone in the squad)
+  const TUNE = { ng0: 2.4, ng1: 1.05, chK: { 3: 0.95, 4: 0.93, 5: 1.12, 6: 1.25 }, ngChK: { 3: 0.82, 4: 0.78, 6: 1.1 } }; // ngChK: the 2nd cycle (everyone in the squad)
   const ngK = (g) => TUNE.ng0 * Math.pow(TUNE.ng1 / TUNE.ng0, (g - 1) / Math.max(1, total() - 1));
   function plan(g, cycle = 1) {
     const a = at(g);
@@ -346,30 +346,32 @@
     return { g, waves: 8, eliteWave: 4, final: a.stage.final, cruel, bg: a.chapter.bg, code: a.code, cycle, ngK: ng ? ngK(g) * (TUNE.ngChK[a.chapter.id] || 1) : TUNE.chK[a.chapter.id] || 1 };
   }
 
-  // who joins the squad (the deck pool): everyone who appears in the story joins at the start of the chapter where she
-  // first appears (JOIN[k] = the newcomers of chapter k + 1). Units the story never shows join in the 2nd cycle (NG_ONLY).
+  // who joins the squad (the deck pool): a unit joins when the story puts her in the field, not when she first speaks
+  // (Constantia spends the day with the commander at the lighthouse and Labiata commands from the Orca: both join for
+  // the last battle under the lighthouse, chapter 8). JOIN[k] = the newcomers of chapter k + 1. A party short of hands
+  // is filled from the same squad (7_LAO_3Kingdom/자료/캐릭터_관계도.md) with someone the scenes do not contradict.
+  // Units the story never fields join in the 2nd cycle (NG_ONLY).
   const JOIN = {
-    0: ['leona', 'nymph', 'valkyrie', 'labiata', 'constantia'],
-    1: ['leprechaun', 'brownie', 'impet', 'gnome'],
-    2: ['raven', 'hraesvelgr', 'harpy', 'khan'],
+    0: ['leona', 'valkyrie', 'nymph', 'andvari'],
+    1: ['brownie', 'leprechaun', 'gnome', 'impet', 'phoenix'],
+    2: ['raven', 'harpy', 'hraesvelgr', 'sleipnir'],
     3: ['lemonadealpha', 'lrl', 'amy', 'sylphid', 'banshee'],
-    4: ['blacklilith', 'titania', 'eternity', 'daphne'],
-    5: ['tiamat', 'mercury', 'undine', 'thetis'],
-    6: ['brunhild', 'hela'],
-    7: [],
+    4: ['blacklilith', 'eternity', 'titania', 'daphne'],
+    5: ['mercury', 'tiamat', 'thetis', 'undine', 'ullr'],
+    6: ['khan', 'brunhild', 'hela'],
+    7: ['constantia', 'labiata'],
   };
-  const NG_ONLY = ['andvari', 'empress', 'zero', 'phoenix', 'ramiel', 'blindprincess', 'saraqael', 'cyclopsprincess', 'sleipnir', 'azazel', 'ullr', 'fafnir'];
-  // each chapter's party: the squad its story follows. The deck of a chapter's first sortie is built from it (then the
-  // strongest of the rest), so the units on the field are the ones in the scenes
+  const NG_ONLY = ['empress', 'zero', 'ramiel', 'blindprincess', 'saraqael', 'cyclopsprincess', 'azazel', 'fafnir'];
+  // each chapter's party: who the scenes send into the field (the deck of the chapter's first sortie, no outsiders)
   const PARTY = {
-    1: ['leona', 'valkyrie', 'nymph'], // 발할라의 돌격
-    2: ['brownie', 'leprechaun', 'gnome', 'impet'], // 스틸라인 출동
-    3: ['raven', 'hraesvelgr', 'harpy'], // 레이븐과 스카이 나이츠
+    1: ['leona', 'valkyrie', 'nymph', 'andvari'], // 발할라의 돌격 (+안드바리: 발할라 보급)
+    2: ['brownie', 'leprechaun', 'gnome', 'impet', 'phoenix'], // 스틸라인 출동 (+피닉스: 스틸 라인 지원부대)
+    3: ['raven', 'harpy', 'hraesvelgr', 'sleipnir'], // 레이븐과 스카이 나이츠 (+슬레이프니르). 칸은 배에 남는다
     4: ['lemonadealpha', 'lrl', 'amy', 'sylphid', 'banshee'], // 공무원과 둠 브링어
-    5: ['blacklilith', 'titania', 'eternity', 'daphne'], // 리리스의 호위대
-    6: ['tiamat', 'mercury', 'undine', 'thetis'], // 스트라이커즈와 호라이즌
-    7: ['leona', 'brownie', 'gnome', 'leprechaun', 'valkyrie', 'nymph'], // 스틸라인이 벽, 발할라가 칼
-    8: [], // 전원 집결: the strongest
+    5: ['blacklilith', 'eternity', 'titania', 'daphne'], // 리리스와 셋 ("셋. 더는 안 받아")
+    6: ['mercury', 'tiamat', 'thetis', 'undine', 'ullr'], // 스트라이커즈와 호라이즌 (+우르)
+    7: ['brownie', 'gnome', 'leprechaun', 'leona', 'valkyrie', 'nymph'], // 스틸라인이 벽, 발할라가 칼
+    8: ['brownie', 'gnome', 'leprechaun', 'leona', 'valkyrie', 'blacklilith'], // "스틸라인이 벽, 발할라가 칼, 리리스가 내 옆"
   };
   // the squad after `chapters` chapter clears: the story's cast so far (cycle 2+: everyone)
   function squad(chapters, cycle = 1) {
