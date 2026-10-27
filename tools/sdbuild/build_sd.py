@@ -9,7 +9,7 @@ Output: js/sd/<id>.js  ->  window.SD_DATA[id] = {...}
 Usage: python tools/sdbuild/build_sd.py [id ...]
 
 Card game copy of the defence project's converter (LAO_Defence/5_LAO_Defence/tools/build_sd.py):
-source assets at E:/LAO/Google_QA, output in js/sd, meshes from tools/sdbuild/unity (RefMesh), and the
+source assets at E:/LAO_Google_QA, output in js/sd, meshes from tools/sdbuild/unity (RefMesh), and the
 NS1 / NS2 skins of every unit as <id>_s1 / <id>_s2 (used for ★2 / ★3).
 """
 import base64
@@ -23,7 +23,7 @@ import sys
 import yaml
 from PIL import Image
 
-ROOT = r"E:/LAO/Google_QA/Assets"
+ROOT = r"E:/LAO_Google_QA/Assets"
 CHAR_DIRS = [ROOT + "/AssetBundleResource/Character", ROOT + "/AssetBundleResourceSub/Character"]
 OUT = os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "..", "js", "sd")
 FPS = 24
@@ -45,6 +45,8 @@ UNITS = {
     "lrl": "PECS_LRL_N",  # LR, crafted (2026-10)
     # the LRL recipe (2026-10)
     "lrlrose": "PECS_LRL_N", "amy": "BR_Amy_N", "cyclopsprincess": "PECS_CyclopsePrincess_N", "blindprincess": "PECS_BlindPrincess_N",
+    # Sisters of Valhalla, chapter 1 (2026-10-27)
+    "alvis": "BR_Alvis_N", "sandman": "BR_SandMan_N",
 }
 
 # NS1 / NS2 skins: <id>_s1 / <id>_s2 (the card game's ★2 / ★3 look); built only when asked for
@@ -113,6 +115,7 @@ def guid_index():
 
 
 def load_docs(path):
+    path = path.replace('E:/LAO/Google_QA/', 'E:/LAO_Google_QA/') if isinstance(path, str) else path  # old guid index paths
     text = open(path, encoding="utf-8", errors="ignore").read()
     text = "\n".join(l for l in text.split("\n") if not l.startswith("%"))
     docs = {}
@@ -903,7 +906,7 @@ def build(uid):
         model = UNITS[uid]
         char_dir, prefab = find_char(model)
         anim_paths = find_anims(char_dir, model)
-        if "move" not in anim_paths or "idle" not in anim_paths:
+        if any(k not in anim_paths for k in ("idle", "move", "atk", "skill", "win")):
             anim_paths = dict(pick_clips(controller_anims(prefab)), **anim_paths)
     atlas = Atlas()
     nodes = build_prefab(prefab, atlas)

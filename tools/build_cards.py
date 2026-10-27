@@ -10,7 +10,7 @@ import subprocess
 
 from PIL import Image
 
-SRC = "E:/LAO/Google_QA/Assets/AssetBundleResource/Texture/PCInvenIcon"
+SRC = "E:/LAO_Google_QA/Assets/AssetBundleResource/Texture/PCInvenIcon"
 ROOT = os.path.join(os.path.dirname(os.path.abspath(__file__)), "..")
 OUT = os.path.join(ROOT, "assets", "cards")
 

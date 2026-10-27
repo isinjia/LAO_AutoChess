@@ -11,7 +11,7 @@ import re
 
 from PIL import Image
 
-SRC = "E:/LAO/Google_QA/Assets/AssetBundleResourceSub/SpineCharacter2D"
+SRC = "E:/LAO_Google_QA/Assets/AssetBundleResourceSub/SpineCharacter2D"
 OUT = os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "assets", "l2d")
 MAX = 2048
 # unit id (js/roster.js) -> model folder

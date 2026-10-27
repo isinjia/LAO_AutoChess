@@ -12,7 +12,7 @@ import sys
 
 from PIL import Image
 
-ATLAS_DIR = "E:/LAO/Google_QA/Assets/AssetBundleResource/Atlas"
+ATLAS_DIR = "E:/LAO_Google_QA/Assets/AssetBundleResource/Atlas"
 OUT = os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "assets", "ui")
 
 

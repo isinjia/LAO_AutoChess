@@ -352,7 +352,7 @@
   // is filled from the same squad (7_LAO_3Kingdom/자료/캐릭터_관계도.md) with someone the scenes do not contradict.
   // Units the story never fields join in the 2nd cycle (NG_ONLY).
   const JOIN = {
-    0: ['leona', 'valkyrie', 'nymph', 'andvari'],
+    0: ['leona', 'valkyrie', 'nymph', 'andvari', 'alvis', 'sandman'],
     1: ['brownie', 'leprechaun', 'gnome', 'impet', 'phoenix'],
     2: ['raven', 'harpy', 'hraesvelgr', 'sleipnir'],
     3: ['lemonadealpha', 'lrl', 'amy', 'sylphid', 'banshee'],
@@ -364,7 +364,7 @@
   const NG_ONLY = ['empress', 'zero', 'ramiel', 'blindprincess', 'saraqael', 'cyclopsprincess', 'azazel', 'fafnir'];
   // each chapter's party: who the scenes send into the field (the deck of the chapter's first sortie, no outsiders)
   const PARTY = {
-    1: ['leona', 'valkyrie', 'nymph', 'andvari'], // 발할라의 돌격 (+안드바리: 발할라 보급)
+    1: ['leona', 'valkyrie', 'nymph', 'andvari', 'alvis', 'sandman'], // 발할라의 돌격 (+안드바리: 발할라 보급, +알비스·샌드걸: 발할라 II)
     2: ['brownie', 'leprechaun', 'gnome', 'impet', 'phoenix'], // 스틸라인 출동 (+피닉스: 스틸 라인 지원부대)
     3: ['raven', 'harpy', 'hraesvelgr', 'sleipnir'], // 레이븐과 스카이 나이츠 (+슬레이프니르). 칸은 배에 남는다
     4: ['lemonadealpha', 'lrl', 'amy', 'sylphid', 'banshee'], // 공무원과 둠 브링어

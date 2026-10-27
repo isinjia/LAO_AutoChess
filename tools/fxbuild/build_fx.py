@@ -20,7 +20,7 @@ from PIL import Image
 HERE = os.path.dirname(os.path.abspath(__file__))
 SRC = os.path.join(HERE, "..", "sdbuild", "unity", "proj", "fx")
 sys.path.insert(0, os.path.join(HERE, "..", "sdbuild"))
-ASSETS = r"E:/LAO/Google_QA/Assets"
+ASSETS = r"E:/LAO_Google_QA/Assets"
 OUT = os.path.join(HERE, "..", "..", "js", "fx")
 MAX_TEX = 1024
 MAX_REP = 4  # repeats of a tiled texture kept in the atlas

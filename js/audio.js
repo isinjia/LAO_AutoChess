@@ -15,6 +15,7 @@
     ullr: 'laserBig', harpy: 'missile', eternity: 'mg', lemonadealpha: 'elec', sleipnir: 'missile', blacklilith: 'slash',
     cyclopsprincess: 'slash', blindprincess: 'energy', brunhild: 'expM', tiamat: 'laserBig', khan: 'rifle', labiata: 'swing',
     lrl: 'energy', constantia: 'laserBig', titania: 'ice', mercury: 'slash', empress: 'expM', fafnir: 'elec', ramiel: 'energy',
+    alvis: 'gun', sandman: 'missile',
   };
   // per-effect loudness (rapid-fire weapons and routine hits sit lower than UI cues and warnings)
   const SFX_VOL = {

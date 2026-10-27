@@ -140,7 +140,7 @@
       const def = Object.assign({}, base, {
         hp: Math.round(base.hp * k * lvK * (m.hp || 1) * (ups.hp || 1)),
         atk: Math.round(base.atk * k * lvK * (m.atk || 1) * (ups.atk || 1)),
-        def: Math.round(base.def * (m.def || 1)), aspd: base.aspd / (m.spd || 1),
+        def: Math.round(base.def * (m.def || 1)), aspd: +(base.aspd / (m.spd || 1) / (1 + 0.1 * (star - 1))).toFixed(2), // +10% attack speed per star
         eva: Math.min(0.6, base.eva + (m.eva || 0)), crit: Math.min(1, base.crit + (m.crit || 0)),
         // gear: 저격형 OS adds range to both attacks
         basic: m.range ? Object.assign({}, base.basic, { range: base.basic.range + m.range }) : base.basic,

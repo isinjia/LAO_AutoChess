@@ -1376,7 +1376,7 @@
     showCard(id, star = 1, gear, cell) { // cell: { col, row } when the card stands on the formation (its tile turns gold)
       const k = WaveSim.STAR[star] || 1, b = RO.BY_ID[id];
       infoCell = cell || null;
-      renderInfo('c' + id + star, Object.assign({}, b, { hp: Math.round(b.hp * k), atk: Math.round(b.atk * k) }), null, star, gear);
+      renderInfo('c' + id + star, Object.assign({}, b, { hp: Math.round(b.hp * k), atk: Math.round(b.atk * k), aspd: +(b.aspd / (1 + 0.1 * ((star || 1) - 1))).toFixed(2) }), null, star, gear);
     },
     hideInfo() { $('info').hidden = true; },
     // outline the player's synergy rows a card would add to (keys from Synergy.compute)

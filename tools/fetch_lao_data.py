@@ -3,7 +3,7 @@
 Source: the game's decoded tables as published by lo.swaytwig.com (Korean server):
   https://lo-swaytwig.b-cdn.net/yaml/korea/unit/<uid>.yml   class, role, stats, skills (rate / range / AP / 3x3 grid)
   https://lo-swaytwig.b-cdn.net/yaml/locale/KR.*.yml         Korean unit and skill names
-The Unity project (E:/LAO/Google_QA) has no unit tables: they are downloaded from the game server at run time.
+The Unity project (E:/LAO_Google_QA) has no unit tables: they are downloaded from the game server at run time.
 
 Usage: python tools/fetch_lao_data.py      (cache: tools/.lao_cache, delete it to refetch)
 """
@@ -42,6 +42,7 @@ SD_UNITS = {
     "andvari": "BR_Andvari", "hraesvelgr": "BR_Hraesvelgr", "lemonadealpha": "PECS_LemonadeAlpha",
     "eternity": "3P_Eternity", "ullr": "ST_Ullr", "saraqael": "DS_Saraqael", "lrl": "PECS_LRL",
     "amy": "BR_Amy", "cyclopsprincess": "PECS_CyclopsePrincess", "blindprincess": "PECS_BlindPrincess",
+    "alvis": "BR_Alvis", "sandman": "BR_SandMan",
 }
 LOCALES = ["UNIT", "SKILL_00", "SKILL_01", "SKILL_02", "SKILL_03"]
 

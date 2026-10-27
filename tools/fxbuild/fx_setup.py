@@ -107,6 +107,8 @@ def rig_sources():
                     continue
                 cd, prefab = B.find_char(B.UNITS[r])
                 anims = B.find_anims(cd, B.UNITS[r])
+                if r.startswith("sandman") and ("atk" not in anims or "skill" not in anims):  # 샌드걸: clips named by the controller only
+                    anims = dict(B.pick_clips(B.controller_anims(prefab)), **anims)
         except Exception as e:  # noqa: BLE001
             print("skip", r, e)
             continue
