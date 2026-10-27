@@ -778,7 +778,7 @@
           `<div class="tiW">${slotWhere(sl)}</div><div class="tiM"><span>진행 ${Math.min(sl.stageCleared, S.total())}/${S.total()}</span><span>플레이 ${playTime(sl.playSec)}</span><span>${new Date(sl.updated).toLocaleDateString('ko-KR')}</span></div>` +
           '<div class="tiBtns">' + (done && sl.endings >= sl.cycle ? `<button class="primary" data-ng="${sl.n}" data-next="${sl.cycle + 1}">${sl.cycle + 1}회차 시작</button>` : '') +
           `<button class="${done ? '' : 'primary'}" data-load="${sl.n}">이어하기</button><button class="quiet" data-erase="${sl.n}">삭제</button></div></div>`;
-      }).join('') + '</div><div class="tiFoot">스토리를 끝까지 깨면 같은 슬롯에서 2회차가 열립니다. 2회차는 모든 대원이 합류한 채 시작하고, 철충이 강해지며, 추가 이야기와 진엔딩이 있습니다.</div>';
+      }).join('') + '</div>' + (window.GAME_VERSION ? `<div class="tiVer">${GAME_VERSION.v}<small>${GAME_VERSION.date}</small></div>` : '') + '<div class="tiFoot">스토리를 끝까지 깨면 같은 슬롯에서 2회차가 열립니다. 2회차는 모든 대원이 합류한 채 시작하고, 철충이 강해지며, 추가 이야기와 진엔딩이 있습니다.</div>';
     $('title').hidden = false;
     A.bgm('title');
   }
